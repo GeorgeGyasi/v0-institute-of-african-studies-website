@@ -55,7 +55,7 @@ const navItems: NavItem[] = [
       { label: "J.H. Kwabena Nketia Archives", href: "/units/nketia-archives" },
       { label: "Ghana Dance Ensemble", href: "/units/ghana-dance-ensemble" },
       { label: "Library", href: "/units/library" },
-      { label: "AngloGold Ashanti", href: "/units/anglogold-ashanti" },
+      { label: "Manhyia Archives", href: "/units/manhyia-archives" },
       { label: "Cultural Heritage & Museum", href: "/units/cultural-heritage" },
     ],
   },

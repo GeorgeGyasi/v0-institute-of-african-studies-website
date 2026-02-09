@@ -67,12 +67,12 @@ const sections = [
     highlights: ["Personal manuscripts", "Field recordings", "Music research papers"],
   },
   {
-    icon: Gem,
-    name: "AngloGold Ashanti",
-    slug: "anglogold-ashanti",
+    icon: Archive,
+    name: "Manhyia Archives",
+    slug: "manhyia-archives",
     description:
-      "A research and heritage unit supported through the AngloGold Ashanti partnership, focused on mining communities, cultural heritage preservation, and sustainable development in gold-mining regions of Ghana.",
-    highlights: ["Community heritage", "Mining history", "Sustainable development"],
+      "A collaborative archival initiative between the Institute of African Studies and the Manhyia Palace, dedicated to preserving and providing access to the rich historical records, oral traditions, and cultural documentation of the Asante Kingdom.",
+    highlights: ["Royal manuscripts", "Oral history recordings", "Asante cultural records"],
   },
 ]
 

@@ -23,7 +23,7 @@ const footerLinks = {
     { label: "Ghana Dance Ensemble", href: "/units/ghana-dance-ensemble" },
     { label: "IAS Library", href: "/units/library" },
     { label: "Nketia Archives", href: "/units/nketia-archives" },
-    { label: "AngloGold Ashanti", href: "/units/anglogold-ashanti" },
+    { label: "Manhyia Archives", href: "/units/manhyia-archives" },
     { label: "Kwame Nkrumah Chair", href: "/kwame-nkrumah-chair" },
   ],
 }
