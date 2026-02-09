@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { PageHeader } from "@/components/page-header"
 import { Quote } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Director's Message",
   description:
-    "A message from the Director of the Institute of African Studies, University of Ghana.",
+    "A message from the Director of the Institute of African Studies, Professor Samuel Aniegye Ntewusu.",
 }
 
 export default function DirectorsMessagePage() {
@@ -22,11 +23,17 @@ export default function DirectorsMessagePage() {
             {/* Director Profile Card */}
             <div className="lg:col-span-1">
               <div className="sticky top-28 rounded-lg border border-border bg-card p-8">
-                <div className="mb-6 flex h-28 w-28 items-center justify-center rounded-full bg-primary/10">
-                  <span className="text-3xl font-bold text-primary">AAA</span>
+                <div className="relative mb-6 h-48 w-48 overflow-hidden rounded-lg">
+                  <Image
+                    src="/images/director.jpg"
+                    alt="Professor Samuel Aniegye Ntewusu, Director of the Institute of African Studies"
+                    fill
+                    className="object-cover"
+                    sizes="192px"
+                  />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">
-                  Prof. Akosua Adomako Ampofo
+                  Prof. Samuel Aniegye Ntewusu
                 </h2>
                 <p className="mt-1 text-sm font-medium text-primary">
                   Director
@@ -40,10 +47,10 @@ export default function DirectorsMessagePage() {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {[
-                      "Gender Studies",
-                      "Social Transformation",
-                      "Identity Politics",
-                      "Qualitative Methods",
+                      "African History",
+                      "Cultural Heritage",
+                      "Oral Traditions",
+                      "Migration Studies",
                     ].map((area) => (
                       <span
                         key={area}
@@ -73,7 +80,7 @@ export default function DirectorsMessagePage() {
                   the oldest and most distinguished African Studies institutions
                   on the continent, we carry forward a legacy of scholarly
                   excellence that began in 1961 under the visionary leadership
-                  of Ghana's first President, Kwame Nkrumah.
+                  of Ghana{"'"}s first President, Kwame Nkrumah.
                 </p>
                 <p>
                   Our founding mandate was to study and document the totality
@@ -121,7 +128,7 @@ export default function DirectorsMessagePage() {
                 </p>
                 <div className="mt-4 border-t border-border pt-6">
                   <p className="font-semibold text-foreground">
-                    Prof. Akosua Adomako Ampofo
+                    Prof. Samuel Aniegye Ntewusu
                   </p>
                   <p className="text-sm text-muted-foreground">
                     Director, Institute of African Studies

@@ -14,17 +14,17 @@ const footerLinks = {
     { label: "Prospective Students", href: "/academics/prospective-students" },
     { label: "Research Areas", href: "/research" },
   ],
-  resources: [
-    { label: "Publications", href: "/publications" },
-    { label: "Institutional Publications", href: "/publications/institutional" },
+  publications: [
+    { label: "Institutional", href: "/publications/institutional" },
+    { label: "AngloGold Ashanti Lectures", href: "/publications/anglogold-ashanti-lectures" },
     { label: "Events & Seminars", href: "/events" },
-    { label: "Contact Us", href: "/contact" },
   ],
-  university: [
-    { label: "University of Ghana", href: "https://www.ug.edu.gh" },
-    { label: "Admissions", href: "https://www.ug.edu.gh/admissions" },
-    { label: "Student Portal", href: "#" },
-    { label: "Staff Directory", href: "/about/staff" },
+  units: [
+    { label: "Ghana Dance Ensemble", href: "/units/ghana-dance-ensemble" },
+    { label: "IAS Library", href: "/units/library" },
+    { label: "Nketia Archives", href: "/units/nketia-archives" },
+    { label: "AngloGold Ashanti", href: "/units/anglogold-ashanti" },
+    { label: "Kwame Nkrumah Chair", href: "/kwame-nkrumah-chair" },
   ],
 }
 
@@ -92,10 +92,10 @@ export function Footer() {
 
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider opacity-90">
-              Resources
+              Publications
             </h3>
             <ul className="flex flex-col gap-2">
-              {footerLinks.resources.map((link) => (
+              {footerLinks.publications.map((link) => (
                 <li key={link.href + link.label}>
                   <Link
                     href={link.href}
@@ -110,10 +110,10 @@ export function Footer() {
 
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider opacity-90">
-              University
+              Units
             </h3>
             <ul className="flex flex-col gap-2">
-              {footerLinks.university.map((link) => (
+              {footerLinks.units.map((link) => (
                 <li key={link.href + link.label}>
                   <Link
                     href={link.href}

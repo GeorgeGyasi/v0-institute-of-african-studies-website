@@ -44,14 +44,22 @@ const sections = [
   },
   {
     icon: Music,
-    name: "Performing Arts Unit",
-    slug: "performing-arts",
+    name: "Ghana Dance Ensemble",
+    slug: "ghana-dance-ensemble",
     description:
-      "Supports research and creative practice in African music, dance, and theatre. Manages performance spaces and maintains a growing audio-visual collection of performing traditions.",
-    highlights: ["Ghana Dance Ensemble", "Performance spaces", "Audio-visual archive"],
+      "A premier professional performing arts company established in 1962, dedicated to researching, preserving, and promoting the traditional and contemporary performing arts of Ghana and Africa.",
+    highlights: ["200+ annual performances", "40+ members", "International tours"],
   },
   {
     icon: Library,
+    name: "IAS Library",
+    slug: "library",
+    description:
+      "One of the foremost specialised Africanist libraries on the continent, housing over 15,000 monographs, 500+ journals, rare books, and digital research resources.",
+    highlights: ["15,000+ books", "500+ journals", "Digital resources"],
+  },
+  {
+    icon: Music,
     name: "J.H. Kwabena Nketia Archives",
     slug: "nketia-archives",
     description:
