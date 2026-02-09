@@ -54,3 +54,25 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .card-elevated {
+    @apply relative rounded-xl border-0 bg-card shadow-[0_1px_3px_rgba(0,0,0,0.06),0_4px_12px_rgba(0,0,0,0.04)] transition-all duration-300;
+  }
+  .card-elevated:hover {
+    @apply shadow-[0_4px_16px_rgba(0,0,0,0.1),0_8px_24px_rgba(0,0,0,0.06)] -translate-y-0.5;
+  }
+  .card-elevated::before {
+    content: "";
+    @apply absolute left-0 top-0 h-full w-1 rounded-l-xl bg-primary opacity-0 transition-opacity duration-300;
+  }
+  .card-elevated:hover::before {
+    @apply opacity-100;
+  }
+  .card-flat {
+    @apply rounded-xl border-0 bg-card shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all duration-300;
+  }
+  .card-flat:hover {
+    @apply shadow-[0_2px_8px_rgba(0,0,0,0.08)];
+  }
+}
