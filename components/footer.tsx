@@ -1,23 +1,30 @@
 import Link from "next/link"
 
 const footerLinks = {
-  institute: [
-    { label: "About Us", href: "/about" },
+  aboutUs: [
+    { label: "Overview", href: "/about" },
+    { label: "Vision & Mission", href: "/about/vision-mission" },
+    { label: "Director's Message", href: "/about/directors-message" },
+    { label: "Staff", href: "/about/staff" },
+    { label: "Sections & Units", href: "/about/sections-units" },
+  ],
+  academics: [
+    { label: "Undergraduate", href: "/academics/undergraduate" },
+    { label: "Graduate", href: "/academics/graduate" },
+    { label: "Prospective Students", href: "/academics/prospective-students" },
     { label: "Research Areas", href: "/research" },
-    { label: "Academic Units", href: "/units" },
-    { label: "Publications", href: "/publications" },
   ],
   resources: [
+    { label: "Publications", href: "/publications" },
+    { label: "Institutional Publications", href: "/publications/institutional" },
     { label: "Events & Seminars", href: "/events" },
-    { label: "Archives", href: "/units" },
-    { label: "Library", href: "/units" },
     { label: "Contact Us", href: "/contact" },
   ],
   university: [
     { label: "University of Ghana", href: "https://www.ug.edu.gh" },
     { label: "Admissions", href: "https://www.ug.edu.gh/admissions" },
     { label: "Student Portal", href: "#" },
-    { label: "Staff Directory", href: "#" },
+    { label: "Staff Directory", href: "/about/staff" },
   ],
 }
 
@@ -25,7 +32,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-foreground text-card">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           <div>
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-md bg-secondary">
@@ -49,10 +56,28 @@ export function Footer() {
 
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider opacity-90">
-              Institute
+              About Us
             </h3>
             <ul className="flex flex-col gap-2">
-              {footerLinks.institute.map((link) => (
+              {footerLinks.aboutUs.map((link) => (
+                <li key={link.href + link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm opacity-70 transition-opacity hover:opacity-100"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider opacity-90">
+              Academics
+            </h3>
+            <ul className="flex flex-col gap-2">
+              {footerLinks.academics.map((link) => (
                 <li key={link.href + link.label}>
                   <Link
                     href={link.href}
