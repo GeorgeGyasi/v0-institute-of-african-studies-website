@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 const sections = [
   {
     icon: Landmark,
-    name: "Cultural Heritage & Museum Unit",
-    slug: "cultural-heritage",
+    name: "Teaching Museum",
+    slug: "teaching-museum",
     description:
-      "Manages the Institute's extensive collection of cultural artifacts, ethnographic materials, and art objects. Oversees the IAS museum and organises exhibitions showcasing Africa's rich material culture.",
-    highlights: ["200+ ceremonial masks", "Akan gold weights", "Traditional pottery"],
+      "The Teaching Museum serves as both a pedagogical resource and a research facility, housing the Institute's extensive collection of cultural artifacts, ethnographic materials, and art objects for hands-on academic instruction and public engagement.",
+    highlights: ["200+ ceremonial masks", "Akan gold weights", "Teaching collections"],
   },
   {
     icon: Archive,

@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 
 const units = [
   {
-    id: "cultural-heritage",
-    name: "Cultural Heritage & Museum Unit",
+    id: "teaching-museum",
+    name: "Teaching Museum",
     description:
-      "The Cultural Heritage and Museum Unit manages the Institute's extensive collection of cultural artifacts, ethnographic materials, and art objects. It oversees the IAS museum and organizes exhibitions that showcase Africa's rich material culture. The unit also conducts research on heritage conservation, restitution, and museum studies.",
+      "The Teaching Museum serves as both a pedagogical resource and a research facility, housing the Institute's extensive collection of cultural artifacts, ethnographic materials, and art objects for hands-on academic instruction and public engagement. It organises exhibitions that showcase Africa's rich material culture and supports research on heritage conservation and museum studies.",
     collections: [
       {
         id: "masks",

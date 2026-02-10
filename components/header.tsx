@@ -56,7 +56,7 @@ const navItems: NavItem[] = [
       { label: "Ghana Dance Ensemble", href: "/units/ghana-dance-ensemble" },
       { label: "Library", href: "/units/library" },
       { label: "Manhyia Archives", href: "/units/manhyia-archives" },
-      { label: "Cultural Heritage & Museum", href: "/units/cultural-heritage" },
+      { label: "Teaching Museum", href: "/units/teaching-museum" },
     ],
   },
   { label: "Events", href: "/events" },

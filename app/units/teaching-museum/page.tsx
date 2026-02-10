@@ -3,16 +3,16 @@ import { PageHeader } from "@/components/page-header"
 import { UnitSection } from "@/components/units/unit-section"
 
 export const metadata: Metadata = {
-  title: "Cultural Heritage & Museum Unit",
+  title: "Teaching Museum",
   description:
-    "The Cultural Heritage and Museum Unit of the Institute of African Studies, University of Ghana.",
+    "The Teaching Museum of the Institute of African Studies, University of Ghana.",
 }
 
 const unit = {
-  id: "cultural-heritage",
-  name: "Cultural Heritage & Museum Unit",
+  id: "teaching-museum",
+  name: "Teaching Museum",
   description:
-    "The Cultural Heritage and Museum Unit manages the Institute's extensive collection of cultural artifacts, ethnographic materials, and art objects. It oversees the IAS museum and organises exhibitions that showcase Africa's rich material culture. The unit also conducts research on heritage conservation, restitution, and museum studies.",
+    "The Teaching Museum serves as both a pedagogical resource and a research facility, housing the Institute's extensive collection of cultural artifacts, ethnographic materials, and art objects for hands-on academic instruction and public engagement. It organises exhibitions that showcase Africa's rich material culture and supports research on heritage conservation, restitution, and museum studies.",
   collections: [
     {
       id: "masks",
@@ -44,12 +44,12 @@ const unit = {
   ],
 }
 
-export default function CulturalHeritagePage() {
+export default function TeachingMuseumPage() {
   return (
     <>
       <PageHeader
         title={unit.name}
-        subtitle="Preserving and showcasing Africa's rich material culture"
+        subtitle="A pedagogical resource preserving and showcasing Africa's rich material culture"
       />
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
