@@ -1,43 +1,57 @@
+"use client"
+
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { useState } from "react"
+import { ArrowRight, Calendar, ChevronRight } from "lucide-react"
 
 const newsItems = [
   {
-    date: "January 28, 2026",
+    date: "Jan 28, 2026",
+    category: "Symposium",
     title: "IAS Hosts International Symposium on Oral Traditions in the Digital Age",
     excerpt:
       "Over 120 scholars from 18 countries convened at the University of Ghana to discuss the preservation and digital archiving of Africa's oral heritage.",
     href: "/events/oral-traditions-conference",
+    accent: "bg-primary",
   },
   {
-    date: "January 10, 2026",
+    date: "Jan 10, 2026",
+    category: "Keynote",
     title: "Professor Ntewusu Delivers Keynote at Pan-African Heritage Summit",
     excerpt:
       "The Director of IAS presented on the role of academic institutions in safeguarding intangible cultural heritage across the continent.",
     href: "/about/directors-message",
+    accent: "bg-secondary",
   },
   {
-    date: "December 15, 2025",
+    date: "Dec 15, 2025",
+    category: "Programme",
     title: "New MPhil Programme in African Digital Humanities Announced",
     excerpt:
       "The Institute launches a pioneering graduate programme combining African studies with digital research methodologies, starting September 2026.",
     href: "/academics/graduate",
+    accent: "bg-foreground",
   },
   {
-    date: "November 22, 2025",
+    date: "Nov 22, 2025",
+    category: "Recognition",
     title: "Manhyia Archives Receives UNESCO Recognition for Preservation Work",
     excerpt:
       "The collaborative archival initiative between IAS and Manhyia Palace has been recognised for its outstanding contribution to cultural heritage documentation.",
     href: "/units/manhyia-archives",
+    accent: "bg-primary",
   },
 ]
 
 export function MissionSection() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
   return (
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid items-start gap-16 lg:grid-cols-2">
-          <div>
+        <div className="grid items-start gap-16 lg:grid-cols-[1fr_1.1fr]">
+          {/* Left: Mission */}
+          <div className="lg:sticky lg:top-28">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
               Our Mission
             </p>
@@ -60,37 +74,99 @@ export function MissionSection() {
             </p>
           </div>
 
+          {/* Right: Modern News Feed */}
           <div>
-            <div className="mb-5 flex items-center justify-between">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-secondary">
-                Latest News
-              </h3>
+            <div className="mb-6 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="h-8 w-1 rounded-full bg-primary" />
+                <h3 className="text-lg font-bold text-foreground">
+                  Latest News
+                </h3>
+              </div>
               <Link
                 href="/events"
-                className="flex items-center gap-1 text-xs font-semibold text-primary transition-colors hover:text-primary/80"
+                className="group/link flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
               >
-                View all
-                <ArrowRight className="h-3 w-3" />
+                All news
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-0.5" />
               </Link>
             </div>
 
-            <div className="flex flex-col gap-4">
-              {newsItems.map((item) => (
+            <div className="flex flex-col gap-3">
+              {newsItems.map((item, index) => (
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="card-elevated group block overflow-hidden p-5"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  className="group relative flex gap-4 rounded-xl bg-card p-4 transition-all duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
+                  style={{
+                    transform: hoveredIndex === index ? "translateX(4px)" : "translateX(0)",
+                    opacity: hoveredIndex !== null && hoveredIndex !== index ? 0.6 : 1,
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                  }}
                 >
-                  <p className="mb-1.5 text-xs font-medium text-secondary">
-                    {item.date}
-                  </p>
-                  <h4 className="mb-2 text-sm font-bold leading-snug text-foreground transition-colors group-hover:text-primary">
-                    {item.title}
-                  </h4>
-                  <p className="text-xs leading-relaxed text-muted-foreground line-clamp-2">
-                    {item.excerpt}
-                  </p>
+                  {/* Accent bar */}
+                  <div className="flex flex-col items-center gap-1 pt-1">
+                    <div
+                      className={`h-full w-1 rounded-full ${item.accent} transition-all duration-300 ${
+                        hoveredIndex === index ? "opacity-100" : "opacity-30"
+                      }`}
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <div className="mb-2 flex items-center gap-3">
+                      <span
+                        className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-card ${item.accent}`}
+                      >
+                        {item.category}
+                      </span>
+                      <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                        <Calendar className="h-3 w-3" />
+                        {item.date}
+                      </span>
+                    </div>
+
+                    <h4 className="mb-1.5 text-sm font-bold leading-snug text-foreground transition-colors group-hover:text-primary">
+                      {item.title}
+                    </h4>
+
+                    <p className="text-xs leading-relaxed text-muted-foreground line-clamp-2">
+                      {item.excerpt}
+                    </p>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="flex items-center self-center">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-muted-foreground opacity-0 transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:opacity-100">
+                      <ChevronRight className="h-4 w-4" />
+                    </div>
+                  </div>
                 </Link>
+              ))}
+            </div>
+
+            {/* Ticker-style stat strip */}
+            <div className="mt-6 flex items-stretch gap-px overflow-hidden rounded-xl">
+              {[
+                { value: "2,500+", label: "Publications" },
+                { value: "60+", label: "Faculty" },
+                { value: "40+", label: "Partners" },
+                { value: "10,000+", label: "Archives" },
+              ].map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className={`flex flex-1 flex-col items-center justify-center py-4 ${
+                    i % 2 === 0 ? "bg-primary text-primary-foreground" : "bg-foreground text-card"
+                  }`}
+                >
+                  <span className="text-lg font-bold leading-none">{stat.value}</span>
+                  <span className="mt-1 text-[10px] font-medium uppercase tracking-wider opacity-70">
+                    {stat.label}
+                  </span>
+                </div>
               ))}
             </div>
           </div>
