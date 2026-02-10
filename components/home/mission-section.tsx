@@ -39,9 +39,11 @@ export function MissionSection() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-lg border border-border bg-card p-6"
+                className="card-elevated overflow-hidden p-6"
               >
-                <stat.icon className="mb-3 h-6 w-6 text-primary" />
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                  <stat.icon className="h-5 w-5 text-primary" />
+                </div>
                 <p className="text-2xl font-bold text-foreground">{stat.value}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>
               </div>

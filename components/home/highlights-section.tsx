@@ -53,7 +53,7 @@ export function HighlightsSection() {
             <Link
               key={item.title}
               href={item.href}
-              className="group overflow-hidden rounded-lg border border-border bg-background transition-shadow hover:shadow-lg"
+              className="card-elevated group overflow-hidden"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image

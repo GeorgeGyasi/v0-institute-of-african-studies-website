@@ -76,3 +76,22 @@
     @apply shadow-[0_2px_8px_rgba(0,0,0,0.08)];
   }
 }
+
+@layer utilities {
+  .african-motif {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23B09C43' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%23B09C43' stroke-width='0.3' opacity='0.06'/%3E%3C/svg%3E");
+  }
+  .kente-stripe {
+    background: repeating-linear-gradient(
+      90deg,
+      hsl(var(--primary)) 0px,
+      hsl(var(--primary)) 3px,
+      hsl(var(--secondary)) 3px,
+      hsl(var(--secondary)) 6px,
+      hsl(var(--foreground)) 6px,
+      hsl(var(--foreground)) 9px,
+      hsl(var(--secondary)) 9px,
+      hsl(var(--secondary)) 12px
+    );
+  }
+}
