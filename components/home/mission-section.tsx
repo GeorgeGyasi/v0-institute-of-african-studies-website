@@ -1,10 +1,35 @@
-import { BookOpen, Users, Globe, Archive } from "lucide-react"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 
-const stats = [
-  { icon: BookOpen, label: "Research Publications", value: "2,500+" },
-  { icon: Users, label: "Faculty & Researchers", value: "60+" },
-  { icon: Globe, label: "International Partners", value: "40+" },
-  { icon: Archive, label: "Archival Collections", value: "10,000+" },
+const newsItems = [
+  {
+    date: "January 28, 2026",
+    title: "IAS Hosts International Symposium on Oral Traditions in the Digital Age",
+    excerpt:
+      "Over 120 scholars from 18 countries convened at the University of Ghana to discuss the preservation and digital archiving of Africa's oral heritage.",
+    href: "/events/oral-traditions-conference",
+  },
+  {
+    date: "January 10, 2026",
+    title: "Professor Ntewusu Delivers Keynote at Pan-African Heritage Summit",
+    excerpt:
+      "The Director of IAS presented on the role of academic institutions in safeguarding intangible cultural heritage across the continent.",
+    href: "/about/directors-message",
+  },
+  {
+    date: "December 15, 2025",
+    title: "New MPhil Programme in African Digital Humanities Announced",
+    excerpt:
+      "The Institute launches a pioneering graduate programme combining African studies with digital research methodologies, starting September 2026.",
+    href: "/academics/graduate",
+  },
+  {
+    date: "November 22, 2025",
+    title: "Manhyia Archives Receives UNESCO Recognition for Preservation Work",
+    excerpt:
+      "The collaborative archival initiative between IAS and Manhyia Palace has been recognised for its outstanding contribution to cultural heritage documentation.",
+    href: "/units/manhyia-archives",
+  },
 ]
 
 export function MissionSection() {
@@ -35,19 +60,39 @@ export function MissionSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="card-elevated overflow-hidden p-6"
+          <div>
+            <div className="mb-5 flex items-center justify-between">
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-secondary">
+                Latest News
+              </h3>
+              <Link
+                href="/events"
+                className="flex items-center gap-1 text-xs font-semibold text-primary transition-colors hover:text-primary/80"
               >
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <stat.icon className="h-5 w-5 text-primary" />
-                </div>
-                <p className="text-2xl font-bold text-foreground">{stat.value}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
+                View all
+                <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              {newsItems.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className="card-elevated group block overflow-hidden p-5"
+                >
+                  <p className="mb-1.5 text-xs font-medium text-secondary">
+                    {item.date}
+                  </p>
+                  <h4 className="mb-2 text-sm font-bold leading-snug text-foreground transition-colors group-hover:text-primary">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs leading-relaxed text-muted-foreground line-clamp-2">
+                    {item.excerpt}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
