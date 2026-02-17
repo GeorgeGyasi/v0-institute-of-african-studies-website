@@ -70,71 +70,58 @@ export default function DirectorsMessagePage() {
                 <Quote className="h-6 w-6 text-secondary" />
               </div>
               <div className="flex flex-col gap-5 text-base leading-relaxed text-muted-foreground">
-                <p className="text-lg font-medium text-foreground">
-                  Dear colleagues, students, and friends of the Institute of
-                  African Studies,
+                <p className="text-lg font-semibold text-foreground">
+                  WELCOME MESSAGE FROM THE DIRECTOR
+                </p>
+                <p className="text-sm italic text-muted-foreground">
+                  Warm welcome to the Institute of African Studies (IAS), University of Ghana.
                 </p>
                 <p>
-                  It is my great privilege to welcome you to the Institute of
-                  African Studies at the University of Ghana, Legon. As one of
-                  the oldest and most distinguished African Studies institutions
-                  on the continent, we carry forward a legacy of scholarly
-                  excellence that began in 1961 under the visionary leadership
-                  of Ghana{"'"}s first President, Kwame Nkrumah.
+                  Founded in 1961 as a semi-autonomous institute within the University, IAS was
+                  formally opened in October 1962 by Ghana{"'"}s first President, Osagyefo Dr.
+                  Kwame Nkrumah, with a mandate to teach and conduct research on the peoples,
+                  cultures, and heritage of Africa. Since then, IAS has been at the forefront of
+                  African Studies pioneering research, innovative teaching and advocacy that
+                  deepen understanding of Africa and its global diaspora.
                 </p>
                 <p>
-                  Our founding mandate was to study and document the totality
-                  of African life and culture. More than six decades later, that
-                  mandate remains as relevant as ever. In an era of rapid
-                  globalisation and technological transformation, the need to
-                  understand African societies on their own terms, through their
-                  own epistemological frameworks, has never been more pressing.
+                  Our strength lies in our commitment to academic excellence, innovation and
+                  interdisciplinary research. We bring together scholars and students from diverse
+                  backgrounds to engage in rigorous, multifaceted research that bridge theory and
+                  practice. At IAS, our graduate programmes offer distinctive perspectives on
+                  Africa{"'"}s history, culture, politics, and development - providing fertile
+                  ground for critical thinking, creativity and ideas.
                 </p>
                 <p>
-                  At the Institute, we are committed to producing knowledge that
-                  not only meets the highest international academic standards but
-                  also speaks directly to the lived realities of African peoples.
-                  Our interdisciplinary approach brings together scholars from
-                  anthropology, sociology, linguistics, political science,
-                  history, archaeology, and the performing arts to address the
-                  complex challenges facing our continent.
+                  We are enriched by unique academic resources, including our specialised Library,
+                  extensive Archives, vibrant Museum, and the renowned resident dance troupe
+                  (Ghana Dance Ensemble), each offering transformative insights into Africa and
+                  her people. Beyond the classroom, the Institute actively fosters collaborations
+                  and partnerships with institutions, organisations and individuals worldwide -
+                  shaping public discourse, influencing policy and contributing to scholarship
+                  that matters.
                 </p>
                 <p>
-                  Our graduate programmes continue to attract some of the
-                  brightest minds from across Africa and beyond. We are
-                  particularly proud of our efforts to mentor the next generation
-                  of African Studies scholars who will carry this important work
-                  forward into the future.
+                  As we expand our networks and intensify our work, our vision remains clear; to
+                  be a global leader in scholarship on Africa and her Diaspora. Our mission is
+                  equally resolute; to contribute to the regeneration of Africa and her peoples
+                  through knowledge production, dissemination, application, and preservation.
                 </p>
                 <p>
-                  The Institute also houses invaluable archival collections
-                  including photographs, manuscripts, audio-visual materials,
-                  and cultural artifacts that document the richness of African
-                  cultural heritage. We are actively engaged in digitising these
-                  collections to ensure wider access for researchers and the
-                  public.
+                  I invite you to join us whether as a student, researcher, partner, or visitor
+                  in this vibrant intellectual community. Here at IAS, you will find a place where
+                  Africa{"'"}s past is honoured, its present critically examined, and its future
+                  imaginatively appreciated.
                 </p>
-                <p>
-                  I invite you to explore our website, learn about our research
-                  programmes, browse our publications, and discover the wealth
-                  of knowledge that the Institute of African Studies has to
-                  offer. Whether you are a prospective student, a fellow
-                  researcher, a policy maker, or simply someone interested in
-                  African societies and cultures, there is something here for
-                  you.
-                </p>
-                <p className="text-foreground">
-                  Welcome to the Institute of African Studies.
-                </p>
-                <div className="mt-4 border-t border-border pt-6">
+                <div className="mt-8 border-t border-border pt-6">
                   <p className="font-semibold text-foreground">
-                    Prof. Samuel Aniegye Ntewusu
+                    Professor Samuel Aniegye Ntewusu
                   </p>
                   <p className="text-sm text-muted-foreground">
                     Director, Institute of African Studies
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    University of Ghana, Legon
+                    University of Ghana
                   </p>
                 </div>
               </div>
