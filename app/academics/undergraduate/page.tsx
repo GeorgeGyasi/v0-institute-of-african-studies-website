@@ -1,16 +1,9 @@
 "use client"
 
-import type { Metadata } from "next"
 import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
 import { BookOpen, Clock, Award, Users, ClipboardList, HelpCircle } from "lucide-react"
 import { useState } from "react"
-
-export const metadata: Metadata = {
-  title: "Undergraduate Programmes",
-  description:
-    "Undergraduate academic programmes at the Institute of African Studies, University of Ghana.",
-}
 
 const baPrograms = [
   {
