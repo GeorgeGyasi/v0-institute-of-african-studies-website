@@ -66,7 +66,7 @@ export function HeroSection() {
   const slide = slides[currentSlide]
 
   return (
-    <section className="relative min-h-[85vh] overflow-hidden">
+    <section className="relative min-h-[85vh] overflow-hidden bg-black">
       <Image
         src={slide.image}
         alt={slide.title}
@@ -81,7 +81,7 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-end px-6 pb-20">
         <div className="max-w-2xl space-y-6">
-          <div className="inline-flex items-center gap-2 w-fit rounded-full bg-secondary/20 backdrop-blur-sm border border-secondary/40 px-4 py-2">
+          <div className="inline-flex items-center gap-2 rounded-full bg-secondary/20 backdrop-blur-sm border border-secondary/40 px-4 py-2 w-fit">
             <Sparkles className="h-4 w-4 text-secondary" />
             <span className="text-xs font-semibold uppercase tracking-widest text-secondary">
               {slide.subtitle}
@@ -96,7 +96,7 @@ export function HeroSection() {
             {slide.description}
           </p>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4 pt-4">
             <Link
               href={slide.primaryCTA.href}
               className="group inline-flex items-center gap-2 rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all hover:shadow-lg hover:scale-105 active:scale-95"
