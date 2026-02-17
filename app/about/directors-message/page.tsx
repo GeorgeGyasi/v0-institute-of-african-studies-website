@@ -23,24 +23,28 @@ export default function DirectorsMessagePage() {
             {/* Director Profile Card */}
             <div className="lg:col-span-1">
               <div className="sticky top-28 rounded-lg border border-border bg-card p-8">
-                <div className="relative mb-6 h-48 w-48 overflow-hidden rounded-lg">
-                  <Image
-                    src="/images/director.jpg"
-                    alt="Professor Samuel Aniegye Ntewusu, Director of the Institute of African Studies"
-                    fill
-                    className="object-cover"
-                    sizes="192px"
-                  />
+                <div className="mb-8 flex justify-center">
+                  <div className="relative h-64 w-64 overflow-hidden rounded-lg">
+                    <Image
+                      src="/images/director.jpg"
+                      alt="Professor Samuel Aniegye Ntewusu, Director of the Institute of African Studies"
+                      fill
+                      className="object-cover"
+                      sizes="256px"
+                    />
+                  </div>
                 </div>
-                <h2 className="text-xl font-semibold text-foreground">
-                  Prof. Samuel Aniegye Ntewusu
-                </h2>
-                <p className="mt-1 text-sm font-medium text-primary">
-                  Director
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Institute of African Studies
-                </p>
+                <div className="text-center">
+                  <h2 className="text-xl font-semibold text-foreground">
+                    Prof. Samuel Aniegye Ntewusu
+                  </h2>
+                  <p className="mt-1 text-sm font-medium text-primary">
+                    Director
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Institute of African Studies
+                  </p>
+                </div>
                 <div className="mt-6 border-t border-border pt-6">
                   <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     Areas of Expertise
