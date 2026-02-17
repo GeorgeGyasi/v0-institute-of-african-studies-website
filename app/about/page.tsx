@@ -57,8 +57,8 @@ export default function AboutPage() {
       {/* History */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div>
+          <div className="flex justify-center">
+            <div className="max-w-2xl text-center">
               <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
                 Our History
               </p>
@@ -87,14 +87,6 @@ export default function AboutPage() {
                   critical to Africa&apos;s development and cultural heritage.
                 </p>
               </div>
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-              <Image
-                src="/images/about.jpg"
-                alt="IAS research library and scholars"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
         </div>
