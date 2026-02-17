@@ -37,7 +37,7 @@ export function UnitSection({ unit }: { unit: Unit }) {
       {unit.collections.length > 0 ? (
         <>
           <p className="mb-6 text-sm font-semibold uppercase tracking-widest text-secondary">
-            Archival Collections
+            Museum Collections
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {unit.collections.map((item) => (

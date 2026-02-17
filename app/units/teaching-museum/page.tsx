@@ -41,6 +41,33 @@ const unit = {
       description:
         "A significant collection of Akan gold weights (abrammuo), used historically for measuring gold dust in trade. The weights depict proverbs, animals, geometric patterns, and scenes of daily life.",
     },
+    {
+      id: "textiles",
+      title: "Traditional African Textiles & Kente Cloths",
+      image: "/images/archive-2.jpg",
+      date: "c. 1950 - Present",
+      source: "IAS Textile Collection",
+      description:
+        "A diverse collection of handwoven textiles including Kente cloths, Adire fabrics, and batik works from Ghana and across West Africa. These pieces demonstrate the artistry and cultural significance of African textile traditions.",
+    },
+    {
+      id: "beads",
+      title: "African Beads & Jewellery",
+      image: "/images/archive-3.jpg",
+      date: "c. 1800 - 1990",
+      source: "IAS Decorative Arts Collection",
+      description:
+        "An extensive collection of beads, ornaments, and jewellery from various African cultures. These pieces showcase the craftsmanship and aesthetic values of different communities, including shell beads, glass beads, and metal ornaments.",
+    },
+    {
+      id: "tools",
+      title: "Historical Tools & Implements",
+      image: "/images/archive-5.jpg",
+      date: "c. 1700 - 1950",
+      source: "IAS Material Culture Collection",
+      description:
+        "A collection of traditional tools, implements, and household items used in agricultural, domestic, and craft activities. These artifacts provide insight into daily life, technological innovations, and cultural practices of African communities.",
+    },
   ],
 }
 
