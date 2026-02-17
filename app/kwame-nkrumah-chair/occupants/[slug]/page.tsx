@@ -148,6 +148,7 @@ export default async function OccupantPage({ params }: PageProps) {
                     src={occupant.image}
                     alt={occupant.name}
                     fill
+                    loading="eager"
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
