@@ -114,51 +114,6 @@ export default function KwameNkrumahChairPage() {
         </div>
       </section>
 
-      {/* Occupants Grid Section - Moved to Top */}
-      <section className="border-t border-border bg-muted/30 py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
-              Distinguished Scholars
-            </p>
-            <h2 className="font-serif text-3xl font-bold text-foreground">
-              Chair Occupants
-            </h2>
-          </div>
-
-          {/* Occupants Cards with Images */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {occupants.map((occupant) => (
-              <Link
-                key={occupant.id}
-                href={`/kwame-nkrumah-chair/occupants/${occupant.id}`}
-                className="group overflow-hidden rounded-lg border border-border bg-card transition-all hover:shadow-lg hover:border-primary"
-              >
-                <div className="relative aspect-square overflow-hidden bg-muted">
-                  <Image
-                    src={occupant.image}
-                    alt={occupant.name}
-                    fill
-                    className="object-cover transition-transform group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
-                    {occupant.position}
-                  </p>
-                  <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {occupant.name}
-                  </h3>
-                  <p className="mt-2 text-xs text-muted-foreground">{occupant.years}</p>
-                  <p className="mt-3 text-xs text-muted-foreground">{occupant.discipline}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Nkrumah's Legacy */}
       <section className="border-t border-border bg-card py-20">
         <div className="mx-auto max-w-7xl px-6">
