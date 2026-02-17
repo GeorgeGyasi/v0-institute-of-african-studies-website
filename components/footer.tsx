@@ -26,13 +26,17 @@ const footerLinks = {
     { label: "Manhyia Archives", href: "/units/manhyia-archives" },
     { label: "Kwame Nkrumah Chair", href: "/kwame-nkrumah-chair" },
   ],
+  contact: [
+    { label: "cjasmanager@ug.edu.gh", href: "mailto:cjasmanager@ug.edu.gh" },
+    { label: "iaspubs@ug.edu.gh", href: "mailto:iaspubs@ug.edu.gh" },
+  ],
 }
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-foreground text-card">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-6">
           <div>
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-md bg-secondary">
@@ -114,6 +118,24 @@ export function Footer() {
             </h3>
             <ul className="flex flex-col gap-2">
               {footerLinks.units.map((link) => (
+                <li key={link.href + link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm opacity-70 transition-opacity hover:opacity-100"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider opacity-90">
+              Contact
+            </h3>
+            <ul className="flex flex-col gap-2">
+              {footerLinks.contact.map((link) => (
                 <li key={link.href + link.label}>
                   <Link
                     href={link.href}

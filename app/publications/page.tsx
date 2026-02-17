@@ -250,39 +250,6 @@ export default function PublicationsPage() {
                 </div>
               </div>
 
-              {/* Contact */}
-              <div className="rounded-lg border border-border bg-card p-8">
-                <h4 className="mb-6 text-lg font-semibold text-foreground">
-                  Contact Information
-                </h4>
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div>
-                    <h5 className="mb-2 flex items-center gap-2 text-sm font-semibold text-foreground">
-                      <Mail className="h-4 w-4 text-primary" />
-                      Editorial Office
-                    </h5>
-                    <a
-                      href="mailto:cjasmanager@ug.edu.gh"
-                      className="text-sm font-medium text-primary hover:underline"
-                    >
-                      cjasmanager@ug.edu.gh
-                    </a>
-                  </div>
-                  <div>
-                    <h5 className="mb-2 flex items-center gap-2 text-sm font-semibold text-foreground">
-                      <Mail className="h-4 w-4 text-primary" />
-                      Publications Office
-                    </h5>
-                    <a
-                      href="mailto:iaspubs@ug.edu.gh"
-                      className="text-sm font-medium text-primary hover:underline"
-                    >
-                      iaspubs@ug.edu.gh
-                    </a>
-                  </div>
-                </div>
-              </div>
-
               {/* Footer Info */}
               <div className="rounded-lg border border-border bg-muted/50 p-8 text-center">
                 <p className="mb-2 text-sm text-muted-foreground">
