@@ -247,6 +247,63 @@ export default function KwameNkrumahChairPage() {
           </div>
         </div>
       </section>
+
+      {/* Terms */}
+      <section className="border-t border-border bg-card py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
+            Support and Benefits
+          </p>
+          <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">
+            Terms
+          </h2>
+          <p className="mb-8 text-base text-muted-foreground">
+            The occupant will be provided with:
+          </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-lg border border-border bg-background p-6">
+              <h3 className="mb-2 font-semibold text-foreground">
+                Return Business Class Ticket
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Return business class ticket from location to Accra, as applicable
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-background p-6">
+              <h3 className="mb-2 font-semibold text-foreground">
+                Office Accommodation
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Office accommodation including a computer and printer
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-background p-6">
+              <h3 className="mb-2 font-semibold text-foreground">
+                Research Support
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                The services of a research assistant and necessary secretarial services
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-background p-6">
+              <h3 className="mb-2 font-semibold text-foreground">
+                Living Expenses
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Accommodation, medical insurance and local living expenses
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-background p-6 md:col-span-2">
+              <h3 className="mb-2 font-semibold text-foreground">
+                Research Grant
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                A research grant to support scholarly activities and research initiatives
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
