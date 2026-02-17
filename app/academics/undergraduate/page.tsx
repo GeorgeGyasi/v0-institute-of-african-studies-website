@@ -93,18 +93,21 @@ export default function UndergraduatePage() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {highlights.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-lg border border-border bg-card p-5 text-center"
-                >
-                  <item.icon className="mx-auto mb-2 h-6 w-6 text-primary" />
-                  <p className="text-lg font-bold text-foreground">
-                    {item.value}
-                  </p>
-                  <p className="text-xs text-muted-foreground">{item.label}</p>
-                </div>
-              ))}
+              {highlights.map((item) => {
+                const Icon = item.icon
+                return (
+                  <div
+                    key={item.label}
+                    className="rounded-lg border border-border bg-card p-5 text-center"
+                  >
+                    <Icon className="mx-auto mb-2 h-6 w-6 text-primary" />
+                    <p className="text-lg font-bold text-foreground">
+                      {item.value}
+                    </p>
+                    <p className="text-xs text-muted-foreground">{item.label}</p>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
