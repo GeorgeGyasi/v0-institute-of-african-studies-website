@@ -250,6 +250,10 @@ const staffCategories: StaffCategory[] = [
         email: "kagyeman@ug.edu.gh",
         photo: "/images/staff/senior-member-31.jpg",
       },
+    ],
+  },
+  {
+    id: "senior-staff",
     category: "Senior Staff",
     members: [
       {
