@@ -256,54 +256,46 @@ const staffCategories: StaffCategory[] = [
     id: "senior-staff",
     category: "Senior Staff",
     members: [
-      {
-        name: "Dr. Ama Boakyewaa Adomaa",
-        role: "Research Fellow",
-        specialty: "Cultural Studies & Identity Politics",
-        email: "abadomaa@ug.edu.gh",
-        photo: "/images/staff/senior-staff-1.jpg",
-      },
-      {
-        name: "Dr. Kwame Asante-Darko",
-        role: "Research Fellow",
-        specialty: "Political Anthropology",
-        email: "kasantedarko@ug.edu.gh",
-        photo: "/images/staff/senior-staff-2.jpg",
-      },
-      {
-        name: "Dr. Faustina Mensah",
-        role: "Research Fellow",
-        specialty: "Education & Indigenous Knowledge",
-        email: "fmensah@ug.edu.gh",
-        photo: "/images/staff/senior-staff-3.jpg",
-      },
+      { name: "Alongya Mark-Anthony", role: "Chief Administrative Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Ametewee Fidelia Serwa", role: "Principal Research Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Opuni Kwagyan Frimpong Klinsmann", role: "Senior ICT Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Twum-Danso Daniel", role: "Chief Library Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Kpogo Nathaniel Worlanyo", role: "Senior Research Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Fuseini Judith", role: "Principal Administrative Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Bruku Christian Emmanuel", role: "Senior Research Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Kpelie Josephine A", role: "Chief Administrative Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Okle Selina Emma", role: "Senior Research Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Owusu Philip", role: "Principal Assistant Curator", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Tetteh Michael Adjei", role: "Senior Accounting Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Asamoah Samuel", role: "Assistant Transport Officer", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Osei Victoria", role: "Senior Accounting Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Apeletey Gifty", role: "Senior Administrative Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Carbral Isaac Jang", role: "Principal Library Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Hoyah Paul", role: "Principal Library Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Obuadey Paul E.", role: "Principal Library Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Incoom Gloria Esi", role: "Administrative Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Danquah Evelyn", role: "Senior Administrative Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Nartey Gabriel Batsa", role: "Administrative Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Aincre Maame Fosua", role: "Research Assistant (Nkrumah Chair)", specialty: "", email: "", photo: "/images/placeholder.svg" },
     ],
   },
   {
     id: "junior-staff",
     category: "Junior Staff",
     members: [
-      {
-        name: "Mrs. Grace Asantewaa Osei",
-        role: "Administrative Secretary",
-        specialty: "Institute Administration",
-        email: "gaosei@ug.edu.gh",
-        photo: "/images/staff/junior-staff-1.jpg",
-      },
-      {
-        name: "Mr. Emmanuel Tetteh",
-        role: "Archives Officer",
-        specialty: "Archival Management & Digitisation",
-        email: "etetteh@ug.edu.gh",
-        photo: "/images/staff/junior-staff-2.jpg",
-      },
-      {
-        name: "Mrs. Patience Adjei",
-        role: "Accounts Officer",
-        specialty: "Financial Management",
-        email: "padjei@ug.edu.gh",
-        photo: "/images/staff/junior-staff-3.jpg",
-      },
+      { name: "Abire Nyaaba", role: "Headman", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Agboletey Robert", role: "Messenger/Cleaner", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Mills-Lamptey Benjamin", role: "Tradesman Gd. 1", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Serfour-Bofa Felicia", role: "Accounts Clerk Gd. 1", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Kagbenu Justice", role: "Junior Lib. Assistant Gd 11", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Amponsah Esther", role: "Clerk Grade 1 (Manhyia Archives)", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Amponsah-Nuamah Sophia", role: "Junior Lib. Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Wiafe Francisca", role: "Junior Lib. Assistant", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Cisse Ibrahim", role: "Driver", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Ziem Lydia", role: "Cleaner", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Nyampong Georgina", role: "Cleaner", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Ahazi Grace", role: "Cleaner", specialty: "", email: "", photo: "/images/placeholder.svg" },
+      { name: "Appiah Seth", role: "Cleaner", specialty: "", email: "", photo: "/images/placeholder.svg" },
     ],
   },
 ]
@@ -411,12 +403,35 @@ export function StaffDirectory() {
 function StaffCard({ person, category }: { person: StaffMember; category: string }) {
   const slug = nameToSlug(person.name)
   const profileUrl = `/about/staff/profiles/${category}/${slug}`
+  const isClickable = category === "senior-members"
 
   return (
     <div className="group overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-lg">
-      {/* Photo with hover brightness - now a link */}
-      <Link href={profileUrl}>
-        <div className="relative aspect-[4/5] overflow-hidden bg-muted cursor-pointer">
+      {/* Photo with hover brightness - link only for senior members */}
+      {isClickable ? (
+        <Link href={profileUrl}>
+          <div className="relative aspect-[4/5] overflow-hidden bg-muted cursor-pointer">
+            <Image
+              src={person.photo || "/placeholder.svg"}
+              alt={`Portrait of ${person.name}`}
+              fill
+              className="object-cover brightness-95 transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+            {/* Subtle gradient overlay at bottom for text readability */}
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
+            <div className="absolute bottom-3 left-4 right-4">
+              <p className="text-sm font-semibold text-white drop-shadow-sm">
+                {person.name}
+              </p>
+              <p className="text-xs font-medium text-white/90 drop-shadow-sm">
+                {person.role}
+              </p>
+            </div>
+          </div>
+        </Link>
+      ) : (
+        <div className="relative aspect-[4/5] overflow-hidden bg-muted">
           <Image
             src={person.photo || "/placeholder.svg"}
             alt={`Portrait of ${person.name}`}
@@ -435,22 +450,24 @@ function StaffCard({ person, category }: { person: StaffMember; category: string
             </p>
           </div>
         </div>
-      </Link>
+      )}
 
       {/* Info section */}
       <div className="p-4">
         <p className="text-xs text-muted-foreground leading-relaxed">
           {person.specialty}
         </p>
-        <div className="mt-3 flex items-center gap-2 border-t border-border pt-3">
-          <Mail className="h-3.5 w-3.5 text-primary/60" />
-          <a
-            href={`mailto:${person.email}`}
-            className="text-xs text-primary hover:underline"
-          >
-            {person.email}
-          </a>
-        </div>
+        {person.email && (
+          <div className="mt-3 flex items-center gap-2 border-t border-border pt-3">
+            <Mail className="h-3.5 w-3.5 text-primary/60" />
+            <a
+              href={`mailto:${person.email}`}
+              className="text-xs text-primary hover:underline"
+            >
+              {person.email}
+            </a>
+          </div>
+        )}
       </div>
     </div>
   )
