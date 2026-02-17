@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import Image from "next/image"
 import { Mail } from "lucide-react"
 import { useEffect, useState } from "react"
@@ -10,6 +11,15 @@ type StaffMember = {
   specialty: string
   email: string
   photo: string
+}
+
+// Convert staff name to URL slug
+function nameToSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
 }
 
 type StaffCategory = {
@@ -341,7 +351,7 @@ export function StaffDirectory() {
                   </div>
                   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {category.members.map((person) => (
-                      <StaffCard key={person.name} person={person} />
+                      <StaffCard key={person.name} person={person} category={category.id} />
                     ))}
                   </div>
                 </div>
@@ -394,29 +404,34 @@ export function StaffDirectory() {
   )
 }
 
-function StaffCard({ person }: { person: StaffMember }) {
+function StaffCard({ person, category }: { person: StaffMember; category: string }) {
+  const slug = nameToSlug(person.name)
+  const profileUrl = `/about/staff/profiles/${category}/${slug}`
+
   return (
     <div className="group overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-lg">
-      {/* Photo with hover brightness */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-        <Image
-          src={person.photo || "/placeholder.svg"}
-          alt={`Portrait of ${person.name}`}
-          fill
-          className="object-cover brightness-95 transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        />
-        {/* Subtle gradient overlay at bottom for text readability */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
-        <div className="absolute bottom-3 left-4 right-4">
-          <p className="text-sm font-semibold text-white drop-shadow-sm">
-            {person.name}
-          </p>
-          <p className="text-xs font-medium text-white/90 drop-shadow-sm">
-            {person.role}
-          </p>
+      {/* Photo with hover brightness - now a link */}
+      <Link href={profileUrl}>
+        <div className="relative aspect-[4/5] overflow-hidden bg-muted cursor-pointer">
+          <Image
+            src={person.photo || "/placeholder.svg"}
+            alt={`Portrait of ${person.name}`}
+            fill
+            className="object-cover brightness-95 transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+          {/* Subtle gradient overlay at bottom for text readability */}
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
+          <div className="absolute bottom-3 left-4 right-4">
+            <p className="text-sm font-semibold text-white drop-shadow-sm">
+              {person.name}
+            </p>
+            <p className="text-xs font-medium text-white/90 drop-shadow-sm">
+              {person.role}
+            </p>
+          </div>
         </div>
-      </div>
+      </Link>
 
       {/* Info section */}
       <div className="p-4">
