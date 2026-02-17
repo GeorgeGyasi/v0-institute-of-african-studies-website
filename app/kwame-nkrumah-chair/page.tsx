@@ -277,6 +277,9 @@ export default function KwameNkrumahChairPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
       {/* Chair Occupants */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
