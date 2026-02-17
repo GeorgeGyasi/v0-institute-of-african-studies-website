@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
 import { BookOpen, ExternalLink, FileText } from "lucide-react"
 
@@ -23,12 +24,12 @@ const institutionalPubs = [
     title: "Contemporary Journal of African Studies (CJAS)",
     type: "Peer-Reviewed Journal",
     frequency: "Bi-annual",
-    issn: "Various",
-    url: "https://journals.ug.edu.gh/cjas",
+    issn: "ISSN 2343-6530",
+    url: "/publications/cjas",
     description:
       "A multidisciplinary peer-reviewed journal publishing original scholarly work on Global Africa. Beginning with the 2019 issues, CJAS is available in electronic format on journals.ug.edu.gh and ajol.info. The journal is committed to promoting knowledge from an African-centred perspective and welcomes special issues from conferences and symposia.",
     volumes: "Published since 2012 (formerly Research Review)",
-    editors: "Series Editor",
+    editors: "Editor-in-Chief: Akosua Adomako Ampofo",
   },
   {
     title: "Feminist Africa",
@@ -99,15 +100,25 @@ export default function InstitutionalPage() {
                         {pub.title}
                       </h3>
                       {pub.url && (
-                        <a
-                          href={pub.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title={`Visit ${pub.title}`}
-                          className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
-                        >
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
+                        pub.url.startsWith("/") ? (
+                          <Link
+                            href={pub.url}
+                            title={`View ${pub.title}`}
+                            className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+                          >
+                            <ExternalLink className="h-4 w-4" />
+                          </Link>
+                        ) : (
+                          <a
+                            href={pub.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={`Visit ${pub.title}`}
+                            className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+                          >
+                            <ExternalLink className="h-4 w-4" />
+                          </a>
+                        )
                       )}
                     </div>
                     <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
