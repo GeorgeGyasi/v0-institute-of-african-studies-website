@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useRef, useEffect } from "react"
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react"
 
@@ -180,21 +181,16 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">
-              IAS
-            </span>
-          </div>
-          <div className="hidden sm:block">
-            <p className="text-sm font-semibold leading-tight text-foreground">
-              Institute of African Studies
-            </p>
-            <p className="text-xs text-muted-foreground">
-              University of Ghana
-            </p>
-          </div>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.png"
+            alt="Institute of African Studies Logo"
+            width={400}
+            height={150}
+            className="h-auto w-auto max-w-xs"
+            priority
+          />
         </Link>
 
         <nav

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 const footerLinks = {
   aboutUs: [
@@ -37,24 +38,22 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-6">
           <div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-md bg-secondary">
-                <span className="text-lg font-bold text-secondary-foreground">
-                  IAS
-                </span>
-              </div>
-              <div>
-                <p className="text-sm font-semibold leading-tight">
-                  Institute of African Studies
-                </p>
-                <p className="text-xs opacity-70">University of Ghana, Legon</p>
-              </div>
-            </div>
-            <p className="mt-4 text-sm leading-relaxed opacity-70">
-              Advancing knowledge and understanding of African societies through
-              interdisciplinary research, teaching, and public engagement since
-              1961.
-            </p>
+        <div className="flex flex-col gap-6 md:col-span-2">
+          <Link href="/" className="w-full">
+            <Image
+              src="/images/logo.png"
+              alt="Institute of African Studies Logo"
+              width={280}
+              height={100}
+              className="h-auto w-full max-w-xs"
+            />
+          </Link>
+          <p className="text-sm leading-relaxed opacity-70">
+            Advancing knowledge and understanding of African societies through
+            interdisciplinary research, teaching, and public engagement since
+            1961.
+          </p>
+        </div>
           </div>
 
           <div>
