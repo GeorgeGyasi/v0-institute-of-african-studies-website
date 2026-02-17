@@ -156,21 +156,6 @@ export default function KwameNkrumahChairPage() {
               </Link>
             ))}
           </div>
-
-          {/* CTA to Full Occupants Page */}
-          <div className="mt-12 rounded-lg border border-border bg-card p-8 text-center">
-            <Users className="mx-auto mb-4 h-8 w-8 text-primary" />
-            <h3 className="text-xl font-bold text-foreground">Explore Full Profiles</h3>
-            <p className="mt-2 text-muted-foreground">
-              Click on any occupant card above to view their complete biography and scholarly achievements
-            </p>
-            <Link
-              href="/kwame-nkrumah-chair/occupants"
-              className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              View Full Directory <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
         </div>
       </section>
 
