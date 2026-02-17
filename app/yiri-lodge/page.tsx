@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, Users, Utensils, Calendar, Phone, Mail, ArrowRight, Star, Wifi, ParkingMeter, AirVent } from 'lucide-react'
+import { MapPin, Users, Utensils, Calendar, Phone, Mail, ArrowRight, Star, Wifi, ParkingMeter, AirVent, MessageCircle } from 'lucide-react'
 
 export default function YiriLodgePage() {
   return (
@@ -22,10 +22,15 @@ export default function YiriLodgePage() {
                 Yiri Lodge is an upscale accommodation facility operated by the Institute of African Studies at the University of Ghana. Whether you're a scholar, visiting student, or traveler seeking authentic African hospitality, we provide comfortable, welcoming spaces designed for intellectual engagement and cultural exchange.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-6 py-3 font-medium text-white transition-colors hover:bg-orange-700">
-                  Book Now
-                  <ArrowRight className="h-4 w-4" />
-                </button>
+                <a
+                  href="https://wa.me/233XXXXXXXXX?text=Hello%20Yiri%20Lodge%2C%20I%20would%20like%20to%20book%20a%20room"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-green-600 px-6 py-3 font-medium text-white transition-colors hover:bg-green-700"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Book on WhatsApp
+                </a>
                 <button className="inline-flex items-center gap-2 rounded-lg border border-orange-200 px-6 py-3 font-medium text-foreground transition-colors hover:bg-orange-50">
                   Learn More
                 </button>
