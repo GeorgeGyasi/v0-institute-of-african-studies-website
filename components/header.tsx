@@ -24,6 +24,7 @@ const navItems: NavItem[] = [
       { label: "Overview", href: "/about" },
       { label: "Vision & Mission", href: "/about/vision-mission" },
       { label: "Director's Message", href: "/about/directors-message" },
+      { label: "Leadership History", href: "/about/leadership-history" },
       { label: "Staff", href: "/about/staff" },
       { label: "Sections & Units", href: "/about/sections-units" },
     ],
