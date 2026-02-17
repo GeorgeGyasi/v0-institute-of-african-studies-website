@@ -65,6 +65,9 @@ export default function UndergraduatePage() {
         title="Undergraduate Programmes (UGRC)"
         subtitle="Foundation courses in African Studies for bachelor's degree students"
       />
+
+      {/* Overview */}
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid items-start gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
