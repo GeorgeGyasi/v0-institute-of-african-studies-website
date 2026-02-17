@@ -72,9 +72,9 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-end px-6 pb-20">
         <div className="max-w-2xl space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full bg-secondary/20 backdrop-blur-sm border border-secondary/40 px-4 py-2 w-fit">
-            <Sparkles className="h-4 w-4 text-secondary" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-secondary">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/40 px-4 py-2 w-fit">
+            <Sparkles className="h-4 w-4 text-primary" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-primary">
               {slide.subtitle}
             </span>
           </div>
@@ -90,7 +90,7 @@ export function HeroSection() {
           <div className="flex flex-wrap items-center gap-4">
             <Link
               href={slide.primaryCTA.href}
-              className="group inline-flex items-center gap-2 rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all hover:shadow-lg hover:scale-105 active:scale-95"
+              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground transition-all hover:shadow-lg hover:scale-105 active:scale-95"
             >
               {slide.primaryCTA.text}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
