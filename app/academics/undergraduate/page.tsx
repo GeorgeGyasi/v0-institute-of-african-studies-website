@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
 import { BookOpen, Clock, Award, Users, ClipboardList, HelpCircle } from "lucide-react"
@@ -55,24 +53,23 @@ const highlights = [
 export default function UndergraduatePage() {
   return (
     <>
-      <PageHeader title="Undergraduate Programmes (UGRC)" subtitle="Foundation courses in African Studies for bachelor's degree students" />
+      <PageHeader
+        title="Undergraduate Programmes (UGRC)"
+        subtitle="Foundation courses in African Studies for bachelor's degree students"
+      />
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid items-start gap-12 lg:grid-cols-3">
+          <div className="mb-12 grid items-start gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">Programme Overview</p>
-              <h2 className="mb-6 font-serif text-3xl font-bold text-foreground">BA in African Studies</h2>
-              <div className="flex flex-col gap-4 text-base leading-relaxed text-muted-foreground">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">Overview</p>
+              <h2 className="mb-6 font-serif text-3xl font-bold text-foreground">About Our Programme</h2>
+              <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
                 <p>
-                  The Bachelor of Arts in African Studies provides students with a comprehensive, interdisciplinary education in the study of
-                  African societies, cultures, histories, and languages. The programme draws on anthropology, sociology, history, linguistics,
-                  political science, and the arts to offer a holistic understanding of the African continent.
+                  The BA African Studies programme provides comprehensive education in African cultures, histories, languages, and contemporary issues. Designed for scholars, students, and the general public, our courses introduce foundational concepts that enhance understanding of African contributions to global society.
                 </p>
                 <p>
-                  Students develop critical thinking, research, and communication skills while engaging with Africa's rich intellectual traditions
-                  and contemporary challenges. The programme prepares graduates for careers in education, research, public policy, cultural
-                  management, journalism, and international development.
+                  All courses carry 3 credits and are delivered through a combination of lectures and tutorials. Students engage with primary and secondary sources, participate in discussions, and develop critical thinking skills about African affairs.
                 </p>
               </div>
             </div>
@@ -111,247 +108,69 @@ export default function UndergraduatePage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-card py-20">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">Structure & Format</p>
-          <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">Course Delivery</h2>
-          <div className="grid gap-8 lg:grid-cols-3">
-            <div className="rounded-lg border border-border bg-background p-8">
-              <h3 className="mb-4 text-lg font-semibold text-foreground">Contact Hours</h3>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">Structure</p>
+          <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">Course Delivery & Assessment</h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="rounded-lg border border-border bg-card p-8">
+              <h3 className="mb-4 text-lg font-semibold text-foreground">Weekly Schedule</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span><strong>2 hours</strong> Lectures per week</span>
+                <li className="flex gap-3">
+                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span><strong>2 hours</strong> of lectures per week</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span><strong>1 hour</strong> Tutorials per week</span>
+                <li className="flex gap-3">
+                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span><strong>1 hour</strong> of tutorials per week</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>Total: <strong>3 hours</strong> weekly contact time</span>
+                <li className="flex gap-3">
+                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span>Total: <strong>3 hours</strong> contact time</span>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-lg border border-border bg-background p-8">
-              <h3 className="mb-4 text-lg font-semibold text-foreground">Assessment Breakdown</h3>
+            <div className="rounded-lg border border-border bg-card p-8">
+              <h3 className="mb-4 text-lg font-semibold text-foreground">Assessment</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-primary" />
+                <li className="flex gap-3">
+                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
                   <span><strong>30%</strong> Continuous Assessment (IA)</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-primary" />
+                <li className="flex gap-3">
+                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
                   <span><strong>50-70%</strong> Final Examination</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-primary" />
+                <li className="flex gap-3">
+                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
                   <span>Class attendance scored separately</span>
                 </li>
               </ul>
             </div>
-
-            <div className="rounded-lg border border-border bg-background p-8">
-              <h3 className="mb-4 text-lg font-semibold text-foreground">Learning Mode</h3>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>In-person lectures and tutorials</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>Interactive discussions and group work</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>Assignments and presentations</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-border py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">Learning Outcomes</p>
-          <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">What You Will Learn</h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="space-y-6">
-              <div>
-                <h3 className="mb-3 text-lg font-semibold text-foreground">Knowledge & Understanding</h3>
-                <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Understand the scope and methods of African Studies
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Explore Africa's rich cultural and historical diversity
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Examine contemporary issues facing African societies
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="mb-3 text-lg font-semibold text-foreground">Critical Thinking</h3>
-                <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Analyze African issues from multiple perspectives
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Question stereotypes and develop nuanced understanding
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Engage with primary and secondary sources critically
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div>
-                <h3 className="mb-3 text-lg font-semibold text-foreground">Skills Development</h3>
-                <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Improve research and information literacy
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Enhance written and oral communication
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Develop collaborative learning abilities
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="mb-3 text-lg font-semibold text-foreground">Global Citizenship</h3>
-                <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Develop sensitivity to cultural diversity
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Appreciate Africa's contributions to global society
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                    Understand interconnectedness of African and world issues
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       <section className="border-t border-border bg-card py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">Support & Guidance</p>
-          <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">Student Guide & FAQs</h2>
-
-          <div className="space-y-8">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">Support</p>
+          <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">Student Guide & Support</h2>
+          <div className="grid gap-8 md:grid-cols-2">
             <div className="rounded-lg border border-border bg-background p-8">
-              <h3 className="mb-4 text-lg font-semibold text-foreground flex items-center gap-2">
-                <ClipboardList className="h-5 w-5 text-secondary" />
-                How do I register for UGRC courses?
-              </h3>
+              <h3 className="mb-4 text-lg font-semibold text-foreground">Registration & Attendance</h3>
               <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                All University of Ghana students are required to take UGRC courses as part of their general education requirements. Registration occurs during the standard course registration period at the beginning of each semester through the Student Portal. You can select from the 20 UGRC courses offered by the Institute of African Studies according to your schedule and interests.
+                All University of Ghana students take UGRC courses. Registration occurs during standard course registration periods through the Student Portal. Regular attendance is mandatory and contributes to your final grade. Attendance is recorded and scored separately throughout the semester.
               </p>
               <p className="text-xs text-muted-foreground italic">Contact: UGRC Unit Office, Institute of African Studies</p>
             </div>
 
             <div className="rounded-lg border border-border bg-background p-8">
-              <h3 className="mb-4 text-lg font-semibold text-foreground flex items-center gap-2">
-                <BookOpen className="h-5 w-5 text-secondary" />
-                What is the attendance requirement?
-              </h3>
+              <h3 className="mb-4 text-lg font-semibold text-foreground">Examination Options</h3>
               <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                Regular attendance is mandatory and contributes to your final grade. Students are expected to attend all lectures and tutorials throughout the semester. Attendance is recorded and scored separately. Poor attendance may affect your continuous assessment score and overall course performance.
+                Multiple examination opportunities are available including Main Examination, Supplementary Examination for those who failed or were absent, and Amnesty Programme for grade improvement. Students may also appeal grades within designated periods if errors are suspected.
               </p>
-              <p className="text-xs text-muted-foreground italic">Note: Approved absences and documented excuses may be accommodated.</p>
-            </div>
-
-            <div className="rounded-lg border border-border bg-background p-8">
-              <h3 className="mb-4 text-lg font-semibold text-foreground flex items-center gap-2">
-                <Award className="h-5 w-5 text-secondary" />
-                What examination options are available?
-              </h3>
-              <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-                The University of Ghana offers multiple examination opportunities for students who cannot sit for the main examination or wish to improve their grades:
-              </p>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-md bg-muted/50 p-4">
-                  <p className="mb-2 text-sm font-semibold text-foreground">Supplementary Examination</p>
-                  <p className="text-xs text-muted-foreground">Available for students who failed the course or were absent from the main examination with valid reasons.</p>
-                </div>
-                <div className="rounded-md bg-muted/50 p-4">
-                  <p className="mb-2 text-sm font-semibold text-foreground">Main Examination</p>
-                  <p className="text-xs text-muted-foreground">The primary examination period held at the end of each semester for all enrolled students.</p>
-                </div>
-                <div className="rounded-md bg-muted/50 p-4">
-                  <p className="mb-2 text-sm font-semibold text-foreground">Amnesty Programme</p>
-                  <p className="text-xs text-muted-foreground">Allows students to retake courses to improve their grades or clear failed courses.</p>
-                </div>
-                <div className="rounded-md bg-muted/50 p-4">
-                  <p className="mb-2 text-sm font-semibold text-foreground">Grade Appeal Process</p>
-                  <p className="text-xs text-muted-foreground">Students may appeal their grades within designated periods if they believe an error was made.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-lg border border-border bg-background p-8">
-              <h3 className="mb-4 text-lg font-semibold text-foreground flex items-center gap-2">
-                <ClipboardList className="h-5 w-5 text-secondary" />
-                What comprises the Continuous Assessment (IA)?
-              </h3>
-              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">The Continuous Assessment (IA) accounts for 30% of your final grade and typically includes:</p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                  Class assignments and quizzes
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                  Midterm assessments
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                  Class participation and engagement
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
-                  Seminar presentations or group projects
-                </li>
-              </ul>
-            </div>
-
-            <div className="rounded-lg border border-border bg-background p-8">
-              <h3 className="mb-4 text-lg font-semibold text-foreground flex items-center gap-2">
-                <HelpCircle className="h-5 w-5 text-secondary" />
-                Where can I get academic support?
-              </h3>
-              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">Multiple support services are available to help you succeed:</p>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <div>
-                  <p className="font-semibold text-foreground">UGRC Unit Office</p>
-                  <p className="mt-1">Located at the Institute of African Studies. Staff can help with course registration, attendance issues, and general inquiries.</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">IAS Academic Office</p>
-                  <p className="mt-1">Provides academic guidance, course-related assistance, and liaison between students and instructors.</p>
-                </div>
-              </div>
+              <p className="text-xs text-muted-foreground italic">Contact: IAS Academic Office</p>
             </div>
           </div>
         </div>
@@ -359,9 +178,9 @@ export default function UndergraduatePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <p className="mb-4 text-lg font-medium text-foreground">Interested in studying African Studies?</p>
+          <p className="mb-4 text-lg font-medium text-foreground">Ready to study African Studies?</p>
           <Link href="/academics/prospective-students" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">
-            Admissions Information
+            Learn More
           </Link>
         </div>
       </section>
