@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { PageHeader } from "@/components/page-header"
 import { ArrowLeft, Award, BookOpen, Clock } from "lucide-react"
 
@@ -9,6 +10,7 @@ const occupants = [
     position: "First Occupant",
     tenure: "2012–2014",
     discipline: "Literature in English",
+    image: "/images/occupant-1.jpg",
     fullBio: "Trained as a professional teacher at Accra Training College and Advanced Teacher Training College-Winneba, Professor Anyidoho taught at primary, middle, and secondary school levels before joining the University faculty. Outside the University, he has been deeply involved in various initiatives designed to promote African culture and history, including Ghana Television's African Heritage Series, for which he was the main host and executive producer. He holds a B.A. Honours in English and Linguistics from the University of Ghana, an M.A. in Folklore from Indiana University-Bloomington, and a Ph.D. in Comparative Literature from the University of Texas at Austin.",
     expertise: [
       "African Literature",
@@ -23,12 +25,13 @@ const occupants = [
     ],
   },
   {
-    slug: "patrick-wilmot",
-    name: "Professor Patrick Wilmot",
+    slug: "professor-gordon",
+    name: "Professor Gordon",
     position: "Second Occupant",
     tenure: "2014–2016",
-    discipline: "African Politics and International Relations",
-    fullBio: "Professor Wilmot is an expert in African politics and international relations, with extensive research and scholarly work on pan-African movements and continental integration. His work has contributed significantly to scholarly debates on African unity, decolonisation, and political governance across the continent.",
+    discipline: "African Studies",
+    image: "/images/occupant-2.jpg",
+    fullBio: "Professor Gordon is an expert in African politics and international relations, with extensive research and scholarly work on pan-African movements and continental integration. His work has contributed significantly to scholarly debates on African unity, decolonisation, and political governance across the continent.",
     expertise: [
       "African Politics",
       "Pan-African Movements",
@@ -47,6 +50,7 @@ const occupants = [
     position: "Third Occupant",
     tenure: "2020–2021",
     discipline: "African American Studies and Political Science",
+    image: "/images/occupant-3.jpg",
     fullBio: "Professor Campbell is a scholar of African American Studies and Political Science at Syracuse University with a focus on African liberation movements and contemporary African geopolitics. His influential works include Global NATO and the Catastrophic Failure in Libya: Lessons for Africa in the Forging of African Unity, which examines the critical challenges facing the continent and the importance of African self-determination in an interconnected world.",
     expertise: [
       "African American Studies",
@@ -61,42 +65,24 @@ const occupants = [
     ],
   },
   {
-    slug: "amina-mama",
-    name: "Professor Amina Mama",
+    slug: "amina-mattah",
+    name: "Amina Mattah",
     position: "Fourth Occupant",
     tenure: "2021–2025",
-    discipline: "Gender and Sexuality Studies",
-    fullBio: "Professor Mama is a gender and sexuality scholar who has been Research Professor of Gender, Sexuality and Women's Studies at the University of California, Davis since 2009. Previously, she held the Barbara Lee Distinguished Chair in Women's Leadership at Mills College in the USA (2007–2009) and served as Chair in Gender Studies and Director of the African Gender Institute at the University of Cape Town, South Africa (1999–2009). Beyond her academic positions, Professor Mama has been engaged in independent research, consultancy, and professional services in Africa, Europe, the United States, and within the United Nations system.",
+    discipline: "Gender & Development",
+    image: "/images/occupant-4.jpg",
+    fullBio: "Amina Mattah is a scholar in gender and development studies. She has been engaged in research, consultancy, and professional services in Africa, Europe, the United States, and within international organizations. Her work focuses on gender dynamics, development initiatives, and women's empowerment across the African continent and diaspora.",
     expertise: [
       "Gender Studies",
-      "Sexuality Studies",
-      "Women's Leadership",
-      "African Feminism",
+      "Development Studies",
+      "Women's Empowerment",
+      "African Development",
     ],
     achievements: [
-      "Research Professor at UC Davis",
-      "Barbara Lee Distinguished Chair holder",
-      "Director of African Gender Institute",
-      "UN consultancy and advisory services",
-    ],
-  },
-  {
-    slug: "ato-quayson",
-    name: "Ato Quayson",
-    position: "Newly Appointed",
-    tenure: "2026–",
-    discipline: "English, African and American Studies",
-    fullBio: "Ato Quayson is an accomplished scholar in English, African, and American Studies. His intellectual work bridges literary analysis with critical engagements on African identity, cultural production, and global interconnections. Beginning his tenure in 2026, he joins the distinguished lineage of Kwame Nkrumah Chair occupants, bringing fresh perspectives on African knowledge systems and contemporary African scholarship.",
-    expertise: [
-      "English Literature",
-      "African Studies",
-      "American Studies",
-      "Cultural Production",
-    ],
-    achievements: [
-      "Accomplished scholar bridging multiple disciplines",
-      "Critical work on African identity and cultural production",
-      "Fresh perspectives on African knowledge systems",
+      "Research in gender and development studies",
+      "International consultancy and advisory services",
+      "Work on women's empowerment initiatives",
+      "Continental and diaspora engagement",
     ],
   },
 ]
@@ -145,6 +131,29 @@ export default async function OccupantPage({ params }: PageProps) {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-12 lg:grid-cols-3">
+            {/* Sidebar - Image */}
+            <div className="lg:col-span-1">
+              <div className="rounded-lg border border-border overflow-hidden bg-card">
+                <div className="relative aspect-square overflow-hidden bg-muted">
+                  <Image
+                    src={occupant.image}
+                    alt={occupant.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-secondary mb-2">
+                    {occupant.position}
+                  </p>
+                  <p className="text-sm font-medium text-muted-foreground">
+                    Tenure: {occupant.tenure}
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-8">
               {/* Basic Info */}
