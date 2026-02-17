@@ -85,7 +85,7 @@ export default function KwameNkrumahChairPage() {
 
             {/* Occupants Widget - Top Right */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24 rounded-lg border border-border bg-card p-6">
+              <div className="rounded-lg border border-border bg-card p-6">
                 <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-secondary">
                   Distinguished Scholars
                 </p>
