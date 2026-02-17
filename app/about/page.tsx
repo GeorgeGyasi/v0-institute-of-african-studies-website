@@ -36,29 +36,6 @@ const values = [
   },
 ]
 
-const leadership = [
-  {
-    name: "Prof. Akosua Adomako Ampofo",
-    role: "Director",
-    specialty: "Gender Studies & Social Transformation",
-  },
-  {
-    name: "Dr. Kodzo Gavua",
-    role: "Deputy Director",
-    specialty: "Archaeology & Heritage Studies",
-  },
-  {
-    name: "Prof. Irene K. Odotei",
-    role: "Senior Research Fellow",
-    specialty: "History & Maritime Studies",
-  },
-  {
-    name: "Dr. Wazi Apoh",
-    role: "Senior Lecturer",
-    specialty: "Historical Archaeology",
-  },
-]
-
 const timeline = [
   { year: "1961", event: "Institute established by the Government of Ghana under the leadership of Dr. Kwame Nkrumah" },
   { year: "1963", event: "First cohort of graduate students admitted to the MPhil program" },
@@ -171,42 +148,6 @@ export default function AboutPage() {
                 </h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {value.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership */}
-      <section className="border-t border-border bg-card py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
-            Leadership
-          </p>
-          <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">
-            Faculty & Administration
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {leadership.map((person) => (
-              <div key={person.name} className="rounded-lg border border-border bg-background p-6">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                  <span className="text-xl font-bold text-primary">
-                    {person.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .slice(0, 2)
-                      .join("")}
-                  </span>
-                </div>
-                <h3 className="text-base font-semibold text-foreground">
-                  {person.name}
-                </h3>
-                <p className="mt-1 text-sm font-medium text-primary">
-                  {person.role}
-                </p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  {person.specialty}
                 </p>
               </div>
             ))}
