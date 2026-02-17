@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import { PageHeader } from "@/components/page-header"
 import { GraduationCap, BookOpen, Handshake, Award } from "lucide-react"
 
