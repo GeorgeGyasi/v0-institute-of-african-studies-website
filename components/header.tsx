@@ -61,6 +61,7 @@ const navItems: NavItem[] = [
     ],
   },
   { label: "Events", href: "/events" },
+  { label: "Yiri Lodge", href: "/yiri-lodge" },
   { label: "Contact", href: "/contact" },
 ]
 
