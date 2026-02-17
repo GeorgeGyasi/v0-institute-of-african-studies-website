@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Sparkles, ChevronLeft, ChevronRight } from "lucide-react"
 
-const slides = [
+const SLIDES = [
   {
     id: 1,
     title: 'Institute of African Studies',
@@ -46,16 +46,32 @@ const slides = [
 
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide(prev => (prev === slides.length - 1 ? 0 : prev + 1))
+    setHydrated(true)
+    const timer = setInterval(() => {
+      setCurrentSlide(prev => (prev === SLIDES.length - 1 ? 0 : prev + 1))
     }, 5000)
-
-    return () => clearInterval(interval)
+    return () => clearInterval(timer)
   }, [])
 
-  const slide = slides[currentSlide]
+  if (!hydrated) {
+    return (
+      <section className="relative min-h-[85vh] overflow-hidden bg-black">
+        <Image
+          src={SLIDES[0].image}
+          alt="Hero"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
+      </section>
+    )
+  }
+
+  const slide = SLIDES[currentSlide]
 
   return (
     <section className="relative min-h-[85vh] overflow-hidden bg-black">
@@ -72,9 +88,9 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-end px-6 pb-20">
         <div className="max-w-2xl space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/40 px-4 py-2 w-fit">
-            <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-primary">
+          <div className="inline-flex items-center gap-2 rounded-full bg-secondary/20 backdrop-blur-sm border border-secondary/40 px-4 py-2 w-fit">
+            <Sparkles className="h-4 w-4 text-secondary" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-secondary">
               {slide.subtitle}
             </span>
           </div>
@@ -90,7 +106,7 @@ export function HeroSection() {
           <div className="flex flex-wrap items-center gap-4">
             <Link
               href={slide.primaryCTA.href}
-              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground transition-all hover:shadow-lg hover:scale-105 active:scale-95"
+              className="group inline-flex items-center gap-2 rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all hover:shadow-lg hover:scale-105 active:scale-95"
             >
               {slide.primaryCTA.text}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -107,7 +123,7 @@ export function HeroSection() {
 
       <div className="absolute bottom-8 left-8 right-8 z-20 flex items-center justify-between">
         <button
-          onClick={() => setCurrentSlide(prev => (prev === 0 ? slides.length - 1 : prev - 1))}
+          onClick={() => setCurrentSlide(prev => prev === 0 ? SLIDES.length - 1 : prev - 1)}
           className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60 active:scale-95"
           aria-label="Previous slide"
         >
@@ -115,7 +131,7 @@ export function HeroSection() {
         </button>
 
         <div className="flex gap-2">
-          {slides.map((_, index) => (
+          {SLIDES.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
@@ -128,7 +144,7 @@ export function HeroSection() {
         </div>
 
         <button
-          onClick={() => setCurrentSlide(prev => (prev === slides.length - 1 ? 0 : prev + 1))}
+          onClick={() => setCurrentSlide(prev => prev === SLIDES.length - 1 ? 0 : prev + 1)}
           className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60 active:scale-95"
           aria-label="Next slide"
         >
