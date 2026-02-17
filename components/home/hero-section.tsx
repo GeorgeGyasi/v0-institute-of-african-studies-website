@@ -8,7 +8,6 @@ import { ArrowRight, Sparkles, ChevronLeft, ChevronRight } from "lucide-react"
 const slides = [
   {
     id: 1,
-    type: 'main',
     title: 'Institute of African Studies',
     subtitle: 'University of Ghana, Legon',
     description: 'Advancing knowledge and understanding of African societies, cultures, and histories through interdisciplinary research and scholarship since 1961.',
@@ -18,7 +17,6 @@ const slides = [
   },
   {
     id: 2,
-    type: 'promotional',
     title: 'Our Initiatives',
     subtitle: 'Promoting Excellence',
     description: 'Discover our graduate programs, research excellence initiatives, and cultural heritage preservation efforts.',
@@ -28,20 +26,30 @@ const slides = [
   },
   {
     id: 3,
-    type: 'partnership',
     title: 'Partnership Program',
     subtitle: 'Global Collaboration',
     description: 'Join us in our mission to advance African Studies through international partnerships and collaborative research.',
     image: '/images/partnership.jpg',
     primaryCTA: { text: 'Explore Partnerships', href: '/partnerships' },
     secondaryCTA: { text: 'Contact Us', href: '/contact' }
+  },
+  {
+    id: 4,
+    title: 'Faculty Promotion',
+    subtitle: 'Celebrating Excellence',
+    description: 'Congratulations to Professor Ntewusu, Professor Edem Addotey, and Professor Irene on their well-deserved promotion.',
+    image: '/images/faculty-promotion.jpg',
+    primaryCTA: { text: 'Meet Our Faculty', href: '/staff' },
+    secondaryCTA: { text: 'Learn More', href: '/about' }
   }
 ]
 
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
     }, 5000)
@@ -57,30 +65,28 @@ export function HeroSection() {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
   }
 
+  if (!mounted) {
+    return <div className="relative min-h-[85vh] bg-black" />
+  }
+
   const slide = slides[currentSlide]
 
   return (
     <section className="relative min-h-[85vh] overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src={slide.image}
-          alt={slide.title}
-          fill
-          className="object-cover"
-          priority
-          loading="eager"
-        />
-      </div>
+      <Image
+        src={slide.image}
+        alt={slide.title}
+        fill
+        className="object-cover"
+        priority
+        loading="eager"
+      />
 
-      {/* Gradient Overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
 
-      {/* Content */}
       <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-end px-6 pb-20">
         <div className="max-w-2xl space-y-6">
-          {/* Accent Badge */}
           <div className="inline-flex items-center gap-2 w-fit rounded-full bg-secondary/20 backdrop-blur-sm border border-secondary/40 px-4 py-2">
             <Sparkles className="h-4 w-4 text-secondary" />
             <span className="text-xs font-semibold uppercase tracking-widest text-secondary">
@@ -88,17 +94,14 @@ export function HeroSection() {
             </span>
           </div>
 
-          {/* Main Heading */}
           <h1 className="font-serif text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl text-balance">
             {slide.title}
           </h1>
 
-          {/* Description */}
           <p className="max-w-lg text-lg leading-relaxed text-white/90">
             {slide.description}
           </p>
 
-          {/* CTA Buttons */}
           <div className="flex flex-wrap items-center gap-4">
             <Link
               href={slide.primaryCTA.href}
@@ -117,7 +120,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Carousel Controls */}
       <div className="absolute bottom-8 left-8 right-8 z-20 flex items-center justify-between">
         <button
           onClick={goToPrevious}
@@ -127,7 +129,6 @@ export function HeroSection() {
           <ChevronLeft className="h-6 w-6" />
         </button>
 
-        {/* Slide Indicators */}
         <div className="flex gap-2">
           {slides.map((_, index) => (
             <button
