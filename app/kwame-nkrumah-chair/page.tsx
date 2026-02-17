@@ -63,30 +63,63 @@ export default function KwameNkrumahChairPage() {
         subtitle="Honouring the legacy of Africa's foremost champion of pan-Africanism"
       />
 
-      {/* Introduction */}
+      {/* Hero Section with Introduction and Occupants Widget */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
-            Historical Background
-          </p>
-          <h2 className="mb-8 font-serif text-3xl font-bold text-foreground text-balance">
-            Establishment and Vision
-          </h2>
-          <div className="max-w-4xl space-y-6 text-base leading-relaxed text-muted-foreground">
-            <p>
-              In 2005, efforts by successive Directors of the Institute, and collaborators knowledgeable about the role of Kwame Nkrumah in the Pan Africanist movement and discourse, culminated in a decision by the University of Ghana to establish a Kwame Nkrumah Chair in African Studies. The chair was established with a two-fold aim:
-            </p>
-            <div className="ml-6 space-y-3">
-              <p>
-                <span className="font-semibold text-foreground">1) To honour Nkrumah</span> for his significant intellectual contributions to African thought, and for his vision and commitment to the liberation and development of Africans on the continent and in the Diaspora.
+          <div className="grid gap-12 lg:grid-cols-3">
+            {/* Main Content */}
+            <div className="lg:col-span-2">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
+                About the Chair
               </p>
-              <p>
-                <span className="font-semibold text-foreground">2) To promote research, teaching and the public promotion of Africana Studies.</span>
-              </p>
+              <h2 className="mb-8 font-serif text-3xl font-bold text-foreground text-balance">
+                Establishment and Vision
+              </h2>
+              <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
+                <p>
+                  In 2005, efforts by successive Directors of the Institute, and collaborators knowledgeable about the role of Kwame Nkrumah in the Pan Africanist movement and discourse, culminated in a decision by the University of Ghana to establish a Kwame Nkrumah Chair in African Studies. The chair was established with a two-fold aim:
+                </p>
+                <div className="ml-6 space-y-3">
+                  <p>
+                    <span className="font-semibold text-foreground">1) To honour Nkrumah</span> for his significant intellectual contributions to African thought, and for his vision and commitment to the liberation and development of Africans on the continent and in the Diaspora.
+                  </p>
+                  <p>
+                    <span className="font-semibold text-foreground">2) To promote research, teaching and the public promotion of Africana Studies.</span>
+                  </p>
+                </div>
+                <p>
+                  The Chair, which was formally launched on Friday, September 21, 2007 at the Institute of African Studies, Kwame Nkrumah Complex, received substantial core funding from Anglogold Ashanti Ltd. Several other corporate and individual donors also provided seed money.
+                </p>
+              </div>
             </div>
-            <p>
-              The Chair, which was formally launched on Friday, September 21, 2007 at the Institute of African Studies, Kwame Nkrumah Complex, received substantial core funding from Anglogold Ashanti Ltd. Several other corporate and individual donors also provided seed money.
-            </p>
+
+            {/* Occupants Widget - Top Right */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-24 rounded-lg border border-border bg-card p-6">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-secondary">
+                  Distinguished Scholars
+                </p>
+                <h3 className="mb-6 font-serif text-lg font-bold text-foreground">
+                  Current Chair Occupants
+                </h3>
+                <div className="space-y-4">
+                  <Link
+                    href="/kwame-nkrumah-chair/occupants/ato-quayson"
+                    className="block rounded-md border border-border bg-background p-3 transition-all hover:border-primary hover:bg-muted"
+                  >
+                    <p className="text-xs font-semibold text-primary">Current (2026–)</p>
+                    <p className="text-sm font-semibold text-foreground">Ato Quayson</p>
+                    <p className="text-xs text-muted-foreground">English & African Studies</p>
+                  </Link>
+                  <Link
+                    href="/kwame-nkrumah-chair/occupants"
+                    className="block rounded-md border border-primary bg-primary/5 p-3 text-center transition-all hover:bg-primary/10"
+                  >
+                    <p className="text-xs font-semibold text-primary">View All Occupants</p>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -281,26 +314,20 @@ export default function KwameNkrumahChairPage() {
         </div>
       </section>
 
-      {/* Chair Occupants Section with Widget */}
+      {/* Full Occupants Directory */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
-            Distinguished Scholars
-          </p>
-          <div className="mb-12 flex items-end justify-between">
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
+              Distinguished Scholars
+            </p>
             <h2 className="font-serif text-3xl font-bold text-foreground">
-              Chair Occupants
+              All Chair Occupants
             </h2>
-            <Link
-              href="/kwame-nkrumah-chair/occupants"
-              className="inline-flex items-center gap-2 rounded-md border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
-            >
-              View All <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
 
           {/* Occupants Summary Cards */}
-          <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Link
               href="/kwame-nkrumah-chair/occupants/kofi-anyidoho"
               className="group rounded-lg border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary"
@@ -359,17 +386,17 @@ export default function KwameNkrumahChairPage() {
           </div>
 
           {/* CTA to Full Occupants Page */}
-          <div className="rounded-lg border border-border bg-muted/50 p-8 text-center">
+          <div className="mt-12 rounded-lg border border-border bg-muted/50 p-8 text-center">
             <Users className="mx-auto mb-4 h-8 w-8 text-primary" />
-            <h3 className="text-xl font-bold text-foreground">Explore Chair Occupants</h3>
+            <h3 className="text-xl font-bold text-foreground">Explore Detailed Profiles</h3>
             <p className="mt-2 text-muted-foreground">
-              Click on any occupant card above to view their full profile and achievements
+              Click on any occupant card above to view their full biography and scholarly achievements
             </p>
             <Link
               href="/kwame-nkrumah-chair/occupants"
               className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >
-              View All Occupants <ArrowRight className="h-4 w-4" />
+              View Full Occupants Directory <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
