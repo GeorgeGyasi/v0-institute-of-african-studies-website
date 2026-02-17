@@ -408,3 +408,6 @@ export default function GraduatePage() {
           </Link>
         </div>
       </section>
+    </>
+  )
+}
