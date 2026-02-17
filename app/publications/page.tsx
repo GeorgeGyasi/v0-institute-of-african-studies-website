@@ -3,10 +3,11 @@
 import Link from "next/link"
 import { useState } from "react"
 import { PageHeader } from "@/components/page-header"
-import { ExternalLink, BookOpen, Mail, FileText } from "lucide-react"
+import { ExternalLink, BookOpen, Mail, FileText, ChevronDown } from "lucide-react"
 
 export default function PublicationsPage() {
   const [activeInstitutional, setActiveInstitutional] = useState<"feminist-africa" | "cjas">("cjas")
+  const [isInstitutionalOpen, setIsInstitutionalOpen] = useState(true)
 
   return (
     <>
@@ -15,106 +16,139 @@ export default function PublicationsPage() {
         subtitle="Peer-reviewed journals and institutional publications advancing African scholarship"
       />
 
-      {/* Institutional Section */}
+      {/* Publications with Sidebar */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
-            Institutional Publications
-          </p>
-          <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">
-            Our Journals
-          </h2>
+          <div className="grid gap-12 lg:grid-cols-4">
+            {/* Sidebar Navigation */}
+            <div className="lg:col-span-1">
+              <div className="space-y-2">
+                {/* Institutional Section with Dropdown */}
+                <div>
+                  <button
+                    onClick={() => setIsInstitutionalOpen(!isInstitutionalOpen)}
+                    className="w-full flex items-center justify-between rounded-lg px-4 py-3 font-semibold text-foreground hover:bg-muted/50 transition-colors"
+                  >
+                    <span>Institutional</span>
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform ${
+                        isInstitutionalOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
 
-          {/* Sub-tabs Navigation */}
-          <div className="mb-12 flex gap-4 border-b border-border">
-            <button
-              onClick={() => setActiveInstitutional("feminist-africa")}
-              className={`py-3 px-1 border-b-2 font-medium text-sm transition-colors ${
-                activeInstitutional === "feminist-africa"
-                  ? "border-primary text-foreground"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Feminist Africa
-            </button>
-            <button
-              onClick={() => setActiveInstitutional("cjas")}
-              className={`py-3 px-1 border-b-2 font-medium text-sm transition-colors ${
-                activeInstitutional === "cjas"
-                  ? "border-primary text-foreground"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              CJAS
-            </button>
-          </div>
-
-          {/* Feminist Africa Sub-section */}
-          {activeInstitutional === "feminist-africa" && (
-            <div className="rounded-lg border border-border bg-card p-12 text-center">
-              <BookOpen className="mx-auto mb-6 h-16 w-16 text-primary" />
-              <h3 className="mb-4 font-serif text-2xl font-bold text-foreground">
-                Feminist Africa
-              </h3>
-              <p className="mb-6 max-w-2xl mx-auto text-base text-muted-foreground">
-                An interdisciplinary journal dedicated to feminist scholarship and analysis on Africa
-              </p>
-              <p className="mb-8 text-sm text-muted-foreground">
-                Explore cutting-edge research on African feminist theory, activism, and practice
-              </p>
-              <a
-                href="https://feministafrica.net/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                <ExternalLink className="h-4 w-4" />
-                Visit Feminist Africa Journal
-              </a>
-              <p className="mt-6 text-xs text-muted-foreground">
-                https://feministafrica.net/
-              </p>
-            </div>
-          )}
-
-          {/* CJAS Sub-section */}
-          {activeInstitutional === "cjas" && (
-            <div className="space-y-12">
-              {/* CJAS Overview */}
-              <div className="rounded-lg border border-border bg-card p-8">
-                <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-secondary">
-                  About
-                </p>
-                <h3 className="mb-6 font-serif text-2xl font-bold text-foreground">
-                  Contemporary Journal of African Studies
-                </h3>
-                <p className="mb-4 text-base leading-relaxed text-muted-foreground">
-                  The Contemporary Journal of African Studies (CJAS) began its life as the Research Review in 1969, and was re-branded as the CJAS in 2012. CJAS is a peer-reviewed scholarly journal published twice a year. Beginning with the 2019 issues, the CJAS is available only in electronic format available on journals.ug.edu.gh and ajol.info/cjas. However, print on demand copies can be made available.
-                </p>
-              </div>
-
-              {/* Mission and Schedule */}
-              <div className="grid gap-8 md:grid-cols-2">
-                <div className="rounded-lg border border-border bg-background p-8">
-                  <h4 className="mb-4 flex items-center gap-2 text-lg font-semibold text-foreground">
-                    <BookOpen className="h-5 w-5 text-primary" />
-                    Mission
-                  </h4>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    The CJAS is a multidisciplinary journal that publishes original scholarly work on Global Africa, including work that engages ongoing topical conversations. We are committed to promoting knowledge from an African-centred perspective. As part of our commitment to encourage African knowledge production, the journal is open, on a case by case basis, to publishing Special Issues such as the outcome of conferences and symposia whose foci are in furtherance of our stated mission.
-                  </p>
+                  {/* Institutional Sub-items */}
+                  {isInstitutionalOpen && (
+                    <div className="space-y-1 mt-1 pl-4">
+                      <button
+                        onClick={() => setActiveInstitutional("feminist-africa")}
+                        className={`w-full text-left rounded-md px-4 py-2 text-sm transition-colors ${
+                          activeInstitutional === "feminist-africa"
+                            ? "bg-primary/10 text-primary font-semibold"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
+                        }`}
+                      >
+                        Feminist Africa
+                      </button>
+                      <button
+                        onClick={() => setActiveInstitutional("cjas")}
+                        className={`w-full text-left rounded-md px-4 py-2 text-sm transition-colors ${
+                          activeInstitutional === "cjas"
+                            ? "bg-primary/10 text-primary font-semibold"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
+                        }`}
+                      >
+                        Contemporary Journal of African Studies
+                      </button>
+                    </div>
+                  )}
                 </div>
+              </div>
+            </div>
 
-                <div className="rounded-lg border border-border bg-background p-8">
-                  <h4 className="mb-4 flex items-center gap-2 text-lg font-semibold text-foreground">
-                    <FileText className="h-5 w-5 text-primary" />
-                    Publishing Schedule
-                  </h4>
-                  <ul className="space-y-3 text-sm text-muted-foreground">
-                    <li className="flex gap-3">
-                      <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      Published twice a year
-                    </li>
+            {/* Main Content */}
+            <div className="lg:col-span-3">
+              <p className="mb-6 text-sm font-semibold uppercase tracking-widest text-secondary">
+                Institutional Publications
+              </p>
+
+              {/* Feminist Africa Content */}
+              {activeInstitutional === "feminist-africa" && (
+                <div className="rounded-lg border border-border bg-card p-12">
+                  <div className="flex items-start gap-6">
+                    <BookOpen className="h-12 w-12 text-primary flex-shrink-0" />
+                    <div className="flex-1">
+                      <h3 className="mb-4 font-serif text-3xl font-bold text-foreground">
+                        Feminist Africa
+                      </h3>
+                      <p className="mb-4 text-base text-muted-foreground">
+                        An interdisciplinary journal dedicated to feminist scholarship and analysis on Africa, publishing cutting-edge research on African feminist theory, activism, and practice.
+                      </p>
+                      <div className="space-y-3 mb-6">
+                        <div>
+                          <p className="text-sm font-semibold text-foreground mb-1">Focus Areas</p>
+                          <p className="text-sm text-muted-foreground">
+                            Gender studies, feminist theory, women's activism, social transformation, and intersectional African perspectives
+                          </p>
+                        </div>
+                      </div>
+                      <a
+                        href="https://feministafrica.net/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Visit Journal Website
+                      </a>
+                      <p className="mt-4 text-xs text-muted-foreground">
+                        https://feministafrica.net/
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* CJAS Content */}
+              {activeInstitutional === "cjas" && (
+                <div className="space-y-12">
+                  {/* CJAS Overview */}
+                  <div className="rounded-lg border border-border bg-card p-12">
+                    <div className="flex items-start gap-6">
+                      <BookOpen className="h-12 w-12 text-primary flex-shrink-0" />
+                      <div className="flex-1">
+                        <h3 className="mb-4 font-serif text-3xl font-bold text-foreground">
+                          Contemporary Journal of African Studies
+                        </h3>
+                        <p className="mb-6 text-base leading-relaxed text-muted-foreground">
+                          The Contemporary Journal of African Studies (CJAS) began its life as the Research Review in 1969, and was re-branded as the CJAS in 2012. CJAS is a peer-reviewed scholarly journal published twice a year. Beginning with the 2019 issues, the CJAS is available only in electronic format available on journals.ug.edu.gh and ajol.info/cjas. However, print on demand copies can be made available.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mission and Schedule */}
+                  <div className="grid gap-8 md:grid-cols-2">
+                    <div className="rounded-lg border border-border bg-card p-8">
+                      <h4 className="mb-4 flex items-center gap-2 text-lg font-semibold text-foreground">
+                        <BookOpen className="h-5 w-5 text-primary" />
+                        Mission
+                      </h4>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        The CJAS is a multidisciplinary journal that publishes original scholarly work on Global Africa, including work that engages ongoing topical conversations. We are committed to promoting knowledge from an African-centred perspective. As part of our commitment to encourage African knowledge production, the journal is open, on a case by case basis, to publishing Special Issues such as the outcome of conferences and symposia whose foci are in furtherance of our stated mission.
+                      </p>
+                    </div>
+
+                    <div className="rounded-lg border border-border bg-card p-8">
+                      <h4 className="mb-4 flex items-center gap-2 text-lg font-semibold text-foreground">
+                        <FileText className="h-5 w-5 text-primary" />
+                        Publishing Schedule
+                      </h4>
+                      <ul className="space-y-3 text-sm text-muted-foreground">
+                        <li className="flex gap-3">
+                          <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                          Published twice a year
+                        </li>
                     <li className="flex gap-3">
                       <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                       Issues in April/May and October/November
@@ -128,7 +162,7 @@ export default function PublicationsPage() {
               </div>
 
               {/* Submissions */}
-              <div className="rounded-lg border border-border bg-background p-8">
+              <div className="rounded-lg border border-border bg-card p-8">
                 <h4 className="mb-6 text-lg font-semibold text-foreground">
                   Submission Guidelines
                 </h4>
@@ -208,7 +242,7 @@ export default function PublicationsPage() {
 
               {/* Copyright & Access */}
               <div className="grid gap-8 md:grid-cols-2">
-                <div className="rounded-lg border border-border bg-background p-8">
+                <div className="rounded-lg border border-border bg-card p-8">
                   <h4 className="mb-4 text-lg font-semibold text-foreground">
                     Copyright & Access
                   </h4>
@@ -220,7 +254,7 @@ export default function PublicationsPage() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-border bg-background p-8">
+                <div className="rounded-lg border border-border bg-card p-8">
                   <h4 className="mb-4 text-lg font-semibold text-foreground">
                     Access Platforms
                   </h4>
