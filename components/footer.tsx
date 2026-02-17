@@ -27,8 +27,7 @@ const footerLinks = {
     { label: "Kwame Nkrumah Chair", href: "/kwame-nkrumah-chair" },
   ],
   contact: [
-    { label: "cjasmanager@ug.edu.gh", href: "mailto:cjasmanager@ug.edu.gh" },
-    { label: "iaspubs@ug.edu.gh", href: "mailto:iaspubs@ug.edu.gh" },
+    { label: "Contact Us", href: "/contact" },
   ],
 }
 
