@@ -37,23 +37,21 @@ export function Footer() {
     <footer className="border-t border-border bg-foreground text-card">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-6">
-          <div>
-        <div className="flex flex-col gap-6 md:col-span-2">
-          <Link href="/" className="w-full">
-            <Image
-              src="/images/logo.png"
-              alt="Institute of African Studies Logo"
-              width={280}
-              height={100}
-              className="h-auto w-full max-w-xs"
-            />
-          </Link>
-          <p className="text-sm leading-relaxed opacity-70">
-            Advancing knowledge and understanding of African societies through
-            interdisciplinary research, teaching, and public engagement since
-            1961.
-          </p>
-        </div>
+          <div className="flex flex-col gap-6 md:col-span-2">
+            <Link href="/" className="w-fit">
+              <Image
+                src="/images/logo.png"
+                alt="Institute of African Studies Logo"
+                width={320}
+                height={120}
+                className="h-auto w-auto"
+              />
+            </Link>
+            <p className="text-sm leading-relaxed opacity-70 max-w-sm">
+              Advancing knowledge and understanding of African societies through
+              interdisciplinary research, teaching, and public engagement since
+              1961.
+            </p>
           </div>
 
           <div>
