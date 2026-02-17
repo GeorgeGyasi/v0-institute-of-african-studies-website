@@ -1,17 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
 import { Award, BookOpen, Users, Globe, ArrowRight, ChevronDown } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "Kwame Nkrumah Chair",
-  description:
-    "The Kwame Nkrumah Chair in African Studies at the Institute of African Studies, University of Ghana.",
-}
 
 const occupants = [
   {
