@@ -299,7 +299,6 @@ const staffCategories: StaffCategory[] = [
     ],
   },
 ]
-
 export function StaffDirectory() {
   const [activeSection, setActiveSection] = useState("senior-members")
 
