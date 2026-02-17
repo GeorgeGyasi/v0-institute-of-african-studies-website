@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ArrowRight, Calendar, ChevronRight } from "lucide-react"
 
 const newsItems = [
@@ -42,6 +42,35 @@ const newsItems = [
     accent: "bg-primary",
   },
 ]
+
+function CountUpStat({ target, label }: { target: number; label: string }) {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    let current = 0
+    const increment = target / 30
+    const timer = setInterval(() => {
+      current += increment
+      if (current >= target) {
+        setCount(target)
+        clearInterval(timer)
+      } else {
+        setCount(Math.floor(current))
+      }
+    }, 30)
+
+    return () => clearInterval(timer)
+  }, [target])
+
+  return (
+    <div className="flex flex-1 flex-col items-center justify-center py-4 bg-primary text-primary-foreground">
+      <span className="text-lg font-bold leading-none">{count.toLocaleString()}+</span>
+      <span className="mt-1 text-[10px] font-medium uppercase tracking-wider opacity-70">
+        {label}
+      </span>
+    </div>
+  )
+}
 
 export function MissionSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -148,26 +177,22 @@ export function MissionSection() {
               ))}
             </div>
 
-            {/* Ticker-style stat strip */}
+            {/* Ticker-style stat strip with count-up animation */}
             <div className="mt-6 flex items-stretch gap-px overflow-hidden rounded-xl">
-              {[
-                { value: "2,500+", label: "Publications" },
-                { value: "60+", label: "Faculty" },
-                { value: "40+", label: "Partners" },
-                { value: "10,000+", label: "Archives" },
-              ].map((stat, i) => (
-                <div
-                  key={stat.label}
-                  className={`flex flex-1 flex-col items-center justify-center py-4 ${
-                    i % 2 === 0 ? "bg-primary text-primary-foreground" : "bg-foreground text-card"
-                  }`}
-                >
-                  <span className="text-lg font-bold leading-none">{stat.value}</span>
-                  <span className="mt-1 text-[10px] font-medium uppercase tracking-wider opacity-70">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
+              <CountUpStat target={2500} label="Publications" />
+              <div className="flex flex-1 flex-col items-center justify-center py-4 bg-foreground text-card">
+                <span className="text-lg font-bold leading-none">60+</span>
+                <span className="mt-1 text-[10px] font-medium uppercase tracking-wider opacity-70">
+                  Faculty
+                </span>
+              </div>
+              <CountUpStat target={40} label="Partners" />
+              <div className="flex flex-1 flex-col items-center justify-center py-4 bg-foreground text-card">
+                <span className="text-lg font-bold leading-none">5,000+</span>
+                <span className="mt-1 text-[10px] font-medium uppercase tracking-wider opacity-70">
+                  Research Centers
+                </span>
+              </div>
             </div>
           </div>
         </div>
