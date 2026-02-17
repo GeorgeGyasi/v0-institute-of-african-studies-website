@@ -190,7 +190,7 @@ export function MissionSection() {
               <div className="flex flex-1 flex-col items-center justify-center py-4 bg-foreground text-card">
                 <span className="text-lg font-bold leading-none">5,000+</span>
                 <span className="mt-1 text-[10px] font-medium uppercase tracking-wider opacity-70">
-                  Research Centers
+                  Students
                 </span>
               </div>
             </div>
