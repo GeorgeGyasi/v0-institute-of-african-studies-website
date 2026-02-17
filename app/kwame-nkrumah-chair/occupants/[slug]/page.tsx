@@ -130,8 +130,17 @@ export default async function OccupantPage({ params }: PageProps) {
       {/* Profile Overview */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
+          {/* About Section with Image on Right */}
           <div className="grid gap-12 lg:grid-cols-3">
-            {/* Sidebar - Image */}
+            <div className="lg:col-span-2">
+              <div className="rounded-lg border border-border bg-card p-8">
+                <h2 className="mb-6 text-2xl font-bold text-foreground">About</h2>
+                <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
+                  <p>{occupant.fullBio}</p>
+                </div>
+              </div>
+            </div>
+
             <div className="lg:col-span-1">
               <div className="rounded-lg border border-border overflow-hidden bg-card">
                 <div className="relative aspect-square overflow-hidden bg-muted">
@@ -153,74 +162,41 @@ export default async function OccupantPage({ params }: PageProps) {
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Main Content */}
-            <div className="lg:col-span-2 space-y-8">
-              {/* Basic Info */}
-              <div className="rounded-lg border border-border bg-card p-8">
-                <h2 className="mb-6 text-2xl font-bold text-foreground">About</h2>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">
-                      Academic Discipline
-                    </p>
-                    <p className="mt-2 text-lg font-semibold text-foreground">
-                      {occupant.discipline}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">
-                      Position at Chair
-                    </p>
-                    <p className="mt-2 text-lg font-semibold text-foreground">
-                      {occupant.position}
-                    </p>
-                  </div>
+          {/* Expertise */}
+          <div className="mt-12 rounded-lg border border-border bg-card p-8">
+            <h2 className="mb-6 flex items-center gap-2 text-2xl font-bold text-foreground">
+              <BookOpen className="h-6 w-6 text-primary" />
+              Areas of Expertise
+            </h2>
+            <div className="grid gap-3 md:grid-cols-2">
+              {occupant.expertise.map((area) => (
+                <div
+                  key={area}
+                  className="rounded-md bg-background p-4 text-sm font-medium text-foreground"
+                >
+                  {area}
                 </div>
-              </div>
-
-              {/* Biography */}
-              <div className="rounded-lg border border-border bg-card p-8">
-                <h2 className="mb-6 text-2xl font-bold text-foreground">Biography</h2>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  {occupant.fullBio}
-                </p>
-              </div>
-
-              {/* Expertise */}
-              <div className="rounded-lg border border-border bg-card p-8">
-                <h2 className="mb-6 flex items-center gap-2 text-2xl font-bold text-foreground">
-                  <BookOpen className="h-6 w-6 text-primary" />
-                  Areas of Expertise
-                </h2>
-                <div className="grid gap-3 md:grid-cols-2">
-                  {occupant.expertise.map((area) => (
-                    <div
-                      key={area}
-                      className="rounded-md bg-background p-4 text-sm font-medium text-foreground"
-                    >
-                      {area}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Achievements */}
-              <div className="rounded-lg border border-border bg-card p-8">
-                <h2 className="mb-6 flex items-center gap-2 text-2xl font-bold text-foreground">
-                  <Award className="h-6 w-6 text-primary" />
-                  Key Achievements
-                </h2>
-                <ul className="space-y-4">
-                  {occupant.achievements.map((achievement) => (
-                    <li key={achievement} className="flex gap-4">
-                      <span className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-primary" />
-                      <span className="text-base text-muted-foreground">{achievement}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              ))}
             </div>
+          </div>
+
+          {/* Achievements */}
+          <div className="mt-12 rounded-lg border border-border bg-card p-8">
+            <h2 className="mb-6 flex items-center gap-2 text-2xl font-bold text-foreground">
+              <Award className="h-6 w-6 text-primary" />
+              Key Achievements
+            </h2>
+            <ul className="space-y-4">
+              {occupant.achievements.map((achievement) => (
+                <li key={achievement} className="flex gap-4">
+                  <span className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-primary" />
+                  <span className="text-base text-muted-foreground">{achievement}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
             {/* Sidebar */}
             <div>
