@@ -3,9 +3,8 @@
 import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
 import { BookOpen, Clock, Award, Users, ClipboardList, HelpCircle } from "lucide-react"
-import { useState } from "react"
 
-const baPrograms = [
+const programmes = [
   {
     code: "AFST 101",
     title: "Introduction to African Studies",
@@ -55,58 +54,17 @@ const highlights = [
   { icon: BookOpen, label: "Courses", value: "24+ Modules" },
   { icon: Award, label: "Degree", value: "BA African Studies" },
   { icon: Users, label: "Cohort Size", value: "~60 Students" },
-]
-
-const ugrcHighlights = [
-  { icon: BookOpen, label: "Courses Offered", value: "20" },
   { icon: ClipboardList, label: "Credits per Course", value: "3" },
-  { icon: Award, label: "Contact Hours", value: "Weekly" },
   { icon: HelpCircle, label: "Support", value: "Available" },
 ]
 
 export default function UndergraduatePage() {
-  const [activeTab, setActiveTab] = useState<"ba" | "ugrc">("ba")
-  
   return (
     <>
       <PageHeader
-        title="Undergraduate Programmes"
+        title="Undergraduate Programmes (UGRC)"
         subtitle="Foundation courses in African Studies for bachelor's degree students"
       />
-
-      {/* Tab Navigation */}
-      <section className="border-b border-border bg-background sticky top-16 z-10">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex gap-8">
-            <button
-              onClick={() => setActiveTab("ba")}
-              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
-                activeTab === "ba"
-                  ? "border-primary text-foreground"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              BA Programme
-            </button>
-            <button
-              onClick={() => setActiveTab("ugrc")}
-              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
-                activeTab === "ugrc"
-                  ? "border-primary text-foreground"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              UGRC Courses
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* BA Programme Tab */}
-      {activeTab === "ba" && (
-      <>
-      {/* Overview */}
-      <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid items-start gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
@@ -162,7 +120,7 @@ export default function UndergraduatePage() {
             Selected Courses
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {baPrograms.map((course) => (
+            {programmes.map((course) => (
               <div
                 key={course.code}
                 className="rounded-lg border border-border bg-background p-6"
@@ -199,58 +157,6 @@ export default function UndergraduatePage() {
           >
             Admissions Information
           </Link>
-        </div>
-      </section>
-      </>
-      )}
-
-      {/* UGRC Tab */}
-      {activeTab === "ugrc" && (
-      <>
-      {/* UGRC Overview */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid items-start gap-12 lg:grid-cols-3">
-            <div className="lg:col-span-2">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
-                Programme Overview
-              </p>
-              <h2 className="mb-6 font-serif text-3xl font-bold text-foreground">
-                About UGRC Courses
-              </h2>
-              <div className="flex flex-col gap-4 text-base leading-relaxed text-muted-foreground">
-                <p>
-                  The University General Requirement Courses (UGRC) are designed
-                  to provide all University of Ghana students with essential
-                  knowledge in African Studies, regardless of their major
-                  programme. These courses contribute to the development of
-                  well-rounded graduates with a comprehensive understanding of
-                  African contexts, cultures, and issues.
-                </p>
-                <p>
-                  The Institute of African Studies offers 20 UGRC courses that
-                  introduce students to foundational concepts in African Studies,
-                  Gender Studies, and related disciplines. All UGRC courses carry
-                  3 credits and are delivered through a combination of lectures
-                  and tutorials.
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {ugrcHighlights.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-lg border border-border bg-card p-5 text-center"
-                >
-                  <item.icon className="mx-auto mb-2 h-6 w-6 text-primary" />
-                  <p className="text-lg font-bold text-foreground">
-                    {item.value}
-                  </p>
-                  <p className="text-xs text-muted-foreground">{item.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -579,8 +485,6 @@ export default function UndergraduatePage() {
           </div>
         </div>
       </section>
-      </>
-      )}
     </>
   )
 }
