@@ -354,7 +354,7 @@ export default function KwameNkrumahChairPage() {
               </div>
             </div>
 
-            {/* Current Occupant */}
+            {/* Current/Fourth Occupant */}
             <div className="rounded-lg border border-border bg-card p-8">
               <div className="mb-6 flex items-start justify-between">
                 <div>
@@ -362,7 +362,7 @@ export default function KwameNkrumahChairPage() {
                     Professor Amina Mama
                   </h3>
                   <p className="mt-1 text-sm font-semibold text-primary">
-                    Current Occupant
+                    Fourth Occupant (2021–2025)
                   </p>
                 </div>
               </div>
@@ -372,6 +372,28 @@ export default function KwameNkrumahChairPage() {
                 </p>
                 <p className="text-base leading-relaxed text-muted-foreground">
                   Professor Mama is a gender and sexuality scholar who has been Research Professor of Gender, Sexuality and Women's Studies at the University of California, Davis since 2009. Previously, she held the Barbara Lee Distinguished Chair in Women's Leadership at Mills College in the USA (2007–2009) and served as Chair in Gender Studies and Director of the African Gender Institute at the University of Cape Town, South Africa (1999–2009). Beyond her academic positions, Professor Mama has been engaged in independent research, consultancy, and professional services in Africa, Europe, the United States, and within the United Nations system, bringing her considerable expertise in feminist scholarship and African knowledge production to the Chair.
+                </p>
+              </div>
+            </div>
+
+            {/* Newly Appointed Occupant */}
+            <div className="rounded-lg border border-border bg-card p-8">
+              <div className="mb-6 flex items-start justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground">
+                    Ato Quayson
+                  </h3>
+                  <p className="mt-1 text-sm font-semibold text-primary">
+                    Newly Appointed (2026–)
+                  </p>
+                </div>
+              </div>
+              <div className="mb-4">
+                <p className="mb-2 text-sm font-semibold text-foreground">
+                  Discipline: English, African and American Studies
+                </p>
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  Ato Quayson is an accomplished scholar in English, African, and American Studies. His intellectual work bridges literary analysis with critical engagements on African identity, cultural production, and global interconnections. Beginning his tenure in 2026, he joins the distinguished lineage of Kwame Nkrumah Chair occupants, bringing fresh perspectives on African knowledge systems and contemporary African scholarship.
                 </p>
               </div>
             </div>
