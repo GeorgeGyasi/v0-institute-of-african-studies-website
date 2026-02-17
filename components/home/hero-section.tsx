@@ -51,7 +51,6 @@ export function HeroSection() {
     const interval = setInterval(() => {
       setCurrentSlide(prev => (prev === slides.length - 1 ? 0 : prev + 1))
     }, 5000)
-
     return () => clearInterval(interval)
   }, [])
 
@@ -105,10 +104,10 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-8 right-8 z-20 flex items-center justify-between">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center gap-8">
         <button
           onClick={() => setCurrentSlide(prev => (prev === 0 ? slides.length - 1 : prev - 1))}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60 active:scale-95"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60"
           aria-label="Previous slide"
         >
           <ChevronLeft className="h-6 w-6" />
@@ -129,7 +128,7 @@ export function HeroSection() {
 
         <button
           onClick={() => setCurrentSlide(prev => (prev === slides.length - 1 ? 0 : prev + 1))}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60 active:scale-95"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60"
           aria-label="Next slide"
         >
           <ChevronRight className="h-6 w-6" />
