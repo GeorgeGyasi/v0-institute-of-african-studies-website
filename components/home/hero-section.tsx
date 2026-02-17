@@ -40,10 +40,13 @@ const slides = [
 
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    setIsClient(true)
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+    }, 5000)
+
+    return () => clearInterval(interval)
   }, [])
 
   const goToPrevious = () => {
@@ -114,52 +117,40 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Carousel Controls - Only render on client to avoid hydration issues */}
-      {isClient && (
-        <>
-          {/* Navigation Buttons */}
-          <div className="absolute bottom-8 left-8 right-8 z-20 flex items-center justify-between">
+      {/* Carousel Controls */}
+      <div className="absolute bottom-8 left-8 right-8 z-20 flex items-center justify-between">
+        <button
+          onClick={goToPrevious}
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60 active:scale-95"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+
+        {/* Slide Indicators */}
+        <div className="flex gap-2">
+          {slides.map((_, index) => (
             <button
-              onClick={goToPrevious}
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60 active:scale-95"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`h-2 rounded-full transition-all ${
+                index === currentSlide
+                  ? 'w-8 bg-white'
+                  : 'w-2 bg-white/50 hover:bg-white/70'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
 
-            {/* Slide Indicators */}
-            <div className="flex gap-2">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    index === currentSlide
-                      ? 'w-8 bg-white'
-                      : 'w-2 bg-white/50 hover:bg-white/70'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={goToNext}
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60 active:scale-95"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </div>
-
-          {/* Slide Counter */}
-          <div className="absolute top-8 right-8 z-20">
-            <div className="rounded-full bg-white/20 backdrop-blur-sm border border-white/40 px-4 py-2 text-sm font-semibold text-white">
-              {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
-            </div>
-          </div>
-        </>
-      )}
+        <button
+          onClick={goToNext}
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60 active:scale-95"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
+      </div>
     </section>
   )
 }
