@@ -190,7 +190,7 @@ export default function YiriLodgePage() {
             </div>
             <div className="relative h-96 w-full rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/yiri-lodge.jpg"
+                src="/images/yiri-restaurant.jpg"
                 alt="Yiri Restaurant and Dining Experience"
                 fill
                 className="object-cover"
