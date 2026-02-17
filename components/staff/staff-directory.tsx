@@ -148,9 +148,16 @@ const staffCategories: StaffCategory[] = [
       {
         name: "Professor Michael Kpessa-Whyte",
         role: "Professor",
-        specialty: "African Religion & Philosophy",
+        specialty: "African Religious Studies & Philosophy",
         email: "mkpessa@ug.edu.gh",
         photo: "/images/staff/senior-member-17.jpg",
+      },
+      {
+        name: "George Gyasi Gyesaw",
+        role: "Archivist",
+        specialty: "J H Kwabena Nketia Archives",
+        email: "ggyesaw@ug.edu.gh",
+        photo: "/images/staff/senior-member-18.jpg",
       },
       {
         name: "Dr. Mjiba Frehiwot",
