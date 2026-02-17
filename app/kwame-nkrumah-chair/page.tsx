@@ -10,48 +10,38 @@ export const metadata: Metadata = {
     "The Kwame Nkrumah Chair in African Studies at the Institute of African Studies, University of Ghana.",
 }
 
-const activities = [
+const occupants = [
   {
-    icon: BookOpen,
-    title: "Annual Lecture Series",
-    description:
-      "A flagship public lecture series featuring internationally acclaimed scholars addressing critical issues in African Studies, pan-Africanism, and continental development.",
+    id: "kofi-anyidoho",
+    position: "First Occupant",
+    name: "Professor Kofi Anyidoho",
+    years: "2012–2014",
+    discipline: "Literature in English",
+    image: "/images/occupant-1.jpg",
   },
   {
-    icon: Users,
-    title: "Visiting Scholars Programme",
-    description:
-      "The Chair hosts distinguished visiting scholars from across Africa and the diaspora, fostering intellectual exchange and collaborative research projects.",
+    id: "professor-gordon",
+    position: "Second Occupant",
+    name: "Professor Gordon",
+    years: "2014–2016",
+    discipline: "African Studies",
+    image: "/images/occupant-2.jpg",
   },
   {
-    icon: Globe,
-    title: "Research Initiatives",
-    description:
-      "Supports cutting-edge research on pan-Africanism, decolonisation, African political thought, and the intellectual legacy of Kwame Nkrumah and his contemporaries.",
+    id: "horace-g-campbell",
+    position: "Third Occupant",
+    name: "Professor Horace G. Campbell",
+    years: "2020–2021",
+    discipline: "African American Studies",
+    image: "/images/occupant-3.jpg",
   },
   {
-    icon: Award,
-    title: "Graduate Fellowships",
-    description:
-      "Provides competitive fellowships and mentorship to outstanding graduate students whose research aligns with the Chair's focus on African political and intellectual history.",
-  },
-]
-
-const pastHolders = [
-  {
-    name: "Prof. Ama Ata Aidoo",
-    period: "2010 - 2013",
-    focus: "Literature, Gender, and Pan-Africanism",
-  },
-  {
-    name: "Prof. Akilagpa Sawyerr",
-    period: "2013 - 2016",
-    focus: "Higher Education and Development",
-  },
-  {
-    name: "Prof. Kwesi Yankah",
-    period: "2016 - 2019",
-    focus: "Oral Traditions and Cultural Communication",
+    id: "amina-mattah",
+    position: "Fourth Occupant",
+    name: "Amina Mattah",
+    years: "2021–2025",
+    discipline: "Gender & Development",
+    image: "/images/occupant-4.jpg",
   },
 ]
 
@@ -104,7 +94,7 @@ export default function KwameNkrumahChairPage() {
                 </h3>
                 <div className="space-y-4">
                   <Link
-                    href="/kwame-nkrumah-chair/occupants/ato-quayson"
+                    href="/kwame-nkrumah-chair/occupants/amina-mattah"
                     className="block rounded-md border border-border bg-background p-3 transition-all hover:border-primary hover:bg-muted"
                   >
                     <p className="text-xs font-semibold text-primary">Current (2026–)</p>
@@ -120,6 +110,66 @@ export default function KwameNkrumahChairPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Occupants Grid Section - Moved to Top */}
+      <section className="border-t border-border bg-muted/30 py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
+              Distinguished Scholars
+            </p>
+            <h2 className="font-serif text-3xl font-bold text-foreground">
+              Chair Occupants
+            </h2>
+          </div>
+
+          {/* Occupants Cards with Images */}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {occupants.map((occupant) => (
+              <Link
+                key={occupant.id}
+                href={`/kwame-nkrumah-chair/occupants/${occupant.id}`}
+                className="group overflow-hidden rounded-lg border border-border bg-card transition-all hover:shadow-lg hover:border-primary"
+              >
+                <div className="relative aspect-square overflow-hidden bg-muted">
+                  <Image
+                    src={occupant.image}
+                    alt={occupant.name}
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
+                    {occupant.position}
+                  </p>
+                  <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {occupant.name}
+                  </h3>
+                  <p className="mt-2 text-xs text-muted-foreground">{occupant.years}</p>
+                  <p className="mt-3 text-xs text-muted-foreground">{occupant.discipline}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA to Full Occupants Page */}
+          <div className="mt-12 rounded-lg border border-border bg-card p-8 text-center">
+            <Users className="mx-auto mb-4 h-8 w-8 text-primary" />
+            <h3 className="text-xl font-bold text-foreground">Explore Full Profiles</h3>
+            <p className="mt-2 text-muted-foreground">
+              Click on any occupant card above to view their complete biography and scholarly achievements
+            </p>
+            <Link
+              href="/kwame-nkrumah-chair/occupants"
+              className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              View Full Directory <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -310,94 +360,6 @@ export default function KwameNkrumahChairPage() {
                 A research grant to support scholarly activities and research initiatives
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Full Occupants Directory */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
-              Distinguished Scholars
-            </p>
-            <h2 className="font-serif text-3xl font-bold text-foreground">
-              All Chair Occupants
-            </h2>
-          </div>
-
-          {/* Occupants Summary Cards */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Link
-              href="/kwame-nkrumah-chair/occupants/kofi-anyidoho"
-              className="group rounded-lg border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary"
-            >
-              <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
-                First Occupant
-              </p>
-              <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary transition-colors">
-                Professor Kofi Anyidoho
-              </h3>
-              <p className="mt-2 text-xs text-muted-foreground">2012–2014</p>
-              <p className="mt-3 text-xs text-muted-foreground">Literature in English</p>
-            </Link>
-
-            <Link
-              href="/kwame-nkrumah-chair/occupants/patrick-wilmot"
-              className="group rounded-lg border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary"
-            >
-              <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
-                Second Occupant
-              </p>
-              <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary transition-colors">
-                Professor Patrick Wilmot
-              </h3>
-              <p className="mt-2 text-xs text-muted-foreground">2014–2016</p>
-              <p className="mt-3 text-xs text-muted-foreground">African Politics</p>
-            </Link>
-
-            <Link
-              href="/kwame-nkrumah-chair/occupants/horace-g-campbell"
-              className="group rounded-lg border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary"
-            >
-              <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
-                Third Occupant
-              </p>
-              <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary transition-colors">
-                Professor Horace G. Campbell
-              </h3>
-              <p className="mt-2 text-xs text-muted-foreground">2020–2021</p>
-              <p className="mt-3 text-xs text-muted-foreground">African American Studies</p>
-            </Link>
-
-            <Link
-              href="/kwame-nkrumah-chair/occupants/ato-quayson"
-              className="group rounded-lg border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary"
-            >
-              <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
-                Current Occupant
-              </p>
-              <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary transition-colors">
-                Ato Quayson
-              </h3>
-              <p className="mt-2 text-xs text-muted-foreground">2026–</p>
-              <p className="mt-3 text-xs text-muted-foreground">English & African Studies</p>
-            </Link>
-          </div>
-
-          {/* CTA to Full Occupants Page */}
-          <div className="mt-12 rounded-lg border border-border bg-muted/50 p-8 text-center">
-            <Users className="mx-auto mb-4 h-8 w-8 text-primary" />
-            <h3 className="text-xl font-bold text-foreground">Explore Detailed Profiles</h3>
-            <p className="mt-2 text-muted-foreground">
-              Click on any occupant card above to view their full biography and scholarly achievements
-            </p>
-            <Link
-              href="/kwame-nkrumah-chair/occupants"
-              className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              View Full Occupants Directory <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
         </div>
       </section>
