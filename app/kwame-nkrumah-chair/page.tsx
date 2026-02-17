@@ -114,14 +114,14 @@ export default function KwameNkrumahChairPage() {
         </div>
       </section>
 
-      {/* Nkrumah's Legacy */}
+      {/* Nkrumah's Intellectual Legacy */}
       <section className="border-t border-border bg-card py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
-            Pan-Africanism
+            The Platform
           </p>
           <h2 className="mb-8 font-serif text-3xl font-bold text-foreground">
-            Nkrumah{"'"}s Intellectual Legacy
+            Nkrumah{"'"}s Vision and Legacy
           </h2>
           <div className="max-w-4xl space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
@@ -166,17 +166,18 @@ export default function KwameNkrumahChairPage() {
         </div>
       </section>
 
-      {/* The Chair Details */}
+      {/* The Chair */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
-            Position Details
+            Chair Information
           </p>
           <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">
             The Chair
           </h2>
-          <div className="rounded-lg border border-border bg-card p-8 mb-8">
-            <p className="mb-4 text-base text-muted-foreground">
+          
+          <div className="mb-12 rounded-lg border border-border bg-muted/30 p-8">
+            <p className="text-base font-medium text-foreground">
               The Chair is located at the Institute of African Studies at the University of Ghana, and is currently tenable for a period up to 12 months.
             </p>
           </div>
@@ -198,7 +199,7 @@ export default function KwameNkrumahChairPage() {
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Public recognition of his/her contributions to the academy and public life
+                  Public recognition of contributions to the academy and public life
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -206,7 +207,7 @@ export default function KwameNkrumahChairPage() {
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  A commitment to scholarship or public service in any field, including the arts, social and natural sciences, that advance knowledge of, and in, Africa
+                  A commitment to scholarship or public service in any field, including the arts, social and natural sciences, that advance knowledge of and in Africa
                 </li>
               </ul>
             </div>
@@ -218,7 +219,7 @@ export default function KwameNkrumahChairPage() {
                 Responsibilities
               </h3>
               <p className="mb-4 text-sm text-muted-foreground">
-                During his/her tenure, the occupant will be expected to:
+                During tenure, the occupant will be expected to:
               </p>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
@@ -235,11 +236,11 @@ export default function KwameNkrumahChairPage() {
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Produce a publishable manuscript on his/her research
+                  Produce a publishable manuscript on research
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Prepare a report detailing the results achieved at the end of the tenure period
+                  Prepare a report detailing results achieved at the end of tenure
                 </li>
               </ul>
             </div>
@@ -247,14 +248,14 @@ export default function KwameNkrumahChairPage() {
         </div>
       </section>
 
-      {/* Terms and Support */}
+      {/* Terms */}
       <section className="border-t border-border bg-card py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
-            Benefits
+            Support and Benefits
           </p>
           <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">
-            Terms and Support
+            Terms
           </h2>
           <p className="mb-8 text-base text-muted-foreground">
             The occupant will be provided with:
@@ -265,7 +266,7 @@ export default function KwameNkrumahChairPage() {
                 Return Business Class Ticket
               </h3>
               <p className="text-sm text-muted-foreground">
-                Return business class ticket from occupant{"'"}s location to Accra, as applicable
+                Return business class ticket from location to Accra, as applicable
               </p>
             </div>
             <div className="rounded-lg border border-border bg-background p-6">
