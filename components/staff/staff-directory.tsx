@@ -297,7 +297,6 @@ const staffCategories: StaffCategory[] = [
       { name: "Ahazi Grace", role: "Cleaner", specialty: "", email: "", photo: "/images/placeholder.svg" },
       { name: "Appiah Seth", role: "Cleaner", specialty: "", email: "", photo: "/images/placeholder.svg" },
     ],
-  },
 ]
 
 export function StaffDirectory() {
