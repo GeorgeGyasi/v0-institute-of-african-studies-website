@@ -20,24 +20,26 @@ const institutionalPubs = [
     editors: "Current Editor: Prof. A. Adomako Ampofo",
   },
   {
-    title: "IAS Occasional Research Papers",
-    type: "Monograph Series",
-    frequency: "Occasional",
+    title: "Contemporary Journal of African Studies (CJAS)",
+    type: "Peer-Reviewed Journal",
+    frequency: "Bi-annual",
     issn: "Various",
+    url: "https://journals.ug.edu.gh/cjas",
     description:
-      "A series of focused monographs and working papers addressing specific topics in African Studies. The series provides a platform for more extended research outputs that go beyond the format of a journal article, allowing scholars to explore complex issues in depth.",
-    volumes: "42 Papers Published",
-    editors: "Series Editor: Dr. K. Gavua",
+      "A multidisciplinary peer-reviewed journal publishing original scholarly work on Global Africa. Beginning with the 2019 issues, CJAS is available in electronic format on journals.ug.edu.gh and ajol.info. The journal is committed to promoting knowledge from an African-centred perspective and welcomes special issues from conferences and symposia.",
+    volumes: "Published since 2012 (formerly Research Review)",
+    editors: "Series Editor",
   },
   {
-    title: "Legon Journal of the Humanities",
+    title: "Feminist Africa",
     type: "Interdisciplinary Journal",
     frequency: "Annual",
-    issn: "ISSN 0855-1502",
+    issn: "Various",
+    url: "https://feministafrica.net/",
     description:
-      "An interdisciplinary humanities journal published in collaboration with the Faculty of Arts, University of Ghana. It covers literature, philosophy, cultural studies, linguistics, and related fields, providing a bridge between African Studies and the broader humanities.",
-    volumes: "34 Volumes Published",
-    editors: "Joint editorial board with Faculty of Arts",
+      "An interdisciplinary journal dedicated to feminist scholarship and analysis on Africa. It publishes cutting-edge research on African feminist theory, activism, and practice, providing a platform for intersectional African feminist perspectives on gender, development, and social transformation.",
+    volumes: "Multiple Volumes Published",
+    editors: "Editorial Board",
   },
   {
     title: "IAS Annual Report",
@@ -92,9 +94,22 @@ export default function InstitutionalPage() {
                     <BookOpen className="h-5 w-5 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-foreground">
-                      {pub.title}
-                    </h3>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-semibold text-foreground">
+                        {pub.title}
+                      </h3>
+                      {pub.url && (
+                        <a
+                          href={pub.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={`Visit ${pub.title}`}
+                          className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
                     <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                       <span className="rounded-sm bg-primary/10 px-2 py-0.5 font-medium text-primary">
                         {pub.type}
