@@ -280,126 +280,96 @@ export default function KwameNkrumahChairPage() {
         </div>
       </section>
 
-      {/* Chair Occupants */}
+      {/* Chair Occupants Section with Widget */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
             Distinguished Scholars
           </p>
-          <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">
-            Chair Occupants
-          </h2>
+          <div className="mb-12 flex items-end justify-between">
+            <h2 className="font-serif text-3xl font-bold text-foreground">
+              Chair Occupants
+            </h2>
+            <Link
+              href="/kwame-nkrumah-chair/occupants"
+              className="inline-flex items-center gap-2 rounded-md border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+            >
+              View All <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
 
-          <div className="space-y-8">
-            {/* First Occupant */}
-            <div className="rounded-lg border border-border bg-card p-8">
-              <div className="mb-6 flex items-start justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Professor Kofi Anyidoho
-                  </h3>
-                  <p className="mt-1 text-sm font-semibold text-primary">
-                    First Occupant (2012–2014)
-                  </p>
-                </div>
-              </div>
-              <div className="mb-4">
-                <p className="mb-2 text-sm font-semibold text-foreground">
-                  Discipline: Literature in English
-                </p>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  Trained as a professional teacher at Accra Training College and Advanced Teacher Training College-Winneba, Professor Anyidoho taught at primary, middle, and secondary school levels before joining the University faculty. Outside the University, he has been deeply involved in various initiatives designed to promote African culture and history, including Ghana Television's African Heritage Series, for which he was the main host and executive producer. He holds a B.A. Honours in English and Linguistics from the University of Ghana, an M.A. in Folklore from Indiana University-Bloomington, and a Ph.D. in Comparative Literature from the University of Texas at Austin.
-                </p>
-              </div>
-            </div>
+          {/* Occupants Summary Cards */}
+          <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <Link
+              href="/kwame-nkrumah-chair/occupants/kofi-anyidoho"
+              className="group rounded-lg border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
+                First Occupant
+              </p>
+              <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary transition-colors">
+                Professor Kofi Anyidoho
+              </h3>
+              <p className="mt-2 text-xs text-muted-foreground">2012–2014</p>
+              <p className="mt-3 text-xs text-muted-foreground">Literature in English</p>
+            </Link>
 
-            {/* Second Occupant */}
-            <div className="rounded-lg border border-border bg-card p-8">
-              <div className="mb-6 flex items-start justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Professor Patrick Wilmot
-                  </h3>
-                  <p className="mt-1 text-sm font-semibold text-primary">
-                    Second Occupant (2014–2016)
-                  </p>
-                </div>
-              </div>
-              <div className="mb-4">
-                <p className="mb-2 text-sm font-semibold text-foreground">
-                  Discipline: African Politics and International Relations
-                </p>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  Professor Wilmot is an expert in African politics and international relations, with extensive research and scholarly work on pan-African movements and continental integration. His work has contributed significantly to scholarly debates on African unity, decolonisation, and political governance across the continent.
-                </p>
-              </div>
-            </div>
+            <Link
+              href="/kwame-nkrumah-chair/occupants/patrick-wilmot"
+              className="group rounded-lg border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
+                Second Occupant
+              </p>
+              <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary transition-colors">
+                Professor Patrick Wilmot
+              </h3>
+              <p className="mt-2 text-xs text-muted-foreground">2014–2016</p>
+              <p className="mt-3 text-xs text-muted-foreground">African Politics</p>
+            </Link>
 
-            {/* Third Occupant */}
-            <div className="rounded-lg border border-border bg-card p-8">
-              <div className="mb-6 flex items-start justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Professor Horace G. Campbell
-                  </h3>
-                  <p className="mt-1 text-sm font-semibold text-primary">
-                    Third Occupant (2020–2021)
-                  </p>
-                </div>
-              </div>
-              <div className="mb-4">
-                <p className="mb-2 text-sm font-semibold text-foreground">
-                  Discipline: African American Studies and Political Science
-                </p>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  Professor Campbell is a scholar of African American Studies and Political Science at Syracuse University with a focus on African liberation movements and contemporary African geopolitics. His influential works include Global NATO and the Catastrophic Failure in Libya: Lessons for Africa in the Forging of African Unity, which examines the critical challenges facing the continent and the importance of African self-determination in an interconnected world.
-                </p>
-              </div>
-            </div>
+            <Link
+              href="/kwame-nkrumah-chair/occupants/horace-g-campbell"
+              className="group rounded-lg border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
+                Third Occupant
+              </p>
+              <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary transition-colors">
+                Professor Horace G. Campbell
+              </h3>
+              <p className="mt-2 text-xs text-muted-foreground">2020–2021</p>
+              <p className="mt-3 text-xs text-muted-foreground">African American Studies</p>
+            </Link>
 
-            {/* Current/Fourth Occupant */}
-            <div className="rounded-lg border border-border bg-card p-8">
-              <div className="mb-6 flex items-start justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Professor Amina Mama
-                  </h3>
-                  <p className="mt-1 text-sm font-semibold text-primary">
-                    Fourth Occupant (2021–2025)
-                  </p>
-                </div>
-              </div>
-              <div className="mb-4">
-                <p className="mb-2 text-sm font-semibold text-foreground">
-                  Discipline: Gender and Sexuality Studies
-                </p>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  Professor Mama is a gender and sexuality scholar who has been Research Professor of Gender, Sexuality and Women's Studies at the University of California, Davis since 2009. Previously, she held the Barbara Lee Distinguished Chair in Women's Leadership at Mills College in the USA (2007–2009) and served as Chair in Gender Studies and Director of the African Gender Institute at the University of Cape Town, South Africa (1999–2009). Beyond her academic positions, Professor Mama has been engaged in independent research, consultancy, and professional services in Africa, Europe, the United States, and within the United Nations system, bringing her considerable expertise in feminist scholarship and African knowledge production to the Chair.
-                </p>
-              </div>
-            </div>
+            <Link
+              href="/kwame-nkrumah-chair/occupants/ato-quayson"
+              className="group rounded-lg border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
+                Current Occupant
+              </p>
+              <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary transition-colors">
+                Ato Quayson
+              </h3>
+              <p className="mt-2 text-xs text-muted-foreground">2026–</p>
+              <p className="mt-3 text-xs text-muted-foreground">English & African Studies</p>
+            </Link>
+          </div>
 
-            {/* Newly Appointed Occupant */}
-            <div className="rounded-lg border border-border bg-card p-8">
-              <div className="mb-6 flex items-start justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Ato Quayson
-                  </h3>
-                  <p className="mt-1 text-sm font-semibold text-primary">
-                    Newly Appointed (2026–)
-                  </p>
-                </div>
-              </div>
-              <div className="mb-4">
-                <p className="mb-2 text-sm font-semibold text-foreground">
-                  Discipline: English, African and American Studies
-                </p>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  Ato Quayson is an accomplished scholar in English, African, and American Studies. His intellectual work bridges literary analysis with critical engagements on African identity, cultural production, and global interconnections. Beginning his tenure in 2026, he joins the distinguished lineage of Kwame Nkrumah Chair occupants, bringing fresh perspectives on African knowledge systems and contemporary African scholarship.
-                </p>
-              </div>
-            </div>
+          {/* CTA to Full Occupants Page */}
+          <div className="rounded-lg border border-border bg-muted/50 p-8 text-center">
+            <Users className="mx-auto mb-4 h-8 w-8 text-primary" />
+            <h3 className="text-xl font-bold text-foreground">Explore Chair Occupants</h3>
+            <p className="mt-2 text-muted-foreground">
+              Click on any occupant card above to view their full profile and achievements
+            </p>
+            <Link
+              href="/kwame-nkrumah-chair/occupants"
+              className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              View All Occupants <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
