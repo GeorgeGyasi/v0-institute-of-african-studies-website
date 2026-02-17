@@ -435,6 +435,7 @@ function StaffCard({ person, category }: { person: StaffMember; category: string
               src={person.photo || "/placeholder.svg"}
               alt={`Portrait of ${person.name}`}
               fill
+              loading="eager"
               className="object-cover brightness-95 transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
@@ -456,6 +457,7 @@ function StaffCard({ person, category }: { person: StaffMember; category: string
             src={person.photo || "/placeholder.svg"}
             alt={`Portrait of ${person.name}`}
             fill
+            loading="eager"
             className="object-cover brightness-95 transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
