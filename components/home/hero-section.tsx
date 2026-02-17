@@ -49,19 +49,11 @@ export function HeroSection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+      setCurrentSlide(prev => (prev === slides.length - 1 ? 0 : prev + 1))
     }, 5000)
 
     return () => clearInterval(interval)
   }, [])
-
-  const goToPrevious = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
-  }
-
-  const goToNext = () => {
-    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-  }
 
   const slide = slides[currentSlide]
 
@@ -73,7 +65,6 @@ export function HeroSection() {
         fill
         className="object-cover"
         priority
-        loading="eager"
       />
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
@@ -96,7 +87,7 @@ export function HeroSection() {
             {slide.description}
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center gap-4">
             <Link
               href={slide.primaryCTA.href}
               className="group inline-flex items-center gap-2 rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all hover:shadow-lg hover:scale-105 active:scale-95"
@@ -116,7 +107,7 @@ export function HeroSection() {
 
       <div className="absolute bottom-8 left-8 right-8 z-20 flex items-center justify-between">
         <button
-          onClick={goToPrevious}
+          onClick={() => setCurrentSlide(prev => (prev === 0 ? slides.length - 1 : prev - 1))}
           className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60 active:scale-95"
           aria-label="Previous slide"
         >
@@ -129,9 +120,7 @@ export function HeroSection() {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`h-2 rounded-full transition-all ${
-                index === currentSlide
-                  ? 'w-8 bg-white'
-                  : 'w-2 bg-white/50 hover:bg-white/70'
+                index === currentSlide ? 'w-8 bg-white' : 'w-2 bg-white/50 hover:bg-white/70'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -139,7 +128,7 @@ export function HeroSection() {
         </div>
 
         <button
-          onClick={goToNext}
+          onClick={() => setCurrentSlide(prev => (prev === slides.length - 1 ? 0 : prev + 1))}
           className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/40 text-white transition-all hover:bg-white/30 hover:border-white/60 active:scale-95"
           aria-label="Next slide"
         >

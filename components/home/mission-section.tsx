@@ -178,7 +178,7 @@ export function MissionSection() {
             </div>
 
             {/* Ticker-style stat strip with count-up animation */}
-            <div className="mt-6 flex items-stretch gap-px overflow-hidden rounded-xl">
+            <div className="mt-6 flex items-stretch justify-center gap-px overflow-hidden rounded-xl max-w-2xl mx-auto">
               <CountUpStat target={2500} label="Publications" />
               <div className="flex flex-1 flex-col items-center justify-center py-4 bg-foreground text-card">
                 <span className="text-lg font-bold leading-none">60+</span>
@@ -187,12 +187,6 @@ export function MissionSection() {
                 </span>
               </div>
               <CountUpStat target={40} label="Partners" />
-              <div className="flex flex-1 flex-col items-center justify-center py-4 bg-foreground text-card">
-                <span className="text-lg font-bold leading-none">5,000+</span>
-                <span className="mt-1 text-[10px] font-medium uppercase tracking-wider opacity-70">
-                  Students
-                </span>
-              </div>
             </div>
           </div>
         </div>
