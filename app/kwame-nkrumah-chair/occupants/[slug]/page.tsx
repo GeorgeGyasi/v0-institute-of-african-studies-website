@@ -197,42 +197,6 @@ export default async function OccupantPage({ params }: PageProps) {
               ))}
             </ul>
           </div>
-
-            {/* Sidebar */}
-            <div>
-              <div className="rounded-lg border border-border bg-card sticky top-24 p-8">
-                <div className="space-y-6">
-                  <div className="rounded-md bg-primary/10 p-6 text-center">
-                    <p className="text-sm font-semibold text-primary uppercase tracking-widest">
-                      Tenure Period
-                    </p>
-                    <p className="mt-3 text-2xl font-bold text-foreground">
-                      {occupant.tenure}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col gap-3">
-                    <Link
-                      href="/kwame-nkrumah-chair/occupants"
-                      className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                    >
-                      <ArrowLeft className="h-4 w-4" />
-                      View All Occupants
-                    </Link>
-                  </div>
-
-                  <div className="rounded-md border border-border bg-background p-6 text-center">
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-                      Kwame Nkrumah Chair
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      African Studies, University of Ghana
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
