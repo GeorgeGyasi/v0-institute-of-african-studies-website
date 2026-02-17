@@ -1,8 +1,11 @@
+'use client'
+
+import { useState } from 'react'
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
-import { Award, BookOpen, Users, Globe, ArrowRight } from "lucide-react"
+import { Award, BookOpen, Users, Globe, ArrowRight, ChevronDown } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Kwame Nkrumah Chair",
@@ -46,6 +49,15 @@ const occupants = [
 ]
 
 export default function KwameNkrumahChairPage() {
+  const [isOccupantsOpen, setIsOccupantsOpen] = useState(false)
+
+  const allOccupants = [
+    { id: "kofi-anyidoho", name: "Professor Kofi Anyidoho", position: "First Occupant", years: "2012–2014" },
+    { id: "professor-gordon", name: "Professor Gordon", position: "Second Occupant", years: "2014–2016" },
+    { id: "horace-g-campbell", name: "Professor Horace G. Campbell", position: "Third Occupant", years: "2020–2021" },
+    { id: "amina-mattah", name: "Amina Mattah", position: "Fourth Occupant", years: "2021–2025" },
+  ]
+
   return (
     <>
       <PageHeader
@@ -101,12 +113,34 @@ export default function KwameNkrumahChairPage() {
                     <p className="text-sm font-semibold text-foreground">Ato Quayson</p>
                     <p className="text-xs text-muted-foreground">English & African Studies</p>
                   </Link>
-                  <Link
-                    href="/kwame-nkrumah-chair/occupants"
-                    className="block rounded-md border border-primary bg-primary/5 p-3 text-center transition-all hover:bg-primary/10"
+                  
+                  <button
+                    onClick={() => setIsOccupantsOpen(!isOccupantsOpen)}
+                    className="w-full rounded-md border border-primary bg-primary/5 p-3 text-center transition-all hover:bg-primary/10 flex items-center justify-center gap-2"
                   >
-                    <p className="text-xs font-semibold text-primary">View All Occupants</p>
-                  </Link>
+                    <span className="text-xs font-semibold text-primary">
+                      {isOccupantsOpen ? 'Hide' : 'View'} All Occupants
+                    </span>
+                    <ChevronDown 
+                      className={`h-4 w-4 text-primary transition-transform ${isOccupantsOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+
+                  {isOccupantsOpen && (
+                    <div className="space-y-2 border-t border-border pt-4">
+                      {allOccupants.map((occupant) => (
+                        <Link
+                          key={occupant.id}
+                          href={`/kwame-nkrumah-chair/occupants/${occupant.id}`}
+                          className="block rounded-md border border-border bg-background p-3 transition-all hover:border-primary hover:bg-muted"
+                        >
+                          <p className="text-xs font-semibold text-secondary uppercase">{occupant.position}</p>
+                          <p className="text-sm font-semibold text-foreground">{occupant.name}</p>
+                          <p className="text-xs text-muted-foreground">{occupant.years}</p>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
