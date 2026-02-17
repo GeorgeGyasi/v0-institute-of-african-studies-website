@@ -35,10 +35,10 @@ const slides = [
   },
   {
     id: 4,
-    title: 'Faculty Promotion',
-    subtitle: 'Celebrating Excellence',
-    description: 'Congratulations to Professor Ntewusu, Professor Edem Addotey, and Professor Irene on their well-deserved promotion.',
-    image: '/images/faculty-promotion.jpg',
+    title: 'Congratulations',
+    subtitle: 'Faculty Promotions',
+    description: 'Celebrating the achievements of our esteemed colleagues on their promotion to Associate and Full Professors.',
+    image: '/images/faculty-promotion-banner.jpg',
     primaryCTA: { text: 'Meet Our Faculty', href: '/staff' },
     secondaryCTA: { text: 'Learn More', href: '/about' }
   }
@@ -46,10 +46,8 @@ const slides = [
 
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
     }, 5000)
@@ -63,10 +61,6 @@ export function HeroSection() {
 
   const goToNext = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-  }
-
-  if (!mounted) {
-    return <div className="relative min-h-[85vh] bg-black" />
   }
 
   const slide = slides[currentSlide]
