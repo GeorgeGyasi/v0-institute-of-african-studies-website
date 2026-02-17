@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { MapPin, Users, Utensils, Calendar, Phone, Mail, ArrowRight, Star, Wifi, ParkingMeter, AirVent } from 'lucide-react'
 
 export default function YiriLodgePage() {
@@ -30,9 +31,14 @@ export default function YiriLodgePage() {
                 </button>
               </div>
             </div>
-            <div className="relative h-96 rounded-2xl bg-gradient-to-br from-orange-200 to-amber-300 p-8 text-center flex flex-col items-center justify-center">
-              <div className="text-6xl font-serif font-bold text-white/80">Yiri</div>
-              <p className="mt-4 text-lg text-white/70">Heritage. Comfort. Community</p>
+            <div className="relative h-96 w-full rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/yiri-lodge.jpg"
+                alt="Yiri Lodge exterior view"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -182,11 +188,13 @@ export default function YiriLodgePage() {
                 </div>
               </div>
             </div>
-            <div className="relative h-96 rounded-2xl bg-gradient-to-br from-amber-200 to-orange-200 p-8 flex items-center justify-center">
-              <div className="text-center">
-                <Utensils className="mx-auto h-16 w-16 text-white/40 mb-4" />
-                <p className="text-2xl font-serif text-white/60">Fine Dining Experience</p>
-              </div>
+            <div className="relative h-96 w-full rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/yiri-lodge.jpg"
+                alt="Yiri Restaurant and Dining Experience"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
