@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { MapPin, Users, Utensils, Calendar, Phone, Mail, ArrowRight, Star, Wifi, Parking, AirVent } from 'lucide-react'
+import { MapPin, Users, Utensils, Calendar, Phone, Mail, ArrowRight, Star, Wifi, ParkingMeter, AirVent } from 'lucide-react'
 
 export default function YiriLodgePage() {
   return (
@@ -275,7 +275,7 @@ export default function YiriLodgePage() {
             {[
               { icon: Wifi, name: 'Free WiFi', description: 'High-speed internet throughout the lodge' },
               { icon: AirVent, name: 'Air Conditioning', description: 'Climate control in all rooms' },
-              { icon: Parking, name: 'Parking', description: 'Secure parking facilities available' },
+              { icon: ParkingMeter, name: 'Parking', description: 'Secure parking facilities available' },
               { icon: Utensils, name: 'Restaurant', description: 'On-site dining with diverse menu' },
               { icon: Users, name: 'Meeting Rooms', description: 'Versatile spaces for groups' },
               { icon: Phone, name: '24/7 Support', description: 'Round-the-clock guest assistance' },
