@@ -34,7 +34,6 @@ const navItems: NavItem[] = [
     href: "/academics",
     children: [
       { label: "Undergraduate", href: "/academics/undergraduate" },
-      { label: "UGRC Courses", href: "/academics/ugrc" },
       { label: "Graduate", href: "/academics/graduate" },
       { label: "Prospective Students", href: "/academics/prospective-students" },
     ],
