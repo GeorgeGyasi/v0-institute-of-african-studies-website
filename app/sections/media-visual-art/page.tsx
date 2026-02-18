@@ -105,6 +105,11 @@ export default function MediaVisualArtPage() {
                     <div key={index} className="rounded-lg border border-border p-4">
                       <h4 className="font-semibold text-foreground">{member.name}</h4>
                       <p className="text-sm text-muted-foreground mt-1">{member.expertise}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Academic Resources */}
               <div className="space-y-4">
                 <h2 className="font-serif text-2xl font-bold text-foreground">
@@ -129,9 +134,6 @@ export default function MediaVisualArtPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
-                  ))}
-                </div>
               </div>
 
               {/* Exhibitions and Curation */}
