@@ -12,7 +12,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Sections & Units",
+  title: "Sections",
   description:
     "Academic sections and units within the Institute of African Studies, University of Ghana.",
 }
@@ -80,7 +80,7 @@ export default function SectionsUnitsPage() {
   return (
     <>
       <PageHeader
-        title="Sections & Units"
+        title="Sections"
         subtitle="Specialised research and archival units within the Institute"
       />
 
