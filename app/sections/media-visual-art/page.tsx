@@ -1,7 +1,7 @@
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import Link from "next/link"
-import { PageHeader } from "@/components/page-header"
 import { ArrowLeft } from "lucide-react"
+import { PageHeader } from "@/components/page-header"
 import { SectionNavigation } from "@/components/section-navigation"
 
 export const metadata: Metadata = {
@@ -33,20 +33,16 @@ export default function MediaVisualArtPage() {
     ],
   }
 
-  const research = [
-    "A study of the Fante Asafo Flag of Ghana",
-    "Kuduo-Brass Weights",
-    "Architectural Transitions in Northern Ghana",
-    "African Urbanisms and the Built Environment",
+  const resources = [
+    "Museum collections and exhibitions",
+    "Audio-visual laboratory",
+    "Photo archives",
+    "Music archives",
+    "Paper archives in the Kwabena Nketia Archives",
   ]
 
   return (
     <main className="min-h-screen bg-background">
-      <PageHeader
-        title="Media and Visual Art"
-        subtitle="Specialised research and archival units within the Institute"
-      />
-
       <div className="mx-auto max-w-7xl px-6 py-12">
         <Link
           href="/about/sections-units"
@@ -56,9 +52,14 @@ export default function MediaVisualArtPage() {
           Back to Sections
         </Link>
 
-        <div className="grid gap-12 lg:grid-cols-4">
-          <div className="lg:col-span-2 space-y-8">
-            {/* Overview */}
+        <PageHeader
+          title="Media and Visual Art"
+          subtitle="Specialised research and archival units within the Institute"
+        />
+
+        <div className="mt-16 grid gap-12 lg:grid-cols-4">
+          <div className="lg:col-span-3 space-y-12">
+            {/* About the Section */}
             <section className="prose prose-lg max-w-none">
               <h2 className="text-2xl font-bold text-foreground">About the Section</h2>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
@@ -104,18 +105,18 @@ export default function MediaVisualArtPage() {
               </div>
             </section>
 
-            {/* Research Activities */}
+            {/* Academic Resources */}
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-6">Research Activities</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Academic Resources</h2>
               <p className="text-base leading-relaxed text-muted-foreground mb-4">
-                The research activities of the faculty members include:
+                The section has access to several key resources supporting research and learning:
               </p>
               <ul className="space-y-3">
-                {research.map((project, index) => (
+                {resources.map((resource, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="mt-1 h-2 w-2 rounded-full bg-secondary flex-shrink-0" />
                     <span className="text-base text-muted-foreground">
-                      {project}
+                      {resource}
                     </span>
                   </li>
                 ))}
@@ -124,7 +125,7 @@ export default function MediaVisualArtPage() {
           </div>
 
           {/* Sidebar */}
-          <aside className="lg:col-span-2">
+          <aside className="lg:col-span-1">
             <div className="sticky top-8 space-y-8">
               <div className="rounded-lg border border-border bg-card p-6">
                 <SectionNavigation />
