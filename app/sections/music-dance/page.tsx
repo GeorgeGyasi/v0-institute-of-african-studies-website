@@ -138,8 +138,12 @@ export default function MusicDancePage() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24 space-y-6">
+          <aside className="lg:col-span-1">
+            <div className="sticky top-8 space-y-8">
+              <div className="rounded-lg border border-border bg-card p-6">
+                <SectionNavigation />
+              </div>
+
               {/* Faculty */}
               <div className="rounded-lg border border-border p-6">
                 <h3 className="font-serif text-lg font-bold text-foreground mb-4">
@@ -177,7 +181,7 @@ export default function MusicDancePage() {
                 </ul>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </main>
