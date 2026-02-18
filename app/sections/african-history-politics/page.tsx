@@ -14,12 +14,12 @@ export default function AfricanHistoryPoliticsPage() {
   const researchFellows = [
     "Dr. Kojo Opoku Aidoo",
     "Dr. Ebenezer Ayesu",
-    "Dr. Samuel Ntewusu",
-    "Dr. Richard Asante",
+    "Prof. Samuel Ntewusu",
+    "Prof. Richard Asante",
     "Dr. Obodai Torto",
     "Dr. Mjiba Frehiwot",
-    "Dr. Edem Adotey",
-    "Dr. Michael Kpessa-Whyte",
+    "Prof. Edem Adotey",
+    "Prof. Michael Kpessa-Whyte",
   ]
 
   const researchAreas = [
