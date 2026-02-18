@@ -50,68 +50,65 @@ export default function AfricanHistoryPoliticsPage() {
 
         <div className="mt-16 grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-3 space-y-12">
-          <div className="lg:col-span-2">
-            <div className="space-y-8">
-              {/* Overview */}
-              <section className="prose prose-lg max-w-none">
-                <h2 className="text-2xl font-bold text-foreground">Overview</h2>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                  The History and Politics section of IAS is an interdisciplinary unit that draws on the expertise and skills of outstanding historians and political scientists to undertake social-science research. The section is committed to the production of knowledge for the purposes of promoting a better understanding of past, present and future developments in both continental Africa and its diasporas.
-                </p>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                  Research Fellows in this section contribute to educational training by teaching of several African Studies courses designed to expose undergraduate students to various aspects of the history and politics in Africa. The section is actively involved in the Institute's graduate (MA, M.Phil. and PhD) programmes.
-                </p>
-              </section>
+            {/* Overview */}
+            <section className="prose prose-lg max-w-none">
+              <h2 className="text-2xl font-bold text-foreground">Overview</h2>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                The History and Politics section of IAS is an interdisciplinary unit that draws on the expertise and skills of outstanding historians and political scientists to undertake social-science research. The section is committed to the production of knowledge for the purposes of promoting a better understanding of past, present and future developments in both continental Africa and its diasporas.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                Research Fellows in this section contribute to educational training by teaching of several African Studies courses designed to expose undergraduate students to various aspects of the history and politics in Africa. The section is actively involved in the Institute's graduate (MA, M.Phil. and PhD) programmes.
+              </p>
+            </section>
 
-              {/* Research Projects */}
-              <section>
-                <h2 className="text-2xl font-bold text-foreground mb-6">Major Research Projects</h2>
-                <div className="space-y-4">
-                  <div className="rounded-lg border border-border bg-card p-6">
-                    <h3 className="font-semibold text-foreground mb-2">Chieftaincy, Governance and Development</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Ford Foundation funded research on traditional forms of governance with emphasis on political transitions among the Asantes in Ghana.
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-border bg-card p-6">
-                    <h3 className="font-semibold text-foreground mb-2">NUFU Collaborative Research</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Norwegian Research Council Fund (NUFU) sponsored collaborative research between the University of Ghana and the Norwegian University of Science and Technology, Trondheim (NTNU).
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-border bg-card p-6">
-                    <h3 className="font-semibold text-foreground mb-2">Traditional Governance Documentation</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Research projects that analyzed and documented aspects of traditional forms of governance with emphasis on political transitions among African communities.
-                    </p>
-                  </div>
+            {/* Research Projects */}
+            <section>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Major Research Projects</h2>
+              <div className="space-y-4">
+                <div className="rounded-lg border border-border bg-card p-6">
+                  <h3 className="font-semibold text-foreground mb-2">Chieftaincy, Governance and Development</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Ford Foundation funded research on traditional forms of governance with emphasis on political transitions among the Asantes in Ghana.
+                  </p>
                 </div>
-              </section>
-
-              {/* Research Areas */}
-              <section>
-                <h2 className="text-2xl font-bold text-foreground mb-6">Key Research Areas</h2>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {researchAreas.map((area) => (
-                    <div key={area} className="flex items-start gap-3 rounded-lg border border-border bg-card p-4">
-                      <div className="mt-1 h-2 w-2 rounded-full bg-primary flex-shrink-0" />
-                      <p className="text-sm font-medium text-foreground">{area}</p>
-                    </div>
-                  ))}
+                <div className="rounded-lg border border-border bg-card p-6">
+                  <h3 className="font-semibold text-foreground mb-2">NUFU Collaborative Research</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Norwegian Research Council Fund (NUFU) sponsored collaborative research between the University of Ghana and the Norwegian University of Science and Technology, Trondheim (NTNU).
+                  </p>
                 </div>
-              </section>
+                <div className="rounded-lg border border-border bg-card p-6">
+                  <h3 className="font-semibold text-foreground mb-2">Traditional Governance Documentation</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Research projects that analyzed and documented aspects of traditional forms of governance with emphasis on political transitions among African communities.
+                  </p>
+                </div>
+              </div>
+            </section>
 
-              {/* Impact & Engagement */}
-              <section>
-                <h2 className="text-2xl font-bold text-foreground mb-6">Impact and Engagement</h2>
-                <p className="text-base leading-relaxed text-muted-foreground mb-4">
-                  Beyond being consulted regularly by numerous institutions including foreign missions, transnational policy actors, governmental agencies and civil society organizations seeking to better appreciate Africa's unique history and politics, the section's Research Fellows are also renowned for their commitment to sharing of knowledge in their areas of expertise in the local and international media.
-                </p>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  The section is also home to several visiting scholars from across Africa and beyond, fostering a vibrant intellectual community dedicated to advancing African Studies scholarship.
-                </p>
-              </section>
-            </div>
+            {/* Research Areas */}
+            <section>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Key Research Areas</h2>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {researchAreas.map((area) => (
+                  <div key={area} className="flex items-start gap-3 rounded-lg border border-border bg-card p-4">
+                    <div className="mt-1 h-2 w-2 rounded-full bg-primary flex-shrink-0" />
+                    <p className="text-sm font-medium text-foreground">{area}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Impact & Engagement */}
+            <section>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Impact and Engagement</h2>
+              <p className="text-base leading-relaxed text-muted-foreground mb-4">
+                Beyond being consulted regularly by numerous institutions including foreign missions, transnational policy actors, governmental agencies and civil society organizations seeking to better appreciate Africa's unique history and politics, the section's Research Fellows are also renowned for their commitment to sharing of knowledge in their areas of expertise in the local and international media.
+              </p>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                The section is also home to several visiting scholars from across Africa and beyond, fostering a vibrant intellectual community dedicated to advancing African Studies scholarship.
+              </p>
+            </section>
           </div>
 
           {/* Sidebar */}
