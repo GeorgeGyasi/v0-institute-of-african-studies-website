@@ -7,7 +7,7 @@ const footerLinks = {
     { label: "Vision & Mission", href: "/about/vision-mission" },
     { label: "Director's Message", href: "/about/directors-message" },
     { label: "Staff", href: "/about/staff" },
-    { label: "Sections & Units", href: "/about/sections-units" },
+    { label: "Sections", href: "/about/sections-units" },
   ],
   academics: [
     { label: "Undergraduate", href: "/academics/undergraduate" },
