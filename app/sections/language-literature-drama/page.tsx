@@ -201,13 +201,14 @@ export default function LanguageLiteratureDramaPage() {
               </div>
 
               {/* Staff Members */}
-              <div className="rounded-xl border border-border bg-card p-8">
+              <div className="rounded-lg border border-border bg-card p-6">
                 <h3 className="text-lg font-bold text-foreground mb-6">Section Members</h3>
                 <div className="space-y-3">
                   {staffMembers.map((member) => (
-                    <p key={member.name} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      {member.name}
-                    </p>
+                    <div key={member.name} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
+                      <p className="text-sm font-medium text-foreground">{member.name}</p>
+                      <p className="text-xs text-muted-foreground mt-1">{member.role}</p>
+                    </div>
                   ))}
                 </div>
               </div>

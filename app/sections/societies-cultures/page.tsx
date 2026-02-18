@@ -163,23 +163,23 @@ export default function SocietiesCulturesPage() {
               </div>
 
               {/* Faculty */}
-              <div className="rounded-lg border border-border p-6 bg-card">
-                <h3 className="font-serif text-lg font-bold text-foreground mb-4">
+              <div className="rounded-lg border border-border bg-card p-6">
+                <h3 className="text-lg font-bold text-foreground mb-6">
                   Faculty Members
                 </h3>
-                <ul className="space-y-3">
+                <div className="space-y-3">
                   {faculty.map((member, index) => (
                     <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
-                      <p className="font-semibold text-sm text-foreground">{member.name}</p>
-                      <p className="text-xs text-muted-foreground">{member.expertise}</p>
+                      <p className="text-sm font-medium text-foreground">{member.name}</p>
+                      <p className="text-xs text-muted-foreground mt-1">{member.expertise}</p>
                     </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
               {/* Key Areas */}
-              <div className="rounded-lg border border-border p-6 bg-card">
-                <h3 className="font-serif text-lg font-bold text-foreground mb-4">
+              <div className="rounded-lg border border-border bg-card p-6">
+                <h3 className="text-lg font-bold text-foreground mb-6">
                   Key Focus Areas
                 </h3>
                 <ul className="space-y-2">
@@ -193,9 +193,8 @@ export default function SocietiesCulturesPage() {
                     "Community Governance",
                     "Resource Management",
                   ].map((area, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-secondary flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{area}</span>
+                    <li key={index} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      {area}
                     </li>
                   ))}
                 </ul>

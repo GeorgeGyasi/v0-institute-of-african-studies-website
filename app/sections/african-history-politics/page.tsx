@@ -12,14 +12,14 @@ export const metadata: Metadata = {
 
 export default function AfricanHistoryPoliticsPage() {
   const researchFellows = [
-    "Dr. Kojo Opoku Aidoo",
-    "Dr. Ebenezer Ayesu",
-    "Prof. Samuel Ntewusu",
-    "Prof. Richard Asante",
-    "Dr. Obodai Torto",
-    "Dr. Mjiba Frehiwot",
-    "Prof. Edem Adotey",
-    "Prof. Michael Kpessa-Whyte",
+    { name: "Dr. Kojo Opoku Aidoo", role: "Researcher" },
+    { name: "Dr. Ebenezer Ayesu", role: "Researcher" },
+    { name: "Prof. Samuel Ntewusu", role: "Professor" },
+    { name: "Prof. Richard Asante", role: "Professor" },
+    { name: "Dr. Obodai Torto", role: "Researcher" },
+    { name: "Dr. Mjiba Frehiwot", role: "Researcher" },
+    { name: "Prof. Edem Adotey", role: "Professor" },
+    { name: "Prof. Michael Kpessa-Whyte", role: "Professor" },
   ]
 
   const researchAreas = [
@@ -119,19 +119,20 @@ export default function AfricanHistoryPoliticsPage() {
               </div>
 
               {/* Research Fellows */}
-              <div className="rounded-xl border border-border bg-card p-8">
+              <div className="rounded-lg border border-border bg-card p-6">
                 <h3 className="text-lg font-bold text-foreground mb-6">Research Fellows</h3>
                 <div className="space-y-3">
                   {researchFellows.map((fellow) => (
-                    <p key={fellow} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      {fellow}
-                    </p>
+                    <div key={fellow.name} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
+                      <p className="text-sm font-medium text-foreground">{fellow.name}</p>
+                      <p className="text-xs text-muted-foreground mt-1">{fellow.role}</p>
+                    </div>
                   ))}
                 </div>
               </div>
 
               {/* Quick Links */}
-              <div className="rounded-xl border border-border bg-card p-8">
+              <div className="rounded-lg border border-border bg-card p-6">
                 <h3 className="text-lg font-bold text-foreground mb-6">Related Sections</h3>
                 <div className="space-y-3">
                   <Link
