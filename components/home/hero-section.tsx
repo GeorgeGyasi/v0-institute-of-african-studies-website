@@ -64,24 +64,27 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[85vh] overflow-hidden bg-black">
-      <Image
-        src={slide.image}
-        alt={slide.title}
-        fill
-        className="object-cover"
-        priority
-      />
+      <div className="absolute inset-0 transition-opacity duration-500">
+        <Image
+          key={slide.id}
+          src={slide.image}
+          alt={slide.title}
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
 
       <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-end px-6 pb-20">
-        <div className="max-w-2xl space-y-6">
+        <div className="max-w-2xl space-y-6 transition-all duration-500">
           <h1 className="font-serif text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl text-balance">
             {slide.title}
           </h1>
 
-          <p className="max-w-lg text-lg leading-relaxed text-white/90">
+          <p className="max-w-lg text-lg leading-relaxed text-white/90 transition-all duration-500">
             {slide.description}
           </p>
 
