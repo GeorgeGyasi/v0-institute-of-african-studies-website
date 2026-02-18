@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
 import { ArrowLeft } from "lucide-react"
+import { SectionNavigation } from "@/components/section-navigation"
 
 export const metadata: Metadata = {
   title: "Media and Visual Art",
@@ -63,7 +64,7 @@ export default function MediaVisualArtPage() {
           Back to Sections
         </Link>
 
-        <div className="grid gap-12 lg:grid-cols-3">
+        <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2 space-y-8">
               {/* Overview */}
               <div className="space-y-4">
@@ -213,8 +214,13 @@ export default function MediaVisualArtPage() {
                 </div>
               </div>
             </aside>
-          </div>
-        </div>
+
+            {/* Sidebar with Navigation */}
+            <aside className="lg:col-span-1">
+              <div className="sticky top-8 space-y-8">
+                <div className="rounded-lg border border-border bg-card p-6">
+                  <SectionNavigation />
+                </div>
       </main>
     )
   }

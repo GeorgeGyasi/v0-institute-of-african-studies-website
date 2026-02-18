@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
+import { SectionNavigation } from "@/components/section-navigation"
 
 export const metadata: Metadata = {
   title: "Language, Literature and Drama",
@@ -88,7 +89,8 @@ export default function LanguageLiteratureDramaPage() {
           subtitle="Exploring African languages, literary traditions, and dramatic arts"
         />
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-3">
+        <div className="mt-16 grid gap-12 lg:grid-cols-4">
+          <div className="lg:col-span-3 space-y-12">
           <div className="lg:col-span-2 space-y-12">
             {/* Overview */}
             <section className="space-y-4">

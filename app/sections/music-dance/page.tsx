@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
+import { SectionNavigation } from "@/components/section-navigation"
 
 export const metadata: Metadata = {
   title: "Music and Dance",
@@ -57,8 +58,8 @@ export default function MusicDancePage() {
           subtitle="One of the founding wings of the Institute since 1962"
         />
 
-        <div className="grid gap-12 lg:grid-cols-3 mt-12">
-          <div className="lg:col-span-2 space-y-8">
+        <div className="grid gap-12 lg:grid-cols-4 mt-12">
+          <div className="lg:col-span-3 space-y-12">
             {/* About */}
             <div className="space-y-4">
               <h2 className="font-serif text-2xl font-bold text-foreground">

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
+import { SectionNavigation } from "@/components/section-navigation"
 
 export const metadata: Metadata = {
   title: "African History and Politics",
@@ -47,7 +48,8 @@ export default function AfricanHistoryPoliticsPage() {
           subtitle="Exploring Africa's past, present, and future through rigorous historical and political analysis"
         />
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-3">
+        <div className="mt-16 grid gap-12 lg:grid-cols-4">
+          <div className="lg:col-span-3 space-y-12">
           <div className="lg:col-span-2">
             <div className="space-y-8">
               {/* Overview */}
@@ -94,7 +96,14 @@ export default function AfricanHistoryPoliticsPage() {
                     <div key={area} className="flex items-start gap-3 rounded-lg border border-border bg-card p-4">
                       <div className="mt-1 h-2 w-2 rounded-full bg-primary flex-shrink-0" />
                       <p className="text-sm font-medium text-foreground">{area}</p>
-                    </div>
+          </div>
+
+          {/* Sidebar */}
+          <aside className="lg:col-span-1">
+            <div className="sticky top-8 space-y-8">
+              <div className="rounded-lg border border-border bg-card p-6">
+                <SectionNavigation />
+              </div>
                   ))}
                 </div>
               </section>

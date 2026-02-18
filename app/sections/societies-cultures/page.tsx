@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
+import { SectionNavigation } from "@/components/section-navigation"
 
 export const metadata: Metadata = {
   title: "Societies and Cultures",
@@ -74,8 +75,8 @@ export default function SocietiesCulturesPage() {
       />
 
       <section className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-3">
-          <div className="lg:col-span-2 space-y-8">
+        <div className="grid gap-12 lg:grid-cols-4">
+          <div className="lg:col-span-3 space-y-12">
             {/* Overview */}
             <div className="space-y-4">
               <h2 className="font-serif text-2xl font-bold text-foreground">
@@ -203,6 +204,16 @@ export default function SocietiesCulturesPage() {
               <ArrowLeft className="h-4 w-4" />
               Back to Sections
             </Link>
+            </aside>
+          </div>
+
+          {/* Sidebar with Navigation */}
+          <aside className="lg:col-span-1">
+            <div className="sticky top-8">
+              <div className="rounded-lg border border-border bg-card p-6">
+                <SectionNavigation />
+              </div>
+            </div>
           </aside>
         </div>
       </section>
