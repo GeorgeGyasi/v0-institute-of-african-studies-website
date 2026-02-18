@@ -147,7 +147,7 @@ export default function MusicDancePage() {
               {/* Faculty */}
               <div className="rounded-lg border border-border bg-card p-6">
                 <h3 className="text-lg font-bold text-foreground mb-6">
-                  Faculty
+                  Faculty Members
                 </h3>
                 <div className="space-y-3">
                   {faculty.map((member, index) => (
