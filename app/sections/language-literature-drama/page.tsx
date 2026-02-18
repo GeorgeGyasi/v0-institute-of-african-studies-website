@@ -75,6 +75,11 @@ export default function LanguageLiteratureDramaPage() {
 
   return (
     <main className="min-h-screen bg-background">
+      <PageHeader
+        title="Language, Literature and Drama"
+        subtitle="Exploring African languages, literary traditions, and dramatic arts"
+      />
+
       <div className="mx-auto max-w-7xl px-6 py-12">
         <Link
           href="/about/sections-units"
@@ -83,11 +88,6 @@ export default function LanguageLiteratureDramaPage() {
           <ArrowLeft className="h-4 w-4" />
           Back to Sections
         </Link>
-
-        <PageHeader
-          title="Language, Literature and Drama"
-          subtitle="Exploring African languages, literary traditions, and dramatic arts"
-        />
 
         <div className="mt-16 grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-3 space-y-12">
