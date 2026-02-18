@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Sparkles, ChevronLeft, ChevronRight } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 
 const slides = [
   {
@@ -77,13 +77,6 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-end px-6 pb-20">
         <div className="max-w-2xl space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full bg-secondary/20 backdrop-blur-sm border border-secondary/40 px-4 py-2 w-fit">
-            <Sparkles className="h-4 w-4 text-secondary" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-secondary">
-              {slide.subtitle}
-            </span>
-          </div>
-
           <h1 className="font-serif text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl text-balance">
             {slide.title}
           </h1>
