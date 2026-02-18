@@ -7,6 +7,7 @@ import {
   Music,
   Flame,
   Users,
+  Palette,
   ArrowRight,
 } from "lucide-react"
 
@@ -57,6 +58,14 @@ const sections = [
       "Studies African social structures, cultural practices, kinship systems, and community organisations. Examines contemporary social challenges, cultural dynamics, and the interface between tradition and modernity across diverse African communities.",
     highlights: ["Social structures", "Cultural practices", "Community dynamics"],
   },
+  {
+    icon: Palette,
+    name: "Media and Visual Art",
+    slug: "media-visual-art",
+    description:
+      "Explores African visual arts, contemporary media practices, and digital culture. Examines visual representation, artistic expression, film, photography, and new media in understanding African creativity and cultural communication.",
+    highlights: ["Visual arts", "Contemporary media", "Digital culture"],
+  },
 ]
 
 export default function SectionsUnitsPage() {
@@ -73,7 +82,7 @@ export default function SectionsUnitsPage() {
             Our Structure
           </p>
           <p className="mb-16 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            The Institute of African Studies is organized around five core academic sections, each dedicated to advancing knowledge and understanding of distinct aspects of African societies, cultures, and intellectual heritage.
+            The Institute of African Studies is organized around six core academic sections, each dedicated to advancing knowledge and understanding of distinct aspects of African societies, cultures, and intellectual heritage.
           </p>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
