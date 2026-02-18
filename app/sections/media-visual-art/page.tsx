@@ -12,14 +12,25 @@ export const metadata: Metadata = {
 export default function MediaVisualArtPage() {
   const faculty = [
     {
-      name: "Dr. Nii Parmar",
-      expertise: "Visual Art History"
+      name: "Prof. Kwame Amoah Labi",
+      expertise: "African Art History"
     },
     {
       name: "Dr. Irene Appeaning Addo",
       expertise: "Architectural History"
     },
   ]
+
+  const courses = {
+    masters: [
+      { semester: "First Semester", course: "Survey of African Art" },
+      { semester: "Second Semester", course: "Methodologies for Constructing Art History in Selected African Societies" },
+    ],
+    phd: [
+      { semester: "First Semester", course: "Historiography of African Art" },
+      { semester: "Second Semester", course: "Contemporary African Art History" },
+    ],
+  }
 
   const resources = [
     "Museum collections and exhibitions",
@@ -55,10 +66,60 @@ export default function MediaVisualArtPage() {
 
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-8">
+              {/* Overview */}
+              <div className="space-y-4">
+                <h2 className="font-serif text-2xl font-bold text-foreground">
+                  About the Section
+                </h2>
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  The Media and Visual Arts Section of the Institute of African Studies at the University of Ghana is one of the six sections of the Institute. The section handles the teaching, learning, and researching into African Art and its history and the material culture on the African Continent and in the diaspora while situating these within global art history discourses.
+                </p>
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  The section attaches great importance to interdisciplinary research and learning and is made up of faculty members with expertise in African Art History and Architectural History.
+                </p>
+              </div>
+
+              {/* Courses */}
+              <div className="space-y-4">
+                <h2 className="font-serif text-2xl font-bold text-foreground">
+                  Courses Offered
+                </h2>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-3">Master's Level (MA, MPhil)</h3>
+                    <ul className="space-y-2">
+                      {courses.masters.map((item, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <span className="mt-1 h-2 w-2 rounded-full bg-secondary flex-shrink-0" />
+                          <div>
+                            <span className="text-sm text-muted-foreground font-medium">{item.semester}: </span>
+                            <span className="text-base text-muted-foreground">{item.course}</span>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-3">PhD Level</h3>
+                    <ul className="space-y-2">
+                      {courses.phd.map((item, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <span className="mt-1 h-2 w-2 rounded-full bg-secondary flex-shrink-0" />
+                          <div>
+                            <span className="text-sm text-muted-foreground font-medium">{item.semester}: </span>
+                            <span className="text-base text-muted-foreground">{item.course}</span>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
               {/* Faculty */}
               <div className="space-y-4">
                 <h2 className="font-serif text-2xl font-bold text-foreground">
-                  Faculty
+                  Faculty Members
                 </h2>
                 <div className="grid gap-4">
                   {faculty.map((member, index) => (
@@ -90,13 +151,13 @@ export default function MediaVisualArtPage() {
                 </ul>
               </div>
 
-              {/* Exhibitions and Curation */}
+              {/* Curated Exhibitions */}
               <div className="space-y-4">
                 <h2 className="font-serif text-2xl font-bold text-foreground">
                   Curated Exhibitions
                 </h2>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  The section has curated several exhibitions including Kuduo and University of Ghana Architecture. The recent exhibition titled <span className="italic">&apos;Every Human Being is a Human Being&apos;</span> was first showcased in the Memphis in May 2022 – International Salute to Ghana Exhibition.
+                <p className="text-base leading-relaxed text-muted-foreground mb-4">
+                  The section has curated several exhibitions including <span className="font-medium">Kuduo</span> and <span className="font-medium">University of Ghana Architecture</span>. The recent exhibition titled <span className="italic">&apos;Every Human Being is a Human Being&apos;</span> was first showcased in the Memphis in May 2022 – International Salute to Ghana Exhibition.
                 </p>
                 <a 
                   href="https://memphisinmay.org/events/international-salute-to-ghana/experience/exhibits/" 
