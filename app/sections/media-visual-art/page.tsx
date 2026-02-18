@@ -48,24 +48,23 @@ export default function MediaVisualArtPage() {
   ]
 
   return (
-    <>
+    <main className="min-h-screen bg-background">
       <PageHeader
         title="Media and Visual Art"
         subtitle="Specialised research and archival units within the Institute"
       />
 
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <Link
-            href="/about/sections-units"
-            className="mb-8 inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Sections
-          </Link>
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        <Link
+          href="/about/sections-units"
+          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 mb-8"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Sections
+        </Link>
 
-          <div className="grid gap-12 lg:grid-cols-3">
-            <div className="lg:col-span-2 space-y-8">
+        <div className="grid gap-12 lg:grid-cols-3">
+          <div className="lg:col-span-2 space-y-8">
               {/* Overview */}
               <div className="space-y-4">
                 <h2 className="font-serif text-2xl font-bold text-foreground">
@@ -234,7 +233,6 @@ export default function MediaVisualArtPage() {
             </aside>
           </div>
         </div>
-      </section>
-    </>
-  )
-}
+      </main>
+    )
+  }
