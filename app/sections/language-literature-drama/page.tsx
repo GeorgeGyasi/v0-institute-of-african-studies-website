@@ -91,7 +91,6 @@ export default function LanguageLiteratureDramaPage() {
 
         <div className="mt-16 grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-3 space-y-12">
-          <div className="lg:col-span-2 space-y-12">
             {/* Overview */}
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-foreground">Overview</h2>
@@ -193,55 +192,54 @@ export default function LanguageLiteratureDramaPage() {
                 The section currently supervises MPhil and PhD students, contributing to institutional capacity-building and ensuring that the next generation of African scholars has a solid foundation in their research areas of interest.
               </p>
             </section>
-
-            {/* Closing */}
-            <section className="rounded-lg bg-muted/30 p-6 border border-border">
-              <p className="text-base leading-relaxed text-muted-foreground">
-                The Language, Literature, and Drama section is a vibrant and exciting part of the Institute of African Studies that welcomes potential students and collaborators to join us in our many African-centred initiatives and endeavours.
-              </p>
-            </section>
           </div>
 
           {/* Sidebar */}
-          <aside className="space-y-8">
-            {/* Staff Members */}
-            <div className="rounded-lg border border-border bg-card p-6">
-              <h3 className="text-lg font-bold text-foreground mb-4">Section Members</h3>
-              <div className="space-y-4">
-                {staffMembers.map((member) => (
-                  <div key={member.name}>
-                    <p className="font-semibold text-foreground text-sm">{member.name}</p>
-                    <p className="text-xs text-muted-foreground">{member.role}</p>
-                  </div>
-                ))}
+          <aside className="lg:col-span-1">
+            <div className="sticky top-8 space-y-8">
+              <div className="rounded-lg border border-border bg-card p-6">
+                <SectionNavigation />
               </div>
-            </div>
 
-            {/* Key Focus Areas */}
-            <div className="rounded-lg border border-border bg-card p-6">
-              <h3 className="text-lg font-bold text-foreground mb-4">Key Focus Areas</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">→</span>
-                  <span className="text-sm text-muted-foreground">African Languages</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">→</span>
-                  <span className="text-sm text-muted-foreground">Literary Traditions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">→</span>
-                  <span className="text-sm text-muted-foreground">Oral Narratives</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">→</span>
-                  <span className="text-sm text-muted-foreground">Theatre & Performance</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">→</span>
-                  <span className="text-sm text-muted-foreground">Language Preservation</span>
-                </li>
-              </ul>
+              {/* Staff Members */}
+              <div className="rounded-lg border border-border bg-card p-6">
+                <h3 className="text-lg font-bold text-foreground mb-4">Section Members</h3>
+                <div className="space-y-4">
+                  {staffMembers.map((member) => (
+                    <div key={member.name}>
+                      <p className="font-semibold text-foreground text-sm">{member.name}</p>
+                      <p className="text-xs text-muted-foreground">{member.role}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Key Focus Areas */}
+              <div className="rounded-lg border border-border bg-card p-6">
+                <h3 className="text-lg font-bold text-foreground mb-4">Key Focus Areas</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">→</span>
+                    <span className="text-sm text-muted-foreground">African Languages</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">→</span>
+                    <span className="text-sm text-muted-foreground">Literary Traditions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">→</span>
+                    <span className="text-sm text-muted-foreground">Oral Narratives</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">→</span>
+                    <span className="text-sm text-muted-foreground">Theatre & Performance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">→</span>
+                    <span className="text-sm text-muted-foreground">Language Preservation</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </aside>
         </div>
