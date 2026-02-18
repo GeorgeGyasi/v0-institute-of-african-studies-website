@@ -96,14 +96,7 @@ export default function AfricanHistoryPoliticsPage() {
                     <div key={area} className="flex items-start gap-3 rounded-lg border border-border bg-card p-4">
                       <div className="mt-1 h-2 w-2 rounded-full bg-primary flex-shrink-0" />
                       <p className="text-sm font-medium text-foreground">{area}</p>
-          </div>
-
-          {/* Sidebar */}
-          <aside className="lg:col-span-1">
-            <div className="sticky top-8 space-y-8">
-              <div className="rounded-lg border border-border bg-card p-6">
-                <SectionNavigation />
-              </div>
+                    </div>
                   ))}
                 </div>
               </section>
@@ -122,33 +115,39 @@ export default function AfricanHistoryPoliticsPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-8">
-            {/* Research Fellows */}
-            <div className="rounded-xl border border-border bg-card p-8">
-              <h3 className="text-lg font-bold text-foreground mb-6">Research Fellows</h3>
-              <div className="space-y-3">
-                {researchFellows.map((fellow) => (
-                  <p key={fellow} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    {fellow}
-                  </p>
-                ))}
+          <aside className="lg:col-span-1">
+            <div className="sticky top-8 space-y-8">
+              <div className="rounded-lg border border-border bg-card p-6">
+                <SectionNavigation />
               </div>
-            </div>
 
-            {/* Quick Links */}
-            <div className="rounded-xl border border-border bg-card p-8">
-              <h3 className="text-lg font-bold text-foreground mb-6">Related Sections</h3>
-              <div className="space-y-3">
-                <Link
-                  href="/about/sections-units"
-                  className="flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                >
-                  View All Sections
-                  <span className="text-lg">→</span>
-                </Link>
+              {/* Research Fellows */}
+              <div className="rounded-xl border border-border bg-card p-8">
+                <h3 className="text-lg font-bold text-foreground mb-6">Research Fellows</h3>
+                <div className="space-y-3">
+                  {researchFellows.map((fellow) => (
+                    <p key={fellow} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      {fellow}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div className="rounded-xl border border-border bg-card p-8">
+                <h3 className="text-lg font-bold text-foreground mb-6">Related Sections</h3>
+                <div className="space-y-3">
+                  <Link
+                    href="/about/sections-units"
+                    className="flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                  >
+                    View All Sections
+                    <span className="text-lg">→</span>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </main>
