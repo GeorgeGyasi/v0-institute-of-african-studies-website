@@ -68,9 +68,8 @@ export default function ReligionsPhilosophyPage() {
 
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-3 space-y-12">
-          <div className="lg:col-span-2 space-y-8">
-              {/* Overview */}
-              <div className="space-y-4">
+            {/* Overview */}
+            <div className="space-y-4">
                 <h2 className="font-serif text-2xl font-bold text-foreground">
                   About the Section
                 </h2>
@@ -132,11 +131,16 @@ export default function ReligionsPhilosophyPage() {
                   ))}
                 </ul>
               </div>
+              </div>
             </div>
 
-            {/* Sidebar */}
+            {/* Sidebar with Navigation */}
             <aside className="lg:col-span-1">
               <div className="sticky top-8 space-y-8">
+                <div className="rounded-lg border border-border bg-card p-6">
+                  <SectionNavigation />
+                </div>
+
                 {/* Faculty Members */}
                 <div className="rounded-lg border border-border bg-card p-8">
                   <h3 className="text-lg font-bold text-foreground mb-6">Faculty Members</h3>
@@ -174,14 +178,8 @@ export default function ReligionsPhilosophyPage() {
               </div>
             </aside>
           </div>
-
-          {/* Sidebar with Navigation */}
-          <aside className="lg:col-span-1">
-            <div className="sticky top-8">
-              <div className="rounded-lg border border-border bg-card p-6">
-                <SectionNavigation />
-              </div>
-            </div>
-      </main>
-    )
-  }
+        </div>
+      </div>
+    </main>
+  )
+}
