@@ -203,7 +203,7 @@ export default function LanguageLiteratureDramaPage() {
 
               {/* Staff Members */}
               <div className="rounded-lg border border-border bg-card p-6">
-                <h3 className="text-lg font-bold text-foreground mb-6">Section Members</h3>
+                <h3 className="text-lg font-bold text-foreground mb-6">Faculty Members</h3>
                 <div className="space-y-3">
                   {staffMembers.map((member) => (
                     <div key={member.name} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
