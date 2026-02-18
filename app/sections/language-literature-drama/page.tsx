@@ -12,9 +12,8 @@ export const metadata: Metadata = {
 
 export default function LanguageLiteratureDramaPage() {
   const staffMembers = [
-    { name: "Dr. Ọbádélé Kambon", role: "Research Coordinator" },
+    { name: "Prof. Ọbádélé Kambon", role: "Research Coordinator" },
     { name: "Prof. Esi Sutherland-Addy", role: "Professor" },
-    { name: "Dr. Edward Nanbigne", role: "Senior Researcher" },
     { name: "Dr. Mercy Akrofi Ansah", role: "Researcher" },
   ]
 
