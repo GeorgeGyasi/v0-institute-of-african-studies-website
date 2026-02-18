@@ -131,8 +131,6 @@ export default function ReligionsPhilosophyPage() {
                   ))}
                 </ul>
               </div>
-              </div>
-            </div>
 
             {/* Sidebar with Navigation */}
             <aside className="lg:col-span-1">
