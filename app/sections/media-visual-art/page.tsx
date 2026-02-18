@@ -191,11 +191,23 @@ export default function MediaVisualArtPage() {
 
             {/* Sidebar */}
             <aside className="lg:col-span-1">
-              <div className="sticky top-8 rounded-lg border border-border bg-card p-8 space-y-6">
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-widest text-secondary mb-4">
-                    Key Research Areas
-                  </h3>
+              <div className="sticky top-8 space-y-8">
+                {/* Faculty Members */}
+                <div className="rounded-lg border border-border bg-card p-8">
+                  <h3 className="text-lg font-bold text-foreground mb-6">Faculty Members</h3>
+                  <div className="space-y-3">
+                    {faculty.map((member) => (
+                      <div key={member.name} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
+                        <p className="text-sm font-medium text-foreground">{member.name}</p>
+                        <p className="text-xs text-muted-foreground mt-1">{member.expertise}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Key Research Areas */}
+                <div className="rounded-lg border border-border bg-card p-8">
+                  <h3 className="text-lg font-bold text-foreground mb-6">Key Research Areas</h3>
                   <ul className="space-y-2">
                     {[
                       "African Art History",
@@ -213,21 +225,6 @@ export default function MediaVisualArtPage() {
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                <div className="pt-6 border-t border-border">
-                  <h3 className="text-sm font-semibold uppercase tracking-widest text-secondary mb-4">
-                    Connect
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    For inquiries about exhibitions, collaborations, or research opportunities.
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="inline-block rounded-lg bg-primary text-primary-foreground px-4 py-2 text-sm font-medium hover:opacity-90 transition-opacity"
-                  >
-                    Get in Touch
-                  </Link>
                 </div>
               </div>
             </aside>
