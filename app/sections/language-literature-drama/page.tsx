@@ -14,6 +14,7 @@ export default function LanguageLiteratureDramaPage() {
   const staffMembers = [
     { name: "Prof. Ọbádélé Kambon", role: "Research Coordinator" },
     { name: "Prof. Esi Sutherland-Addy", role: "Professor" },
+    { name: "Dr. Edwin Asa Adjei", role: "Researcher" },
     { name: "Dr. Mercy Akrofi Ansah", role: "Researcher" },
   ]
 
