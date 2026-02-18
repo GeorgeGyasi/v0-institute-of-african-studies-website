@@ -131,9 +131,10 @@ export default function ReligionsPhilosophyPage() {
                   ))}
                 </ul>
               </div>
+          </div>
 
-            {/* Sidebar with Navigation */}
-            <aside className="lg:col-span-1">
+          {/* Sidebar with Navigation */}
+          <aside className="lg:col-span-1">
               <div className="sticky top-8 space-y-8">
                 <div className="rounded-lg border border-border bg-card p-6">
                   <SectionNavigation />
@@ -174,8 +175,8 @@ export default function ReligionsPhilosophyPage() {
                   </ul>
                 </div>
               </div>
-            </aside>
-          </div>
+            </div>
+          </aside>
         </div>
       </div>
     </main>
