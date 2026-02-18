@@ -1,107 +1,67 @@
-import type { Metadata } from "next"
+import { Metadata } from "next"
 import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
 import { ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Media and Visual Art | IAS",
+  title: "Media and Visual Art",
   description:
-    "The Media and Visual Arts Section teaches, researches, and explores African art history, material culture, and visual expression within global art history contexts.",
+    "Explore the Media and Visual Art section at the Institute of African Studies, featuring faculty research, exhibitions, and academic resources.",
 }
 
 export default function MediaVisualArtPage() {
+  const faculty = [
+    {
+      name: "Dr. Nii Parmar",
+      expertise: "Visual Art History"
+    },
+    {
+      name: "Dr. Irene Appeaning Addo",
+      expertise: "Architectural History"
+    },
+  ]
+
+  const resources = [
+    "Museum collections and exhibitions",
+    "Audio-visual laboratory",
+    "Photo archives",
+    "Music archives",
+    "Paper archives in the Kwabena Nketia Archives",
+  ]
+
+  const research = [
+    "A study of the Fante Asafo Flag of Ghana",
+    "Kuduo-Brass Weights",
+    "Architectural Transitions in Northern Ghana",
+    "African Urbanisms and the Built Environment",
+  ]
+
   return (
     <>
       <PageHeader
         title="Media and Visual Art"
-        subtitle="African Art History, Material Culture, and Visual Expression"
+        subtitle="Specialised research and archival units within the Institute"
       />
 
-      <section className="py-20">
+      <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12">
-            <Link
-              href="/about/sections-units"
-              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 mb-8"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to Sections
-            </Link>
-          </div>
+          <Link
+            href="/about/sections-units"
+            className="mb-8 inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Sections
+          </Link>
 
-          <div className="grid gap-16 lg:grid-cols-3">
-            {/* Main Content */}
-            <div className="lg:col-span-2 space-y-12">
-              {/* Overview */}
-              <div className="space-y-4">
-                <h2 className="font-serif text-3xl font-bold text-foreground">
-                  Section Overview
-                </h2>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  The Media and Visual Arts Section of the Institute of African Studies at the University of Ghana is one of the six sections of the Institute. The section handles the teaching, learning, and researching into African Art and its history and the material culture on the African Continent and in the diaspora while situating these within global art history discourses.
-                </p>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  The section attaches great importance to interdisciplinary research and learning and is made up of faculty members with expertise in African Art History and Architectural History.
-                </p>
-              </div>
-
-              {/* Courses */}
-              <div className="space-y-4">
-                <h2 className="font-serif text-2xl font-bold text-foreground">
-                  Graduate and Undergraduate Courses
-                </h2>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-3">MA/MPhil Level</h3>
-                    <ul className="space-y-2">
-                      {[
-                        "Survey of African Art (First Semester)",
-                        "Methodologies for Constructing Art History in Selected African Societies (Second Semester)",
-                      ].map((course, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <span className="mt-1 h-2 w-2 rounded-full bg-secondary flex-shrink-0" />
-                          <span className="text-base text-muted-foreground">
-                            {course}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-3">PhD Level</h3>
-                    <ul className="space-y-2">
-                      {[
-                        "Historiography of African Art (First Semester)",
-                        "Contemporary African Art History (Second Semester)",
-                      ].map((course, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <span className="mt-1 h-2 w-2 rounded-full bg-secondary flex-shrink-0" />
-                          <span className="text-base text-muted-foreground">
-                            {course}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
+          <div className="grid gap-12 lg:grid-cols-3">
+            <div className="lg:col-span-2 space-y-8">
               {/* Faculty */}
               <div className="space-y-4">
                 <h2 className="font-serif text-2xl font-bold text-foreground">
-                  Faculty Members
+                  Faculty
                 </h2>
-                <div className="space-y-4">
-                  {[
-                    {
-                      name: "Prof. Kwame Amoah Labi",
-                      expertise: "African Art History"
-                    },
-                    {
-                      name: "Dr. Irene Appeaning Addo",
-                      expertise: "Architectural History"
-                    },
-                  ].map((member, index) => (
+                <div className="grid gap-4">
+                  {faculty.map((member, index) => (
                     <div key={index} className="rounded-lg border border-border p-4">
                       <h4 className="font-semibold text-foreground">{member.name}</h4>
                       <p className="text-sm text-muted-foreground mt-1">{member.expertise}</p>
@@ -119,13 +79,7 @@ export default function MediaVisualArtPage() {
                   The section has access to several key resources supporting research and learning:
                 </p>
                 <ul className="space-y-3">
-                  {[
-                    "Museum collections and exhibitions",
-                    "Audio-visual laboratory",
-                    "Photo archives",
-                    "Music archives",
-                    "Paper archives in the Kwabena Nketia Archives",
-                  ].map((resource, index) => (
+                  {resources.map((resource, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="mt-1 h-2 w-2 rounded-full bg-secondary flex-shrink-0" />
                       <span className="text-base text-muted-foreground">
@@ -142,7 +96,7 @@ export default function MediaVisualArtPage() {
                   Curated Exhibitions
                 </h2>
                 <p className="text-base leading-relaxed text-muted-foreground">
-                  The section has curated several exhibitions including Kuduo and University of Ghana Architecture. The recent exhibition titled <span className="italic">'Every Human Being is a Human Being'</span> was first showcased in the Memphis in May 2022 – International Salute to Ghana Exhibition.
+                  The section has curated several exhibitions including Kuduo and University of Ghana Architecture. The recent exhibition titled <span className="italic">&apos;Every Human Being is a Human Being&apos;</span> was first showcased in the Memphis in May 2022 – International Salute to Ghana Exhibition.
                 </p>
                 <a 
                   href="https://memphisinmay.org/events/international-salute-to-ghana/experience/exhibits/" 
@@ -163,12 +117,7 @@ export default function MediaVisualArtPage() {
                   The research activities of the faculty members include:
                 </p>
                 <ul className="space-y-3">
-                  {[
-                    "A study of the Fante Asafo Flag of Ghana",
-                    "Kuduo-Brass Weights",
-                    "Architectural Transitions in Northern Ghana",
-                    "African Urbanisms and the Built Environment",
-                  ].map((project, index) => (
+                  {research.map((project, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="mt-1 h-2 w-2 rounded-full bg-secondary flex-shrink-0" />
                       <span className="text-base text-muted-foreground">
