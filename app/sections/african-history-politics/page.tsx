@@ -118,9 +118,9 @@ export default function AfricanHistoryPoliticsPage() {
                 <SectionNavigation />
               </div>
 
-              {/* Research Fellows */}
+              {/* Faculty Members */}
               <div className="rounded-lg border border-border bg-card p-6">
-                <h3 className="text-lg font-bold text-foreground mb-6">Research Fellows</h3>
+                <h3 className="text-lg font-bold text-foreground mb-6">Faculty Members</h3>
                 <div className="space-y-3">
                   {researchFellows.map((fellow) => (
                     <div key={fellow.name} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
