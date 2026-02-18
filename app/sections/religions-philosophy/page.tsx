@@ -4,54 +4,56 @@ import { PageHeader } from "@/components/page-header"
 import { ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Media and Visual Art",
+  title: "Religions and Philosophy",
   description:
-    "Explore the Media and Visual Art section at the Institute of African Studies, featuring faculty research, exhibitions, and academic resources.",
+    "Explore the Religions and Philosophy section at the Institute of African Studies, investigating African religious systems, philosophies, and spiritual traditions.",
 }
 
-export default function MediaVisualArtPage() {
+export default function ReligionsPhilosophyPage() {
   const faculty = [
     {
-      name: "Prof. Kwame Amoah Labi",
-      expertise: "African Art History"
+      name: "Rev. Dr. Grace Sintim Adasi",
+      expertise: "African Religions and Christianity"
     },
     {
-      name: "Dr. Irene Appeaning Addo",
-      expertise: "Architectural History"
+      name: "Dr. Genevieve Nrenzah",
+      expertise: "African Religions"
+    },
+    {
+      name: "Dr. Stephen Acheampong",
+      expertise: "Philosophy and Religious Studies"
+    },
+    {
+      name: "Dr. Chika Mba",
+      expertise: "Religion and Social Issues"
     },
   ]
 
   const courses = {
     masters: [
-      { semester: "First Semester", course: "Survey of African Art" },
-      { semester: "Second Semester", course: "Methodologies for Constructing Art History in Selected African Societies" },
+      { semester: "First Semester", course: "Indigenous Religions of Africa" },
+      { semester: "Second Semester", course: "Philosophy and Religion" },
     ],
     phd: [
-      { semester: "First Semester", course: "Historiography of African Art" },
-      { semester: "Second Semester", course: "Contemporary African Art History" },
+      { semester: "First Semester", course: "Seminar in African Religions" },
+      { semester: "Second Semester", course: "Topics in Contemporary African Philosophy" },
     ],
   }
 
-  const resources = [
-    "Museum collections and exhibitions",
-    "Audio-visual laboratory",
-    "Photo archives",
-    "Music archives",
-    "Paper archives in the Kwabena Nketia Archives",
-  ]
-
   const research = [
-    "A study of the Fante Asafo Flag of Ghana",
-    "Kuduo-Brass Weights",
-    "Architectural Transitions in Northern Ghana",
-    "African Urbanisms and the Built Environment",
+    "African Traditional Religions",
+    "Christianity and African Religions",
+    "Islam in Africa",
+    "African Philosophy",
+    "Religion and Gender",
+    "Religion and Development",
   ]
 
   return (
     <main className="min-h-screen bg-background">
       <PageHeader
-        title="Media and Visual Art"
-        subtitle="Specialised research and archival units within the Institute"
+        title="Religions and Philosophy"
+        subtitle="Investigating African religious systems, philosophies, and spiritual traditions"
       />
 
       <div className="mx-auto max-w-7xl px-6 py-12">
@@ -71,10 +73,7 @@ export default function MediaVisualArtPage() {
                   About the Section
                 </h2>
                 <p className="text-base leading-relaxed text-muted-foreground">
-                  The Media and Visual Arts Section of the Institute of African Studies at the University of Ghana is one of the six sections of the Institute. The section handles the teaching, learning, and researching into African Art and its history and the material culture on the African Continent and in the diaspora while situating these within global art history discourses.
-                </p>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  The section attaches great importance to interdisciplinary research and learning and is made up of faculty members with expertise in African Art History and Architectural History.
+                  The Religions and Philosophy section investigates the nature of African religious systems, philosophies, and spiritual traditions. The section explores the dynamics between indigenous African religions and their interactions with foreign religions such as Christianity and Islam, while contributing to broader debates in religious and philosophical studies globally.
                 </p>
               </div>
 
@@ -115,58 +114,17 @@ export default function MediaVisualArtPage() {
                 </div>
               </div>
 
-              {/* Academic Resources */}
+              {/* Research Areas */}
               <div className="space-y-4">
                 <h2 className="font-serif text-2xl font-bold text-foreground">
-                  Academic Resources
+                  Research Areas
                 </h2>
-                <p className="text-base leading-relaxed text-muted-foreground mb-4">
-                  The section has access to several key resources supporting research and learning:
-                </p>
                 <ul className="space-y-3">
-                  {resources.map((resource, index) => (
+                  {research.map((area, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="mt-1 h-2 w-2 rounded-full bg-secondary flex-shrink-0" />
                       <span className="text-base text-muted-foreground">
-                        {resource}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Curated Exhibitions */}
-              <div className="space-y-4">
-                <h2 className="font-serif text-2xl font-bold text-foreground">
-                  Curated Exhibitions
-                </h2>
-                <p className="text-base leading-relaxed text-muted-foreground mb-4">
-                  The section has curated several exhibitions including <span className="font-medium">Kuduo</span> and <span className="font-medium">University of Ghana Architecture</span>. The recent exhibition titled <span className="italic">&apos;Every Human Being is a Human Being&apos;</span> was first showcased in the Memphis in May 2022 – International Salute to Ghana Exhibition.
-                </p>
-                <a 
-                  href="https://memphisinmay.org/events/international-salute-to-ghana/experience/exhibits/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-block text-primary hover:text-primary/80 font-medium text-sm mt-2"
-                >
-                  View International Salute to Ghana Exhibition →
-                </a>
-              </div>
-
-              {/* Research Activities */}
-              <div className="space-y-4">
-                <h2 className="font-serif text-2xl font-bold text-foreground">
-                  Research Activities
-                </h2>
-                <p className="text-base leading-relaxed text-muted-foreground mb-4">
-                  The research activities of the faculty members include:
-                </p>
-                <ul className="space-y-3">
-                  {research.map((project, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <span className="mt-1 h-2 w-2 rounded-full bg-secondary flex-shrink-0" />
-                      <span className="text-base text-muted-foreground">
-                        {project}
+                        {area}
                       </span>
                     </li>
                   ))}
@@ -195,12 +153,12 @@ export default function MediaVisualArtPage() {
                   <h3 className="text-lg font-bold text-foreground mb-6">Key Research Areas</h3>
                   <ul className="space-y-2">
                     {[
-                      "African Art History",
-                      "Material Culture",
-                      "Architectural History",
-                      "Visual Expression",
-                      "Art Curation",
-                      "Global Art History",
+                      "African Traditional Religions",
+                      "Christianity in Africa",
+                      "Islam in Africa",
+                      "African Philosophy",
+                      "Religion and Gender",
+                      "Religion and Development",
                     ].map((area, index) => (
                       <li
                         key={index}
