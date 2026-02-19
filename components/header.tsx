@@ -185,10 +185,10 @@ export function Header() {
         <Link href="https://www.ug.edu.gh" target="_blank" rel="noopener noreferrer" className="flex items-center">
           <Image
             src="/images/logo.png"
-            alt="Institute of African Studies Logo"
-            width={160}
+            alt="University of Ghana - Institute of African Studies Logo"
+            width={300}
             height={60}
-            className="w-[160px] h-auto"
+            className="w-auto h-14"
             priority
           />
         </Link>
