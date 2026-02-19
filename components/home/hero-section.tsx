@@ -55,15 +55,15 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[85vh] overflow-hidden bg-black">
-      <div className="absolute inset-0 transition-opacity duration-500">
+      <div className="absolute inset-0 transition-opacity duration-500 bg-gradient-to-b from-black/50 to-black/80">
         <Image
-          key={slide.id}
           src={slide.image}
           alt={slide.title}
           fill
           sizes="100vw"
           className="object-cover"
           priority
+          onLoad={() => {}}
         />
       </div>
 
