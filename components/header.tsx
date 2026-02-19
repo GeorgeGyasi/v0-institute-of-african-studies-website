@@ -182,12 +182,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
-        <Link href="/" className="flex items-center">
+        <Link href="https://www.ug.edu.gh" target="_blank" rel="noopener noreferrer" className="flex items-center">
           <Image
             src="/images/logo.png"
             alt="Institute of African Studies Logo"
-            width={140}
-            height={52}
+            width={180}
+            height={67}
             className="h-auto w-auto"
             priority
           />
