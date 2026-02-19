@@ -4,7 +4,25 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 31536000,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.vercel-storage.com',
+      },
+    ],
+  },
+  compress: true,
+  poweredByHeader: false,
+  reactStrictMode: true,
+  swcMinify: true,
+  productionBrowserSourceMaps: false,
+  experimental: {
+    optimizePackageImports: [
+      '@radix-ui',
+      'lucide-react',
+    ],
   },
 }
 
