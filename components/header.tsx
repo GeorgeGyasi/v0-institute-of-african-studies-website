@@ -28,6 +28,7 @@ const navItems: NavItem[] = [
       { label: "Leadership History", href: "/about/leadership-history" },
       { label: "Staff", href: "/about/staff" },
       { label: "Sections", href: "/about/sections-units" },
+      { label: "Kwame Nkrumah Chair", href: "/kwame-nkrumah-chair" },
     ],
   },
   {
@@ -48,7 +49,6 @@ const navItems: NavItem[] = [
       { label: "AngloGold Ashanti Lectures", href: "/publications/anglogold-ashanti-lectures" },
     ],
   },
-  { label: "Kwame Nkrumah Chair", href: "/kwame-nkrumah-chair" },
   {
     label: "Units",
     href: "/about/sections-units",
