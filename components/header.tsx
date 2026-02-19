@@ -188,7 +188,7 @@ export function Header() {
             alt="Institute of African Studies Logo"
             width={220}
             height={82}
-            className="h-auto w-auto"
+            className="w-[220px] h-[82px]"
             priority
           />
         </Link>
