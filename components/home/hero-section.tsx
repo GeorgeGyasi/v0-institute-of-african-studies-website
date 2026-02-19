@@ -11,36 +11,27 @@ const slides = [
     title: 'Institute of African Studies',
     subtitle: 'University of Ghana, Legon',
     description: 'Advancing knowledge and understanding of African societies, cultures, and histories through interdisciplinary research and scholarship since 1961.',
-    image: '/images/hero.jpg',
+    image: '/images/hero-slide-1.jpg',
     primaryCTA: { text: 'Explore Our Work', href: '/about' },
     secondaryCTA: { text: 'Research Areas', href: '/research' }
   },
   {
     id: 2,
-    title: 'Our Initiatives',
-    subtitle: 'Promoting Excellence',
-    description: 'Discover our graduate programs, research excellence initiatives, and cultural heritage preservation efforts.',
-    image: '/images/promotional.jpg',
+    title: 'Our Institution',
+    subtitle: 'A Center of Excellence',
+    description: 'Discover the Institute of African Studies, a beacon of knowledge and research dedicated to advancing African scholarship and cultural understanding.',
+    image: '/images/hero-slide-2.jpg',
     primaryCTA: { text: 'Learn More', href: '/research' },
-    secondaryCTA: { text: 'Programs', href: '/programs' }
+    secondaryCTA: { text: 'About Us', href: '/about' }
   },
   {
     id: 3,
-    title: 'Partnership Program',
-    subtitle: 'Global Collaboration',
-    description: 'Join us in our mission to advance African Studies through international partnerships and collaborative research.',
-    image: '/images/partnership.jpg',
-    primaryCTA: { text: 'Explore Partnerships', href: '/partnerships' },
-    secondaryCTA: { text: 'Contact Us', href: '/contact' }
-  },
-  {
-    id: 4,
-    title: 'Congratulations',
-    subtitle: 'Faculty Promotions',
-    description: 'Celebrating the achievements of our esteemed colleagues on their promotion to Associate and Full Professors.',
-    image: '/images/faculty-promotion-banner.jpg',
-    primaryCTA: { text: 'Meet Our Faculty', href: '/staff' },
-    secondaryCTA: { text: 'Learn More', href: '/about' }
+    title: 'Our Community',
+    subtitle: 'Engaging and Collaborative',
+    description: 'Join our vibrant academic community where students, faculty, and researchers work together to explore and celebrate African heritage.',
+    image: '/images/hero-slide-3.jpg',
+    primaryCTA: { text: 'Explore Programs', href: '/research' },
+    secondaryCTA: { text: 'Get Involved', href: '/contact' }
   }
 ]
 
