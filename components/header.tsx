@@ -186,8 +186,8 @@ export function Header() {
           <Image
             src="/images/logo.png"
             alt="Institute of African Studies Logo"
-            width={60}
-            height={22}
+            width={140}
+            height={52}
             className="h-auto w-auto"
             priority
           />
