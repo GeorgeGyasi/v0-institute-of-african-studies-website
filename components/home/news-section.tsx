@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, Calendar } from "lucide-react"
 
 const news = [
@@ -67,18 +68,31 @@ export function NewsSection() {
             <Link
               key={item.title}
               href={item.href}
-              className="group rounded-lg border border-border bg-card p-6 transition-shadow hover:shadow-md"
+              className="group overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-md"
             >
-              <div className="mb-3 flex items-center gap-2 text-xs text-muted-foreground">
-                <Calendar className="h-3.5 w-3.5" />
-                {item.date}
+              {item.images && item.images[0] && (
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={item.images[0]}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                <div className="mb-3 flex items-center gap-2 text-xs text-muted-foreground">
+                  <Calendar className="h-3.5 w-3.5" />
+                  {item.date}
+                </div>
+                <h3 className="mb-2 text-lg font-semibold text-foreground group-hover:text-primary">
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {item.excerpt}
+                </p>
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-foreground group-hover:text-primary">
-                {item.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {item.excerpt}
-              </p>
             </Link>
           ))}
         </div>
