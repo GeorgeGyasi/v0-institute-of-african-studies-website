@@ -15,12 +15,12 @@ const newsItems = [
     accent: "bg-primary",
   },
   {
-    date: "Dec 15, 2025",
-    category: "Programme",
-    title: "New MPhil Programme in African Digital Humanities Announced",
+    date: "June 11, 2025",
+    category: "Public Lecture",
+    title: "Day of Scientific Renaissance of Africa (DSRA) Public Lecture",
     excerpt:
-      "The Institute launches a pioneering graduate programme combining African studies with digital research methodologies, starting September 2026.",
-    href: "/academics/graduate",
+      "Pluriversal dialogues about alternative futures with Dr. Jan Linhart from the University of Bonn. Speaker explores cross-cultural learning and collaborative knowledge systems.",
+    href: "/events/dsra-public-lecture",
     accent: "bg-secondary",
   },
   {
