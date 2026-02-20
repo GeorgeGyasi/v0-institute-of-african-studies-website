@@ -92,15 +92,17 @@ export function HeroSection() {
 
           <div className="flex flex-wrap items-center gap-4">
             <Link
-              href={slide.primaryCTA.href}
-              className="group inline-flex items-center gap-2 rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all hover:shadow-lg hover:scale-105 active:scale-95"
+              href={mounted ? slide.primaryCTA.href : '#'}
+              onClick={(e) => !mounted && e.preventDefault()}
+              className="group inline-flex items-center gap-2 rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all hover:shadow-lg hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {slide.primaryCTA.text}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
-              href={slide.secondaryCTA.href}
-              className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-8 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/50"
+              href={mounted ? slide.secondaryCTA.href : '#'}
+              onClick={(e) => !mounted && e.preventDefault()}
+              className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-8 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/50 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {slide.secondaryCTA.text}
             </Link>

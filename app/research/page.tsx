@@ -65,6 +65,7 @@ export default function ResearchPage() {
               src="/images/research.jpg"
               alt="Research seminar at the Institute of African Studies"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-foreground/40" />

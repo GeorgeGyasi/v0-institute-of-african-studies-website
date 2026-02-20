@@ -52,6 +52,7 @@ export function UnitSection({ unit }: { unit: Unit }) {
                     src={item.image || "/placeholder.svg"}
                     alt={item.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-foreground/0 transition-colors group-hover:bg-foreground/10" />
