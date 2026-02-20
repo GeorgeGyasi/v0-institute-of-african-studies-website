@@ -19,6 +19,7 @@ const upcomingEvents = [
     description:
       "Workshop organized by the African Thoughts and Spirituality (Religion and Philosophy) Unit exploring rituals, abuse, and conflations of crimes in religious spaces. Features keynote speakers Dr. Justice A. Arthur & Dr. Fulera Issaka Toure, with guest speakers Nana Osofo-Komfo D. Quarm & Sheikh Sa-id Mukhtar.",
     type: "Workshop",
+    virtualLink: "https://shorturl.at/QkhxS",
   },
   {
     title: "Seminar: Decolonizing the African Archive",
@@ -164,13 +165,26 @@ export default function EventsPage() {
                       </span>
                     </div>
                   </div>
-                  <Link
-                    href="/contact"
-                    className="inline-flex shrink-0 items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-                  >
-                    Register
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  <div className="flex shrink-0 flex-col gap-2">
+                    {event.virtualLink && (
+                      <Link
+                        href={event.virtualLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-md border border-primary px-5 py-2.5 text-sm font-semibold text-primary transition-opacity hover:opacity-90"
+                      >
+                        Participate Here
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    )}
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+                    >
+                      Register
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))}
