@@ -22,13 +22,14 @@ const upcomingEvents = [
     virtualLink: "https://shorturl.at/QkhxS",
   },
   {
-    title: "Seminar: Decolonizing the African Archive",
-    date: "April 8, 2026",
-    time: "2:00 PM - 4:00 PM",
-    location: "IAS Seminar Room 201",
+    title: "Book Launch: The Social Life of Health Data",
+    date: "Tuesday, May 6, 2025",
+    time: "10:00 AM",
+    location: "J. H. Nketia Conference Hall, Institute of African Studies, University of Ghana",
     description:
-      "A research seminar exploring critical approaches to archival practice in African Studies, including community-based archiving and digital repatriation.",
-    type: "Seminar",
+      "Official launch of 'The Social Life of Health Data: Health Records and Knowledge Production in Ghana' edited by Alena Thiel & Samuel A. Ntewusu. Join us to explore the critical intersections of data, health, and society in the Ghanaian context. Available in person and virtually.",
+    type: "Book Launch",
+    virtualLink: "https://itucph.zoom.us/j/65301257673",
   },
   {
     title: "Workshop: Digital Humanities Methods for African Studies",
