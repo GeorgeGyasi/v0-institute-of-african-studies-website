@@ -15,22 +15,13 @@ const newsItems = [
     accent: "bg-primary",
   },
   {
-    date: "Jan 10, 2026",
-    category: "Keynote",
-    title: "Professor Ntewusu Delivers Keynote at Pan-African Heritage Summit",
-    excerpt:
-      "The Director of IAS presented on the role of academic institutions in safeguarding intangible cultural heritage across the continent.",
-    href: "/about/directors-message",
-    accent: "bg-secondary",
-  },
-  {
     date: "Dec 15, 2025",
     category: "Programme",
     title: "New MPhil Programme in African Digital Humanities Announced",
     excerpt:
       "The Institute launches a pioneering graduate programme combining African studies with digital research methodologies, starting September 2026.",
     href: "/academics/graduate",
-    accent: "bg-foreground",
+    accent: "bg-secondary",
   },
   {
     date: "Nov 22, 2025",
@@ -39,7 +30,7 @@ const newsItems = [
     excerpt:
       "The collaborative archival initiative between IAS and Manhyia Palace has been recognised for its outstanding contribution to cultural heritage documentation.",
     href: "/units/manhyia-archives",
-    accent: "bg-primary",
+    accent: "bg-foreground",
   },
 ]
 
