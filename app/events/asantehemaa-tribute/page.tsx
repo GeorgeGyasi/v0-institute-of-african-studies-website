@@ -35,25 +35,44 @@ export default function AsantehemaaTributePage() {
             </span>
           </div>
 
-          {/* Featured Images */}
-          <div className="mb-12 grid gap-6 md:grid-cols-2">
-            <div className="relative aspect-square overflow-hidden rounded-lg">
-              <Image
-                src="/images/asantehemaa-tribute-1.jpg"
-                alt="Asantehemaa funeral ceremony with royal regalia"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
+          {/* Featured Images with Alternating Layout */}
+          <div className="mb-12 space-y-12">
+            {/* Section 1: Image Left, Content Right */}
+            <div className="grid gap-8 md:grid-cols-2 md:items-center">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                <Image
+                  src="/images/asantehemaa-tribute-1.jpg"
+                  alt="Asantehemaa funeral ceremony with royal regalia"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="space-y-4">
+                <h2 className="text-2xl font-bold text-foreground">Royal Funeral Ceremony</h2>
+                <p className="leading-relaxed text-foreground">
+                  Throughout the four-day funeral, which featured a profound display of Ashanti drumming, dance, and protocol, the delegation gained invaluable scholarly insight into royal funeral customs. These observations contribute to the Institute's broader mission of understanding and preserving African cultural heritage.
+                </p>
+              </div>
             </div>
-            <div className="relative aspect-square overflow-hidden rounded-lg">
-              <Image
-                src="/images/asantehemaa-tribute-2.jpg"
-                alt="Institute delegation signing condolence book"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
+
+            {/* Section 2: Content Left, Image Right */}
+            <div className="grid gap-8 md:grid-cols-2 md:items-center">
+              <div className="space-y-4 md:order-2">
+                <h2 className="text-2xl font-bold text-foreground">A Delegation of Respect and Scholarship</h2>
+                <p className="leading-relaxed text-foreground">
+                  An administrative team, comprising Mrs. Yvonne Lartey and Diana Addo-Mensah, observed tradition by presenting ceremonial drinks and a cash donation to the Asantehene, Otumfuo Osei Tutu II, the Royal Family, and the people of Asanteman. The team also signed a book of condolence, formally documenting the Institute's participation in this significant moment in Ashanti history.
+                </p>
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg md:order-1">
+                <Image
+                  src="/images/asantehemaa-tribute-2.jpg"
+                  alt="Institute delegation signing condolence book"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
 
