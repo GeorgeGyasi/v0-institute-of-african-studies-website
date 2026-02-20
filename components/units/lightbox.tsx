@@ -70,6 +70,7 @@ export function Lightbox({ item, onClose }: LightboxProps) {
             src={item.image || "/placeholder.svg"}
             alt={item.title}
             fill
+            sizes="(max-width: 768px) 100vw, 60vw"
             className="object-cover"
           />
         </div>

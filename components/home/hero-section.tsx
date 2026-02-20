@@ -12,7 +12,7 @@ const slides = [
     subtitle: 'University of Ghana, Legon',
     description: 'Advancing knowledge and understanding of African societies, cultures, and histories through interdisciplinary research and scholarship since 1961.',
     image: '/images/hero-slide-1.jpg',
-    primaryCTA: { text: 'Explore Our Work', href: '/about' },
+    primaryCTA: { text: 'Explore Our Work', href: '/research' },
     secondaryCTA: { text: 'Research Areas', href: '/research' }
   },
   {
