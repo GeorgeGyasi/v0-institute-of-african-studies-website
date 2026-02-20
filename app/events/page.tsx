@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 
 const upcomingEvents = [
   {
-    title: "International Conference on African Oral Traditions",
-    date: "March 15-17, 2026",
-    time: "9:00 AM - 5:00 PM",
-    location: "IAS Conference Hall, University of Ghana",
+    title: "Advancing Discourse on Acts of Faith in Religious Spaces",
+    date: "June 13, 2025",
+    time: "9:00 AM",
+    location: "J. H. Nketia Conference Hall, Institute of African Studies, University of Ghana",
     description:
-      "A three-day conference bringing together scholars from over 20 countries to discuss preservation strategies for African oral traditions in the digital age.",
-    type: "Conference",
+      "Workshop organized by the African Thoughts and Spirituality (Religion and Philosophy) Unit exploring rituals, abuse, and conflations of crimes in religious spaces. Features keynote speakers Dr. Justice A. Arthur & Dr. Fulera Issaka Toure, with guest speakers Nana Osofo-Komfo D. Quarm & Sheikh Sa-id Mukhtar.",
+    type: "Workshop",
   },
   {
     title: "Seminar: Decolonizing the African Archive",
