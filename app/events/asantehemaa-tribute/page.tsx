@@ -72,7 +72,13 @@ export default function AsantehemaaTributePage() {
               The Palace warmly acknowledged the Institute's gesture of respect and solidarity, reinforcing the strong relationship between the Manhyia Palace and the Institute of African Studies. This partnership continues to be a vital collaboration in advancing African scholarship and cultural preservation.
             </p>
 
-            {/* Image inserted after key sentence */}
+            <h2 className="mb-4 text-2xl font-bold text-foreground">Delegation Members</h2>
+            <ul className="mb-12 list-disc space-y-2 pl-6 text-foreground">
+              <li><strong>Research Team:</strong> Dr. Edem Adotey, Mrs. Judith Opoku Boateng</li>
+              <li><strong>Administrative Team:</strong> Mrs. Yvonne Lartey, Diana Addo-Mensah</li>
+            </ul>
+
+            {/* Image inserted after Delegation Members */}
             <div className="mb-12">
               <div className="relative aspect-video overflow-hidden rounded-lg">
                 <Image
@@ -84,12 +90,6 @@ export default function AsantehemaaTributePage() {
                 />
               </div>
             </div>
-
-            <h2 className="mb-4 text-2xl font-bold text-foreground">Delegation Members</h2>
-            <ul className="mb-6 list-disc space-y-2 pl-6 text-foreground">
-              <li><strong>Research Team:</strong> Dr. Edem Adotey, Mrs. Judith Opoku Boateng</li>
-              <li><strong>Administrative Team:</strong> Mrs. Yvonne Lartey, Diana Addo-Mensah</li>
-            </ul>
 
             <p className="text-sm italic text-muted-foreground">
               This visit reflects the Institute of African Studies' ongoing commitment to documenting, understanding, and preserving the rich cultural heritage of African societies.
