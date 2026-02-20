@@ -12,6 +12,13 @@ const news = [
     images: ["/images/asantehemaa-tribute-1.jpg", "/images/asantehemaa-tribute-2.jpg"],
   },
   {
+    date: "June 11, 2025",
+    title: "Day of Scientific Renaissance of Africa (DSRA) Public Lecture",
+    excerpt:
+      "Pluriversal dialogues about alternative futures featuring Dr. Jan Linhart from the University of Bonn exploring cross-cultural learning and collaborative knowledge systems.",
+    href: "/events/dsra-public-lecture",
+  },
+  {
     date: "January 2026",
     title: "International Conference on African Oral Traditions",
     excerpt:
