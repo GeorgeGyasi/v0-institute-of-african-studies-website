@@ -96,10 +96,10 @@ export default function OralTraditionsConferencePage() {
             </ul>
 
             <h3 className="mt-8 font-serif text-xl font-bold text-foreground">
-              Keynote Speakers
+              Public Lecture
             </h3>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Keynote addresses will be delivered by leading researchers in
+              Public lecture addresses will be delivered by leading researchers in
               African oral traditions, including scholars from the University of
               Cape Town, SOAS University of London, and the University of Dar es
               Salaam. The full speaker list will be announced in February 2026.
