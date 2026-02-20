@@ -24,12 +24,12 @@ const newsItems = [
     accent: "bg-secondary",
   },
   {
-    date: "Nov 22, 2025",
-    category: "Recognition",
-    title: "Manhyia Archives Receives UNESCO Recognition for Preservation Work",
+    date: "June 12, 2025",
+    category: "Panel Discussion",
+    title: "Indigenous Knowledge and Innovation: African Solutions for Climate Resilience",
     excerpt:
-      "The collaborative archival initiative between IAS and Manhyia Palace has been recognised for its outstanding contribution to cultural heritage documentation.",
-    href: "/units/manhyia-archives",
+      "Celebrating the 2025 Day of Scientific Renaissance of Africa. Panel exploring how indigenous knowledge systems offer solutions for climate resilience and socio-economic transformation.",
+    href: "/events/indigenous-knowledge-panel",
     accent: "bg-foreground",
   },
 ]
