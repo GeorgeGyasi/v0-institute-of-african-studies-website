@@ -6,12 +6,12 @@ import { ArrowRight, Calendar, ChevronRight } from "lucide-react"
 
 const newsItems = [
   {
-    date: "Jan 28, 2026",
-    category: "Symposium",
-    title: "IAS Hosts International Symposium on Oral Traditions in the Digital Age",
+    date: "September 2025",
+    category: "Tribute",
+    title: "Paying Tribute to the Asantehemaa",
     excerpt:
-      "Over 120 scholars from 18 countries convened at the University of Ghana to discuss the preservation and digital archiving of Africa's oral heritage.",
-    href: "/events/oral-traditions-conference",
+      "The IAS honors its partnership with Manhyia Palace during the final funeral rites of the late Asantehemaa, Nana Ama Konadu Yiadom III, documenting royal customs and Ashanti heritage.",
+    href: "/events/asantehemaa-tribute",
     accent: "bg-primary",
   },
   {
