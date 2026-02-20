@@ -35,21 +35,12 @@ export default function AsantehemaaTributePage() {
             </span>
           </div>
 
-          {/* Featured Images - Full Width Stacked */}
-          <div className="mb-12 space-y-6">
+          {/* Featured Image - Full Width */}
+          <div className="mb-12">
             <div className="relative aspect-video overflow-hidden rounded-lg">
               <Image
                 src="/images/asantehemaa-tribute-1.jpg"
                 alt="Asantehemaa funeral ceremony with royal regalia"
-                fill
-                sizes="100vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-video overflow-hidden rounded-lg">
-              <Image
-                src="/images/asantehemaa-tribute-2.jpg"
-                alt="Institute delegation signing condolence book"
                 fill
                 sizes="100vw"
                 className="object-cover"
@@ -80,6 +71,19 @@ export default function AsantehemaaTributePage() {
             <p className="mb-6 leading-relaxed text-foreground">
               The Palace warmly acknowledged the Institute's gesture of respect and solidarity, reinforcing the strong relationship between the Manhyia Palace and the Institute of African Studies. This partnership continues to be a vital collaboration in advancing African scholarship and cultural preservation.
             </p>
+
+            {/* Image inserted after key sentence */}
+            <div className="mb-12">
+              <div className="relative aspect-video overflow-hidden rounded-lg">
+                <Image
+                  src="/images/asantehemaa-tribute-2.jpg"
+                  alt="Institute delegation signing condolence book"
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
 
             <h2 className="mb-4 text-2xl font-bold text-foreground">Delegation Members</h2>
             <ul className="mb-6 list-disc space-y-2 pl-6 text-foreground">
