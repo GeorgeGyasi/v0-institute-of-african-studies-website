@@ -3,6 +3,14 @@ import { ArrowRight, Calendar } from "lucide-react"
 
 const news = [
   {
+    date: "September 2025",
+    title: "Paying Tribute to the Asantehemaa",
+    excerpt:
+      "The IAS honors its partnership with Manhyia Palace during the final funeral rites of the late Asantehemaa, documenting royal funeral customs and Ashanti heritage.",
+    href: "/events/asantehemaa-tribute",
+    images: ["/images/asantehemaa-tribute-1.jpg", "/images/asantehemaa-tribute-2.jpg"],
+  },
+  {
     date: "January 2026",
     title: "International Conference on African Oral Traditions",
     excerpt:
