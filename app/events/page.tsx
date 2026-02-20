@@ -32,13 +32,14 @@ const upcomingEvents = [
     virtualLink: "https://itucph.zoom.us/j/65301257673",
   },
   {
-    title: "Workshop: Digital Humanities Methods for African Studies",
-    date: "May 5-6, 2026",
-    time: "10:00 AM - 4:00 PM",
-    location: "IAS Computer Lab",
+    title: "Efua Sutherland Centenary Conference 2025",
+    date: "March 27-28, 2025",
+    time: "9:30 AM - 5:25 PM",
+    location: "Institute of African Studies & School of Performing Arts, University of Ghana",
     description:
-      "Hands-on workshop introducing digital tools and methodologies for African Studies research, including text mining, GIS mapping, and digital storytelling.",
-    type: "Workshop",
+      "International conference celebrating Efua Sutherland's centenary (1924-2024) with the theme 'Efua Sutherland and the Creation of African Scholarly Paradigms Since 1960: Continuity or Rupture'. Features keynote addresses, eight thematic panels, creative workshops, and an evening performance. Organized with Rutgers University and the Busia Foundation International.",
+    type: "Conference",
+    virtualLink: "https://shorturl.at/lEs44",
   },
   {
     title: "Public Lecture: African Art in Global Collections",
