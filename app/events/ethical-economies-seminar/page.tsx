@@ -1,15 +1,15 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
-import { Calendar, Clock, MapPin, Users, ExternalLink, Download } from "lucide-react"
+import { Calendar, Clock, MapPin, Users, Download } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Seminar on Ethical Economies in Cape Town, Mumbai, and Accra",
   description:
-    "Multi-continental seminar on ethical economies, market practices, consumption and regulation across three cities.",
+    "Multi-continental exploration of ethical economies, market practices, consumption, and regulation across three cities.",
 }
 
-export default function EthicalEconomiesSeminar() {
+export default function EthicalEconomiesSeminarPage() {
   return (
     <>
       <PageHeader
@@ -19,74 +19,90 @@ export default function EthicalEconomiesSeminar() {
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
-          <div className="mb-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-            <span className="inline-flex items-center gap-2">
-              <Calendar className="h-4 w-4 text-primary" />
-              August 15, 2025
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <Clock className="h-4 w-4 text-primary" />
-              TBD
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-primary" />
-              Institute of African Studies, University of Ghana
-            </span>
+          {/* Event Metadata */}
+          <div className="mb-8 border-b border-border pb-8">
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="flex items-start gap-3">
+                <Calendar className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Date</p>
+                  <p className="font-semibold text-foreground">August 15, 2025</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Time</p>
+                  <p className="font-semibold text-foreground">TBD</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Venue</p>
+                  <p className="font-semibold text-foreground">Institute of African Studies</p>
+                </div>
+              </div>
+            </div>
           </div>
 
+          {/* Action Buttons */}
+          <div className="mb-12 flex flex-wrap gap-4">
+            <a
+              href="/documents/ethical-economies-seminar.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              <Download className="h-4 w-4" />
+              Download PDF
+            </a>
+          </div>
+
+          {/* Main Content */}
           <article className="prose prose-invert max-w-none">
             <p className="mb-6 text-lg leading-relaxed text-foreground">
-              The Institute of African Studies, in collaboration with Leiden University and Stellenbosch University, is organizing a seminal seminar on "Ethical Economies: Market Practices, Consumption and Regulation." This multi-continental initiative brings together scholars, practitioners, and policymakers to examine ethical dimensions of economic practices across three major cities: Cape Town, Mumbai, and Accra.
+              The Institute of African Studies, University of Ghana, in collaboration with Leiden University and Stellenbosch University, hosts a seminal seminar exploring "Ethical Economies: Market Practices, Consumption and Regulation." This multi-continental initiative brings together scholars, practitioners, and policymakers from Cape Town, Mumbai, and Accra to advance dialogue on ethical dimensions of economic systems.
             </p>
 
             <h2 className="mb-4 text-2xl font-bold text-foreground">Seminar Focus</h2>
             <p className="mb-6 leading-relaxed text-foreground">
-              The seminar explores how ethical considerations shape market practices, consumption patterns, and regulatory frameworks across different cultural, economic, and political contexts. By examining cases from three continents, the seminar seeks to identify shared ethical principles and culturally specific approaches to creating more just and sustainable economic systems.
+              This seminar examines how ethical frameworks shape market practices, consumer behavior, and regulatory systems across diverse geographic and cultural contexts. By comparing perspectives from three continents, participants explore shared challenges and innovative solutions for building more ethical and equitable economic systems.
             </p>
 
-            <h2 className="mb-4 text-2xl font-bold text-foreground">Key Themes</h2>
-            <ul className="mb-6 list-disc space-y-2 pl-6 text-foreground">
-              <li><strong>Market Ethics:</strong> Examining fair trade, ethical sourcing, and responsible business practices</li>
-              <li><strong>Consumer Responsibility:</strong> Understanding how consumers make ethical choices and what influences consumption patterns</li>
-              <li><strong>Regulatory Frameworks:</strong> Comparing how different jurisdictions govern market practices to promote ethical economic behavior</li>
-              <li><strong>Grassroots Movements:</strong> Exploring community-led initiatives for economic justice and sustainability</li>
-              <li><strong>Policy Innovation:</strong> Identifying promising approaches to embedding ethical principles in economic governance</li>
+            <h2 className="mb-4 text-2xl font-bold text-foreground">Key Topics</h2>
+            <ul className="mb-12 list-disc space-y-2 pl-6 text-foreground">
+              <li>Market practices and ethical frameworks across continents</li>
+              <li>Consumer behavior and ethical consumption patterns</li>
+              <li>Government regulation and market governance</li>
+              <li>Informal economies and alternative economic models</li>
+              <li>Corporate social responsibility in African contexts</li>
+              <li>Sustainability and ethical economic development</li>
             </ul>
 
             <h2 className="mb-4 text-2xl font-bold text-foreground">Collaborating Institutions</h2>
-            <div className="mb-6 space-y-3">
-              <div className="rounded-lg bg-card p-4 border border-border">
-                <p className="font-semibold text-foreground">Institute of African Studies</p>
-                <p className="text-sm text-muted-foreground">University of Ghana - Host Institution</p>
+            <div className="mb-12 rounded-lg bg-card border border-border p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Users className="h-5 w-5 text-primary" />
+                <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Co-Organizers</p>
               </div>
-              <div className="rounded-lg bg-card p-4 border border-border">
-                <p className="font-semibold text-foreground">Leiden University</p>
-                <p className="text-sm text-muted-foreground">Netherlands - Co-organizer</p>
-              </div>
-              <div className="rounded-lg bg-card p-4 border border-border">
-                <p className="font-semibold text-foreground">Stellenbosch University</p>
-                <p className="text-sm text-muted-foreground">South Africa - Co-organizer</p>
-              </div>
+              <ul className="space-y-2 text-foreground">
+                <li>Institute of African Studies, University of Ghana (Accra Hub)</li>
+                <li>Leiden University (European Perspective)</li>
+                <li>Stellenbosch University (African Perspective)</li>
+              </ul>
             </div>
 
-            <h2 className="mb-4 text-2xl font-bold text-foreground">Expected Outcomes</h2>
+            <h2 className="mb-4 text-2xl font-bold text-foreground">About This Initiative</h2>
             <p className="mb-6 leading-relaxed text-foreground">
-              The seminar will produce a comparative analysis of ethical economies across the three cities, identify best practices for ethical market governance, and develop recommendations for policymakers and civil society organizations seeking to advance ethical economic systems. Participants will also forge collaborative networks for ongoing research and advocacy on ethical economies.
+              The Ethical Economies seminar series represents a commitment to advancing comparative scholarship on how societies across the Global South and North grapple with market regulation, consumer ethics, and sustainable development. By fostering dialogue across institutional and geographic boundaries, the seminar contributes to building more inclusive and equitable approaches to economic governance.
             </p>
 
-            <h2 className="mb-4 text-2xl font-bold text-foreground">Access Materials</h2>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="/documents/ethical-economies-seminar.pdf"
-                download
-                className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-              >
-                <Download className="h-4 w-4" />
-                Download Seminar Details
-              </a>
-            </div>
+            <p className="text-sm italic text-muted-foreground">
+              For detailed information about seminar sessions, speakers, and registration, please download the program PDF above. This initiative welcomes scholars, policymakers, business leaders, and civil society representatives interested in advancing ethical perspectives on economic systems.
+            </p>
           </article>
 
+          {/* Back Link */}
           <div className="mt-12 border-t border-border pt-8">
             <a
               href="/events"
