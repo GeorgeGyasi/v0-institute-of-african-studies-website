@@ -8,7 +8,7 @@ const news = [
     title: "Paying Tribute to the Asantehemaa",
     excerpt:
       "The IAS honors its partnership with Manhyia Palace during the final funeral rites of the late Asantehemaa, documenting royal funeral customs and Ashanti heritage.",
-    href: "/events/asantehemaa-tribute",
+    href: "/news/asantehemaa-tribute",
     images: ["/images/asantehemaa-tribute-1.jpg", "/images/asantehemaa-tribute-2.jpg"],
   },
   {
@@ -16,35 +16,35 @@ const news = [
     title: "Day of Scientific Renaissance of Africa (DSRA) Public Lecture",
     excerpt:
       "Pluriversal dialogues about alternative futures featuring Dr. Jan Linhart from the University of Bonn exploring cross-cultural learning and collaborative knowledge systems.",
-    href: "/events/dsra-public-lecture",
+    href: "/news/dsra-public-lecture",
   },
   {
     date: "January 2026",
     title: "International Conference on African Oral Traditions",
     excerpt:
       "Scholars from over 20 countries gather to discuss preservation strategies for African oral traditions in the digital age.",
-    href: "/events",
+    href: "/news/african-oral-traditions-conference",
   },
   {
     date: "December 2025",
     title: "New Archival Collection: Gold Coast Photography 1920-1957",
     excerpt:
       "Over 3,000 newly digitized photographs documenting everyday life in the Gold Coast now available for public research.",
-    href: "/units",
+    href: "/news/gold-coast-photography-collection",
   },
   {
     date: "November 2025",
     title: "IAS Research Fellow Wins Continental Humanities Award",
     excerpt:
       "Dr. Ama Boahen receives the African Humanities Prize for groundbreaking work in postcolonial identity studies.",
-    href: "/research",
+    href: "/news/research-fellow-award",
   },
   {
     date: "October 2025",
     title: "Partnership with SOAS University of London",
     excerpt:
       "New memorandum of understanding signed to establish joint doctoral program in African Cultural Studies.",
-    href: "/about",
+    href: "/news/soas-partnership",
   },
 ]
 
