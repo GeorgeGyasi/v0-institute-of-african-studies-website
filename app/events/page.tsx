@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
-import { Calendar, MapPin, Clock, ArrowRight } from "lucide-react"
+import { Calendar, MapPin, Clock, ArrowRight, Download } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Events",
@@ -40,6 +40,7 @@ const upcomingEvents = [
       "International conference celebrating Efua Sutherland's centenary (1924-2024) with the theme 'Efua Sutherland and the Creation of African Scholarly Paradigms Since 1960: Continuity or Rupture'. Features keynote addresses, eight thematic panels, creative workshops, and an evening performance. Organized with Rutgers University and the Busia Foundation International.",
     type: "Conference",
     virtualLink: "https://shorturl.at/lEs44",
+    pdfDownload: "/documents/efua-sutherland-programme-outline.pdf",
   },
   {
     title: "Public Lecture: African Art in Global Collections",
@@ -170,6 +171,16 @@ export default function EventsPage() {
                     </div>
                   </div>
                   <div className="flex shrink-0 flex-col gap-2">
+                    {event.pdfDownload && (
+                      <a
+                        href={event.pdfDownload}
+                        download
+                        className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+                      >
+                        <Download className="h-4 w-4" />
+                        Download
+                      </a>
+                    )}
                     {event.virtualLink && (
                       <Link
                         href={event.virtualLink}
