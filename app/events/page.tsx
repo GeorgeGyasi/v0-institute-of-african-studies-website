@@ -59,31 +59,37 @@ const pastEvents = [
     title: "Annual Research Review Symposium 2025",
     date: "November 2025",
     type: "Symposium",
+    href: "/events/annual-research-symposium",
   },
   {
     title: "Film Screening: Stories from the Gold Coast Archives",
     date: "October 2025",
     type: "Screening",
+    href: "/events/film-screening-gold-coast",
   },
   {
     title: "Workshop: Field Methods in Linguistic Documentation",
     date: "September 2025",
     type: "Workshop",
+    href: "/events/field-methods-workshop",
   },
   {
     title: "Seminar Series: Women and Governance in Africa",
     date: "August 2025",
     type: "Seminar",
+    href: "/events/women-governance-seminar",
   },
   {
     title: "Heritage Day: Open Access to IAS Collections",
     date: "July 2025",
     type: "Open Day",
+    href: "/events/heritage-day",
   },
   {
     title: "Collaborative Research Planning Workshop with SOAS",
     date: "June 2025",
     type: "Workshop",
+    href: "/events/soas-collaborative-workshop",
   },
 ]
 
@@ -212,9 +218,10 @@ export default function EventsPage() {
           </h2>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {pastEvents.map((event) => (
-              <div
+              <Link
                 key={event.title}
-                className="rounded-lg border border-border bg-background p-5"
+                href={event.href}
+                className="group rounded-lg border border-border bg-background p-5 transition-all hover:border-primary hover:shadow-md"
               >
                 <div className="mb-2 flex items-center gap-2">
                   <span
@@ -226,10 +233,10 @@ export default function EventsPage() {
                     {event.date}
                   </span>
                 </div>
-                <h3 className="text-sm font-semibold text-foreground">
+                <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
                   {event.title}
                 </h3>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
