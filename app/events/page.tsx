@@ -116,6 +116,8 @@ export default function EventsPage() {
               src="/images/events.jpg"
               alt="Academic conference at the Institute of African Studies"
               fill
+              sizes="100vw"
+              loading="eager"
               className="object-cover"
             />
           </div>
