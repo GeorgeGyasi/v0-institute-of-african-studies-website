@@ -1,136 +1,123 @@
-import { Metadata } from "next"
+import type { Metadata } from "next"
+import { PageHeader } from "@/components/page-header"
+import { Calendar, MapPin, Clock, Users, ExternalLink } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
-import { ArrowLeft, Calendar, Clock, MapPin, Users } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Indigenous Knowledge and Innovation Panel Discussion",
+  title: "Indigenous Knowledge and Innovation: African Solutions for Climate Resilience",
   description:
-    "Panel discussion on African solutions for climate resilience and socio-economic transformation, part of the 2025 Day of Scientific Renaissance of Africa.",
+    "Panel discussion on African solutions for climate resilience and socio-economic transformation as part of the Day of Scientific Renaissance of Africa.",
 }
 
 export default function IndigenousKnowledgePanelPage() {
   return (
-    <main className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="border-b border-border bg-card">
-        <div className="mx-auto max-w-4xl px-6 py-12">
-          <Link
-            href="/"
-            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to home
-          </Link>
-          
-          <div className="space-y-4">
-            <div className="inline-block rounded-full bg-secondary px-4 py-2 text-xs font-bold uppercase tracking-wider text-secondary-foreground">
-              Panel Discussion
+    <>
+      <PageHeader
+        title="Indigenous Knowledge and Innovation: African Solutions for Climate Resilience"
+        subtitle="Celebrating the 2025 Day of Scientific Renaissance of Africa"
+      />
+
+      <section className="py-16">
+        <div className="mx-auto max-w-4xl px-6">
+          {/* Event Metadata */}
+          <div className="mb-8 border-b border-border pb-8">
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="flex items-start gap-3">
+                <Calendar className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Date</p>
+                  <p className="font-semibold text-foreground">Thursday, June 12, 2025</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Time</p>
+                  <p className="font-semibold text-foreground">9:00 AM</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Venue</p>
+                  <p className="font-semibold text-foreground">J.H. Nketia Conference Room</p>
+                </div>
+              </div>
             </div>
-            <h1 className="font-serif text-4xl font-bold leading-tight text-foreground lg:text-5xl">
-              Indigenous Knowledge and Innovation: African Solutions for Climate Resilience and Socio-Economic Transformation
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Celebrating the 2025 Day of Scientific Renaissance of Africa
+          </div>
+
+          {/* Action Buttons */}
+          <div className="mb-12 flex flex-wrap gap-4">
+            <Link
+              href="https://tinyurl.com/yxmsc8nh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Join Virtually
+            </Link>
+          </div>
+
+          {/* Main Content */}
+          <article className="prose prose-invert max-w-none">
+            <p className="mb-6 text-lg leading-relaxed text-foreground">
+              The Institute of African Studies is pleased to host a panel discussion exploring how indigenous knowledge systems and innovations offer practical solutions for addressing climate resilience and driving socio-economic transformation across Africa. This event celebrates the 2025 Day of Scientific Renaissance of Africa.
             </p>
+
+            <h2 className="mb-4 text-2xl font-bold text-foreground">Panel Overview</h2>
+            <p className="mb-6 leading-relaxed text-foreground">
+              This timely conversation brings together scholars and experts to examine the intersection of traditional African knowledge systems with contemporary challenges. The discussion demonstrates how ancestral wisdom and modern innovation can work synergistically to create sustainable development pathways for African communities and beyond.
+            </p>
+
+            <h2 className="mb-4 text-2xl font-bold text-foreground">Key Discussion Topics</h2>
+            <ul className="mb-12 list-disc space-y-2 pl-6 text-foreground">
+              <li>Integration of indigenous knowledge systems with climate adaptation strategies</li>
+              <li>Traditional African approaches to sustainable resource management</li>
+              <li>Innovation and entrepreneurship rooted in ancestral wisdom</li>
+              <li>Case studies of successful indigenous-led development initiatives</li>
+              <li>Bridging traditional and contemporary scientific approaches</li>
+            </ul>
+
+            <h2 className="mb-4 text-2xl font-bold text-foreground">Panel Leadership</h2>
+            <div className="mb-12 rounded-lg bg-card border border-border p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Users className="h-5 w-5 text-primary" />
+                <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Leadership</p>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold text-foreground">Prof. Samuel Ntewusu</p>
+                  <p className="text-sm text-muted-foreground">Host - Institute of African Studies, University of Ghana</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">Prof. Deborah Atobrah</p>
+                  <p className="text-sm text-muted-foreground">Chairperson</p>
+                </div>
+              </div>
+            </div>
+
+            <h2 className="mb-4 text-2xl font-bold text-foreground">About Day of Scientific Renaissance of Africa</h2>
+            <p className="mb-6 leading-relaxed text-foreground">
+              The Day of Scientific Renaissance of Africa (DSRA) is a continental celebration that recognizes and promotes Africa's scientific heritage and contemporary contributions to global knowledge systems. The Institute of African Studies participates in this celebration with a series of academic events highlighting Africa's intellectual traditions and innovative solutions to contemporary challenges.
+            </p>
+
+            <p className="text-sm italic text-muted-foreground">
+              This panel welcomes the University of Ghana community and the general public. Attend in person at the venue or participate virtually using the link above.
+            </p>
+          </article>
+
+          {/* Back Link */}
+          <div className="mt-12 border-t border-border pt-8">
+            <a
+              href="/events"
+              className="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
+            >
+              ← Back to Events
+            </a>
           </div>
         </div>
-      </div>
-
-      {/* Content */}
-      <div className="mx-auto max-w-4xl px-6 py-12">
-        <div className="prose prose-invert max-w-none space-y-8 text-foreground">
-          {/* Event Details Grid */}
-          <div className="grid gap-6 rounded-lg border border-border bg-card p-8 md:grid-cols-2">
-            <div className="flex gap-4">
-              <Calendar className="h-6 w-6 flex-shrink-0 text-secondary" />
-              <div>
-                <p className="text-sm font-semibold text-muted-foreground uppercase">Date</p>
-                <p className="mt-1 text-lg font-semibold text-foreground">Thursday 12th June 2025</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <Clock className="h-6 w-6 flex-shrink-0 text-secondary" />
-              <div>
-                <p className="text-sm font-semibold text-muted-foreground uppercase">Time</p>
-                <p className="mt-1 text-lg font-semibold text-foreground">9:00 AM</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 md:col-span-2">
-              <MapPin className="h-6 w-6 flex-shrink-0 text-secondary" />
-              <div>
-                <p className="text-sm font-semibold text-muted-foreground uppercase">Venue</p>
-                <p className="mt-1 text-lg font-semibold text-foreground">J.H. Nketia Conference Room, Institute of African Studies, University of Ghana</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Description */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground">About This Panel Discussion</h2>
-            <p className="leading-relaxed text-muted-foreground">
-              The Institute of African Studies is pleased to host this panel discussion as part of the 2025 Day of Scientific Renaissance of Africa celebration. This timely conversation brings together scholars and experts to explore how indigenous knowledge systems and innovations offer practical solutions for addressing climate resilience and driving socio-economic transformation across Africa.
-            </p>
-            <p className="leading-relaxed text-muted-foreground">
-              The panel will examine the intersection of traditional African knowledge systems with contemporary challenges, demonstrating how ancestral wisdom and modern innovation can work synergistically to create sustainable development pathways.
-            </p>
-          </div>
-
-          {/* Speakers */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground">Panel Leadership</h2>
-            <div className="space-y-4">
-              <div className="rounded-lg border border-border bg-card/50 p-6">
-                <p className="flex items-center gap-2 text-sm font-semibold text-secondary">
-                  <Users className="h-4 w-4" />
-                  HOST
-                </p>
-                <p className="mt-2 text-lg font-semibold text-foreground">Prof. Samuel Ntewusu</p>
-                <p className="text-sm text-muted-foreground">Institute of African Studies, University of Ghana</p>
-              </div>
-
-              <div className="rounded-lg border border-border bg-card/50 p-6">
-                <p className="flex items-center gap-2 text-sm font-semibold text-secondary">
-                  <Users className="h-4 w-4" />
-                  CHAIRPERSON
-                </p>
-                <p className="mt-2 text-lg font-semibold text-foreground">Prof. Deborah Atobrah</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Participation */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground">How to Participate</h2>
-            <p className="leading-relaxed text-muted-foreground">
-              This event welcomes the University of Ghana community and the general public. You can attend either in person at the venue or participate virtually.
-            </p>
-            <div className="space-y-3">
-              <div className="rounded-lg border border-border bg-card p-4">
-                <p className="text-sm font-semibold text-muted-foreground uppercase">Virtual Link</p>
-                <a
-                  href="https://tinyurl.com/yxmsc8nh"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center gap-2 text-lg font-semibold text-secondary hover:text-secondary/80 transition-colors break-all"
-                >
-                  https://tinyurl.com/yxmsc8nh
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Theme Context */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground">Day of Scientific Renaissance of Africa 2025</h2>
-            <p className="leading-relaxed text-muted-foreground">
-              The Day of Scientific Renaissance of Africa (DSRA) is a continental celebration that recognizes and promotes Africa's scientific heritage and contemporary contributions to global knowledge systems. The Institute of African Studies joins this celebration with a series of academic events highlighting Africa's intellectual traditions and innovative solutions to contemporary challenges.
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
+      </section>
+    </>
   )
 }

@@ -1,12 +1,11 @@
 import type { Metadata } from "next"
 import { PageHeader } from "@/components/page-header"
-import { Calendar, MapPin, Users, ExternalLink } from "lucide-react"
-import Link from "next/link"
+import { Calendar, MapPin, Users } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Day of Scientific Renaissance of Africa (DSRA) Public Lecture",
   description:
-    "Pluriversal dialogues about alternative futures featuring Dr. Jan Linhart exploring cross-cultural learning and collaborative knowledge systems.",
+    "Pluriversal dialogues about alternative futures featuring Dr. Jan Linhart from University of Bonn exploring cross-cultural learning and collaborative knowledge systems.",
 }
 
 export default function DSRAPublicLecturePage() {
@@ -19,7 +18,7 @@ export default function DSRAPublicLecturePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
-          {/* Article Header */}
+          {/* Event Metadata */}
           <div className="mb-8 border-b border-border pb-8">
             <div className="grid gap-4 md:grid-cols-3">
               <div className="flex items-start gap-3">
@@ -49,12 +48,12 @@ export default function DSRAPublicLecturePage() {
           {/* Main Content */}
           <article className="prose prose-invert max-w-none">
             <p className="mb-6 text-lg leading-relaxed text-foreground">
-              As part of the global Day of Scientific Renaissance of Africa (DSRA) initiative, the Institute of African Studies hosted a public lecture on pluriversal dialogues about alternative futures, featuring Dr. Jan Linhart from the University of Bonn.
+              As part of the global Day of Scientific Renaissance of Africa (DSRA) initiative, the Institute of African Studies hosted a public lecture on pluriversal dialogues about alternative futures, featuring Dr. Jan Linhart from the University of Bonn. The lecture explored innovative approaches to cross-cultural learning and collaborative knowledge systems.
             </p>
 
             <h2 className="mb-4 text-2xl font-bold text-foreground">About the Lecture</h2>
             <p className="mb-6 leading-relaxed text-foreground">
-              The lecture explored innovative approaches to cross-cultural learning and collaborative knowledge systems. Dr. Linhart's presentation examined how African intellectual traditions can contribute to shaping alternative futures and more inclusive approaches to global knowledge production.
+              Dr. Linhart's presentation examined how African intellectual traditions can contribute to shaping alternative futures and more inclusive approaches to global knowledge production. The lecture emphasized the importance of recognizing diverse knowledge systems and building bridges between African and European scholarly communities.
             </p>
 
             <h2 className="mb-4 text-2xl font-bold text-foreground">Key Themes</h2>
@@ -67,13 +66,20 @@ export default function DSRAPublicLecturePage() {
             </ul>
 
             <h2 className="mb-4 text-2xl font-bold text-foreground">About Dr. Jan Linhart</h2>
-            <p className="mb-6 leading-relaxed text-foreground">
-              Dr. Jan Linhart is a scholar at the University of Bonn with extensive experience in African studies and international collaborative research. His work focuses on bridging academic traditions and fostering meaningful dialogue between African and European intellectual communities.
-            </p>
+            <div className="mb-12 rounded-lg bg-card border border-border p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Users className="h-5 w-5 text-primary" />
+                <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Speaker</p>
+              </div>
+              <p className="mb-3 font-semibold text-foreground">Dr. Jan Linhart</p>
+              <p className="text-foreground leading-relaxed">
+                Dr. Linhart is a scholar at the University of Bonn with extensive experience in African studies and international collaborative research. His work focuses on bridging academic traditions and fostering meaningful dialogue between African and European intellectual communities, with particular emphasis on how diverse knowledge systems can contribute to addressing global challenges.
+              </p>
+            </div>
 
             <h2 className="mb-4 text-2xl font-bold text-foreground">Day of Scientific Renaissance of Africa</h2>
             <p className="mb-6 leading-relaxed text-foreground">
-              The DSRA is a global initiative dedicated to celebrating African contributions to science and knowledge creation, promoting African-led research agendas, and fostering international collaboration that centers African perspectives and intellectual leadership.
+              The DSRA is a global initiative dedicated to celebrating African contributions to science and knowledge creation, promoting African-led research agendas, and fostering international collaboration that centers African perspectives and intellectual leadership. The Institute of African Studies participates in this celebration with a series of academic events highlighting Africa's intellectual traditions and innovative contributions to global knowledge systems.
             </p>
 
             <p className="text-sm italic text-muted-foreground">
