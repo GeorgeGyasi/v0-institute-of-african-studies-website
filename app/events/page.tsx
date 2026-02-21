@@ -43,13 +43,13 @@ const upcomingEvents = [
     pdfDownload: "/documents/efua-sutherland-programme-outline.pdf",
   },
   {
-    title: "Public Lecture: African Art in Global Collections",
-    date: "May 22, 2026",
-    time: "6:00 PM - 8:00 PM",
-    location: "Great Hall, University of Ghana",
+    title: "Seminar on Ethical Economies in Cape Town, Mumbai, and Accra",
+    date: "August 15, 2025",
+    time: "TBD",
+    location: "Institute of African Studies, University of Ghana",
     description:
-      "Distinguished lecture on the provenance, restitution, and display of African art objects in museums worldwide, featuring Professor Kwame Opoku.",
-    type: "Lecture",
+      "Seminal seminar on 'Ethical Economies: Market Practices, Consumption and Regulation' hosted by the Institute of African Studies in collaboration with Leiden University and Stellenbosch University. Exploring ethical dimensions of market practices and consumption across three continents.",
+    type: "Seminar",
   },
 ]
 
