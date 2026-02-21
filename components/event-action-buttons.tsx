@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Download, ExternalLink } from "lucide-react"
 
@@ -28,11 +30,6 @@ export function EventActionButtons({ buttons, variant = "top" }: EventActionButt
             target={button.isExternal ? "_blank" : undefined}
             rel={button.isExternal ? "noopener noreferrer" : undefined}
             download={button.isDownload}
-            onClick={(e) => {
-              if (button.isDownload) {
-                e.currentTarget.click()
-              }
-            }}
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-all hover:opacity-90 hover:shadow-lg active:scale-95"
           >
             {button.isDownload && <Download className="h-5 w-5" />}
