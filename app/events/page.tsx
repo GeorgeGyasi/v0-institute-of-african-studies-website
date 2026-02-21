@@ -21,6 +21,7 @@ const upcomingEvents = [
     summary: "Exploring ethical dimensions of religious practices and community discourse through keynote and guest speakers.",
     type: "Workshop",
     virtualLink: "https://shorturl.at/QkhxS",
+    href: "/events/acts-of-faith-workshop",
     tier: "standard" as const,
     organizers: [
       { name: "Dr. Genevieve Nrenzah", title: "Co-Organizer" },
@@ -37,6 +38,7 @@ const upcomingEvents = [
     summary: "Launch of groundbreaking book exploring health data, records, and knowledge production in Ghana.",
     type: "Book Launch",
     virtualLink: "https://itucph.zoom.us/j/65301257673",
+    href: "/events/book-launch-health-data",
     tier: "standard" as const,
     organizers: [
       { name: "Alena Thiel", title: "Editor" },
@@ -54,6 +56,7 @@ const upcomingEvents = [
     type: "Conference",
     virtualLink: "https://shorturl.at/lEs44",
     pdfDownload: "/documents/efua-sutherland-programme-outline.pdf",
+    href: "/events/efua-sutherland-centenary",
     tier: "major" as const,
     organizers: [
       { name: "Prof. Kofi Anyidoho", title: "Keynote Speaker" },
@@ -72,6 +75,7 @@ const upcomingEvents = [
     summary: "Multi-continental exploration of ethical economies and market practices across three cities.",
     type: "Seminar",
     pdfDownload: "/documents/ethical-economies-seminar.pdf",
+    href: "/events/ethical-economies-seminar",
     tier: "standard" as const,
     organizers: [
       { name: "Leiden University", title: "Co-organizer" },
@@ -200,82 +204,70 @@ export default function EventsPage() {
           </h2>
           <div className="flex flex-col gap-8">
             {upcomingEvents.map((event) => (
-              <article
+              <Link
                 key={event.title}
-                className="rounded-lg border border-border bg-card p-8 transition-shadow hover:shadow-md"
+                href={event.href}
               >
-                <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-                  <div className="flex-1">
-                    <div className="mb-3 flex items-center gap-3">
-                      <span
-                        className={`inline-block rounded-sm px-2.5 py-0.5 text-xs font-semibold ${getTypeColor(event.type)}`}
-                      >
-                        {event.type}
-                      </span>
-                    </div>
-                    <h3 className="mb-2 text-xl font-semibold text-foreground">
-                      {event.title}
-                    </h3>
-                    <p className="mb-4 text-sm font-medium text-primary">
-                      {event.summary}
-                    </p>
-                    <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                      {event.description}
-                    </p>
-                    <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                      <span className="inline-flex items-center gap-1.5">
-                        <Calendar className="h-4 w-4 text-primary" />
-                        {event.date}
-                      </span>
-                      <span className="inline-flex items-center gap-1.5">
-                        <Clock className="h-4 w-4 text-primary" />
-                        {event.time}
-                      </span>
-                      <span className="inline-flex items-center gap-1.5">
-                        <MapPin className="h-4 w-4 text-primary" />
-                        {event.location}
-                      </span>
-                    </div>
-                    {event.organizers && event.organizers.length > 0 && (
-                      <div className="mt-4 border-t border-border pt-4">
-                        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-secondary">
-                          Organizers
-                        </p>
-                        <div className="flex flex-wrap gap-3">
-                          {event.organizers.map((org) => (
-                            <span key={org.name} className="text-xs text-muted-foreground">
-                              {org.title ? `${org.name} (${org.title})` : org.name}
-                            </span>
-                          ))}
-                        </div>
+                <article className="rounded-lg border border-border bg-card p-8 transition-all hover:border-primary hover:shadow-md cursor-pointer">
+                  <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+                    <div className="flex-1">
+                      <div className="mb-3 flex items-center gap-3">
+                        <span
+                          className={`inline-block rounded-sm px-2.5 py-0.5 text-xs font-semibold ${getTypeColor(event.type)}`}
+                        >
+                          {event.type}
+                        </span>
                       </div>
-                    )}
-                  </div>
-                  <div className="flex shrink-0 flex-col gap-2">
-                    {event.pdfDownload && (
-                      <a
-                        href={event.pdfDownload}
-                        download
-                        className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-                      >
-                        <Download className="h-4 w-4" />
-                        Download PDF
-                      </a>
-                    )}
-                    {event.virtualLink && (
+                      <h3 className="mb-2 text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {event.title}
+                      </h3>
+                      <p className="mb-4 text-sm font-medium text-primary">
+                        {event.summary}
+                      </p>
+                      <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                        {event.description}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                        <span className="inline-flex items-center gap-1.5">
+                          <Calendar className="h-4 w-4 text-primary" />
+                          {event.date}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5">
+                          <Clock className="h-4 w-4 text-primary" />
+                          {event.time}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5">
+                          <MapPin className="h-4 w-4 text-primary" />
+                          {event.location}
+                        </span>
+                      </div>
+                      {event.organizers && event.organizers.length > 0 && (
+                        <div className="mt-4 border-t border-border pt-4">
+                          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-secondary">
+                            Organizers
+                          </p>
+                          <div className="flex flex-wrap gap-3">
+                            {event.organizers.map((org) => (
+                              <span key={org.name} className="text-xs text-muted-foreground">
+                                {org.title ? `${org.name} (${org.title})` : org.name}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex shrink-0 flex-col gap-2">
                       <Link
-                        href={event.virtualLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={event.href}
                         className="inline-flex items-center gap-2 rounded-md border border-primary px-5 py-2.5 text-sm font-semibold text-primary transition-opacity hover:opacity-90"
                       >
-                        Participate Here
+                        Read More
                         <ArrowRight className="h-4 w-4" />
                       </Link>
-                    )}
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Link>
             ))}
           </div>
         </div>
