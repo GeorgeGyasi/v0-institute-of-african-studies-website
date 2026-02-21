@@ -18,8 +18,14 @@ const upcomingEvents = [
     location: "J. H. Nketia Conference Hall, Institute of African Studies, University of Ghana",
     description:
       "Workshop organized by the African Thoughts and Spirituality (Religion and Philosophy) Unit exploring rituals, abuse, and conflations of crimes in religious spaces. Features keynote speakers Dr. Justice A. Arthur & Dr. Fulera Issaka Toure, with guest speakers Nana Osofo-Komfo D. Quarm & Sheikh Sa-id Mukhtar.",
+    summary: "Exploring ethical dimensions of religious practices and community discourse through keynote and guest speakers.",
     type: "Workshop",
     virtualLink: "https://shorturl.at/QkhxS",
+    tier: "standard" as const,
+    organizers: [
+      { name: "Dr. Genevieve Nrenzah", title: "Co-Organizer" },
+      { name: "Dr. Ahmed B. Mustapha", title: "Co-Organizer" },
+    ],
   },
   {
     title: "Book Launch: The Social Life of Health Data",
@@ -28,8 +34,14 @@ const upcomingEvents = [
     location: "J. H. Nketia Conference Hall, Institute of African Studies, University of Ghana",
     description:
       "Official launch of 'The Social Life of Health Data: Health Records and Knowledge Production in Ghana' edited by Alena Thiel & Samuel A. Ntewusu. Join us to explore the critical intersections of data, health, and society in the Ghanaian context. Available in person and virtually.",
+    summary: "Launch of groundbreaking book exploring health data, records, and knowledge production in Ghana.",
     type: "Book Launch",
     virtualLink: "https://itucph.zoom.us/j/65301257673",
+    tier: "standard" as const,
+    organizers: [
+      { name: "Alena Thiel", title: "Editor" },
+      { name: "Samuel A. Ntewusu", title: "Editor & IAS Director" },
+    ],
   },
   {
     title: "Efua Sutherland Centenary Conference 2025",
@@ -38,9 +50,17 @@ const upcomingEvents = [
     location: "Institute of African Studies & School of Performing Arts, University of Ghana",
     description:
       "International conference celebrating Efua Sutherland's centenary (1924-2024) with the theme 'Efua Sutherland and the Creation of African Scholarly Paradigms Since 1960: Continuity or Rupture'. Features keynote addresses, eight thematic panels, creative workshops, and an evening performance. Organized with Rutgers University and the Busia Foundation International.",
+    summary: "International celebration of Efua Sutherland's legacy with keynote addresses, eight thematic panels, and creative workshops.",
     type: "Conference",
     virtualLink: "https://shorturl.at/lEs44",
     pdfDownload: "/documents/efua-sutherland-programme-outline.pdf",
+    tier: "major" as const,
+    organizers: [
+      { name: "Prof. Kofi Anyidoho", title: "Keynote Speaker" },
+      { name: "Prof. Marshall Jones", title: "Keynote Speaker" },
+      { name: "Rutgers University", title: "Co-organizer" },
+      { name: "Busia Foundation International", title: "Co-organizer" },
+    ],
   },
   {
     title: "Seminar on Ethical Economies in Cape Town, Mumbai, and Accra",
@@ -49,8 +69,14 @@ const upcomingEvents = [
     location: "Institute of African Studies, University of Ghana",
     description:
       "Seminal seminar on 'Ethical Economies: Market Practices, Consumption and Regulation' hosted by the Institute of African Studies in collaboration with Leiden University and Stellenbosch University. Exploring ethical dimensions of market practices and consumption across three continents.",
+    summary: "Multi-continental exploration of ethical economies and market practices across three cities.",
     type: "Seminar",
     pdfDownload: "/documents/ethical-economies-seminar.pdf",
+    tier: "standard" as const,
+    organizers: [
+      { name: "Leiden University", title: "Co-organizer" },
+      { name: "Stellenbosch University", title: "Co-organizer" },
+    ],
   },
 ]
 
@@ -60,36 +86,67 @@ const pastEvents = [
     date: "November 2025",
     type: "Symposium",
     href: "/events/annual-research-symposium",
+    summary: "Annual gathering celebrating research excellence and scholarly contributions across the Institute.",
+    tier: "standard" as const,
+    organizers: [
+      { name: "IAS Research Committee", title: "Organizer" },
+    ],
   },
   {
     title: "Film Screening: Stories from the Gold Coast Archives",
     date: "October 2025",
     type: "Screening",
     href: "/events/film-screening-gold-coast",
+    summary: "Rare archival materials and oral histories documenting stories from Ghana's colonial and post-colonial periods.",
+    tier: "major" as const,
+    organizers: [
+      { name: "Archives & Documentation Unit", title: "Organizer" },
+    ],
   },
   {
     title: "Workshop: Field Methods in Linguistic Documentation",
     date: "September 2025",
     type: "Workshop",
     href: "/events/field-methods-workshop",
+    summary: "Hands-on workshop introducing digital tools and methodologies for African linguistic research.",
+    tier: "standard" as const,
+    organizers: [
+      { name: "IAS Research Team", title: "Organizer" },
+    ],
   },
   {
     title: "Seminar Series: Women and Governance in Africa",
     date: "August 2025",
     type: "Seminar",
     href: "/events/women-governance-seminar",
+    summary: "Exploring women's leadership, political participation, and governance in African contexts.",
+    tier: "standard" as const,
+    organizers: [
+      { name: "Gender Studies Unit", title: "Organizer" },
+    ],
   },
   {
     title: "Heritage Day: Open Access to IAS Collections",
     date: "July 2025",
     type: "Open Day",
     href: "/events/heritage-day",
+    summary: "Public open-access event celebrating African heritage through the Institute's collections and archives.",
+    tier: "major" as const,
+    organizers: [
+      { name: "Archives & Collections Unit", title: "Organizer" },
+      { name: "Institute Faculty", title: "Guides" },
+    ],
   },
   {
     title: "Collaborative Research Planning Workshop with SOAS",
     date: "June 2025",
     type: "Workshop",
     href: "/events/soas-collaborative-workshop",
+    summary: "Joint planning workshop establishing collaborative research initiatives with SOAS University of London.",
+    tier: "standard" as const,
+    organizers: [
+      { name: "SOAS University of London", title: "Co-organizer" },
+    ],
   },
 ]
 
@@ -156,9 +213,12 @@ export default function EventsPage() {
                         {event.type}
                       </span>
                     </div>
-                    <h3 className="mb-3 text-xl font-semibold text-foreground">
+                    <h3 className="mb-2 text-xl font-semibold text-foreground">
                       {event.title}
                     </h3>
+                    <p className="mb-4 text-sm font-medium text-primary">
+                      {event.summary}
+                    </p>
                     <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
                       {event.description}
                     </p>
@@ -176,6 +236,20 @@ export default function EventsPage() {
                         {event.location}
                       </span>
                     </div>
+                    {event.organizers && event.organizers.length > 0 && (
+                      <div className="mt-4 border-t border-border pt-4">
+                        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-secondary">
+                          Organizers
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                          {event.organizers.map((org) => (
+                            <span key={org.name} className="text-xs text-muted-foreground">
+                              {org.title ? `${org.name} (${org.title})` : org.name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="flex shrink-0 flex-col gap-2">
                     {event.pdfDownload && (
@@ -216,14 +290,14 @@ export default function EventsPage() {
           <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">
             Past Events
           </h2>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {pastEvents.map((event) => (
               <Link
                 key={event.title}
                 href={event.href}
                 className="group rounded-lg border border-border bg-background p-5 transition-all hover:border-primary hover:shadow-md"
               >
-                <div className="mb-2 flex items-center gap-2">
+                <div className="mb-3 flex items-center gap-2">
                   <span
                     className={`inline-block rounded-sm px-2 py-0.5 text-xs font-medium ${getTypeColor(event.type)}`}
                   >
@@ -233,9 +307,19 @@ export default function EventsPage() {
                     {event.date}
                   </span>
                 </div>
-                <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
+                <h3 className="mb-2 text-sm font-semibold text-foreground group-hover:text-primary">
                   {event.title}
                 </h3>
+                <p className="mb-3 text-xs leading-relaxed text-muted-foreground">
+                  {event.summary}
+                </p>
+                {event.organizers && event.organizers.length > 0 && (
+                  <div className="border-t border-border pt-3">
+                    <p className="text-xs font-medium text-secondary">
+                      {event.organizers.map((org) => org.name).join(", ")}
+                    </p>
+                  </div>
+                )}
               </Link>
             ))}
           </div>
