@@ -50,6 +50,7 @@ const upcomingEvents = [
     description:
       "Seminal seminar on 'Ethical Economies: Market Practices, Consumption and Regulation' hosted by the Institute of African Studies in collaboration with Leiden University and Stellenbosch University. Exploring ethical dimensions of market practices and consumption across three continents.",
     type: "Seminar",
+    pdfDownload: "/documents/ethical-economies-seminar.pdf",
   },
 ]
 
