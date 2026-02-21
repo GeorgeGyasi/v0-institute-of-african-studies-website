@@ -21,19 +21,19 @@ export default function EfuaSutherlandConferenceEvent() {
 
           {/* Download Program Outline */}
           <div className="mb-8 rounded-lg border border-primary/20 bg-primary/5 p-6">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
               <div>
-                <h3 className="mb-1 font-semibold text-foreground">Conference Programme Outline</h3>
+                <h3 className="mb-2 font-semibold text-foreground">Conference Programme Outline</h3>
                 <p className="text-sm text-muted-foreground">Detailed schedule with panel information and speaker profiles</p>
               </div>
-              <Link
+              <a
                 href="/documents/efua-sutherland-programme-outline.pdf"
-                download="efua-sutherland-programme-outline.pdf"
-                className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+                download
+                className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 whitespace-nowrap"
               >
                 <Download className="h-4 w-4" />
                 Download PDF
-              </Link>
+              </a>
             </div>
           </div>
 
