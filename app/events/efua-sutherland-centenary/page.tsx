@@ -35,6 +35,14 @@ export default function EfuaSutherlandCentennaryPage() {
           {/* Sticky Action Buttons - Top */}
           <EventActionButtons buttons={actionButtons} variant="top" />
 
+          {/* Conference Theme - Highlighted */}
+          <div className="mb-8 rounded-lg bg-primary/10 border border-primary/20 p-6">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Conference Theme</p>
+            <p className="text-xl font-semibold text-foreground">
+              "Efua Sutherland and the Creation of African Scholarly Paradigms Since 1960: Continuity or Rupture"
+            </p>
+          </div>
+
           {/* Event Metadata */}
           <div className="mb-8 border-b border-border pb-8">
             <div className="grid gap-4 md:grid-cols-3">
@@ -100,11 +108,6 @@ export default function EfuaSutherlandCentennaryPage() {
                 <li>Busia Foundation International</li>
               </ul>
             </div>
-
-            <h2 className="mb-4 text-2xl font-bold text-foreground">Conference Theme</h2>
-            <p className="mb-6 text-lg italic font-semibold text-primary">
-              "Efua Sutherland and the Creation of African Scholarly Paradigms Since 1960: Continuity or Rupture"
-            </p>
 
             <p className="text-sm italic text-muted-foreground">
               Join us in person or virtually to celebrate Efua Sutherland's intellectual legacy and explore contemporary African scholarship. Download the detailed conference programme above for complete information on all panels and sessions.
