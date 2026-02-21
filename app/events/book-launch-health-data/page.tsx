@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
-import { Calendar, Clock, MapPin, Users, ExternalLink } from "lucide-react"
+import { EventActionButtons } from "@/components/event-action-buttons"
+import { Calendar, Clock, MapPin, Users } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Book Launch: The Social Life of Health Data",
@@ -10,6 +11,14 @@ export const metadata: Metadata = {
 }
 
 export default function BookLaunchHealthDataPage() {
+  const actionButtons = [
+    {
+      label: "Join Virtually",
+      href: "https://itucph.zoom.us/j/65301257673",
+      isExternal: true,
+    },
+  ]
+
   return (
     <>
       <PageHeader
@@ -19,6 +28,9 @@ export default function BookLaunchHealthDataPage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
+          {/* Sticky Action Buttons - Top */}
+          <EventActionButtons buttons={actionButtons} variant="top" />
+
           {/* Event Metadata */}
           <div className="mb-8 border-b border-border pb-8">
             <div className="grid gap-4 md:grid-cols-3">
@@ -44,19 +56,6 @@ export default function BookLaunchHealthDataPage() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="mb-12 flex flex-wrap gap-4">
-            <Link
-              href="https://itucph.zoom.us/j/65301257673"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              <ExternalLink className="h-4 w-4" />
-              Join Virtually
-            </Link>
           </div>
 
           {/* Main Content */}
@@ -99,8 +98,11 @@ export default function BookLaunchHealthDataPage() {
             </p>
           </article>
 
+          {/* Action Buttons - Bottom */}
+          <EventActionButtons buttons={actionButtons} variant="bottom" />
+
           {/* Back Link */}
-          <div className="mt-12 border-t border-border pt-8">
+          <div className="mt-8 pt-8">
             <a
               href="/events"
               className="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"

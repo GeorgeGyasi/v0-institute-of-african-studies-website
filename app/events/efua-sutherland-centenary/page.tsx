@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { PageHeader } from "@/components/page-header"
-import { Calendar, MapPin, Clock, Users, Download, ExternalLink } from "lucide-react"
-import Link from "next/link"
+import { EventActionButtons } from "@/components/event-action-buttons"
+import { Calendar, MapPin, Clock, Users } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Efua Sutherland Centenary Conference 2025",
@@ -10,6 +10,19 @@ export const metadata: Metadata = {
 }
 
 export default function EfuaSutherlandCentennaryPage() {
+  const actionButtons = [
+    {
+      label: "Download PDF",
+      href: "/documents/efua-sutherland-programme-outline.pdf",
+      isDownload: true,
+    },
+    {
+      label: "Join Virtually",
+      href: "https://shorturl.at/lEs44",
+      isExternal: true,
+    },
+  ]
+
   return (
     <>
       <PageHeader
@@ -19,6 +32,9 @@ export default function EfuaSutherlandCentennaryPage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
+          {/* Sticky Action Buttons - Top */}
+          <EventActionButtons buttons={actionButtons} variant="top" />
+
           {/* Event Metadata */}
           <div className="mb-8 border-b border-border pb-8">
             <div className="grid gap-4 md:grid-cols-3">
@@ -44,27 +60,6 @@ export default function EfuaSutherlandCentennaryPage() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="mb-12 flex flex-wrap gap-4">
-            <a
-              href="/documents/efua-sutherland-programme-outline.pdf"
-              download
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              <Download className="h-4 w-4" />
-              Download PDF
-            </a>
-            <Link
-              href="https://shorturl.at/lEs44"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md border border-primary px-6 py-3 text-sm font-semibold text-primary transition-opacity hover:opacity-90"
-            >
-              <ExternalLink className="h-4 w-4" />
-              Join Virtually
-            </Link>
           </div>
 
           {/* Main Content */}
@@ -116,8 +111,11 @@ export default function EfuaSutherlandCentennaryPage() {
             </p>
           </article>
 
+          {/* Action Buttons - Bottom */}
+          <EventActionButtons buttons={actionButtons} variant="bottom" />
+
           {/* Back Link */}
-          <div className="mt-12 border-t border-border pt-8">
+          <div className="mt-8 pt-8">
             <a
               href="/events"
               className="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"

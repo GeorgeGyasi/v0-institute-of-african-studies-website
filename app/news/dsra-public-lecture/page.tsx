@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { PageHeader } from "@/components/page-header"
+import { EventActionButtons } from "@/components/event-action-buttons"
 import { Calendar, MapPin, Users } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -9,6 +10,8 @@ export const metadata: Metadata = {
 }
 
 export default function DSRAPublicLecturePage() {
+  const actionButtons = []
+
   return (
     <>
       <PageHeader
@@ -18,6 +21,9 @@ export default function DSRAPublicLecturePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
+          {/* Sticky Action Buttons - Top */}
+          {actionButtons.length > 0 && <EventActionButtons buttons={actionButtons} variant="top" />}
+
           {/* Event Metadata */}
           <div className="mb-8 border-b border-border pb-8">
             <div className="grid gap-4 md:grid-cols-3">
@@ -87,8 +93,11 @@ export default function DSRAPublicLecturePage() {
             </p>
           </article>
 
+          {/* Action Buttons - Bottom */}
+          {actionButtons.length > 0 && <EventActionButtons buttons={actionButtons} variant="bottom" />}
+
           {/* Back Link */}
-          <div className="mt-12 border-t border-border pt-8">
+          <div className="mt-12 pt-8">
             <a
               href="/"
               className="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"

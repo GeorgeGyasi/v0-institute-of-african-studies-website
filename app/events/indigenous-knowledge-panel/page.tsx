@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { PageHeader } from "@/components/page-header"
-import { Calendar, MapPin, Clock, Users, ExternalLink } from "lucide-react"
-import Link from "next/link"
+import { EventActionButtons } from "@/components/event-action-buttons"
+import { Calendar, MapPin, Clock, Users } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Indigenous Knowledge and Innovation: African Solutions for Climate Resilience",
@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 }
 
 export default function IndigenousKnowledgePanelPage() {
+  const actionButtons = [
+    {
+      label: "Join Virtually",
+      href: "https://tinyurl.com/yxmsc8nh",
+      isExternal: true,
+    },
+  ]
+
   return (
     <>
       <PageHeader
@@ -19,6 +27,9 @@ export default function IndigenousKnowledgePanelPage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
+          {/* Sticky Action Buttons - Top */}
+          <EventActionButtons buttons={actionButtons} variant="top" />
+
           {/* Event Metadata */}
           <div className="mb-8 border-b border-border pb-8">
             <div className="grid gap-4 md:grid-cols-3">
@@ -44,19 +55,6 @@ export default function IndigenousKnowledgePanelPage() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="mb-12 flex flex-wrap gap-4">
-            <Link
-              href="https://tinyurl.com/yxmsc8nh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              <ExternalLink className="h-4 w-4" />
-              Join Virtually
-            </Link>
           </div>
 
           {/* Main Content */}
@@ -107,8 +105,11 @@ export default function IndigenousKnowledgePanelPage() {
             </p>
           </article>
 
+          {/* Action Buttons - Bottom */}
+          <EventActionButtons buttons={actionButtons} variant="bottom" />
+
           {/* Back Link */}
-          <div className="mt-12 border-t border-border pt-8">
+          <div className="mt-8 pt-8">
             <a
               href="/events"
               className="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
