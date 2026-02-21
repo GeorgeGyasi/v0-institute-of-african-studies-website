@@ -19,6 +19,14 @@ export default function AsantehemaaTributePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
+          {/* Main Theme - Highlighted */}
+          <div className="mb-8 rounded-lg bg-primary/10 border border-primary/20 p-6">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Theme</p>
+            <p className="text-xl font-semibold text-foreground">
+              Documenting and Preserving Indigenous Knowledge Through Cultural Ceremony
+            </p>
+          </div>
+
           {/* Article Header */}
           <div className="mb-8 border-b border-border pb-8">
             <div className="grid gap-4 md:grid-cols-3">
@@ -109,10 +117,10 @@ export default function AsantehemaaTributePage() {
           {/* Back Link */}
           <div className="mt-12 border-t border-border pt-8">
             <a
-              href="/"
+              href="/news"
               className="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
             >
-              ← Back to Home
+              ← Back to News
             </a>
           </div>
         </div>
