@@ -63,6 +63,8 @@ export default function AsantehemaaTributePage() {
                 fill
                 sizes="100vw"
                 className="object-cover"
+                loading="eager"
+                priority
               />
             </div>
           </div>
