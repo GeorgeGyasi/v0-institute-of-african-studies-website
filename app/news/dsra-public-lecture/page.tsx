@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { PageHeader } from "@/components/page-header"
-import { EventActionButtons } from "@/components/event-action-buttons"
 import { Calendar, MapPin, Users } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -10,8 +10,6 @@ export const metadata: Metadata = {
 }
 
 export default function DSRAPublicLecturePage() {
-  const actionButtons = []
-
   return (
     <>
       <PageHeader
@@ -21,9 +19,6 @@ export default function DSRAPublicLecturePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
-          {/* Sticky Action Buttons - Top */}
-          {actionButtons.length > 0 && <EventActionButtons buttons={actionButtons} variant="top" />}
-
           {/* Lecture Theme - Highlighted */}
           <div className="mb-8 rounded-lg bg-primary/10 border border-primary/20 p-6">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Lecture Theme</p>
@@ -59,6 +54,21 @@ export default function DSRAPublicLecturePage() {
             </div>
           </div>
 
+          {/* Featured Image */}
+          <div className="mb-12">
+            <div className="relative aspect-video overflow-hidden rounded-lg">
+              <Image
+                src="/images/dsra-public-lecture.jpg"
+                alt="Dr. Jan Linhart during DSRA public lecture"
+                fill
+                sizes="100vw"
+                className="object-cover"
+                loading="eager"
+                priority
+              />
+            </div>
+          </div>
+
           {/* Main Content */}
           <article className="prose prose-invert max-w-none">
             <p className="mb-6 text-lg leading-relaxed text-foreground">
@@ -80,16 +90,9 @@ export default function DSRAPublicLecturePage() {
             </ul>
 
             <h2 className="mb-4 text-2xl font-bold text-foreground">About Dr. Jan Linhart</h2>
-            <div className="mb-12 rounded-lg bg-card border border-border p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <Users className="h-5 w-5 text-primary" />
-                <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Speaker</p>
-              </div>
-              <p className="mb-3 font-semibold text-foreground">Dr. Jan Linhart</p>
-              <p className="text-foreground leading-relaxed">
-                Dr. Linhart is a scholar at the University of Bonn with extensive experience in African studies and international collaborative research. His work focuses on bridging academic traditions and fostering meaningful dialogue between African and European intellectual communities, with particular emphasis on how diverse knowledge systems can contribute to addressing global challenges.
-              </p>
-            </div>
+            <p className="mb-6 leading-relaxed text-foreground">
+              Dr. Linhart is a scholar at the University of Bonn with extensive experience in African studies and international collaborative research. His work focuses on bridging academic traditions and fostering meaningful dialogue between African and European intellectual communities, with particular emphasis on how diverse knowledge systems can contribute to addressing global challenges.
+            </p>
 
             <h2 className="mb-4 text-2xl font-bold text-foreground">Day of Scientific Renaissance of Africa</h2>
             <p className="mb-6 leading-relaxed text-foreground">
@@ -101,11 +104,8 @@ export default function DSRAPublicLecturePage() {
             </p>
           </article>
 
-          {/* Action Buttons - Bottom */}
-          {actionButtons.length > 0 && <EventActionButtons buttons={actionButtons} variant="bottom" />}
-
           {/* Back Link */}
-          <div className="mt-12 pt-8">
+          <div className="mt-12 border-t border-border pt-8">
             <a
               href="/news"
               className="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
