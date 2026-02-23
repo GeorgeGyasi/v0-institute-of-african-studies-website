@@ -118,23 +118,15 @@ export default function DSRAPublicLecture() {
               <p className="mb-6 leading-relaxed text-foreground">
                 Whether joining in person at the J. H. Nketia Conference Hall or virtually via Zoom, we invite you to participate in this important scholarly conversation. This is an excellent opportunity to engage with cutting-edge thinking on Africa's role in global intellectual discourse.
               </p>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="https://tinyurl.com/ytmzacme"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  Join Virtual Meeting
-                </a>
-                <Link
-                  href="/events"
-                  className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-6 py-3 font-semibold text-foreground transition-colors hover:bg-accent"
-                >
-                  View Other Events
-                </Link>
-              </div>
+              <a
+                href="https://tinyurl.com/ytmzacme"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                <ExternalLink className="h-4 w-4" />
+                Join Virtual Meeting
+              </a>
             </div>
           </div>
         </div>
