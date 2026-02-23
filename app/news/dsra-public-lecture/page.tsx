@@ -28,30 +28,19 @@ export default function DSRAPublicLecturePage() {
           </div>
 
           {/* Event Metadata */}
-          <div className="mb-8 border-b border-border pb-8">
-            <div className="grid gap-4 md:grid-cols-3">
-              <div className="flex items-start gap-3">
-                <Calendar className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Date</p>
-                  <p className="font-semibold text-foreground">June 11, 2025</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Location</p>
-                  <p className="font-semibold text-foreground">Institute of African Studies</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Users className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Speaker</p>
-                  <p className="font-semibold text-foreground">Dr. Jan Linhart</p>
-                </div>
-              </div>
-            </div>
+          <div className="mb-8 flex flex-wrap items-center gap-6 rounded-lg bg-muted p-4">
+            <span className="inline-flex items-center gap-2 text-muted-foreground">
+              <Calendar className="h-5 w-5 text-primary" />
+              <span className="text-sm font-medium">June 11, 2025</span>
+            </span>
+            <span className="inline-flex items-center gap-2 text-muted-foreground">
+              <MapPin className="h-5 w-5 text-primary" />
+              <span className="text-sm font-medium">Institute of African Studies</span>
+            </span>
+            <span className="inline-flex items-center gap-2 text-muted-foreground">
+              <Users className="h-5 w-5 text-primary" />
+              <span className="text-sm font-medium">Dr. Jan Linhart</span>
+            </span>
           </div>
 
           {/* Featured Image */}
