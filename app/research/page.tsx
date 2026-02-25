@@ -67,6 +67,8 @@ export default function ResearchPage() {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
               className="object-cover"
+              loading="eager"
+              priority
             />
             <div className="absolute inset-0 bg-foreground/40" />
             <div className="absolute bottom-0 left-0 p-8">
