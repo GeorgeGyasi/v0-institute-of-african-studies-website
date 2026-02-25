@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { PageHeader } from "@/components/page-header"
+import { ProfileNavigation } from "@/components/profile-navigation"
+import { getProfileNavigation } from "@/lib/staff-profiles"
 import { Mail, Globe, BookOpen, Award } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -10,6 +12,8 @@ export const metadata: Metadata = {
 }
 
 export default function ProfessorTsikataPage() {
+  const navigation = getProfileNavigation("professor-dzodzi-tsikata")
+
   return (
     <>
       <PageHeader
@@ -194,8 +198,20 @@ export default function ProfessorTsikataPage() {
                 </div>
               </div>
 
+              {/* Navigation */}
+              {navigation && (
+                <ProfileNavigation
+                  previousSlug={navigation.previous.slug}
+                  nextSlug={navigation.next.slug}
+                  previousName={navigation.previous.name}
+                  nextName={navigation.next.name}
+                  isFirst={navigation.isFirst}
+                  isLast={navigation.isLast}
+                />
+              )}
+
               {/* Back Link */}
-              <div className="pt-8 border-t border-border">
+              <div className="mt-8 pt-8">
                 <a
                   href="/about/staff"
                   className="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
