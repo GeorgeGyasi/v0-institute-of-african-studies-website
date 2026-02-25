@@ -57,6 +57,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${sourceSerif.variable} ${inter.variable} font-display antialiased`}
+        suppressHydrationWarning
       >
         <Header />
         <main>{children}</main>
