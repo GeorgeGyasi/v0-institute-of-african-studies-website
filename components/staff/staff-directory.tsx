@@ -38,7 +38,7 @@ const staffCategories: StaffCategory[] = [
         role: "Professor",
         specialty: "African Legal Studies & Gender Justice",
         email: "dtsikata@ug.edu.gh",
-        photo: "/images/staff/senior-member-1.jpg",
+        photo: "/images/professor-dzodzi-tsikata.jpg",
       },
       {
         name: "Professor Emerita Takyiwaa Manuh",
