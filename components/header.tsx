@@ -182,16 +182,28 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
-        <Link href="https://www.ug.edu.gh" target="_blank" rel="noopener noreferrer" className="flex items-center">
-          <Image
-            src="/images/logo.png"
-            alt="University of Ghana - Institute of African Studies Logo"
-            width={300}
-            height={60}
-            className="w-auto h-14"
-            priority
-          />
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link href="https://www.ug.edu.gh" target="_blank" rel="noopener noreferrer" aria-label="University of Ghana website">
+            <Image
+              src="/images/logo-ug.png"
+              alt="University of Ghana Logo"
+              width={140}
+              height={60}
+              className="w-auto h-14"
+              priority
+            />
+          </Link>
+          <Link href="https://ias.ug.edu.gh" target="_blank" rel="noopener noreferrer" aria-label="Institute of African Studies website">
+            <Image
+              src="/images/logo-ias.png"
+              alt="Institute of African Studies Logo"
+              width={140}
+              height={60}
+              className="w-auto h-14"
+              priority
+            />
+          </Link>
+        </div>
 
         <nav
           className="hidden items-center gap-0.5 lg:flex"
