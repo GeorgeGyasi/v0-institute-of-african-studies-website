@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { PageHeader } from "@/components/page-header"
+import { EventActionButtons } from "@/components/event-action-buttons"
 import { Calendar, MapPin, Users } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 }
 
 export default function AsantehemaaTributePage() {
+  const actionButtons = []
+
   return (
     <>
       <PageHeader
@@ -19,20 +22,42 @@ export default function AsantehemaaTributePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
-          {/* Article Header */}
-          <div className="mb-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-            <span className="inline-flex items-center gap-2">
-              <Calendar className="h-4 w-4 text-primary" />
-              September 15-18, 2025
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-primary" />
-              Kumasi, Asanteman
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <Users className="h-4 w-4 text-primary" />
-              Institute Delegation
-            </span>
+          {/* Sticky Action Buttons - Top */}
+          {actionButtons.length > 0 && <EventActionButtons buttons={actionButtons} variant="top" />}
+
+          {/* Event Theme - Highlighted */}
+          <div className="mb-8 rounded-lg bg-primary/10 border border-primary/20 p-6">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Event Theme</p>
+            <p className="text-xl font-semibold text-foreground">
+              Documenting and Preserving Indigenous Knowledge Through Cultural Ceremony
+            </p>
+          </div>
+
+          {/* Event Metadata */}
+          <div className="mb-8 border-b border-border pb-8">
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="flex items-start gap-3">
+                <Calendar className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Date</p>
+                  <p className="font-semibold text-foreground">September 15-18, 2025</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Location</p>
+                  <p className="font-semibold text-foreground">Kumasi, Asanteman</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Users className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Participants</p>
+                  <p className="font-semibold text-foreground">Institute Delegation</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Featured Image - Full Width */}
@@ -44,6 +69,8 @@ export default function AsantehemaaTributePage() {
                 fill
                 sizes="100vw"
                 className="object-cover"
+                loading="eager"
+                priority
               />
             </div>
           </div>
@@ -96,8 +123,11 @@ export default function AsantehemaaTributePage() {
             </p>
           </article>
 
+          {/* Action Buttons - Bottom */}
+          {actionButtons.length > 0 && <EventActionButtons buttons={actionButtons} variant="bottom" />}
+
           {/* Back Link */}
-          <div className="mt-12 border-t border-border pt-8">
+          <div className="mt-12 pt-8">
             <a
               href="/events"
               className="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
