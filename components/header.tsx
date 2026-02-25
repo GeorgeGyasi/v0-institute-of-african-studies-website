@@ -199,7 +199,7 @@ export function Header() {
               alt="Institute of African Studies Logo"
               width={140}
               height={60}
-              className="w-auto h-8"
+              className="w-auto h-14"
               priority
             />
           </Link>
