@@ -193,6 +193,7 @@ export function Header() {
               priority
             />
           </Link>
+          <div className="w-0.5 h-8" style={{ backgroundColor: "rgb(183, 154, 100)" }} />
           <Link href="https://ias.ug.edu.gh" target="_blank" rel="noopener noreferrer" aria-label="Institute of African Studies website">
             <Image
               src="/images/logo-ias.png"
