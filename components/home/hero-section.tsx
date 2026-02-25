@@ -70,6 +70,7 @@ export function HeroSection() {
               sizes="100vw"
               className="object-cover"
               priority={index === currentSlide}
+              loading={index <= 1 ? "eager" : "lazy"}
             />
           </div>
         ))}
