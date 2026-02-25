@@ -52,7 +52,7 @@ const staffCategories: StaffCategory[] = [
         role: "Professor",
         specialty: "Gender Studies & Social Transformation",
         email: "aadomako@ug.edu.gh",
-        photo: "/images/staff/senior-member-3.jpg",
+        photo: "/images/professor-adomako.jpg",
       },
       {
         name: "Professor Esi Sutherland-Addy",
