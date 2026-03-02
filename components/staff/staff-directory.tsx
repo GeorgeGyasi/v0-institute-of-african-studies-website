@@ -73,7 +73,7 @@ const staffCategories: StaffCategory[] = [
         role: "Professor",
         specialty: "Ethnomusicology & Cultural Studies",
         email: "davorgbedor@ug.edu.gh",
-        photo: "/images/staff/senior-member-6.jpg",
+        photo: "/images/professor-avorgbedor.jpg",
       },
       {
         name: "Professor Kojo Amanor",
