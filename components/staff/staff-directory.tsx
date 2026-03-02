@@ -66,7 +66,7 @@ const staffCategories: StaffCategory[] = [
         role: "Professor",
         specialty: "African Anthropology & Religion",
         email: "aawedoba@ug.edu.gh",
-        photo: "/images/staff/senior-member-5.jpg",
+        photo: "/images/professor-albert-awedoba.jpg",
       },
       {
         name: "Professor Daniel Avorgbedor",
