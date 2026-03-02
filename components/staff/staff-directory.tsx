@@ -193,7 +193,7 @@ const staffCategories: StaffCategory[] = [
         role: "Lecturer",
         specialty: "African Archaeology",
         email: "elawer@ug.edu.gh",
-        photo: "/images/staff/senior-member-22.jpg",
+        photo: "/images/dr-eric-lawer.jpg",
       },
       {
         name: "Dr. Edwin Asa Adjei",
