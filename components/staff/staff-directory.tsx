@@ -87,7 +87,7 @@ const staffCategories: StaffCategory[] = [
         role: "Professor",
         specialty: "African History & Governance",
         email: "rasante@ug.edu.gh",
-        photo: "/images/staff/senior-member-8.jpg",
+        photo: "/images/professor-asante.jpg",
       },
       {
         name: "Ɔbenfo (Professor) Ọbádélé Bakari Kambon",
