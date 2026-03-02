@@ -59,7 +59,7 @@ const staffCategories: StaffCategory[] = [
         role: "Professor",
         specialty: "African Literature & Linguistics",
         email: "esutherland@ug.edu.gh",
-        photo: "/images/staff/senior-member-4.jpg",
+        photo: "/images/professor-esi-sutherland.jpg",
       },
       {
         name: "Professor Albert Awedoba",
