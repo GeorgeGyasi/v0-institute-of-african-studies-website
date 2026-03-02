@@ -45,7 +45,7 @@ const staffCategories: StaffCategory[] = [
         role: "Professor Emerita",
         specialty: "African Development & Diaspora Studies",
         email: "tmanuh@ug.edu.gh",
-        photo: "/images/staff/senior-member-2.jpg",
+        photo: "/images/professor-takyiwaa-manuh.jpg",
       },
       {
         name: "Professor Akosua Adomako Ampofo",

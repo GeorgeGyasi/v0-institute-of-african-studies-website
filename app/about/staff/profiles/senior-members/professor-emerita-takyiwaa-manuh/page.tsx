@@ -28,7 +28,7 @@ export default function ProfessorManuhPage() {
             <div className="md:col-span-1">
               <div className="mb-6 overflow-hidden rounded-lg">
                 <Image
-                  src="/images/staff/senior-member-2.jpg"
+                  src="/images/professor-takyiwaa-manuh.jpg"
                   alt="Professor Emerita Takyiwaa Manuh"
                   width={300}
                   height={400}
