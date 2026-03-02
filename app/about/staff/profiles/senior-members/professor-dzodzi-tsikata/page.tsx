@@ -28,7 +28,7 @@ export default function ProfessorTsikataPage() {
             <div className="md:col-span-1">
               <div className="mb-6 overflow-hidden rounded-lg">
                 <Image
-                  src="/images/staff/senior-member-1.jpg"
+                  src="/images/professor-dzodzi-tsikata.jpg"
                   alt="Professor Dzodzi Tsikata"
                   width={300}
                   height={400}
