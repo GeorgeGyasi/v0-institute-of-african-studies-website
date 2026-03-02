@@ -94,7 +94,7 @@ const staffCategories: StaffCategory[] = [
         role: "Professor",
         specialty: "African Philosophy & Consciousness",
         email: "okambon@ug.edu.gh",
-        photo: "/images/staff/senior-member-9.jpg",
+        photo: "/images/professor-obadele-kambon.jpg",
       },
       {
         name: "Dr. Genevieve Nrenzah",
