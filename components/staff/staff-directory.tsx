@@ -186,7 +186,7 @@ const staffCategories: StaffCategory[] = [
         role: "Lecturer",
         specialty: "African Environmental Conservation",
         email: "ahargoe@ug.edu.gh",
-        photo: "/images/staff/senior-member-21.jpg",
+        photo: "/images/dr-aristedes-hargoe.jpg",
       },
       {
         name: "Dr. Eric Tamatey Lawer",
