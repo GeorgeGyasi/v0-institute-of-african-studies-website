@@ -108,7 +108,7 @@ const staffCategories: StaffCategory[] = [
         role: "Senior Lecturer",
         specialty: "African Economic Development",
         email: "cmba@ug.edu.gh",
-        photo: "/images/staff/senior-member-11.jpg",
+        photo: "/images/dr-chika-mba.jpg",
       },
       {
         name: "Dr. Kojo Opoku Aidoo",
