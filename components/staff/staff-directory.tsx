@@ -101,7 +101,7 @@ const staffCategories: StaffCategory[] = [
         role: "Senior Research Fellow",
         specialty: "African Medical Anthropology",
         email: "gnrenzah@ug.edu.gh",
-        photo: "/images/staff/senior-member-10.jpg",
+        photo: "/images/dr-genevieve-nrenzah.jpg",
       },
       {
         name: "Dr. Chika C. Mba",
