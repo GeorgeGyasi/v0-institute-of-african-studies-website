@@ -157,7 +157,7 @@ const staffCategories: StaffCategory[] = [
         role: "Archivist",
         specialty: "J H Kwabena Nketia Archives",
         email: "ggyesaw@ug.edu.gh",
-        photo: "/images/george-gyesaw.jpg",
+        photo: "/images/staff/senior-member-6.jpg",
       },
       {
         name: "Dr. Mjiba Frehiwot",
