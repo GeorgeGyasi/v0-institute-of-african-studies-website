@@ -207,7 +207,7 @@ const staffCategories: StaffCategory[] = [
         role: "Senior Lecturer",
         specialty: "African Islamic History",
         email: "amustapha@ug.edu.gh",
-        photo: "/images/staff/senior-member-24.jpg",
+        photo: "/images/dr-ahmed-mustapha.jpg",
       },
       {
         name: "N. Laryea Akwetteh",
