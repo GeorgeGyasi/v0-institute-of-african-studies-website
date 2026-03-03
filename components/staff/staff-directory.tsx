@@ -235,7 +235,7 @@ const staffCategories: StaffCategory[] = [
         role: "Senior Lecturer",
         specialty: "African Islamic Civilization",
         email: "oalhassan@ug.edu.gh",
-        photo: "/images/staff/senior-member-28.jpg",
+        photo: "/images/dr-osman-alhassan.jpg",
       },
       {
         name: "Professor. Samuel Ntewusu",
