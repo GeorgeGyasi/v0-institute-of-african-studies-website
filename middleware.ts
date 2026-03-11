@@ -9,8 +9,8 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Allow login page without authentication
-  if (pathname === '/admin/login') {
+  // Allow setup and login pages without authentication
+  if (pathname === '/admin/login' || pathname === '/admin/setup') {
     return NextResponse.next();
   }
 
