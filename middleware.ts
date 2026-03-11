@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from 'next/server';
-import { createServerClient, parse, serialize } from '@supabase/ssr';
+import { createServerClient, serialize } from '@supabase/ssr';
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
@@ -24,7 +24,11 @@ export async function middleware(request: NextRequest) {
     {
       cookies: {
         getAll() {
-          return parse(request.headers.getSetCookie());
+          const cookieString = request.headers.get('cookie') || '';
+          return cookieString.split(';').map(cookie => {
+            const [name, value] = cookie.trim().split('=');
+            return { name, value };
+          });
         },
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) =>
