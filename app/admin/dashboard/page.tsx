@@ -12,6 +12,8 @@ export default function AdminDashboard() {
   const [staff, setStaff] = useState<StaffProfile[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
+  const [seeding, setSeeding] = useState(false);
+  const [seedError, setSeedError] = useState<string | null>(null);
 
   useEffect(() => {
     fetchStaff();
@@ -66,6 +68,27 @@ export default function AdminDashboard() {
     }
   }
 
+  async function handleSeedData() {
+    setSeeding(true);
+    setSeedError(null);
+
+    try {
+      const response = await fetch('/api/admin/seed', { method: 'POST' });
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to seed data');
+      }
+
+      // Refresh the staff list
+      fetchStaff();
+    } catch (err) {
+      console.error('[v0] Seed error:', err);
+      setSeedError(err instanceof Error ? err.message : 'Failed to seed data');
+    } finally {
+      setSeeding(false);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="p-8">
@@ -86,8 +109,19 @@ export default function AdminDashboard() {
           </Link>
         </div>
 
+        {seedError && (
+          <div className="mb-4 p-4 text-sm text-red-600 bg-red-50 rounded-md">{seedError}</div>
+        )}
+
         {loading ? (
           <div className="text-center py-12">Loading staff...</div>
+        ) : filteredStaff.length === 0 && staff.length === 0 ? (
+          <div className="text-center py-12 bg-muted/20 rounded-lg p-8">
+            <p className="text-muted-foreground mb-4">No staff members yet. Start by seeding initial data.</p>
+            <Button onClick={handleSeedData} disabled={seeding} variant="default">
+              {seeding ? 'Seeding Data...' : 'Seed Initial Staff Data'}
+            </Button>
+          </div>
         ) : (
           <div className="grid gap-4">
             {filteredStaff.map((member) => (
