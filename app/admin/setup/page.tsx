@@ -24,9 +24,16 @@ export default function AdminSetupPage() {
 
   async function checkInitialization() {
     try {
+      console.log('[v0] Checking if database is already initialized...');
       const response = await fetch('/api/admin/init', { method: 'POST' });
-      if (response.ok) {
-        setStep('complete');
+      const data = await response.json();
+      console.log('[v0] Init check response:', data);
+      
+      if (response.ok && data.success) {
+        console.log('[v0] Database already initialized, moving to signup');
+        setStep('signup');
+      } else {
+        console.log('[v0] Database not yet initialized');
       }
     } catch (err) {
       console.error('[v0] Check error:', err);
@@ -38,15 +45,22 @@ export default function AdminSetupPage() {
     setError(null);
 
     try {
+      console.log('[v0] Starting database initialization...');
       const response = await fetch('/api/admin/init', { method: 'POST' });
+      const data = await response.json();
+      console.log('[v0] Init response:', data);
+      
       if (!response.ok) {
-        throw new Error('Failed to initialize');
+        const errorMsg = data.details || data.error || 'Failed to initialize database';
+        throw new Error(errorMsg);
       }
 
+      console.log('[v0] Database initialized successfully');
       setStep('signup');
     } catch (err) {
       console.error('[v0] Init error:', err);
-      setError('Failed to initialize database');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to initialize database';
+      setError(errorMessage);
     } finally {
       setInitLoading(false);
     }

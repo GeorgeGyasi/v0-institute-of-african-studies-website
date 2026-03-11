@@ -49,14 +49,31 @@ CREATE POLICY "Enable delete for authenticated users only"
 `;
 
 export async function POST(request: NextRequest) {
-  const pool = new Pool({
-    connectionString: process.env.POSTGRES_URL,
-    ssl: { rejectUnauthorized: false },
-  });
-
   try {
+    console.log('[v0] Init endpoint called');
+    const postgresUrl = process.env.POSTGRES_URL;
+    console.log('[v0] POSTGRES_URL set:', !!postgresUrl);
+    
+    if (!postgresUrl) {
+      console.error('[v0] POSTGRES_URL environment variable is not set');
+      return NextResponse.json(
+        { 
+          error: 'POSTGRES_URL environment variable not set. Please configure your Supabase connection.',
+          success: false
+        },
+        { status: 500 }
+      );
+    }
+
+    console.log('[v0] Creating PostgreSQL pool...');
+    const pool = new Pool({
+      connectionString: postgresUrl,
+      ssl: { rejectUnauthorized: false },
+    });
+
     console.log('[v0] Connecting to PostgreSQL...');
     const client = await pool.connect();
+    console.log('[v0] Connected successfully');
 
     try {
       console.log('[v0] Executing initialization SQL...');
@@ -69,18 +86,21 @@ export async function POST(request: NextRequest) {
       });
     } finally {
       client.release();
+      await pool.end();
     }
   } catch (error: any) {
-    console.error('[v0] Database initialization error:', error.message);
+    console.error('[v0] Database initialization error:', error);
+    console.error('[v0] Error message:', error.message);
+    console.error('[v0] Error code:', error.code);
+    
     return NextResponse.json(
       { 
         error: 'Failed to initialize database',
-        details: error.message 
+        details: error.message,
+        code: error.code
       },
       { status: 500 }
     );
-  } finally {
-    await pool.end();
   }
 }
 
