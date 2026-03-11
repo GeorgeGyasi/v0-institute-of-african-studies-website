@@ -1,67 +1,86 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
-import { exec } from 'child_process';
-import { promisify } from 'util';
+import { Pool } from 'pg';
 
-const execAsync = promisify(exec);
+const SQL_INIT = `
+CREATE TABLE IF NOT EXISTS public.staff_profiles (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  role TEXT NOT NULL,
+  specialty TEXT,
+  email TEXT NOT NULL UNIQUE,
+  photo_url TEXT,
+  bio TEXT,
+  department TEXT,
+  rank TEXT,
+  phone TEXT,
+  office TEXT,
+  research_interests TEXT,
+  publications TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+ALTER TABLE public.staff_profiles ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Enable read access for all users" ON public.staff_profiles;
+CREATE POLICY "Enable read access for all users" 
+  ON public.staff_profiles 
+  FOR SELECT 
+  USING (true);
+
+DROP POLICY IF EXISTS "Enable insert for authenticated users only" ON public.staff_profiles;
+CREATE POLICY "Enable insert for authenticated users only"
+  ON public.staff_profiles
+  FOR INSERT
+  WITH CHECK (auth.role() = 'authenticated');
+
+DROP POLICY IF EXISTS "Enable update for authenticated users only" ON public.staff_profiles;
+CREATE POLICY "Enable update for authenticated users only"
+  ON public.staff_profiles
+  FOR UPDATE
+  USING (auth.role() = 'authenticated')
+  WITH CHECK (auth.role() = 'authenticated');
+
+DROP POLICY IF EXISTS "Enable delete for authenticated users only" ON public.staff_profiles;
+CREATE POLICY "Enable delete for authenticated users only"
+  ON public.staff_profiles
+  FOR DELETE
+  USING (auth.role() = 'authenticated');
+`;
 
 export async function POST(request: NextRequest) {
+  const pool = new Pool({
+    connectionString: process.env.POSTGRES_URL,
+    ssl: { rejectUnauthorized: false },
+  });
+
   try {
-    console.log('[v0] Checking database initialization...');
+    console.log('[v0] Connecting to PostgreSQL...');
+    const client = await pool.connect();
 
-    const supabaseAdmin = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    );
-
-    // Try to query the table to see if it exists
-    const { error: queryError } = await supabaseAdmin
-      .from('staff_profiles')
-      .select('*')
-      .limit(1);
-
-    // If table exists, return success
-    if (!queryError || queryError.code !== 'PGRST205') {
-      console.log('[v0] Table already exists');
-      return NextResponse.json({
-        success: true,
-        message: 'Database already initialized',
-      });
-    }
-
-    // Table doesn't exist - try to create it
-    console.log('[v0] Table does not exist, running init script...');
-    
     try {
-      const { stdout, stderr } = await execAsync('cd /vercel/share/v0-project && npx tsx scripts/init-db.ts', {
-        timeout: 30000,
-      });
-      
-      console.log('[v0] Init script output:', stdout);
-      if (stderr) console.error('[v0] Init script stderr:', stderr);
+      console.log('[v0] Executing initialization SQL...');
+      await client.query(SQL_INIT);
+      console.log('[v0] Database initialized successfully');
 
       return NextResponse.json({
         success: true,
         message: 'Database initialized successfully',
       });
-    } catch (execError: any) {
-      console.error('[v0] Script execution error:', execError.message);
-      
-      // Table creation failed - return helpful error
-      return NextResponse.json(
-        { 
-          error: 'Database table creation failed. Please ensure POSTGRES_URL is properly configured.',
-          details: execError.message 
-        },
-        { status: 500 }
-      );
+    } finally {
+      client.release();
     }
-  } catch (error) {
-    console.error('[v0] Initialization error:', error);
+  } catch (error: any) {
+    console.error('[v0] Database initialization error:', error.message);
     return NextResponse.json(
-      { error: 'Failed to initialize database' },
+      { 
+        error: 'Failed to initialize database',
+        details: error.message 
+      },
       { status: 500 }
     );
+  } finally {
+    await pool.end();
   }
 }
 
