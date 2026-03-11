@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { getSupabaseBrowserClient } from '@/lib/supabase';
+import { getSupabaseClient } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -45,7 +45,7 @@ export default function StaffFormPage() {
 
   async function fetchStaff() {
     try {
-      const supabase = getSupabaseBrowserClient();
+      const supabase = getSupabaseClient();
       const { data, error: fetchError } = await supabase
         .from('staff_profiles')
         .select('*')
@@ -74,7 +74,7 @@ export default function StaffFormPage() {
   async function handleImageUpload(file: File) {
     try {
       setUploading(true);
-      const supabase = getSupabaseBrowserClient();
+      const supabase = getSupabaseClient();
       const fileExt = file.name.split('.').pop();
       const fileName = `${Date.now()}.${fileExt}`;
 

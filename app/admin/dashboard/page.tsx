@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { getSupabaseBrowserClient } from '@/lib/supabase';
+import { getSupabaseClient } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -20,7 +20,7 @@ export default function AdminDashboard() {
   async function fetchStaff() {
     try {
       setLoading(true);
-      const supabase = getSupabaseBrowserClient();
+      const supabase = getSupabaseClient();
       const { data, error } = await supabase
         .from('staff_profiles')
         .select('*')
@@ -49,7 +49,7 @@ export default function AdminDashboard() {
     if (!confirm('Are you sure you want to delete this staff member?')) return;
 
     try {
-      const supabase = getSupabaseBrowserClient();
+      const supabase = getSupabaseClient();
       const { error } = await supabase
         .from('staff_profiles')
         .delete()
