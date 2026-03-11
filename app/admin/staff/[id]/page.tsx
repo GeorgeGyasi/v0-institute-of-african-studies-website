@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { supabaseClient } from '@/lib/supabase';
+import { getSupabaseBrowserClient } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -45,7 +45,8 @@ export default function StaffFormPage() {
 
   async function fetchStaff() {
     try {
-      const { data, error: fetchError } = await supabaseClient
+      const supabase = getSupabaseBrowserClient();
+      const { data, error: fetchError } = await supabase
         .from('staff_profiles')
         .select('*')
         .eq('id', staffId)
@@ -73,10 +74,11 @@ export default function StaffFormPage() {
   async function handleImageUpload(file: File) {
     try {
       setUploading(true);
+      const supabase = getSupabaseBrowserClient();
       const fileExt = file.name.split('.').pop();
       const fileName = `${Date.now()}.${fileExt}`;
 
-      const { error: uploadError, data } = await supabaseClient.storage
+      const { error: uploadError, data } = await supabase.storage
         .from('staff-photos')
         .upload(fileName, file, { upsert: false });
 
@@ -86,7 +88,7 @@ export default function StaffFormPage() {
         return;
       }
 
-      const { data: publicData } = supabaseClient.storage
+      const { data: publicData } = supabase.storage
         .from('staff-photos')
         .getPublicUrl(fileName);
 
@@ -109,8 +111,9 @@ export default function StaffFormPage() {
     setError(null);
 
     try {
+      const supabase = getSupabaseBrowserClient();
       if (isNew) {
-        const { error: insertError } = await supabaseClient
+        const { error: insertError } = await supabase
           .from('staff_profiles')
           .insert([formData]);
 
@@ -119,7 +122,7 @@ export default function StaffFormPage() {
           return;
         }
       } else {
-        const { error: updateError } = await supabaseClient
+        const { error: updateError } = await supabase
           .from('staff_profiles')
           .update(formData)
           .eq('id', staffId);

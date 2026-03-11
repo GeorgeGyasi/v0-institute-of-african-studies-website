@@ -8,11 +8,28 @@ if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error("Missing Supabase environment variables");
 }
 
-// Client for browser
-export const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
+// Browser client - create once
+let browserClient: ReturnType<typeof createClient> | null = null;
+
+export function getSupabaseBrowserClient() {
+  if (!browserClient) {
+    browserClient = createClient(supabaseUrl, supabaseAnonKey, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+      },
+    });
+  }
+  return browserClient;
+}
 
 // Server client (for sensitive operations)
-export const supabaseServer = createClient(supabaseUrl, supabaseServiceKey || supabaseAnonKey);
+export const supabaseServer = createClient(supabaseUrl, supabaseServiceKey || supabaseAnonKey, {
+  auth: {
+    persistSession: false,
+  },
+});
 
 export type StaffProfile = {
   id: string;
