@@ -3,14 +3,22 @@ import { createClient } from '@supabase/supabase-js';
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createClient(
+    // Use service role key to execute SQL
+    const supabaseAdmin = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
 
     // Create staff_profiles table
-    const { error: tableError } = await supabase.rpc('exec', {
-      sql: `
+    const { data: createTableResult, error: tableError } = await supabaseAdmin
+      .from('staff_profiles')
+      .select('*')
+      .limit(0);
+
+    // If table doesn't exist, we'll get an error. Try to create it using SQL directly
+    if (tableError?.code === 'PGRST116') {
+      // Table doesn't exist, create it
+      const { error: createError } = await supabaseAdmin.sql`
         CREATE TABLE IF NOT EXISTS staff_profiles (
           id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
           name TEXT NOT NULL,
@@ -28,28 +36,50 @@ export async function POST(request: NextRequest) {
           created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
           updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
         );
-      `,
-    });
+        
+        ALTER TABLE staff_profiles ENABLE ROW LEVEL SECURITY;
+        
+        CREATE POLICY "Enable read access for all users" 
+          ON staff_profiles 
+          FOR SELECT 
+          USING (true);
+        
+        CREATE POLICY "Enable insert for authenticated users only"
+          ON staff_profiles
+          FOR INSERT
+          WITH CHECK (auth.role() = 'authenticated');
+        
+        CREATE POLICY "Enable update for authenticated users only"
+          ON staff_profiles
+          FOR UPDATE
+          USING (auth.role() = 'authenticated')
+          WITH CHECK (auth.role() = 'authenticated');
+        
+        CREATE POLICY "Enable delete for authenticated users only"
+          ON staff_profiles
+          FOR DELETE
+          USING (auth.role() = 'authenticated');
+      `;
 
-    if (tableError && !tableError.message.includes('already exists')) {
-      console.error('[v0] Table creation error:', tableError);
-    }
-
-    // Enable RLS
-    const { error: rlsError } = await supabase.rpc('exec', {
-      sql: `ALTER TABLE IF EXISTS staff_profiles ENABLE ROW LEVEL SECURITY;`,
-    });
-
-    if (rlsError && !rlsError.message.includes('already')) {
-      console.error('[v0] RLS error:', rlsError);
+      if (createError) {
+        console.error('[v0] Table creation error:', createError);
+        // Continue - table might already exist
+      }
     }
 
     // Create storage bucket if it doesn't exist
-    const { data: buckets } = await supabase.storage.listBuckets();
+    const { data: buckets } = await supabaseAdmin.storage.listBuckets();
     const bucketExists = buckets?.some((b) => b.name === 'staff-photos');
 
     if (!bucketExists) {
-      await supabase.storage.createBucket('staff-photos', { public: true });
+      const { error: bucketError } = await supabaseAdmin.storage.createBucket(
+        'staff-photos',
+        { public: true }
+      );
+      
+      if (bucketError && !bucketError.message.includes('exists')) {
+        console.error('[v0] Bucket creation error:', bucketError);
+      }
     }
 
     return NextResponse.json({
