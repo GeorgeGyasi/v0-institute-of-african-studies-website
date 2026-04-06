@@ -14,6 +14,7 @@ export default function AdminDashboard() {
   const [searchTerm, setSearchTerm] = useState('');
   const [seeding, setSeeding] = useState(false);
   const [seedError, setSeedError] = useState<string | null>(null);
+  const [fetchError, setFetchError] = useState<string | null>(null);
 
   useEffect(() => {
     fetchStaff();
@@ -22,6 +23,7 @@ export default function AdminDashboard() {
   async function fetchStaff() {
     try {
       setLoading(true);
+      setFetchError(null);
       const supabase = getSupabaseClient();
       const { data, error } = await supabase
         .from('staff_profiles')
@@ -30,12 +32,14 @@ export default function AdminDashboard() {
 
       if (error) {
         console.error('[v0] Error fetching staff:', error);
+        setFetchError('Failed to load staff. Database may not be initialized. Please click "Initialize Database" first.');
         return;
       }
 
       setStaff(data || []);
     } catch (err) {
       console.error('[v0] Fetch error:', err);
+      setFetchError('Failed to connect to database. Please check your connection and try again.');
     } finally {
       setLoading(false);
     }
@@ -113,8 +117,19 @@ export default function AdminDashboard() {
           <div className="mb-4 p-4 text-sm text-red-600 bg-red-50 rounded-md">{seedError}</div>
         )}
 
+        {fetchError && (
+          <div className="mb-4 p-4 text-sm text-red-600 bg-red-50 rounded-md">{fetchError}</div>
+        )}
+
         {loading ? (
           <div className="text-center py-12">Loading staff...</div>
+        ) : fetchError && staff.length === 0 ? (
+          <div className="text-center py-12 bg-muted/20 rounded-lg p-8">
+            <p className="text-muted-foreground mb-4">Unable to load staff data. Please initialize the database first.</p>
+            <Button onClick={() => window.location.href = '/admin/setup'} variant="default">
+              Go to Setup
+            </Button>
+          </div>
         ) : filteredStaff.length === 0 && staff.length === 0 ? (
           <div className="text-center py-12 bg-muted/20 rounded-lg p-8">
             <p className="text-muted-foreground mb-4">No staff members yet. Start by seeding initial data.</p>
