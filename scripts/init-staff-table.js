@@ -1,6 +1,6 @@
-import { Pool } from 'pg';
+const { Pool } = require('pg');
 
-// Parse the connection string manually to avoid SSL issues
+// Parse the connection string
 const connectionUrl = process.env.POSTGRES_URL;
 if (!connectionUrl) {
   console.error('[v0] POSTGRES_URL not set');
@@ -9,7 +9,7 @@ if (!connectionUrl) {
 
 const pool = new Pool({
   connectionString: connectionUrl,
-  ssl: false, // Disable SSL for Vercel Postgres in sandbox
+  ssl: false,
 });
 
 async function createStaffTable() {
@@ -41,12 +41,11 @@ async function createStaffTable() {
       );
     `);
     
-    console.log('[v0] Table created successfully');
-  } catch (error: any) {
+    console.log('[v0] Table created successfully!');
+    process.exit(0);
+  } catch (error) {
     console.error('[v0] Error:', error.message);
-    if (error.code === 'SELF_SIGNED_CERT_IN_CHAIN') {
-      console.error('[v0] SSL certificate error - this is expected in sandbox');
-    }
+    process.exit(1);
   } finally {
     if (client) {
       client.release();
