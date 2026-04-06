@@ -1,23 +1,18 @@
-import { getSupabaseClient } from '@/lib/supabase';
+import { sql } from '@vercel/postgres';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = getSupabaseClient();
-    const { data, error } = await supabase
-      .from('staff_profiles')
-      .select('*')
-      .order('name');
+    console.log('[v0] Fetching staff from Vercel Postgres...');
+    
+    const result = await sql`
+      SELECT * FROM staff_profiles ORDER BY name
+    `;
 
-    if (error) {
-      console.error('[v0] Database error:', error);
-      // Return empty array if database is unavailable
-      return NextResponse.json([]);
-    }
-
-    return NextResponse.json(data || []);
-  } catch (error) {
-    console.error('[v0] API error:', error);
+    console.log('[v0] Staff fetched successfully:', result.rows.length);
+    return NextResponse.json(result.rows || []);
+  } catch (error: any) {
+    console.error('[v0] API error:', error.message);
     // Return empty array instead of 500 error, so page still loads
     return NextResponse.json([]);
   }
