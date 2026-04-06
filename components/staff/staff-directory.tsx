@@ -25,7 +25,7 @@ type StaffCategory = {
   members: StaffMember[]
 }
 
-export default function StaffDirectoryComponent() {
+export function StaffDirectory() {
   const [staffCategories, setStaffCategories] = useState<StaffCategory[]>([])
   const [activeSection, setActiveSection] = useState("staff")
   const [loading, setLoading] = useState(true)
