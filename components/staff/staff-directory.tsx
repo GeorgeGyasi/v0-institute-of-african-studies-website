@@ -121,6 +121,7 @@ export default function StaffDirectoryComponent() {
   return (
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-6">
+        <div className="flex gap-8">
           {/* Main content */}
           <div className="min-w-0 flex-1">
             <div className="flex flex-col gap-20">
