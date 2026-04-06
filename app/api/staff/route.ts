@@ -1,9 +1,10 @@
-import { supabaseServer } from '@/lib/supabase';
+import { getSupabaseClient } from '@/lib/supabase';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   try {
-    const { data, error } = await supabaseServer
+    const supabase = getSupabaseClient();
+    const { data, error } = await supabase
       .from('staff_profiles')
       .select('*')
       .order('name');
