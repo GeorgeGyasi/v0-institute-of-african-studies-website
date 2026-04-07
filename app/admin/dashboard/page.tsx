@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface StaffProfile {
@@ -12,12 +13,58 @@ interface StaffProfile {
   role: string;
   email: string;
   specialty?: string;
+  photo_url?: string;
 }
 
 const MOCK_STAFF: StaffProfile[] = [
-  { id: '1', name: 'Dr. Sarah Johnson', role: 'Professor', email: 'sarah@university.edu', specialty: 'Computer Science' },
-  { id: '2', name: 'Prof. Michael Chen', role: 'Associate Professor', email: 'michael@university.edu', specialty: 'AI & Machine Learning' },
-  { id: '3', name: 'Dr. Emily Rodriguez', role: 'Assistant Professor', email: 'emily@university.edu', specialty: 'Web Development' },
+  { 
+    id: '1', 
+    name: 'Prof. Asante', 
+    role: 'Senior Member', 
+    email: 'p.asante@university.edu', 
+    specialty: 'African Studies',
+    photo_url: '/images/professor-asante.jpg'
+  },
+  { 
+    id: '2', 
+    name: 'Prof. Dzodzi Tsikata', 
+    role: 'Senior Member', 
+    email: 'p.tsikata@university.edu', 
+    specialty: 'Law & Development',
+    photo_url: '/images/professor-dzodzi-tsikata.jpg'
+  },
+  { 
+    id: '3', 
+    name: 'Prof. Takyiwaa Manuh', 
+    role: 'Senior Member', 
+    email: 'p.manuh@university.edu', 
+    specialty: 'Gender Studies',
+    photo_url: '/images/professor-takyiwaa-manuh.jpg'
+  },
+  { 
+    id: '4', 
+    name: 'Prof. Albert Awedoba', 
+    role: 'Senior Member', 
+    email: 'p.awedoba@university.edu', 
+    specialty: 'Anthropology',
+    photo_url: '/images/professor-albert-awedoba.jpg'
+  },
+  { 
+    id: '5', 
+    name: 'Prof. Avorgbedor', 
+    role: 'Senior Member', 
+    email: 'p.avorgbedor@university.edu', 
+    specialty: 'Music & Culture',
+    photo_url: '/images/professor-avorgbedor.jpg'
+  },
+  { 
+    id: '6', 
+    name: 'Dr. Nii Dortey', 
+    role: 'Senior Member', 
+    email: 'dr.dortey@university.edu', 
+    specialty: 'Literature',
+    photo_url: '/images/dr-nii-dortey.jpg'
+  },
 ];
 
 export default function AdminDashboard() {
@@ -94,7 +141,18 @@ export default function AdminDashboard() {
             {filteredStaff.map((member) => (
               <Card key={member.id}>
                 <CardContent className="pt-6">
-                  <div className="flex items-start justify-between">
+                  <div className="flex gap-6 items-start">
+                    {member.photo_url && (
+                      <div className="flex-shrink-0">
+                        <Image
+                          src={member.photo_url}
+                          alt={member.name}
+                          width={120}
+                          height={160}
+                          className="rounded-lg object-cover"
+                        />
+                      </div>
+                    )}
                     <div className="flex-1">
                       <h3 className="font-semibold text-lg">{member.name}</h3>
                       <p className="text-sm text-muted-foreground">{member.role}</p>
@@ -102,20 +160,20 @@ export default function AdminDashboard() {
                         <p className="text-sm text-muted-foreground">{member.specialty}</p>
                       )}
                       <p className="text-sm text-muted-foreground mt-2">{member.email}</p>
-                    </div>
-                    <div className="flex gap-2">
-                      <Link href={`/admin/staff/${member.id}`}>
-                        <Button variant="outline" size="sm">
-                          Edit
+                      <div className="flex gap-2 mt-4">
+                        <Link href={`/admin/staff/${member.id}`}>
+                          <Button variant="outline" size="sm">
+                            Edit
+                          </Button>
+                        </Link>
+                        <Button
+                          variant="destructive"
+                          size="sm"
+                          onClick={() => deleteStaff(member.id)}
+                        >
+                          Delete
                         </Button>
-                      </Link>
-                      <Button
-                        variant="destructive"
-                        size="sm"
-                        onClick={() => deleteStaff(member.id)}
-                      >
-                        Delete
-                      </Button>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
