@@ -14,12 +14,13 @@ export async function POST(request: NextRequest) {
   try {
     console.log('[v0] Init endpoint called');
     
-    const dbUrl = process.env.DATABASE_URL;
-    console.log('[v0] DATABASE_URL:', dbUrl ? 'SET' : 'NOT SET');
+    // Support both Vercel Postgres (POSTGRES_URL) and Neon (DATABASE_URL)
+    const dbUrl = process.env.POSTGRES_URL || process.env.DATABASE_URL;
+    console.log('[v0] Database connection:', dbUrl ? 'configured' : 'NOT SET');
     
     if (!dbUrl) {
       return NextResponse.json(
-        { error: 'DATABASE_URL environment variable is not set. Please configure it in your Vercel project settings.' },
+        { error: 'Database not configured. Add POSTGRES_URL (Vercel Postgres) to your Vercel project settings.' },
         { status: 500 }
       );
     }
@@ -30,7 +31,7 @@ export async function POST(request: NextRequest) {
 
     let client;
     client = await pool.connect();
-    console.log('[v0] Connected to Neon database');
+    console.log('[v0] Connected to database');
 
     // Create all tables
     console.log('[v0] Creating database tables...');
