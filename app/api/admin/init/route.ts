@@ -11,15 +11,24 @@ const STAFF_DATA = [
 ];
 
 export async function POST(request: NextRequest) {
-  const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-  });
-
-  let client;
   try {
     console.log('[v0] Init endpoint called');
-    console.log('[v0] DATABASE_URL set:', !!process.env.DATABASE_URL);
+    
+    const dbUrl = process.env.DATABASE_URL;
+    console.log('[v0] DATABASE_URL:', dbUrl ? 'SET' : 'NOT SET');
+    
+    if (!dbUrl) {
+      return NextResponse.json(
+        { error: 'DATABASE_URL environment variable is not set. Please configure it in your Vercel project settings.' },
+        { status: 500 }
+      );
+    }
 
+    const pool = new Pool({
+      connectionString: dbUrl,
+    });
+
+    let client;
     client = await pool.connect();
     console.log('[v0] Connected to Neon database');
 
