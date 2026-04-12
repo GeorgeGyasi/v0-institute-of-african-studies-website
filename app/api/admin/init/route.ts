@@ -23,8 +23,10 @@ export async function POST(request: NextRequest) {
     client = await pool.connect();
     console.log('[v0] Connected to Neon database');
 
-    // Create table
-    console.log('[v0] Creating staff_profiles table...');
+    // Create all tables
+    console.log('[v0] Creating database tables...');
+    
+    // Staff profiles table
     await client.query(`
       CREATE TABLE IF NOT EXISTS staff_profiles (
         id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -44,9 +46,99 @@ export async function POST(request: NextRequest) {
         updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
       );
     `);
-    console.log('[v0] Table created successfully');
+    console.log('[v0] staff_profiles table created');
 
-    // Seed data
+    // Events table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS events (
+        id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+        title TEXT NOT NULL,
+        description TEXT,
+        event_date TIMESTAMP WITH TIME ZONE NOT NULL,
+        location TEXT,
+        category TEXT,
+        image_url TEXT,
+        status TEXT DEFAULT 'upcoming',
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      );
+    `);
+    console.log('[v0] events table created');
+
+    // Blog posts table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS blog_posts (
+        id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+        title TEXT NOT NULL,
+        slug TEXT UNIQUE,
+        content TEXT,
+        excerpt TEXT,
+        author_id UUID,
+        featured_image TEXT,
+        status TEXT DEFAULT 'draft',
+        published_at TIMESTAMP WITH TIME ZONE,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      );
+    `);
+    console.log('[v0] blog_posts table created');
+
+    // Research projects table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS research_projects (
+        id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+        title TEXT NOT NULL,
+        description TEXT,
+        principal_investigator TEXT,
+        co_investigators TEXT[],
+        start_date DATE,
+        end_date DATE,
+        funding_source TEXT,
+        status TEXT DEFAULT 'active',
+        publications TEXT[],
+        image_url TEXT,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      );
+    `);
+    console.log('[v0] research_projects table created');
+
+    // Users/Members table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS users (
+        id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+        email TEXT NOT NULL UNIQUE,
+        name TEXT NOT NULL,
+        password_hash TEXT,
+        role TEXT DEFAULT 'user',
+        status TEXT DEFAULT 'active',
+        avatar_url TEXT,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      );
+    `);
+    console.log('[v0] users table created');
+
+    // Resources/Documents table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS resources (
+        id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+        title TEXT NOT NULL,
+        description TEXT,
+        file_url TEXT NOT NULL,
+        file_type TEXT,
+        category TEXT,
+        size_kb INTEGER,
+        download_count INTEGER DEFAULT 0,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      );
+    `);
+    console.log('[v0] resources table created');
+
+    console.log('[v0] All tables created successfully');
+
+    // Seed staff data
     console.log('[v0] Seeding staff data...');
     for (const staff of STAFF_DATA) {
       await client.query(
@@ -60,14 +152,14 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Database initialized successfully with ' + STAFF_DATA.length + ' staff members',
+      message: 'Database initialized successfully with all tables and ' + STAFF_DATA.length + ' staff members',
     });
   } catch (error: any) {
     console.error('[v0] Database initialization error:', error.message);
     
-    // If table already exists, that's fine
-    if (error.code === '42P07') {
-      console.log('[v0] Table already exists');
+    // If tables already exist, that's fine
+    if (error.code === '42P07' || error.message.includes('already exists')) {
+      console.log('[v0] Tables already exist');
       return NextResponse.json({
         success: true,
         message: 'Database already initialized',
