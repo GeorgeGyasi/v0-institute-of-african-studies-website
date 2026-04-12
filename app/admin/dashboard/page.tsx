@@ -71,21 +71,33 @@ export default function AdminDashboard() {
   const [staff, setStaff] = useState<StaffProfile[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [showMockData, setShowMockData] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Load staff from localStorage on mount
+    fetchStaff();
+  }, []);
+
+  async function fetchStaff() {
     try {
-      const savedStaff = localStorage.getItem('staff_profiles');
-      if (savedStaff) {
-        setStaff(JSON.parse(savedStaff));
+      setLoading(true);
+      setError(null);
+      console.log('[v0] Fetching staff from API...');
+      
+      const response = await fetch('/api/staff');
+      if (!response.ok) {
+        throw new Error('Failed to fetch staff');
       }
+      
+      const data = await response.json();
+      console.log('[v0] Staff fetched:', data.length);
+      setStaff(data);
     } catch (err) {
-      console.error('[v0] Error loading staff:', err);
+      console.error('[v0] Fetch error:', err);
+      setError('Failed to load staff from database');
     } finally {
       setLoading(false);
     }
-  }, []);
+  }
 
   const filteredStaff = staff.filter(
     (member) =>
@@ -98,13 +110,25 @@ export default function AdminDashboard() {
     
     const updated = staff.filter((member) => member.id !== id);
     setStaff(updated);
-    localStorage.setItem('staff_profiles', JSON.stringify(updated));
+    // TODO: Call DELETE API endpoint when built
   }
 
-  function handleSeedData() {
-    setStaff(MOCK_STAFF);
-    localStorage.setItem('staff_profiles', JSON.stringify(MOCK_STAFF));
-    setShowMockData(true);
+  async function handleSeedData() {
+    try {
+      console.log('[v0] Initializing database...');
+      const response = await fetch('/api/admin/init', { method: 'POST' });
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.details || 'Failed to initialize');
+      }
+      
+      console.log('[v0] Database initialized:', data.message);
+      await fetchStaff();
+    } catch (err) {
+      console.error('[v0] Init error:', err);
+      setError(err instanceof Error ? err.message : 'Failed to initialize database');
+    }
   }
 
   return (
@@ -127,13 +151,17 @@ export default function AdminDashboard() {
           </Link>
         </div>
 
+        {error && (
+          <div className="mb-4 p-4 text-sm text-red-600 bg-red-50 rounded-md">{error}</div>
+        )}
+
         {loading ? (
           <div className="text-center py-12">Loading staff...</div>
         ) : filteredStaff.length === 0 && staff.length === 0 ? (
           <div className="text-center py-12 bg-muted/20 rounded-lg p-8">
-            <p className="text-muted-foreground mb-4">No staff members yet. Start by seeding initial data.</p>
+            <p className="text-muted-foreground mb-4">No staff members yet. Initialize database and seed data.</p>
             <Button onClick={handleSeedData} variant="default">
-              Seed Initial Staff Data
+              Initialize & Seed Database
             </Button>
           </div>
         ) : (
