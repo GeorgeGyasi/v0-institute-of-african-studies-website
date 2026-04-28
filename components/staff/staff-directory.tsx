@@ -4,11 +4,66 @@ import Link from "next/link"
 import Image from "next/image"
 import { Mail } from "lucide-react"
 import { useEffect, useState } from "react"
-import type { StaffProfile } from "@/lib/supabase"
 
-type StaffMember = StaffProfile & {
-  photo: string
+type StaffMember = {
+  id: string
+  name: string
+  role: string
+  email: string
+  specialty?: string
+  photo_url?: string
 }
+
+const MOCK_STAFF: StaffMember[] = [
+  { 
+    id: '1', 
+    name: 'Prof. Asante', 
+    role: 'Senior Member', 
+    email: 'p.asante@university.edu', 
+    specialty: 'African Studies',
+    photo_url: '/images/professor-asante.jpg'
+  },
+  { 
+    id: '2', 
+    name: 'Prof. Dzodzi Tsikata', 
+    role: 'Senior Member', 
+    email: 'p.tsikata@university.edu', 
+    specialty: 'Law & Development',
+    photo_url: '/images/professor-dzodzi-tsikata.jpg'
+  },
+  { 
+    id: '3', 
+    name: 'Prof. Takyiwaa Manuh', 
+    role: 'Senior Member', 
+    email: 'p.manuh@university.edu', 
+    specialty: 'Gender Studies',
+    photo_url: '/images/professor-takyiwaa-manuh.jpg'
+  },
+  { 
+    id: '4', 
+    name: 'Prof. Albert Awedoba', 
+    role: 'Senior Member', 
+    email: 'p.awedoba@university.edu', 
+    specialty: 'Anthropology',
+    photo_url: '/images/professor-albert-awedoba.jpg'
+  },
+  { 
+    id: '5', 
+    name: 'Prof. Avorgbedor', 
+    role: 'Senior Member', 
+    email: 'p.avorgbedor@university.edu', 
+    specialty: 'Music & Culture',
+    photo_url: '/images/professor-avorgbedor.jpg'
+  },
+  { 
+    id: '6', 
+    name: 'Dr. Nii Dortey', 
+    role: 'Senior Member', 
+    email: 'dr.dortey@university.edu', 
+    specialty: 'Literature',
+    photo_url: '/images/dr-nii-dortey.jpg'
+  },
+];
 
 // Convert staff name to URL slug
 function nameToSlug(name: string): string {
@@ -31,46 +86,19 @@ export function StaffDirectory() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    async function fetchStaff() {
-      try {
-        const response = await fetch('/api/staff')
-        if (!response.ok) {
-          throw new Error('Failed to fetch staff')
-        }
-        const data = await response.json()
-
-        // Group staff by department/category
-        const grouped: Record<string, StaffMember[]> = {}
-        data.forEach((member: any) => {
-          const category = member.department || 'Staff'
-          if (!grouped[category]) {
-            grouped[category] = []
-          }
-          grouped[category].push({
-            ...member,
-            photo: member.photo_url || '/images/placeholder.svg',
-            specialty: member.specialty || '',
-          })
-        })
-
-        // Convert to categories format
-        const categories = Object.entries(grouped).map(([category, members]) => ({
-          id: category.toLowerCase().replace(/\s+/g, '-'),
-          category,
-          members: (members as StaffMember[]).sort((a, b) => a.name.localeCompare(b.name)),
-        }))
-
-        setStaffCategories(categories)
-      } catch (error) {
-        console.error('[v0] Error fetching staff:', error)
-        // Fall back to empty state
-        setStaffCategories([])
-      } finally {
-        setLoading(false)
-      }
+    // Use mock data directly
+    const grouped: Record<string, StaffMember[]> = {
+      'Senior Members': MOCK_STAFF
     }
 
-    fetchStaff()
+    const categories = Object.entries(grouped).map(([category, members]) => ({
+      id: category.toLowerCase().replace(/\s+/g, '-'),
+      category,
+      members: (members as StaffMember[]).sort((a, b) => a.name.localeCompare(b.name)),
+    }))
+
+    setStaffCategories(categories)
+    setLoading(false)
   }, [])
 
   useEffect(() => {
@@ -193,56 +221,30 @@ export function StaffDirectory() {
 function StaffCard({ person, category }: { person: StaffMember; category: string }) {
   const slug = nameToSlug(person.name)
   const profileUrl = `/about/staff/profiles/${category}/${slug}`
-  const isClickable = category === "senior-members"
 
   return (
     <div className="group overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-lg">
-      {/* Photo with hover brightness - link only for senior members */}
-      {isClickable ? (
-        <Link href={profileUrl}>
-          <div className="relative aspect-[4/5] overflow-hidden bg-muted cursor-pointer">
-            <Image
-              src={person.photo || "/placeholder.svg"}
-              alt={`Portrait of ${person.name}`}
-              fill
-              loading="eager"
-              className="object-cover brightness-95 transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-            {/* Subtle gradient overlay at bottom for text readability */}
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
-            <div className="absolute bottom-3 left-4 right-4">
-              <p className="text-sm font-semibold text-white drop-shadow-sm">
-                {person.name}
-              </p>
-              <p className="text-xs font-medium text-white/90 drop-shadow-sm">
-                {person.role}
-              </p>
-            </div>
-          </div>
-        </Link>
-      ) : (
-        <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-          <Image
-            src={person.photo || "/placeholder.svg"}
-            alt={`Portrait of ${person.name}`}
-            fill
-            loading="eager"
-            className="object-cover brightness-95 transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-          {/* Subtle gradient overlay at bottom for text readability */}
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
-          <div className="absolute bottom-3 left-4 right-4">
-            <p className="text-sm font-semibold text-white drop-shadow-sm">
-              {person.name}
-            </p>
-            <p className="text-xs font-medium text-white/90 drop-shadow-sm">
-              {person.role}
-            </p>
-          </div>
+      {/* Photo with hover brightness */}
+      <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+        <Image
+          src={person.photo_url || "/placeholder.svg"}
+          alt={`Portrait of ${person.name}`}
+          fill
+          loading="eager"
+          className="object-cover brightness-95 transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        {/* Subtle gradient overlay at bottom for text readability */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
+        <div className="absolute bottom-3 left-4 right-4">
+          <p className="text-sm font-semibold text-white drop-shadow-sm">
+            {person.name}
+          </p>
+          <p className="text-xs font-medium text-white/90 drop-shadow-sm">
+            {person.role}
+          </p>
         </div>
-      )}
+      </div>
 
       {/* Info section */}
       <div className="p-4">
