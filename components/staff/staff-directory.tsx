@@ -219,51 +219,101 @@ export function StaffDirectory() {
 function StaffCard({ person, category }: { person: StaffMember; category: string }) {
   const slug = nameToSlug(person.name)
   const profileUrl = `/about/staff/profiles/${category}/${slug}`
+  
+  // Only named staff have profiles (not the numbered ones)
+  const hasProfile = !person.name.includes('Senior Member') && !person.name.includes('Junior Staff Member')
 
-  return (
-    <Link href={profileUrl}>
-      <div className="group overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-lg cursor-pointer">
-        {/* Photo with hover brightness */}
-        <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-          <Image
-            src={person.photo_url || "/placeholder.svg"}
-            alt={`Portrait of ${person.name}`}
-            fill
-            loading="eager"
-            className="object-cover brightness-95 transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-          {/* Subtle gradient overlay at bottom for text readability */}
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
-          <div className="absolute bottom-3 left-4 right-4">
-            <p className="text-sm font-semibold text-white drop-shadow-sm">
-              {person.name}
+  if (hasProfile) {
+    return (
+      <Link href={profileUrl}>
+        <div className="group overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-lg cursor-pointer">
+          {/* Photo with hover brightness */}
+          <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+            <Image
+              src={person.photo_url || "/placeholder.svg"}
+              alt={`Portrait of ${person.name}`}
+              fill
+              loading="eager"
+              className="object-cover brightness-95 transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+            {/* Subtle gradient overlay at bottom for text readability */}
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
+            <div className="absolute bottom-3 left-4 right-4">
+              <p className="text-sm font-semibold text-white drop-shadow-sm">
+                {person.name}
+              </p>
+              <p className="text-xs font-medium text-white/90 drop-shadow-sm">
+                {person.role}
+              </p>
+            </div>
+          </div>
+
+          {/* Info section */}
+          <div className="p-4">
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              {person.specialty}
             </p>
-            <p className="text-xs font-medium text-white/90 drop-shadow-sm">
-              {person.role}
-            </p>
+            {person.email && (
+              <div className="mt-3 flex items-center gap-2 border-t border-border pt-3">
+                <Mail className="h-3.5 w-3.5 text-primary/60" />
+                <a
+                  href={`mailto:${person.email}`}
+                  className="text-xs text-primary hover:underline"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {person.email}
+                </a>
+              </div>
+            )}
           </div>
         </div>
+      </Link>
+    )
+  }
 
-        {/* Info section */}
-        <div className="p-4">
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            {person.specialty}
+  // Non-clickable card for numbered staff and junior staff
+  return (
+    <div className="group overflow-hidden rounded-lg border border-border bg-card">
+      {/* Photo without link */}
+      <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+        <Image
+          src={person.photo_url || "/placeholder.svg"}
+          alt={`Portrait of ${person.name}`}
+          fill
+          loading="eager"
+          className="object-cover brightness-95"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        {/* Subtle gradient overlay at bottom for text readability */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
+        <div className="absolute bottom-3 left-4 right-4">
+          <p className="text-sm font-semibold text-white drop-shadow-sm">
+            {person.name}
           </p>
-          {person.email && (
-            <div className="mt-3 flex items-center gap-2 border-t border-border pt-3">
-              <Mail className="h-3.5 w-3.5 text-primary/60" />
-              <a
-                href={`mailto:${person.email}`}
-                className="text-xs text-primary hover:underline"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {person.email}
-              </a>
-            </div>
-          )}
+          <p className="text-xs font-medium text-white/90 drop-shadow-sm">
+            {person.role}
+          </p>
         </div>
       </div>
-    </Link>
+
+      {/* Info section */}
+      <div className="p-4">
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          {person.specialty}
+        </p>
+        {person.email && (
+          <div className="mt-3 flex items-center gap-2 border-t border-border pt-3">
+            <Mail className="h-3.5 w-3.5 text-primary/60" />
+            <a
+              href={`mailto:${person.email}`}
+              className="text-xs text-primary hover:underline"
+            >
+              {person.email}
+            </a>
+          </div>
+        )}
+      </div>
+    </div>
   )
 }
