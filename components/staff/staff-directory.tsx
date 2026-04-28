@@ -84,9 +84,11 @@ export function StaffDirectory() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Use mock data directly
+    // Group staff by role/category
     const grouped: Record<string, StaffMember[]> = {
-      'Senior Members': MOCK_STAFF
+      'Senior Members': MOCK_STAFF.slice(0, 12), // Named staff
+      'Senior Staff': MOCK_STAFF.slice(12, 43), // Numbered senior members
+      'Junior Staff': MOCK_STAFF.slice(43, 46), // Junior staff
     }
 
     const categories = Object.entries(grouped).map(([category, members]) => ({
