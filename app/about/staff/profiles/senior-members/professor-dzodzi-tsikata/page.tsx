@@ -158,8 +158,20 @@ export default function ProfessorTsikataPage() {
 
               {/* Current Research Projects */}
               <div>
-                <h2 className="mb-4 text-2xl font-bold text-foreground">Current Research Projects</h2>
+                <h2 className="mb-4 text-2xl font-bold text-foreground">Current Research and Publication Projects</h2>
                 <div className="space-y-4">
+                  <div className="border-l-2 border-primary pl-4">
+                    <p className="font-semibold text-foreground">2015-2022</p>
+                    <p className="text-sm text-muted-foreground">
+                      Co applicant, Land Commercialisation, Gendered Agrarian Transformation, and the Right to Food Research Project, and team leader of eight-member Ghana team. Project funded by Swiss National Foundation under its R4D programme.
+                    </p>
+                  </div>
+                  <div className="border-l-2 border-primary pl-4">
+                    <p className="font-semibold text-foreground">2018-2023</p>
+                    <p className="text-sm text-muted-foreground">
+                      IAS Team leader, Domestic Security Implications of UN Peacekeeping (D-SIP).
+                    </p>
+                  </div>
                   <div className="border-l-2 border-primary pl-4">
                     <p className="font-semibold text-foreground">2020-2023</p>
                     <p className="text-sm text-muted-foreground">
@@ -181,21 +193,142 @@ export default function ProfessorTsikataPage() {
                 </div>
               </div>
 
-              {/* Professional Roles */}
+              {/* Publications */}
               <div>
-                <h2 className="mb-4 text-2xl font-bold text-foreground">Professional Roles</h2>
-                <div className="space-y-3 text-sm text-foreground">
+                <h2 className="mb-4 text-2xl font-bold text-foreground">Recent Publications</h2>
+                <div className="space-y-6">
+                  {/* Edited Books */}
                   <div>
-                    <p className="font-semibold mb-2">Editorial Board Memberships</p>
-                    <ul className="list-inside list-disc space-y-1 text-muted-foreground ml-2">
-                      <li>Editorial Advisory Board, Oxford Development Journal (2019-present)</li>
-                      <li>Editor, Feminist Africa Journal (2018-present)</li>
-                      <li>Editorial Advisory Board, Journal of Modern African Studies (2018-present)</li>
-                      <li>International Advisory Board, Journal for Peasant Studies (2007-present)</li>
-                      <li>Editorial Board, Agrarian South: Journal of Political Economy (2011-present)</li>
+                    <h3 className="font-semibold text-foreground mb-3">Edited Books and Special Issues</h3>
+                    <ul className="space-y-2 text-sm text-foreground">
+                      <li>Elisabeth Prügl, Fenneke Reysoo & Dzodzi Tsikata (2021) Guest Editors-Forum: Commercialising Agriculture/Reorganizing Gender Journal of Peasant Studies, Vol. 48: 7 pp. 1439-1536.</li>
+                      <li>Hall, R., Scoones, I., & Tsikata D. (2017) Guest Editors, Forum: Land and Agricultural Commercialisation in Africa, Journal of Peasant Studies, Vol 44, Issue 3, Pages 515-593.</li>
+                      <li>Hall, R., Scoones, I., & Tsikata D. (Eds.). (2015). Africa's land rush: Implications for rural livelihood livelihoods and agrarian change. Martlesham: Boydell and Brewer Ltd.</li>
+                      <li>Rodriguez, C., Tsikata, D. & Ampofo, A.A. (Eds.). (2015). Transatlantic feminisms: Women and studies in Africa and the diaspora. Lanham: Lexington Books.</li>
+                      <li>Moyo, S., Tsikata, D. and Diop, Y. (Eds.). (2015). Land in the struggles for citizenship in Africa. Dakar: CODESRIA.</li>
+                    </ul>
+                  </div>
+
+                  {/* Book Chapters */}
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-3">Book Chapters</h3>
+                    <ul className="space-y-2 text-sm text-foreground">
+                      <li>Hall, R., Scoones, I. (2015). Introduction: The contexts and consequences of Africa's landrush. In R. Hall, I. Scoones & D. Tsikata (Eds.), Africa's land rush: Implications for rural livelihoods and agrarian change. Martlesham: Boydell and Brewer Ltd.</li>
+                      <li>Moyo, S., Tsikata, D. & Diop, Y. (2015). Africa's Diverse and Changing Land Questions. In S. Moyo, D. Tsikata & Y. Diop (Eds.), Land in the struggles for citizenship in Africa (pp. 1-33), Dakar: CODESRIA.</li>
+                      <li>Rodriguez, C.R, Tsikata, D., & Ampofo, A.A. (2015). Introduction: Collaborative Traditions and Transcontinental Connections. In C.R. Rodriguez, D. Tsikata, & A.A. Ampofo (Eds.), Transatlantic feminisms: women and gender studies in Africa and the diaspora. Lanham: Lexington Books.</li>
+                      <li>Tsikata, D. (2015). Like your own child? Employers' perspectives and domestic work relations in Ghana. In C.R Rodriguez, D. Tsikata & A.A. Ampofo (Eds.), Transatlantic feminisms: women and gender studies in Africa and the diaspora. Lanham: Lexington Books.</li>
+                      <li>Yaro, J.A., & Tsikata, D. (2015). Recent Transnational land deals, livelihoods and agrarian change in Ghana. In R. Hall, I. Scoones & D. Tsikata (Eds.), Africa's landrush: implications for rural livelihoods and agrarian change. Martlesham: Boydell and Brewer Ltd.</li>
+                    </ul>
+                  </div>
+
+                  {/* Journal Articles */}
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-3">Journal Articles</h3>
+                    <ul className="space-y-2 text-sm text-foreground">
+                      <li>Elisabeth Prügl, Fenneke Reysoo & Dzodzi Tsikata (2021) Agricultural and land commercialization – feminist and rights perspectives, The Journal of Peasant Studies, DOI: 10.1080/03066150.2021.1974843</li>
+                      <li>Fred Mawunyo Dzanku, Dzodzi Tsikata & Daniel Adu Ankrah (2021) The gender and geography of agricultural commercialisation: what implications for the food security of Ghana's smallholder farmers?, The Journal of Peasant Studies, DOI: 10.1080/03066150.2021.1945584</li>
+                      <li>Hall, R., Scoones, I., & Tsikata D. (2017) Plantations, outgrowers and commercial farming in Africa: agricultural commercialisation and implications for agrarian change, Journal of Peasant Studies, Vol 44, Issue 3, Pages 515-537.</li>
+                      <li>Tsikata, D. (2016). Gender, Land tenure and agrarian production systems in Sub Saharan Africa. Agrarian South: Journal of Political Economy, Vol 5, Issue 1, pp. 1 - 19.</li>
+                      <li>Tsikata, D. (2016). Understanding and addressing inequalities in the context of structural transformation in Africa: A synthesis of seven country studies. Development, pp. 1-24, doi:10.1057/s41301-016-0002-8.</li>
+                    </ul>
+                  </div>
+
+                  {/* Working Papers */}
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-3">Refereed Working Papers</h3>
+                    <ul className="space-y-2 text-sm text-foreground">
+                      <li>Darkwah, A., Tsikata, D. 2021. Home-based work and homework in Ghana: An exploration, ILO Working Paper 22 (Geneva, ILO).</li>
+                      <li>Tsikata, D. 2018 Promoting Change in Domestic Work Conditions from Outside the State in a Context of Regulatory Inertia: The Case of Ghana, LLDRL Working Paper Series, WP # 9.</li>
+                      <li>Tsikata, D. (2015). The social relations of agrarian change (IIED Working Paper). London.</li>
+                      <li>Helen Dancer, H. & Tsikata, D. (2015). Researching land and commercial agriculture in sub-Saharan Africa with a gender perspective: Concepts, issues and methods. (Working Paper 132, FAC/LAC).</li>
                     </ul>
                   </div>
                 </div>
+              </div>
+
+              {/* Teaching and Supervision */}
+              <div>
+                <h2 className="mb-4 text-2xl font-bold text-foreground">Teaching and Supervision</h2>
+                <div className="space-y-3 text-foreground">
+                  <p>
+                    Dzodzi Tsikata has taught the advanced gender studies course in the Ph.D. Development Studies Programme at ISSER (ISDS712) since 2014. Before then, she developed and taught the Gender and Development Course in the M.A. Development Studies Programme at ISSER (ISDS605) between 2002 and 2012.
+                  </p>
+                </div>
+              </div>
+
+              {/* Board Memberships */}
+              <div>
+                <h2 className="mb-4 text-2xl font-bold text-foreground">Board Memberships and Committees</h2>
+                <div className="space-y-6">
+                  {/* University of Ghana */}
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-3">University of Ghana</h3>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Member, Academic Board (2010-present)</li>
+                      <li>• Member, Business and Executive Committee (2016-present)</li>
+                      <li>• Member, Security Committee (2016-2020)</li>
+                      <li>• Member, Office of Research and Development (ORID) Management Board (2016-present)</li>
+                      <li>• IAS Management Board (2016-present)</li>
+                      <li>• Humanities Assessor, UG (2018-present)</li>
+                      <li>• Representative of UG Appointments Board on College of Humanities Appointments and Promotion Board (2018-present)</li>
+                      <li>• Representative of College of Humanities on CBAS Board (2016-present)</li>
+                      <li>• College of Humanities Academic Quality Assurance Committee (2016-present)</li>
+                    </ul>
+                  </div>
+
+                  {/* External Boards */}
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-3">External Board Memberships</h3>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Executive Secretary, International Development Economics Associates (IDEAS) (2021-present)</li>
+                      <li>• President, Executive Council, Maria Sybilla Merian Institute of Advanced Studies in Africa (MIASA) (2020-present)</li>
+                      <li>• Vice Chair, Board of the Institute for Economic Justice (2019-present)</li>
+                      <li>• Board member, GILBT (2016-present)</li>
+                      <li>• Board member, Ghana National Theatre (2016-present)</li>
+                      <li>• Member of the Steering Committee, Network for Women's Rights in Ghana (1999-present; Convenor 2003-2005)</li>
+                      <li>• Deputy Chair, International Governing Council, Centre for Democracy and Development (2009-present)</li>
+                      <li>• President, CODESRIA (2015-2018)</li>
+                      <li>• Commissioner, National Development Planning Commission (2015-2017)</li>
+                      <li>• Board Member, International Association for Feminist Economics (IAFFE) (2014-2019)</li>
+                      <li>• Member, UN Committee for Development Policy (2013-2018)</li>
+                      <li>• Member of Executive Committee, Third World Network Africa (2006-2020)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Editorial Boards */}
+              <div>
+                <h2 className="mb-4 text-2xl font-bold text-foreground">Editorial Board Memberships</h2>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Editorial Advisory Board, Oxford Development Journal (2019-present)</li>
+                  <li>• Editor, Feminist Africa Journal (2018-present)</li>
+                  <li>• Editorial Advisory Board, Journal of Modern African Studies (2018-present)</li>
+                  <li>• Editorial Board, Social Politics: International Studies in Gender, State and Society (2016-present)</li>
+                  <li>• Editorial Advisory Board, Feminist Economics (2014-present)</li>
+                  <li>• International Advisory Board, Canadian Journal of Development Studies (2014-present)</li>
+                  <li>• Editorial Board, Agrarian South: Journal of Political Economy (2011-present)</li>
+                  <li>• Editorial Board, Ghana Studies, Journal of the Ghana Studies Council (2009-present)</li>
+                  <li>• International Advisory Board, Journal for Peasant Studies (2007-present)</li>
+                  <li>• Editorial Advisory Board, African Sociological Review (2006-present)</li>
+                </ul>
+              </div>
+
+              {/* Professional Associations */}
+              <div>
+                <h2 className="mb-4 text-2xl font-bold text-foreground">Professional and Civil Society Associations</h2>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>• African Studies Association of Africa (ASAA)</li>
+                  <li>• Agrarian South Network</li>
+                  <li>• African Studies Association (ASA), USA</li>
+                  <li>• African Studies Association Women's Caucus</li>
+                  <li>• Council for the Development of Social Science Research (CODESRIA)</li>
+                  <li>• Ghana Studies Council, USA</li>
+                  <li>• International Association of Feminist Economics (IAFFE)</li>
+                  <li>• International Development Economics Associates (IDEAS)</li>
+                  <li>• Network for Women's Rights in Ghana (NETRIGHT)</li>
+                  <li>• Third World Network Africa</li>
+                </ul>
               </div>
 
               {/* Navigation */}
