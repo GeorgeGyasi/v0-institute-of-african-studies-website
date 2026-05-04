@@ -24,7 +24,7 @@ const MOCK_STAFF: StaffProfile[] = [
   { id: '5', name: 'Prof. Avorgbedor', role: 'Senior Member', email: 'p.avorgbedor@university.edu', specialty: 'Music & Culture', photo_url: '/images/professor-avorgbedor.jpg' },
   { id: '6', name: 'Dr. Nii Dortey', role: 'Senior Member', email: 'dr.dortey@university.edu', specialty: 'Literature', photo_url: '/images/dr-nii-dortey.jpg' },
   { id: '7', name: 'Prof. Esi Sutherland', role: 'Senior Member', email: 'e.sutherland@university.edu', specialty: 'Drama & Performance', photo_url: '/images/professor-esi-sutherland.jpg' },
-  { id: '8', name: 'Prof. Adomako', role: 'Senior Member', email: 'p.adomako@university.edu', specialty: 'Philosophy', photo_url: '/images/professor-adomako.jpg' },
+  { id: '8', name: 'Prof. Akosua Adomako Ampofo', role: 'Senior Member', email: 'aadomako@ug.edu.gh', specialty: 'Gender & African Studies', photo_url: '/images/professor-adomako.jpg' },
   { id: '9', name: 'Dr. Peter Narh', role: 'Senior Member', email: 'p.narh@university.edu', specialty: 'Economics', photo_url: '/images/dr-peter-narh.jpg' },
   { id: '10', name: 'Dr. Hasiyatu Abubakari', role: 'Senior Member', email: 'h.abubakari@university.edu', specialty: 'History', photo_url: '/images/dr-hasiyatu-abubakari.jpg' },
   { id: '11', name: 'Dr. Mjiba Frehiwot', role: 'Senior Member', email: 'm.frehiwot@university.edu', specialty: 'Religious Studies', photo_url: '/images/dr-mjiba-frehiwot.jpg' },
