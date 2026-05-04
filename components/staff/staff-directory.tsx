@@ -72,6 +72,22 @@ function nameToSlug(name: string): string {
     .replace(/\s+/g, "-")
 }
 
+// Mapping for named staff to their correct profile slugs
+const PROFILE_SLUG_MAP: Record<string, string> = {
+  'Prof. Asante': 'professor-richard-asante',
+  'Prof. Dzodzi Tsikata': 'professor-dzodzi-tsikata',
+  'Prof. Takyiwaa Manuh': 'professor-takyiwaa-manuh',
+  'Prof. Albert Awedoba': 'professor-albert-awedoba',
+  'Prof. Avorgbedor': 'professor-avorgbedor',
+  'Dr. Nii Dortey': 'dr-nii-dortey',
+  'Prof. Esi Sutherland': 'professor-esi-sutherland',
+  'Prof. Adomako': 'professor-adomako',
+  'Dr. Peter Narh': 'dr-peter-narh',
+  'Dr. Hasiyatu Abubakari': 'dr-hasiyatu-abubakari',
+  'Dr. Mjiba Frehiwot': 'dr-mjiba-frehiwot',
+  'George Gyesaw': 'george-gyesaw',
+};
+
 type StaffCategory = {
   id: string
   category: string
@@ -219,7 +235,8 @@ export function StaffDirectory() {
 }
 
 function StaffCard({ person, category }: { person: StaffMember; category: string }) {
-  const slug = nameToSlug(person.name)
+  // Use the slug map for named staff, otherwise use auto-generated slug
+  const slug = PROFILE_SLUG_MAP[person.name] || nameToSlug(person.name)
   const profileUrl = `/about/staff/profiles/${category}/${slug}`
   
   // Only named staff have profiles (not the numbered ones)
