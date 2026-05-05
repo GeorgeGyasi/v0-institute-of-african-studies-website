@@ -66,7 +66,7 @@ const units = [
         date: "1950 - 1985",
         source: "IAS Ethnomusicology Archive",
         description:
-          "A photographic and audio-visual archive documenting traditional drumming ceremonies, dance performances, and musical traditions across Ghana. Includes field recordings by pioneering ethnomusicologist J.H. Kwabena Nketia and his students, along with contextual photographs and field notes.",
+          "A photographic and audio-visual archive documenting traditional drumming ceremonies, dance performances, and musical traditions across Ghana. Includes field recordings by pioneering ethnomusicologist J. H. Kwabena Nketia and his students, along with contextual photographs and field notes.",
       },
       {
         id: "textiles",

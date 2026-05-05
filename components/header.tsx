@@ -54,7 +54,7 @@ const navItems: NavItem[] = [
     href: "/about/sections-units",
     children: [
       { label: "All Sections & Units", href: "/about/sections-units" },
-      { label: "J.H. Kwabena Nketia Archives", href: "/units/nketia-archives" },
+      { label: "J. H. Kwabena Nketia Archives", href: "/units/nketia-archives" },
       { label: "Ghana Dance Ensemble", href: "/units/ghana-dance-ensemble" },
       { label: "Library", href: "/units/library" },
       { label: "Manhyia Archives", href: "/units/manhyia-archives" },

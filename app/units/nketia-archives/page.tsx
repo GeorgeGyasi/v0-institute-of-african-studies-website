@@ -3,7 +3,7 @@ import { PageHeader } from "@/components/page-header"
 import { Library, Music, FileText, Mic } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "J.H. Kwabena Nketia Archives",
+  title: "J. H. Kwabena Nketia Archives",
   description:
     "The J.H. Kwabena Nketia Archives at the Institute of African Studies, University of Ghana.",
 }
@@ -43,7 +43,7 @@ export default function NketiaArchivesPage() {
   return (
     <>
       <PageHeader
-        title="J.H. Kwabena Nketia Archives"
+        title="J. H. Kwabena Nketia Archives"
         subtitle="Preserving the legacy of Africa's foremost ethnomusicologist"
       />
 
@@ -58,7 +58,7 @@ export default function NketiaArchivesPage() {
             </h2>
             <div className="flex flex-col gap-4 text-base leading-relaxed text-muted-foreground">
               <p>
-                The J.H. Kwabena Nketia Archives are named in honour of
+                The J. H. Kwabena Nketia Archives are named in honour of
                 Professor Joseph Hanson Kwabena Nketia (1921-2019), one of
                 Africa's most distinguished scholars of music and the arts.
                 Prof. Nketia spent over six decades researching, documenting,

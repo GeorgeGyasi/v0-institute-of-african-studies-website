@@ -51,7 +51,7 @@ export default function IndigenousKnowledgePanelPage() {
                 <MapPin className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Venue</p>
-                  <p className="font-semibold text-foreground">J.H. Nketia Conference Room</p>
+                  <p className="font-semibold text-foreground">J. H. Nketia Conference Room</p>
                 </div>
               </div>
             </div>

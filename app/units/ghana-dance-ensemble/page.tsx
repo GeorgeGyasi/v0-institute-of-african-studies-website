@@ -98,8 +98,8 @@ export default function GhanaDanceEnsemblePage() {
                 <p>
                   The Ghana Dance Ensemble was established in 1962 as a
                   professional performing arts company of the Institute of
-                  African Studies, University of Ghana. Founded under the
-                  direction of Professor Albert Mawere Opoku and Professor J.H.
+                  African Studies, University of Ghana.                   Founded under the
+                  direction of Professor Albert Mawere Opoku and Professor J. H.
                   Kwabena Nketia, the Ensemble was created to research, preserve,
                   and promote the traditional and contemporary performing arts
                   of Ghana and Africa.
