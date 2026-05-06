@@ -24,9 +24,9 @@ const researchAreas = [
     projects: ["Trans-Saharan Trade Networks", "Archaeology of the Volta Basin", "Oral History Documentation"],
   },
   {
-    title: "Gender, Culture & Society",
+    title: "Culture & Societies",
     description:
-      "Interdisciplinary research on gender relations, cultural practices, social structures, and their transformations in contemporary African societies.",
+      "Interdisciplinary research on cultural practices, social structures, and their transformations in contemporary African societies.",
     projects: ["Women in African Politics", "Masculinities in West Africa", "Gender and Land Rights"],
   },
   {
