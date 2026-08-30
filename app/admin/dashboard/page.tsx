@@ -75,7 +75,22 @@ export default function AdminDashboard() {
     try {
       const savedStaff = localStorage.getItem('staff_profiles');
       if (savedStaff) {
-        setStaff(JSON.parse(savedStaff));
+        const saved = JSON.parse(savedStaff) as StaffProfile[];
+        const renamed = saved.map((member) => {
+          const nameUpdates: Record<string, string> = {
+            'Senior Member 1': 'Nathaniel Kpogo Worlanyo',
+            'Senior Member 10': 'Selina Okle Emma',
+            'Senior Member 11': 'Philip Owusu PhD',
+            'Senior Member 12': 'Joy Koney',
+            'Senior Member 13': 'Justice Library',
+            'Senior Member 14': 'Mark Anthony A. Alongya',
+          };
+          return nameUpdates[member.name] ? { ...member, name: nameUpdates[member.name] } : member;
+        });
+        setStaff(renamed);
+        localStorage.setItem('staff_profiles', JSON.stringify(renamed));
+      } else {
+        setStaff(MOCK_STAFF);
       }
     } catch (err) {
       console.error('[v0] Error loading staff:', err);
