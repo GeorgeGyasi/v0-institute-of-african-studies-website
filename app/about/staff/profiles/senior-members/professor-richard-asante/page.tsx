@@ -69,44 +69,60 @@ export default function ProfessorAsantePage() {
                 <div>
                   <h2 className="text-3xl font-bold text-foreground mb-4">Professional Overview</h2>
                   <p className="text-lg leading-relaxed text-foreground">
-                    Professor Richard Asante is a distinguished scholar of African history and governance at the Institute of African Studies, University of Ghana. With extensive research and teaching experience, he has contributed significantly to the understanding of African political systems, historical governance structures, and contemporary state formation in Africa.
+                    Richard Asante is an Associate Professor of Comparative Politics at the University of Ghana, Legon. His research focuses on the intersection between politics and development, with special focus on democratisation, the dynamics of Africa-China relations, natural resource governance and communal conflicts, and international peacekeeping and domestic and regional security.
+
+Asante holds B.A. and M.Phil. degrees in Political Science from the University of Ghana, and a Ph.D. in Political Science through the Harvard University–University of Ghana split-Ph.D. programme. He was a special student in the Department of Government at Harvard University in 2008/2009 and has held Visiting Scholar positions at Oxford University, New School University, and the University of Cape Town.
+
+He has also been a visiting professor at Pomona College, where he taught Comparative Politics of Africa and Peace and Security in Africa. He received the 2012/2013 Mellon Postdoctoral Fellowship at Northwestern University, where he taught Comparative Politics and Development in Africa.
+
+Asante is Regional Manager, West Africa, for the Varieties of Democracy (V-Dem) Research Project at the University of Gothenburg, an Afrobarometer Fellow since 2010, and a Catalyst Fellow at the Centre of African Studies at the University of Edinburgh. He has contributed to post-conference policy briefings in Washington, D.C. on electoral politics, power sharing, Africa-China relations, democratic backsliding, and terrorism in West Africa.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-4">Research Focus</h2>
+                  <h2 className="text-2xl font-bold text-foreground mb-4">Research Areas</h2>
                   <ul className="space-y-3 text-foreground">
-                    <li className="flex gap-3">
-                      <span className="text-primary flex-shrink-0">•</span>
-                      <span>African political history and governance systems</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary flex-shrink-0">•</span>
-                      <span>Traditional forms of African leadership and administration</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary flex-shrink-0">•</span>
-                      <span>Post-colonial state development in Africa</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary flex-shrink-0">•</span>
-                      <span>Comparative African governance structures</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary flex-shrink-0">•</span>
-                      <span>Historical analysis of political transitions in African societies</span>
-                    </li>
+                    {[
+                      "Democratisation and comparative politics",
+                      "Africa-China relations",
+                      "Natural resource governance and communal conflicts",
+                      "International peacekeeping",
+                      "Domestic and regional security",
+                    ].map((area) => (
+                      <li key={area} className="flex gap-3">
+                        <span className="text-primary flex-shrink-0">•</span>
+                        <span>{area}</span>
+                      </li>
+                    ))}
                   </ul>
+
+                  <div className="mt-8">
+                    <h2 className="text-2xl font-bold text-foreground mb-4">Education</h2>
+                    <ul className="space-y-3 text-foreground">
+                      <li>B.A. in Political Science, University of Ghana</li>
+                      <li>M.Phil. in Political Science, University of Ghana</li>
+                      <li>Ph.D. in Political Science, Harvard University–University of Ghana split-Ph.D. programme</li>
+                      <li>Special Student, Department of Government, Harvard University (2008/2009)</li>
+                    </ul>
+                  </div>
                 </div>
 
                 <div>
                   <h2 className="text-2xl font-bold text-foreground mb-4">Academic Contributions</h2>
                   <p className="leading-relaxed text-foreground mb-4">
-                    Professor Asante has published extensively on African political history, with particular emphasis on the governance structures and political transitions among Asante communities in Ghana. His work examines how traditional political systems have adapted to modern state structures, and explores the continuities and transformations in African governance.
+                    Asante’s work examines the relationship between political change and development in Africa, including democratic transitions, security, peacekeeping, Africa-China relations, natural resources, and communal conflict. His research and policy engagement connect academic analysis with contemporary governance and security challenges.
                   </p>
+                </div>
+
+                <div>
+                  <h2 className="text-2xl font-bold text-foreground mb-4">Recent Publications</h2>
                   <p className="leading-relaxed text-foreground">
-                    His research has been supported by major funding bodies, including the Ford Foundation, enabling him to conduct extensive field research on political systems and their evolution in contemporary African contexts.
+                    Professor Asante’s publications address comparative politics, democratisation, Africa-China relations, resource governance, conflict, peacekeeping, and security. A complete and current publication list can be accessed through his Google Scholar profile.
                   </p>
+                  <a href="https://scholar.google.com/" className="mt-4 inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
+                    <Globe className="h-4 w-4" />
+                    Google Scholar profile
+                  </a>
                 </div>
 
                 <div>
@@ -120,12 +136,16 @@ export default function ProfessorAsantePage() {
                   <h2 className="text-2xl font-bold text-foreground mb-4">Research Projects</h2>
                   <ul className="space-y-4 text-foreground">
                     <li className="rounded-lg bg-card p-4 border border-border">
-                      <h3 className="font-semibold mb-2">Ford Foundation Funded Research</h3>
-                      <p className="text-sm">Research on traditional forms of governance with emphasis on political transitions among the Asantes in Ghana, examining how indigenous political systems engage with modern democratic institutions.</p>
+                      <h3 className="font-semibold mb-2">Africa-China Relations and Development</h3>
+                      <p className="text-sm">Research on the political, environmental, and security implications of Africa-China relations.</p>
                     </li>
                     <li className="rounded-lg bg-card p-4 border border-border">
-                      <h3 className="font-semibold mb-2">Comparative African Governance Studies</h3>
-                      <p className="text-sm">Investigation of governance models across different African societies, analyzing the interplay between traditional authority and state power.</p>
+                      <h3 className="font-semibold mb-2">Democracy, Peacekeeping and Security</h3>
+                      <p className="text-sm">Research and policy engagement on democratic backsliding, electoral politics, power sharing, international peacekeeping, and terrorism in West Africa.</p>
+                    </li>
+                    <li className="rounded-lg bg-card p-4 border border-border">
+                      <h3 className="font-semibold mb-2">Varieties of Democracy (V-Dem)</h3>
+                      <p className="text-sm">Regional Manager for West Africa of the V-Dem Research Project at the University of Gothenburg, Sweden.</p>
                     </li>
                   </ul>
                 </div>
