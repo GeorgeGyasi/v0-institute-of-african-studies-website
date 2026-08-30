@@ -133,9 +133,14 @@ export default function AdminDashboard() {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="max-w-md"
           />
-          <Link href="/admin/staff/new">
-            <Button>Add New Staff Member</Button>
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/admin/senior-profile">
+              <Button variant="outline">Senior Member Profile Form</Button>
+            </Link>
+            <Link href="/admin/staff/new">
+              <Button>Add New Staff Member</Button>
+            </Link>
+          </div>
         </div>
 
         {loading ? (
