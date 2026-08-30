@@ -29,6 +29,7 @@ const MOCK_STAFF: StaffProfile[] = [
   { id: '10', name: 'Dr. Hasiyatu Abubakari', role: 'Senior Member', email: 'h.abubakari@university.edu', specialty: 'History', photo_url: '/images/dr-hasiyatu-abubakari.jpg' },
   { id: '11', name: 'Dr. Mjiba Frehiwot', role: 'Senior Member', email: 'm.frehiwot@university.edu', specialty: 'Religious Studies', photo_url: '/images/dr-mjiba-frehiwot.jpg' },
   { id: '12', name: 'George Gyesaw', role: 'Senior Member', email: 'g.gyesaw@university.edu', specialty: 'Cultural Studies', photo_url: '/images/george-gyesaw.jpg' },
+  { id: '47', name: 'Ɔbenfo (Professor) Ọbádélé Bakari Kambon', role: 'Senior Member', email: '', specialty: 'African Philosophy & Consciousness', photo_url: '/images/obadele-bakari-kambon.jpg' },
   { id: '13', name: 'Nathaniel Kpogo Worlanyo', role: 'Senior Member', email: 'sm1@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-1.jpg' },
   { id: '14', name: 'Senior Member 2', role: 'Senior Member', email: 'sm2@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-2.jpg' },
   { id: '15', name: 'Senior Member 3', role: 'Senior Member', email: 'sm3@university.edu', specialty: 'Administration', photo_url: '/images/staff/senior-member-3.jpg' },
@@ -87,8 +88,12 @@ export default function AdminDashboard() {
           };
           return nameUpdates[member.name] ? { ...member, name: nameUpdates[member.name] } : member;
         });
-        setStaff(renamed);
-        localStorage.setItem('staff_profiles', JSON.stringify(renamed));
+        const kambon = MOCK_STAFF.find((member) => member.name.startsWith('Ɔbenfo'));
+        const synced = kambon && !renamed.some((member) => member.name.startsWith('Ɔbenfo'))
+          ? [...renamed, kambon]
+          : renamed;
+        setStaff(synced);
+        localStorage.setItem('staff_profiles', JSON.stringify(synced));
       } else {
         setStaff(MOCK_STAFF);
       }
