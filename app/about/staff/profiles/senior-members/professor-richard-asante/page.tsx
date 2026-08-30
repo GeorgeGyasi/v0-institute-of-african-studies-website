@@ -1,199 +1,71 @@
 import type { Metadata } from "next"
 import Image from "next/image"
+import Link from "next/link"
+import { Mail, MapPin, BookOpen, GraduationCap, FlaskConical, Library, Users, Landmark, Award, ExternalLink } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
 import { ProfileNavigation } from "@/components/profile-navigation"
 import { getProfileNavigation } from "@/lib/staff-profiles"
-import { Mail, Globe, BookOpen, Award } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Professor Richard Asante",
-  description:
-    "Professor of African History and Governance at the Institute of African Studies, University of Ghana.",
+  description: "Profile of Professor Richard Asante, Associate Professor of Comparative Politics at the Institute of African Studies, University of Ghana.",
+}
+
+const researchAreas = [
+  "Democratisation and comparative politics",
+  "Africa-China relations",
+  "Natural resource governance and communal conflicts",
+  "International peacekeeping",
+  "Domestic and regional security",
+]
+
+const education = [
+  "B.A. in Political Science, University of Ghana",
+  "M.Phil. in Political Science, University of Ghana",
+  "Ph.D. in Political Science, Harvard University–University of Ghana split-Ph.D. programme",
+  "Special Student, Department of Government, Harvard University (2008/2009)",
+]
+
+const projects = [
+  ["Africa-China Relations and Development", "Research on the political, environmental, and security implications of Africa-China relations."],
+  ["Democracy, Peacekeeping and Security", "Research and policy engagement on democratic backsliding, electoral politics, power sharing, international peacekeeping, and terrorism in West Africa."],
+  ["Varieties of Democracy (V-Dem)", "Regional Manager for West Africa of the V-Dem Research Project at the University of Gothenburg, Sweden."],
+]
+
+const boards = [
+  "Regional Manager, West Africa, Varieties of Democracy (V-Dem) Research Project, University of Gothenburg",
+  "Afrobarometer Fellow (since 2010)",
+  "Catalyst Fellow, Centre of African Studies, University of Edinburgh",
+  "Visiting Scholar, Oxford University, New School University, and University of Cape Town",
+]
+
+function Section({ id, icon: Icon, title, children }: { id: string; icon: typeof BookOpen; title: string; children: React.ReactNode }) {
+  return <section id={id} className="scroll-mt-28 border-b border-border py-10 last:border-0"><div className="mb-5 flex items-center gap-3"><Icon className="size-5 text-primary" aria-hidden="true" /><h2 className="text-2xl font-semibold tracking-tight text-foreground">{title}</h2></div>{children}</section>
+}
+
+function List({ items }: { items: string[] }) {
+  return <ul className="flex flex-col gap-3 text-sm leading-6 text-muted-foreground">{items.map((item) => <li key={item} className="flex gap-3"><span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" /><span>{item}</span></li>)}</ul>
 }
 
 export default function ProfessorAsantePage() {
   const navigation = getProfileNavigation("professor-richard-asante")
-
-  return (
-    <>
-      <PageHeader
-        title="Professor Richard Asante"
-        subtitle="Professor of African History and Governance"
-      />
-
-      <section className="py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-12 lg:grid-cols-3">
-            {/* Left Column - Profile Image and Contact */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24 space-y-6">
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src="/images/professor-asante.jpg"
-                    alt="Professor Richard Asante"
-                    width={300}
-                    height={400}
-                    className="h-auto w-full object-cover"
-                    priority
-                  />
-                </div>
-
-                {/* Contact Information */}
-                <div className="space-y-4 rounded-lg bg-card p-6 border border-border">
-                  <h3 className="text-lg font-semibold text-foreground">Contact</h3>
-                  <div className="space-y-3">
-                    <a
-                      href="mailto:rasante@ug.edu.gh"
-                      className="flex items-center gap-3 text-primary hover:opacity-80 transition-opacity"
-                    >
-                      <Mail className="h-5 w-5 flex-shrink-0" />
-                      <span className="text-sm">rasante@ug.edu.gh</span>
-                    </a>
-                  </div>
-                </div>
-
-                {/* Key Information */}
-                <div className="space-y-4 rounded-lg bg-card p-6 border border-border">
-                  <h3 className="text-lg font-semibold text-foreground">Position</h3>
-                  <p className="text-sm text-muted-foreground">Professor of African History and Governance</p>
-                  
-                  <h3 className="text-lg font-semibold text-foreground pt-4">Specialty</h3>
-                  <p className="text-sm text-muted-foreground">African History & Governance</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Biography and Details */}
-            <div className="lg:col-span-2">
-              <article className="prose prose-invert max-w-none space-y-8">
-                <div>
-                  <h2 className="text-3xl font-bold text-foreground mb-4">Professional Overview</h2>
-                  <p className="text-lg leading-relaxed text-foreground">
-                    Richard Asante is an Associate Professor of Comparative Politics at the University of Ghana, Legon. His research focuses on the intersection between politics and development, with special focus on democratisation, the dynamics of Africa-China relations, natural resource governance and communal conflicts, and international peacekeeping and domestic and regional security.
-
-Asante holds B.A. and M.Phil. degrees in Political Science from the University of Ghana, and a Ph.D. in Political Science through the Harvard University–University of Ghana split-Ph.D. programme. He was a special student in the Department of Government at Harvard University in 2008/2009 and has held Visiting Scholar positions at Oxford University, New School University, and the University of Cape Town.
-
-He has also been a visiting professor at Pomona College, where he taught Comparative Politics of Africa and Peace and Security in Africa. He received the 2012/2013 Mellon Postdoctoral Fellowship at Northwestern University, where he taught Comparative Politics and Development in Africa.
-
-Asante is Regional Manager, West Africa, for the Varieties of Democracy (V-Dem) Research Project at the University of Gothenburg, an Afrobarometer Fellow since 2010, and a Catalyst Fellow at the Centre of African Studies at the University of Edinburgh. He has contributed to post-conference policy briefings in Washington, D.C. on electoral politics, power sharing, Africa-China relations, democratic backsliding, and terrorism in West Africa.
-                  </p>
-                </div>
-
-                <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-4">Research Areas</h2>
-                  <ul className="space-y-3 text-foreground">
-                    {[
-                      "Democratisation and comparative politics",
-                      "Africa-China relations",
-                      "Natural resource governance and communal conflicts",
-                      "International peacekeeping",
-                      "Domestic and regional security",
-                    ].map((area) => (
-                      <li key={area} className="flex gap-3">
-                        <span className="text-primary flex-shrink-0">•</span>
-                        <span>{area}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-8">
-                    <h2 className="text-2xl font-bold text-foreground mb-4">Education</h2>
-                    <ul className="space-y-3 text-foreground">
-                      <li>B.A. in Political Science, University of Ghana</li>
-                      <li>M.Phil. in Political Science, University of Ghana</li>
-                      <li>Ph.D. in Political Science, Harvard University–University of Ghana split-Ph.D. programme</li>
-                      <li>Special Student, Department of Government, Harvard University (2008/2009)</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-4">Academic Contributions</h2>
-                  <p className="leading-relaxed text-foreground mb-4">
-                    Asante’s work examines the relationship between political change and development in Africa, including democratic transitions, security, peacekeeping, Africa-China relations, natural resources, and communal conflict. His research and policy engagement connect academic analysis with contemporary governance and security challenges.
-                  </p>
-                </div>
-
-                <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-4">Recent Publications</h2>
-                  <p className="leading-relaxed text-foreground">
-                    Professor Asante’s publications address comparative politics, democratisation, Africa-China relations, resource governance, conflict, peacekeeping, and security. A complete and current publication list can be accessed through his Google Scholar profile.
-                  </p>
-                  <a href="https://scholar.google.com/" className="mt-4 inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
-                    <Globe className="h-4 w-4" />
-                    Google Scholar profile
-                  </a>
-                </div>
-
-                <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-4">Teaching and Mentorship</h2>
-                  <p className="leading-relaxed text-foreground">
-                    As an experienced educator, Professor Asante has taught numerous courses on African history, political systems, and governance to undergraduate and graduate students. He is committed to developing the next generation of African scholars and has supervised numerous research projects focusing on African political development and historical analysis.
-                  </p>
-                </div>
-
-                <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-4">Research Projects</h2>
-                  <ul className="space-y-4 text-foreground">
-                    <li className="rounded-lg bg-card p-4 border border-border">
-                      <h3 className="font-semibold mb-2">Africa-China Relations and Development</h3>
-                      <p className="text-sm">Research on the political, environmental, and security implications of Africa-China relations.</p>
-                    </li>
-                    <li className="rounded-lg bg-card p-4 border border-border">
-                      <h3 className="font-semibold mb-2">Democracy, Peacekeeping and Security</h3>
-                      <p className="text-sm">Research and policy engagement on democratic backsliding, electoral politics, power sharing, international peacekeeping, and terrorism in West Africa.</p>
-                    </li>
-                    <li className="rounded-lg bg-card p-4 border border-border">
-                      <h3 className="font-semibold mb-2">Varieties of Democracy (V-Dem)</h3>
-                      <p className="text-sm">Regional Manager for West Africa of the V-Dem Research Project at the University of Gothenburg, Sweden.</p>
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-4">Professional Roles</h2>
-                  <ul className="space-y-2 text-foreground">
-                    <li className="flex gap-3">
-                      <span className="text-primary flex-shrink-0">•</span>
-                      <span>Professor of African History and Governance</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary flex-shrink-0">•</span>
-                      <span>Member, Institute of African Studies Faculty</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary flex-shrink-0">•</span>
-                      <span>Advisor to graduate students in African History programs</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Navigation */}
-                {navigation && (
-                  <ProfileNavigation
-                    previousSlug={navigation.previous.slug}
-                    nextSlug={navigation.next.slug}
-                    previousName={navigation.previous.name}
-                    nextName={navigation.next.name}
-                    isFirst={navigation.isFirst}
-                    isLast={navigation.isLast}
-                  />
-                )}
-
-                {/* Back Link */}
-                <div className="mt-8 pt-8">
-                  <a
-                    href="/about/staff"
-                    className="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
-                  >
-                    ← Back to Staff Directory
-                  </a>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+  return <>
+    <PageHeader title="Professor Richard Asante" subtitle="Associate Professor · Comparative Politics" />
+    <main className="mx-auto grid max-w-7xl gap-8 px-6 py-10 lg:grid-cols-[280px_minmax(0,1fr)]">
+      <aside className="lg:sticky lg:top-24 lg:h-fit">
+        <div className="overflow-hidden rounded-xl border border-border bg-card"><Image src="/images/professor-asante.jpg" alt="Professor Richard Asante" width={640} height={800} className="aspect-[4/5] w-full object-cover" priority /><div className="flex flex-col gap-4 p-5"><div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Associate Professor</p><p className="mt-1 text-sm text-foreground">Institute of African Studies</p></div><a href="mailto:rasante@ug.edu.gh" className="flex items-center gap-2 text-sm text-primary hover:underline"><Mail className="size-4" />rasante@ug.edu.gh</a><p className="flex gap-2 text-sm leading-6 text-muted-foreground"><MapPin className="mt-1 size-4 shrink-0" />University of Ghana, Legon</p></div></div>
+        <nav aria-label="Profile sections" className="mt-5 hidden rounded-xl border border-border bg-card p-4 lg:block"><p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">On this page</p><div className="flex flex-col gap-2 text-sm"><a href="#profile" className="text-primary hover:underline">Profile</a><a href="#education" className="text-muted-foreground hover:text-primary">Education</a><a href="#research" className="text-muted-foreground hover:text-primary">Research</a><a href="#publications" className="text-muted-foreground hover:text-primary">Publications</a><a href="#teaching" className="text-muted-foreground hover:text-primary">Teaching</a><a href="#leadership" className="text-muted-foreground hover:text-primary">Leadership</a></div></nav>
+      </aside>
+      <article className="min-w-0 rounded-xl border border-border bg-card px-6 md:px-10">
+        <Section id="profile" icon={Users} title="Profile"><div className="flex flex-col gap-4 text-base leading-7 text-muted-foreground"><p>Richard Asante is an Associate Professor of Comparative Politics at the University of Ghana, Legon. His research focuses on the intersection between politics and development, with special focus on democratisation, the dynamics of Africa-China relations, natural resource governance and communal conflicts, and international peacekeeping and domestic and regional security.</p><p>He has held Visiting Scholar positions at Oxford University, New School University, and the University of Cape Town. He has also been a visiting professor at Pomona College and received the 2012/2013 Mellon Postdoctoral Fellowship at Northwestern University.</p><p>Asante has contributed to post-conference policy briefings in Washington, D.C. on electoral politics, power sharing, Africa-China relations, democratic backsliding, and terrorism in West Africa.</p></div></Section>
+        <Section id="education" icon={GraduationCap} title="Education"><List items={education} /></Section>
+        <Section id="research" icon={FlaskConical} title="Research Areas"><List items={researchAreas} /><div className="mt-8 flex flex-col gap-5"><h3 className="text-lg font-semibold text-foreground">Current Research and Publication Projects</h3>{projects.map(([title, description]) => <div key={title} className="rounded-lg border border-border p-4"><h4 className="font-semibold text-foreground">{title}</h4><p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p></div>)}</div></Section>
+        <Section id="publications" icon={Library} title="Recent Publications"><p className="text-sm leading-6 text-muted-foreground">Professor Asante’s publications address comparative politics, democratisation, Africa-China relations, resource governance, conflict, peacekeeping, and security. For current and future publications, visit <a className="inline-flex items-center gap-1 text-primary hover:underline" href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar <ExternalLink className="size-3" /></a>.</p></Section>
+        <Section id="teaching" icon={BookOpen} title="Teaching and Supervision"><p className="text-sm leading-6 text-muted-foreground">Professor Asante has taught Comparative Politics of Africa, Peace and Security in Africa, and Comparative Politics and Development in Africa. He is committed to developing the next generation of African scholars through teaching and supervision.</p></Section>
+        <Section id="leadership" icon={Landmark} title="Board Memberships and Professional Roles"><List items={boards} /></Section>
+        {navigation && <ProfileNavigation previousSlug={navigation.previous.slug} nextSlug={navigation.next.slug} previousName={navigation.previous.name} nextName={navigation.next.name} isFirst={navigation.isFirst} isLast={navigation.isLast} />}
+        <div className="border-t border-border py-8"><Link href="/about/staff" className="text-sm text-primary hover:underline">← Back to Staff Directory</Link></div>
+      </article>
+    </main>
+  </>
 }
