@@ -29,6 +29,7 @@ const MOCK_STAFF: StaffMember[] = [
   { id: '12', name: 'George Gyesaw', role: 'Senior Member', email: 'g.gyesaw@university.edu', specialty: 'Cultural Studies', photo_url: '/images/george-gyesaw.jpg' },
   { id: '47', name: 'Ɔbenfo (Professor) Ọbádélé Bakari Kambon', role: 'Senior Member', email: '', specialty: 'African Philosophy & Consciousness', photo_url: '/images/obadele-bakari-kambon.jpg' },
   { id: '48', name: 'Dr. Edwin Asa Adjei', role: 'Senior Member', email: 'edaadjei@ug.edu.gh', specialty: 'Language, Literature and Drama', photo_url: '/images/dr-edwin-asa-adjei.jpg' },
+  { id: '49', name: 'Chika C. Mba', role: 'Senior Member', email: 'cmba@ug.edu.gh', specialty: 'African Philosophy & Decolonial Theory', photo_url: '/images/dr-chika-mba.jpg' },
   { id: '13', name: 'Nathaniel Kpogo Worlanyo', role: 'Senior Member', email: 'sm1@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-1.jpg' },
   { id: '14', name: 'Senior Member 2', role: 'Senior Member', email: 'sm2@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-2.jpg' },
   { id: '15', name: 'Senior Member 3', role: 'Senior Member', email: 'sm3@university.edu', specialty: 'Administration', photo_url: '/images/staff/senior-member-3.jpg' },
@@ -76,6 +77,7 @@ function nameToSlug(name: string): string {
 
 // Mapping for named staff to their correct profile slugs
 const PROFILE_SLUG_MAP: Record<string, string> = {
+  'Chika C. Mba': 'dr-chika-c-mba',
   'Dr. Edwin Asa Adjei': 'dr-edwin-asa-adjei',
   'Ɔbenfo (Professor) Ọbádélé Bakari Kambon': 'benfo-professor-obadele-bakari-kambon',
   'Prof. Asante': 'professor-richard-asante',
@@ -106,9 +108,9 @@ export function StaffDirectory() {
   useEffect(() => {
     // Group staff by role/category
     const grouped: Record<string, StaffMember[]> = {
-      'Senior Members': MOCK_STAFF.slice(0, 14), // Named staff, including Kambon and Edwin
-      'Senior Staff': MOCK_STAFF.slice(14, 45), // Numbered senior members
-      'Junior Staff': MOCK_STAFF.slice(45, 48), // Junior staff
+      'Senior Members': MOCK_STAFF.slice(0, 15), // Named staff, including Kambon, Edwin, and Mba
+      'Senior Staff': MOCK_STAFF.slice(15, 46), // Numbered senior members
+      'Junior Staff': MOCK_STAFF.slice(46, 49), // Junior staff
     }
 
     const categories = Object.entries(grouped).map(([category, members]) => ({
