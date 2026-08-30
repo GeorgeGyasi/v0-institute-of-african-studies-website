@@ -31,6 +31,7 @@ const MOCK_STAFF: StaffProfile[] = [
   { id: '12', name: 'George Gyesaw', role: 'Senior Member', email: 'g.gyesaw@university.edu', specialty: 'Cultural Studies', photo_url: '/images/george-gyesaw.jpg' },
   { id: '47', name: 'Ɔbenfo (Professor) Ọbádélé Bakari Kambon', role: 'Senior Member', email: '', specialty: 'African Philosophy & Consciousness', photo_url: '/images/obadele-bakari-kambon.jpg' },
   { id: '49', name: 'Chika C. Mba', role: 'Senior Member', email: 'cmba@ug.edu.gh', specialty: 'African Philosophy & Decolonial Theory', photo_url: '/images/dr-chika-mba.jpg' },
+  { id: '50', name: 'Dr. Eric Tamatey Lawer', role: 'Senior Member', email: 'elawer@ug.edu.gh', specialty: 'Natural Resource Governance & Energy Transition', photo_url: '/images/dr-eric-tamatey-lawer.jpg' },
   { id: '13', name: 'Nathaniel Kpogo Worlanyo', role: 'Senior Member', email: 'sm1@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-1.jpg' },
   { id: '14', name: 'Senior Member 2', role: 'Senior Member', email: 'sm2@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-2.jpg' },
   { id: '15', name: 'Senior Member 3', role: 'Senior Member', email: 'sm3@university.edu', specialty: 'Administration', photo_url: '/images/staff/senior-member-3.jpg' },
@@ -90,7 +91,7 @@ export default function AdminDashboard() {
           return nameUpdates[member.name] ? { ...member, name: nameUpdates[member.name] } : member;
         });
         const missingProfiles = MOCK_STAFF.filter((member) =>
-          ['Ɔbenfo (Professor) Ọbádélé Bakari Kambon', 'Chika C. Mba'].includes(member.name) &&
+          ['Ɔbenfo (Professor) Ọbádélé Bakari Kambon', 'Chika C. Mba', 'Dr. Eric Tamatey Lawer'].includes(member.name) &&
           !renamed.some((savedMember) => savedMember.name === member.name),
         );
         const synced = [...renamed, ...missingProfiles];
