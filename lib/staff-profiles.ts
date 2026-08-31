@@ -33,7 +33,6 @@ export const seniorMembers: StaffProfile[] = [
   { name: "Dr. Pius Siakwah", slug: "dr-pius-siakwah", specialty: "African Social Development" },
   { name: "Professor Kwame Amoah Labi", slug: "professor-kwame-amoah-labi", specialty: "African Literature & Cultural Studies" },
   { name: "Professor Michael Kpessa-Whyte", slug: "professor-michael-kpessa-whyte", specialty: "African Religious Studies & Philosophy" },
-  { name: "George Gyasi Gyesaw", slug: "george-gyasi-gyesaw", specialty: "J H Kwabena Nketia Archives" },
   { name: "Dr. Mjiba Frehiwot", slug: "dr-mjiba-frehiwot", specialty: "African Peace & Conflict Studies" },
   { name: "Dr. Hasiyatu Abubakari", slug: "dr-hasiyatu-abubakari", specialty: "African Islamic Studies" },
   { name: "Dr. Benjamin Kobina Kwansa", slug: "dr-benjamin-kobina-kwansa", specialty: "African Heritage Management" },
