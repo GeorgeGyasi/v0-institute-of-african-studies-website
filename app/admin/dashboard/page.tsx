@@ -99,7 +99,7 @@ export default function AdminDashboard() {
           ['Ɔbenfo (Professor) Ọbádélé Bakari Kambon', 'Chika C. Mba', 'Dr. Eric Tamatey Lawer', 'Aba Amandzewaa Anaman', 'Rev. Dr. Grace Sintim Adasi', 'Professor Samuel Aniegye Ntewusu', 'Vivian Appiah, CA', 'Professor Michael Kpessa-Whyte'].includes(member.name) &&
           !renamed.some((savedMember) => savedMember.name === member.name),
         );
-        const synced = [...renamed, ...missingProfiles];
+        const synced = [...renamed, ...missingProfiles].map((member) => member.name === 'Professor Michael Kpessa-Whyte' ? { ...member, email: 'mkpessa-whyte@ug.edu.gh' } : member);
         setStaff(synced);
         localStorage.setItem('staff_profiles', JSON.stringify(synced));
       } else {
