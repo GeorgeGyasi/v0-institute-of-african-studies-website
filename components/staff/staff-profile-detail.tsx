@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Mail, Phone, Globe, ArrowLeft } from "lucide-react"
+import { ProfileNavigation } from "@/components/profile-navigation"
+import { getProfileNavigation } from "@/lib/staff-profiles"
 
 interface StaffProfileProps {
   name: string
@@ -35,6 +37,8 @@ export function StaffProfileDetail({
   officeHours,
   categorySlug,
 }: StaffProfileProps) {
+  const navigation = getProfileNavigation(categorySlug)
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header Navigation */}
@@ -215,6 +219,7 @@ export function StaffProfileDetail({
             <section><h2 className="mb-4 font-serif text-xl font-bold text-foreground">Associations</h2><p className="text-sm text-muted-foreground">Not available.</p></section>
           </div>
         </div>
+        {navigation && <ProfileNavigation previousSlug={navigation.previous.slug} nextSlug={navigation.next.slug} previousName={navigation.previous.name} nextName={navigation.next.name} isFirst={navigation.isFirst} isLast={navigation.isLast} />}
       </main>
     </div>
   )

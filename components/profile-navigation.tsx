@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react"
+import { getProfileNavigation } from "@/lib/staff-profiles"
 
 type ProfileNavigationProps = {
   previousSlug: string
@@ -10,37 +11,38 @@ type ProfileNavigationProps = {
   isLast: boolean
 }
 
+export function ProfileNavigationForSlug({ slug }: { slug: string }) {
+  const navigation = getProfileNavigation(slug)
+  if (!navigation) return null
+  return <ProfileNavigation {...navigation} />
+}
+
 export function ProfileNavigation({
   previousSlug,
   nextSlug,
-  previousName,
-  nextName,
   isFirst,
   isLast,
 }: ProfileNavigationProps) {
+  const previousHref = isFirst ? "/about/staff" : `/about/staff/profiles/senior-members/${previousSlug}`
+  const nextHref = isLast ? "/about/staff/profiles/senior-members" : `/about/staff/profiles/senior-members/${nextSlug}`
+
   return (
-    <div className="mt-12 flex items-center justify-between border-t border-border pt-8">
-      <Link
-        href={`/about/staff/profiles/senior-members/${previousSlug}`}
-        className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm font-medium transition-all hover:bg-muted"
-      >
-        <ChevronLeft className="h-4 w-4" />
-        <span className="hidden sm:inline">Previous</span>
-      </Link>
-
-      <div className="text-center">
-        <p className="text-xs text-muted-foreground">
-          {isLast ? "Last Profile • Click next to return to beginning" : "Navigate through profiles"}
-        </p>
+    <footer className="mt-12 border-t border-border pt-8">
+      <div className="flex items-center justify-between gap-4 border-b border-border pb-8">
+        <Link href={previousHref} className="inline-flex items-center gap-3 rounded-lg border border-border bg-card px-5 py-4 text-base font-medium text-foreground transition-colors hover:bg-muted">
+          <ChevronLeft className="size-5" aria-hidden="true" />
+          <span>Previous</span>
+        </Link>
+        <p className="text-center text-base text-muted-foreground">Navigate through profiles</p>
+        <Link href={nextHref} className="inline-flex items-center gap-3 rounded-lg border border-border bg-card px-5 py-4 text-base font-medium text-foreground transition-colors hover:bg-muted">
+          <span>Next</span>
+          <ChevronRight className="size-5" aria-hidden="true" />
+        </Link>
       </div>
-
-      <Link
-        href={`/about/staff/profiles/senior-members/${nextSlug}`}
-        className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm font-medium transition-all hover:bg-muted"
-      >
-        <span className="hidden sm:inline">{isLast ? "Return to Beginning" : "Next"}</span>
-        <ChevronRight className="h-4 w-4" />
+      <Link href="/about/staff" className="mt-12 inline-flex items-center gap-2 text-base text-primary hover:underline">
+        <ArrowLeft className="size-4" aria-hidden="true" />
+        Back to Staff Directory
       </Link>
-    </div>
+    </footer>
   )
 }
