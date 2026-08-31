@@ -42,34 +42,9 @@ const MOCK_STAFF: StaffMember[] = [
   { id: '13', name: 'Nathaniel Kpogo Worlanyo', role: 'Senior Research Assistant', email: 'nkpogo@ug.edu.gh', specialty: 'Office: IAS Old Site', photo_url: '/images/staff/nathaniel-kpogo-worlanyo.jpg' },
   { id: '14', name: 'Diana Abena Mensah-Addo', role: 'Principal Administrative Assistant', email: 'damensah@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/diana-abena-mensah-addo.jpg' },
   { id: '15', name: 'Fidelia Ametewee', role: 'Principal Research Assistant', email: 'fametewee@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/fidelia-ametewee.jpg' },
-  { id: '16', name: 'Senior Member 4', role: 'Senior Member', email: 'sm4@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-4.jpg' },
-  { id: '17', name: 'Senior Member 5', role: 'Senior Member', email: 'sm5@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-5.jpg' },
-  { id: '18', name: 'Senior Member 6', role: 'Senior Member', email: 'sm6@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-6.jpg' },
-  { id: '19', name: 'Senior Member 7', role: 'Senior Member', email: 'sm7@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-7.jpg' },
-  { id: '20', name: 'Senior Member 8', role: 'Senior Member', email: 'sm8@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-8.jpg' },
-  { id: '21', name: 'Senior Member 9', role: 'Senior Member', email: 'sm9@university.edu', specialty: 'Administration', photo_url: '/images/staff/senior-member-9.jpg' },
   { id: '22', name: 'Selina Emma Okle', role: 'Senior Research Assistant', email: 'snalaryea@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/selina-emma-okle.jpg' },
   { id: '23', name: 'Dr. Philip Owusu', role: 'Curator', email: 'phowusu@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/dr-philip-owusu.jpg' },
-  { id: '24', name: 'Joy Koney', role: 'Senior Member', email: 'sm12@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-12.jpg' },
-  { id: '25', name: 'Justice Library', role: 'Senior Member', email: 'sm13@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-13.jpg' },
   { id: '26', name: 'Dr. Apuri Mark-Anthony Alongya', role: 'Chief Administrative Assistant', email: 'maalongya@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/dr-apuri-mark-anthony-alongya.jpg' },
-  { id: '27', name: 'Senior Member 15', role: 'Senior Member', email: 'sm15@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-15.jpg' },
-  { id: '28', name: 'Senior Member 16', role: 'Senior Member', email: 'sm16@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-16.jpg' },
-  { id: '29', name: 'Senior Member 17', role: 'Senior Member', email: 'sm17@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-17.jpg' },
-  { id: '30', name: 'Senior Member 18', role: 'Senior Member', email: 'sm18@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-18.jpg' },
-  { id: '31', name: 'Senior Member 19', role: 'Senior Member', email: 'sm19@university.edu', specialty: 'Administration', photo_url: '/images/staff/senior-member-19.jpg' },
-  { id: '32', name: 'Senior Member 20', role: 'Senior Member', email: 'sm20@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-20.jpg' },
-  { id: '33', name: 'Senior Member 21', role: 'Senior Member', email: 'sm21@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-21.jpg' },
-  { id: '34', name: 'Senior Member 22', role: 'Senior Member', email: 'sm22@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-22.jpg' },
-  { id: '35', name: 'Senior Member 23', role: 'Senior Member', email: 'sm23@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-23.jpg' },
-  { id: '36', name: 'Senior Member 24', role: 'Senior Member', email: 'sm24@university.edu', specialty: 'Administration', photo_url: '/images/staff/senior-member-24.jpg' },
-  { id: '37', name: 'Senior Member 25', role: 'Senior Member', email: 'sm25@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-25.jpg' },
-  { id: '38', name: 'Senior Member 26', role: 'Senior Member', email: 'sm26@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-26.jpg' },
-  { id: '39', name: 'Senior Member 27', role: 'Senior Member', email: 'sm27@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-27.jpg' },
-  { id: '40', name: 'Senior Member 28', role: 'Senior Member', email: 'sm28@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-28.jpg' },
-  { id: '41', name: 'Senior Member 29', role: 'Senior Member', email: 'sm29@university.edu', specialty: 'Administration', photo_url: '/images/staff/senior-member-29.jpg' },
-  { id: '42', name: 'Senior Member 30', role: 'Senior Member', email: 'sm30@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-30.jpg' },
-  { id: '43', name: 'Senior Member 31', role: 'Senior Member', email: 'sm31@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-31.jpg' },
   { id: '44', name: 'Junior Staff Member 1', role: 'Junior Staff', email: 'js1@university.edu', specialty: 'Support', photo_url: '/images/staff/junior-staff-1.jpg' },
   { id: '45', name: 'Junior Staff Member 2', role: 'Junior Staff', email: 'js2@university.edu', specialty: 'Administration', photo_url: '/images/staff/junior-staff-2.jpg' },
   { id: '46', name: 'Junior Staff Member 3', role: 'Junior Staff', email: 'js3@university.edu', specialty: 'Support', photo_url: '/images/staff/junior-staff-3.jpg' },
@@ -127,8 +102,8 @@ export function StaffDirectory() {
     // Group staff by role/category
     const grouped: Record<string, StaffMember[]> = {
       'Senior Members': MOCK_STAFF.slice(0, 24), // Named staff, including Mercy
-      'Senior Staff': MOCK_STAFF.slice(24, 55), // Numbered senior members
-      'Junior Staff': MOCK_STAFF.slice(55, 58), // Junior staff
+      'Senior Staff': MOCK_STAFF.slice(24, 30), // Named senior staff
+      'Junior Staff': MOCK_STAFF.slice(30, 33), // Junior staff
     }
 
     const categories = Object.entries(grouped).map(([category, members]) => ({
