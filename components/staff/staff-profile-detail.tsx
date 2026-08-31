@@ -132,13 +132,13 @@ export function StaffProfileDetail({
 
             {/* Biography Section */}
             <section>
-              <h2 className="mb-4 font-serif text-xl font-bold text-foreground">Biography</h2>
+              <h2 className="mb-4 font-serif text-xl font-bold text-foreground">Profile</h2>
               <p className="leading-relaxed text-muted-foreground text-sm">{bio}</p>
             </section>
 
             {/* Research Areas */}
             <section>
-              <h2 className="mb-4 font-serif text-xl font-bold text-foreground">Research Areas</h2>
+              <h2 className="mb-4 font-serif text-xl font-bold text-foreground">Research</h2>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {researchAreas.map((area) => (
                   <li key={area} className="flex items-start gap-2">
@@ -150,7 +150,13 @@ export function StaffProfileDetail({
             </section>
 
             {/* Education */}
-            {education.length > 0 && (
+            <section>
+              <h2 className="mb-4 font-serif text-xl font-bold text-foreground">Education</h2>
+              {education.length > 0 ? (
+                <div className="space-y-4">{education.map((edu, idx) => (<div key={idx} className="border-l-2 border-secondary/30 pl-4"><p className="font-semibold text-foreground">{edu.degree}</p><p className="text-sm text-muted-foreground">{edu.institution}</p><p className="text-xs text-secondary font-medium">{edu.year}</p></div>))}</div>
+              ) : <p className="text-sm text-muted-foreground">Not available.</p>}
+            </section>
+            {false && (
               <section>
                 <h2 className="mb-4 font-serif text-xl font-bold text-foreground">Education</h2>
                 <div className="space-y-4">
@@ -203,6 +209,10 @@ export function StaffProfileDetail({
                 </div>
               </section>
             )}
+
+            <section><h2 className="mb-4 font-serif text-xl font-bold text-foreground">Teaching</h2><p className="text-sm text-muted-foreground">Not available.</p></section>
+            <section><h2 className="mb-4 font-serif text-xl font-bold text-foreground">Leadership</h2><p className="text-sm text-muted-foreground">Not available.</p></section>
+            <section><h2 className="mb-4 font-serif text-xl font-bold text-foreground">Associations</h2><p className="text-sm text-muted-foreground">Not available.</p></section>
           </div>
         </div>
       </main>
