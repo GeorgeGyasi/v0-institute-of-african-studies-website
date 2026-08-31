@@ -238,8 +238,8 @@ function StaffCard({ person, category }: { person: StaffMember; category: string
   const slug = PROFILE_SLUG_MAP[person.name] || nameToSlug(person.name)
   const profileUrl = `/about/staff/profiles/${category}/${slug}`
   
-  // Only senior members have dedicated profile pages; senior/junior staff are info-only
-  const hasProfile = category === 'senior-members'
+  // Senior members and senior staff have dedicated profile pages; junior staff are info-only
+  const hasProfile = category === 'senior-members' || category === 'senior-staff'
 
   if (hasProfile) {
     return (

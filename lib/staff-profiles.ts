@@ -48,6 +48,36 @@ export const seniorMembers: StaffProfile[] = [
   { name: "Prof. Edem Adotey", slug: "prof-edem-adotey", specialty: "African Arts & Aesthetics" },
 ]
 
+// Senior staff list - alphabetical, matches the sorted display order in staff-directory.tsx
+export const seniorStaff: StaffProfile[] = [
+  { name: "Diana Abena Mensah-Addo", slug: "diana-abena-mensah-addo", specialty: "Principal Administrative Assistant" },
+  { name: "Dr. Apuri Mark-Anthony Alongya", slug: "dr-apuri-mark-anthony-alongya", specialty: "Chief Administrative Assistant" },
+  { name: "Dr. Philip Owusu", slug: "dr-philip-owusu", specialty: "Curator" },
+  { name: "Fidelia Ametewee", slug: "fidelia-ametewee", specialty: "Principal Research Assistant" },
+  { name: "Nathaniel Kpogo Worlanyo", slug: "nathaniel-kpogo-worlanyo", specialty: "Senior Research Assistant" },
+  { name: "Selina Emma Okle", slug: "selina-emma-okle", specialty: "Senior Research Assistant" },
+]
+
+// Get senior staff navigation info (current, next, previous)
+export function getSeniorStaffNavigation(currentSlug: string) {
+  const currentIndex = seniorStaff.findIndex((p) => p.slug === currentSlug)
+
+  if (currentIndex === -1) {
+    return null
+  }
+
+  const previousIndex = currentIndex === 0 ? seniorStaff.length - 1 : currentIndex - 1
+  const nextIndex = currentIndex === seniorStaff.length - 1 ? 0 : currentIndex + 1
+
+  return {
+    current: seniorStaff[currentIndex],
+    previous: seniorStaff[previousIndex],
+    next: seniorStaff[nextIndex],
+    isLast: currentIndex === seniorStaff.length - 1,
+    isFirst: currentIndex === 0,
+  }
+}
+
 // Get profile navigation info (current, next, previous)
 export function getProfileNavigation(currentSlug: string) {
   const currentIndex = seniorMembers.findIndex((p) => p.slug === currentSlug)

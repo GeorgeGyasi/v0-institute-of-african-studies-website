@@ -9,6 +9,7 @@ type ProfileNavigationProps = {
   nextName: string
   isFirst: boolean
   isLast: boolean
+  basePath?: string
 }
 
 export function ProfileNavigationForSlug({ slug }: { slug: string }) {
@@ -22,9 +23,10 @@ export function ProfileNavigation({
   nextSlug,
   isFirst,
   isLast,
+  basePath = "senior-members",
 }: ProfileNavigationProps) {
-  const previousHref = isFirst ? "/about/staff" : `/about/staff/profiles/senior-members/${previousSlug}`
-  const nextHref = isLast ? "/about/staff/profiles/senior-members" : `/about/staff/profiles/senior-members/${nextSlug}`
+  const previousHref = isFirst ? "/about/staff" : `/about/staff/profiles/${basePath}/${previousSlug}`
+  const nextHref = isLast ? "/about/staff" : `/about/staff/profiles/${basePath}/${nextSlug}`
 
   return (
     <footer className="mt-12 border-t border-border pt-8">
