@@ -46,6 +46,7 @@ export const seniorMembers: StaffProfile[] = [
   { name: "Dr. Benjamin O. Ayeetey", slug: "dr-benjamin-o-ayeetey", specialty: "African Social Anthropology" },
   { name: "Ms. Vivian Appiah", slug: "ms-vivian-appiah", specialty: "African Gender & Development" },
   { name: "Prof. Edem Adotey", slug: "prof-edem-adotey", specialty: "African Arts & Aesthetics" },
+  { name: "Aba Amandzewaa Anaman", slug: "aba-amandzewaa-anaman", specialty: "Academic Librarianship & Information Science" },
 ]
 
 // Senior staff list - alphabetical, matches the sorted display order in staff-directory.tsx
