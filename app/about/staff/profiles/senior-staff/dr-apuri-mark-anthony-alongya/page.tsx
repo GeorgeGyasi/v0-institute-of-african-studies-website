@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Profile of Dr. Apuri Mark-Anthony Alongya, Chief Administrative Assistant at the Institute of African Studies, University of Ghana.",
 }
 
-const responsibilities = [
+const research = [
   "Administrative leadership and office coordination",
   "Human resource and records administration",
   "Support for institute governance and operations",
@@ -99,8 +99,10 @@ export default function ApuriMarkAnthonyAlongyaPage() {
             <div className="flex flex-col gap-2 text-sm">
               <a href="#profile" className="text-primary hover:underline">Profile</a>
               <a href="#education" className="text-muted-foreground hover:text-primary">Education</a>
-              <a href="#responsibilities" className="text-muted-foreground hover:text-primary">Responsibilities</a>
-              <a href="#service" className="text-muted-foreground hover:text-primary">Service</a>
+              <a href="#research" className="text-muted-foreground hover:text-primary">Research</a>
+              <a href="#publications" className="text-muted-foreground hover:text-primary">Publications</a>
+              <a href="#teaching" className="text-muted-foreground hover:text-primary">Teaching</a>
+              <a href="#leadership" className="text-muted-foreground hover:text-primary">Leadership</a>
               <a href="#associations" className="text-muted-foreground hover:text-primary">Associations</a>
             </div>
           </nav>
@@ -118,12 +120,22 @@ export default function ApuriMarkAnthonyAlongyaPage() {
           <Section id="education" icon={GraduationCap} title="Education">
             <List items={education} />
           </Section>
-          <Section id="responsibilities" icon={FlaskConical} title="Responsibilities">
-            <List items={responsibilities} />
+          <Section id="research" icon={FlaskConical} title="Research Interests">
+            <List items={research} />
           </Section>
-          <Section id="service" icon={Landmark} title="Service">
+          <Section id="publications" icon={BookOpen} title="Publications">
             <p className="text-sm leading-6 text-muted-foreground">
-              Service and administrative contributions will be added as they become available.
+              Selected publications will be added as they become available.
+            </p>
+          </Section>
+          <Section id="teaching" icon={BookOpen} title="Teaching and Supervision">
+            <p className="text-sm leading-6 text-muted-foreground">
+              Teaching and supervision information will be added as it becomes available.
+            </p>
+          </Section>
+          <Section id="leadership" icon={Landmark} title="Leadership">
+            <p className="text-sm leading-6 text-muted-foreground">
+              Board memberships and leadership roles will be added as they become available.
             </p>
           </Section>
           <Section id="associations" icon={Users} title="Associations">
