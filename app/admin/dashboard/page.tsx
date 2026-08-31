@@ -26,7 +26,7 @@ const MOCK_STAFF: StaffProfile[] = [
   { id: '7', name: 'Prof. Esi Sutherland-Addy', role: 'Senior Member', email: 'esutherland-addy@ug.edu.gh', specialty: 'African Literature & Cultural Policy', photo_url: '/images/professor-esi-sutherland.jpg' },
   { id: '8', name: 'Dr. Aristedes Narh Hargoe', role: 'Senior Member', email: 'ahargoe@ug.edu.gh', specialty: 'African Environmental Conservation', photo_url: '/images/dr-aristedes-narh-hargoe.png' },
   { id: '9', name: 'Dr. Peter Narh', role: 'Senior Member', email: 'p.narh@university.edu', specialty: 'Economics', photo_url: '/images/dr-peter-narh.jpg' },
-  { id: '10', name: 'Dr. Hasiyatu Abubakari', role: 'Senior Member', email: 'h.abubakari@university.edu', specialty: 'History', photo_url: '/images/dr-hasiyatu-abubakari.jpg' },
+  { id: '10', name: 'Prof. Hasiyatu Abubakari', role: 'Associate Professor', email: 'haabubakari@ug.edu.gh', specialty: 'African Linguistics', photo_url: '/images/dr-hasiyatu-abubakari.jpg' },
   { id: '11', name: 'Dr. Mjiba Frehiwot', role: 'Senior Member', email: 'm.frehiwot@university.edu', specialty: 'Religious Studies', photo_url: '/images/dr-mjiba-frehiwot.jpg' },
   { id: '12', name: 'George Gyasi Gyesaw', role: 'Senior Member', email: 'g.gyesaw@university.edu', specialty: 'Cultural Studies', photo_url: '/images/george-gyesaw.jpg' },
   { id: '47', name: 'Ɔbenfo (Professor) Ọbádélé Bakari Kambon', role: 'Senior Member', email: '', specialty: 'African Philosophy & Consciousness', photo_url: '/images/obadele-bakari-kambon.jpg' },
@@ -68,7 +68,7 @@ export default function AdminDashboard() {
           (member) => !/^Senior Member \d+$/.test(member.name) && !removedNames.includes(member.name),
         );
         // Refresh senior/junior staff members whose details were updated with real name/role/email/office/photo
-        const refreshedIds = ['13', '14', '15', '22', '23', '26', '44', '45', '46'];
+        const refreshedIds = ['10', '13', '14', '15', '22', '23', '26', '44', '45', '46'];
         const renamed = pruned.map((member) => {
           if (refreshedIds.includes(member.id)) {
             const updated = MOCK_STAFF.find((m) => m.id === member.id);

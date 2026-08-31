@@ -24,7 +24,7 @@ const MOCK_STAFF: StaffMember[] = [
   { id: '7', name: 'Prof. Esi Sutherland-Addy', role: 'Senior Member', email: 'esutherland-addy@ug.edu.gh', specialty: 'African Literature & Cultural Policy', photo_url: '/images/professor-esi-sutherland.jpg' },
   { id: '8', name: 'Dr. Aristedes Narh Hargoe', role: 'Senior Member', email: 'ahargoe@ug.edu.gh', specialty: 'African Environmental Conservation', photo_url: '/images/dr-aristedes-narh-hargoe.png' },
   { id: '9', name: 'Dr. Peter Narh', role: 'Senior Member', email: 'p.narh@university.edu', specialty: 'Economics', photo_url: '/images/dr-peter-narh.jpg' },
-  { id: '10', name: 'Dr. Hasiyatu Abubakari', role: 'Senior Member', email: 'h.abubakari@university.edu', specialty: 'History', photo_url: '/images/dr-hasiyatu-abubakari.jpg' },
+  { id: '10', name: 'Prof. Hasiyatu Abubakari', role: 'Associate Professor', email: 'haabubakari@ug.edu.gh', specialty: 'African Linguistics', photo_url: '/images/dr-hasiyatu-abubakari.jpg' },
   { id: '11', name: 'Dr. Mjiba Frehiwot', role: 'Senior Member', email: 'm.frehiwot@university.edu', specialty: 'Religious Studies', photo_url: '/images/dr-mjiba-frehiwot.jpg' },
   { id: '12', name: 'George Gyasi Gyesaw', role: 'Senior Member', email: 'g.gyesaw@university.edu', specialty: 'Cultural Studies', photo_url: '/images/george-gyesaw.jpg' },
   { id: '47', name: 'Ɔbenfo (Professor) Ọbádélé Bakari Kambon', role: 'Senior Member', email: '', specialty: 'African Philosophy & Consciousness', photo_url: '/images/obadele-bakari-kambon.jpg' },
@@ -83,7 +83,7 @@ const PROFILE_SLUG_MAP: Record<string, string> = {
   'Dr. Nii Dortey': 'dr-nii-dortey',
   'Prof. Esi Sutherland-Addy': 'professor-esi-sutherland',
   'Dr. Peter Narh': 'dr-peter-narh',
-  'Dr. Hasiyatu Abubakari': 'dr-hasiyatu-abubakari',
+  'Prof. Hasiyatu Abubakari': 'dr-hasiyatu-abubakari',
   'Dr. Mjiba Frehiwot': 'dr-mjiba-frehiwot',
 };
 

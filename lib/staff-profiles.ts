@@ -33,7 +33,7 @@ export const seniorMembers: StaffProfile[] = [
   { name: "Professor Michael Kpessa-Whyte", slug: "professor-michael-kpessa-whyte", specialty: "African Religious Studies & Philosophy" },
   { name: "Dr. Mjiba Frehiwot", slug: "dr-mjiba-frehiwot", specialty: "African Peace & Conflict Studies" },
   { name: "George Gyasi Gyesaw", slug: "george-gyasi-gyesaw", specialty: "J. H. Kwabena Nketia Archives" },
-  { name: "Dr. Hasiyatu Abubakari", slug: "dr-hasiyatu-abubakari", specialty: "African Islamic Studies" },
+  { name: "Prof. Hasiyatu Abubakari", slug: "dr-hasiyatu-abubakari", specialty: "African Linguistics" },
   { name: "Dr. Benjamin Kobina Kwansa", slug: "dr-benjamin-kobina-kwansa", specialty: "African Heritage Management" },
   { name: "Dr. Aristedes Narh Hargoe", slug: "dr-aristedes-narh-hargoe", specialty: "African Environmental Conservation" },
   { name: "Dr. Eric Tamatey Lawer", slug: "dr-eric-tamatey-lawer", specialty: "African Archaeology" },
