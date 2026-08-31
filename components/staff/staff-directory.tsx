@@ -45,9 +45,9 @@ const MOCK_STAFF: StaffMember[] = [
   { id: '22', name: 'Selina Emma Okle', role: 'Senior Research Assistant', email: 'snalaryea@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/selina-emma-okle.jpg' },
   { id: '23', name: 'Dr. Philip Owusu', role: 'Curator', email: 'phowusu@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/dr-philip-owusu.jpg' },
   { id: '26', name: 'Dr. Apuri Mark-Anthony Alongya', role: 'Chief Administrative Assistant', email: 'maalongya@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/dr-apuri-mark-anthony-alongya.jpg' },
-  { id: '44', name: 'Junior Staff Member 1', role: 'Junior Staff', email: 'js1@university.edu', specialty: 'Support', photo_url: '/images/staff/junior-staff-1.jpg' },
-  { id: '45', name: 'Junior Staff Member 2', role: 'Junior Staff', email: 'js2@university.edu', specialty: 'Administration', photo_url: '/images/staff/junior-staff-2.jpg' },
-  { id: '46', name: 'Junior Staff Member 3', role: 'Junior Staff', email: 'js3@university.edu', specialty: 'Support', photo_url: '/images/staff/junior-staff-3.jpg' },
+  { id: '44', name: 'Wiafe Francisca', role: 'Junior Lib. Assistant', email: 'wfrancisca@ug.edu.gh', specialty: '', photo_url: '/images/staff/junior-staff-1.jpg' },
+  { id: '45', name: 'Mr. Obeng', role: 'Driver', email: 'obeng@ug.edu.gh', specialty: '', photo_url: '/images/staff/junior-staff-2.jpg' },
+  { id: '46', name: 'Ziem Lydia', role: 'Cleaner', email: 'zlydia@ug.edu.gh', specialty: '', photo_url: '/images/staff/junior-staff-3.jpg' },
 ];
 
 // Convert staff name to URL slug
