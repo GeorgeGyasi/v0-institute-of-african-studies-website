@@ -18,13 +18,13 @@ interface StaffProfile {
 
 const MOCK_STAFF: StaffProfile[] = [
   { id: '1', name: 'Prof. Asante', role: 'Senior Member', email: 'p.asante@university.edu', specialty: 'African Studies', photo_url: '/images/professor-asante.jpg' },
-  { id: '2', name: 'Prof. Dzodzi Tsikata', role: 'Senior Member', email: 'p.tsikata@university.edu', specialty: 'Law & Development', photo_url: '/images/professor-dzodzi-tsikata.jpg' },
-  { id: '3', name: 'Prof. Takyiwaa Manuh', role: 'Senior Member', email: 'p.manuh@university.edu', specialty: 'Gender Studies', photo_url: '/images/professor-takyiwaa-manuh.jpg' },
-  { id: '4', name: 'Prof. Albert Awedoba', role: 'Senior Member', email: 'p.awedoba@university.edu', specialty: 'Anthropology', photo_url: '/images/professor-albert-awedoba.jpg' },
+  { id: '2', name: 'Professor Deborah Atobrah', role: 'Senior Member', email: 'datobrah@ug.edu.gh', specialty: 'African Women & Development', photo_url: '/images/professor-deborah-atobrah.png' },
+  { id: '3', name: 'Dr. Laryea Akwetteh', role: 'Senior Member', email: 'lakwetteh@ug.edu.gh', specialty: 'African Cultural Heritage', photo_url: '/images/dr-laryea-akwetteh.png' },
+  { id: '4', name: 'Dr. Benjamin Kobina Kwansa', role: 'Senior Member', email: 'bkkwansa@ug.edu.gh', specialty: 'African Heritage Management', photo_url: '/images/dr-benjamin-kobina-kwansa.png' },
   { id: '5', name: 'Prof. Avorgbedor', role: 'Senior Member', email: 'p.avorgbedor@university.edu', specialty: 'Music & Culture', photo_url: '/images/professor-avorgbedor.jpg' },
   { id: '6', name: 'Dr. Nii Dortey', role: 'Senior Member', email: 'dr.dortey@university.edu', specialty: 'Literature', photo_url: '/images/dr-nii-dortey.jpg' },
   { id: '7', name: 'Prof. Esi Sutherland-Addy', role: 'Senior Member', email: 'esutherland-addy@ug.edu.gh', specialty: 'African Literature & Cultural Policy', photo_url: '/images/professor-esi-sutherland.jpg' },
-  { id: '8', name: 'Prof. Akosua Adomako Ampofo', role: 'Senior Member', email: 'aadomako@ug.edu.gh', specialty: 'Gender & African Studies', photo_url: '/images/professor-adomako.jpg' },
+  { id: '8', name: 'Dr. Aristedes Narh Hargoe', role: 'Senior Member', email: 'ahargoe@ug.edu.gh', specialty: 'African Environmental Conservation', photo_url: '/images/dr-aristedes-narh-hargoe.png' },
   { id: '9', name: 'Dr. Peter Narh', role: 'Senior Member', email: 'p.narh@university.edu', specialty: 'Economics', photo_url: '/images/dr-peter-narh.jpg' },
   { id: '10', name: 'Dr. Hasiyatu Abubakari', role: 'Senior Member', email: 'h.abubakari@university.edu', specialty: 'History', photo_url: '/images/dr-hasiyatu-abubakari.jpg' },
   { id: '11', name: 'Dr. Mjiba Frehiwot', role: 'Senior Member', email: 'm.frehiwot@university.edu', specialty: 'Religious Studies', photo_url: '/images/dr-mjiba-frehiwot.jpg' },
