@@ -37,6 +37,7 @@ const MOCK_STAFF: StaffProfile[] = [
   { id: '53', name: 'Professor Samuel Aniegye Ntewusu', role: 'Senior Member', email: 'santewusu@ug.edu.gh', specialty: 'African History, Culture & Development', photo_url: '/images/professor-samuel-ntewusu.jpg' },
   { id: '54', name: 'Vivian Appiah, CA', role: 'Senior Member', email: 'voduro@ug.edu.gh', specialty: 'Finance & Accounting', photo_url: '/images/vivian-appiah.jpg' },
   { id: '55', name: 'Professor Michael Kpessa-Whyte', role: 'Senior Member', email: 'mkpessa-whyte@ug.edu.gh', specialty: 'African Politics & Comparative Public Policy', photo_url: '/images/professor-michael-kpessa-whyte.jpg' },
+  { id: '56', name: 'Dr. Genevieve Nrenzah', role: 'Senior Member', email: 'gnrenzah@ug.edu.gh', specialty: 'Religions & Philosophy', photo_url: '/images/dr-genevieve-nrenzah.png' },
   { id: '13', name: 'Nathaniel Kpogo Worlanyo', role: 'Senior Member', email: 'sm1@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-1.jpg' },
   { id: '14', name: 'Senior Member 2', role: 'Senior Member', email: 'sm2@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-2.jpg' },
   { id: '15', name: 'Senior Member 3', role: 'Senior Member', email: 'sm3@university.edu', specialty: 'Administration', photo_url: '/images/staff/senior-member-3.jpg' },
@@ -96,7 +97,7 @@ export default function AdminDashboard() {
           return nameUpdates[member.name] ? { ...member, name: nameUpdates[member.name] } : member;
         });
         const missingProfiles = MOCK_STAFF.filter((member) =>
-          ['Ɔbenfo (Professor) Ọbádélé Bakari Kambon', 'Chika C. Mba', 'Dr. Eric Tamatey Lawer', 'Aba Amandzewaa Anaman', 'Rev. Dr. Grace Sintim Adasi', 'Professor Samuel Aniegye Ntewusu', 'Vivian Appiah, CA', 'Professor Michael Kpessa-Whyte'].includes(member.name) &&
+          ['Ɔbenfo (Professor) Ọbádélé Bakari Kambon', 'Chika C. Mba', 'Dr. Eric Tamatey Lawer', 'Aba Amandzewaa Anaman', 'Rev. Dr. Grace Sintim Adasi', 'Professor Samuel Aniegye Ntewusu', 'Vivian Appiah, CA', 'Professor Michael Kpessa-Whyte', 'Dr. Genevieve Nrenzah'].includes(member.name) &&
           !renamed.some((savedMember) => savedMember.name === member.name),
         );
         const synced = [...renamed, ...missingProfiles].map((member) => member.name === 'Professor Michael Kpessa-Whyte' ? { ...member, email: 'mkpessa-whyte@ug.edu.gh' } : member);
