@@ -28,7 +28,7 @@ export const seniorMembers: StaffProfile[] = [
   { name: "Dr. Genevieve Nrenzah", slug: "dr-genevieve-nrenzah", specialty: "African Medical Anthropology" },
   { name: "Dr. Chika C. Mba", slug: "dr-chika-c-mba", specialty: "African Economic Development" },
   { name: "Dr. Kojo Opoku Aidoo", slug: "dr-kojo-opoku-aidoo", specialty: "African Political Science" },
-  { name: "Professor. (Mrs) Mercy Akrofi Ansah", slug: "professor-mrs-mercy-akrofi-ansah", specialty: "African Music & Cultural Heritage" },
+  { name: "Professor (Mrs) Mercy Akrofi Ansah", slug: "professor-mrs-mercy-akrofi-ansah", specialty: "Language, Literature & Drama" },
   { name: "Dr. Peter Narh", slug: "dr-peter-narh", specialty: "African Urban Geography" },
   { name: "Dr. Pius Siakwah", slug: "dr-pius-siakwah", specialty: "African Social Development" },
   { name: "Professor Kwame Amoah Labi", slug: "professor-kwame-amoah-labi", specialty: "African Literature & Cultural Studies" },
