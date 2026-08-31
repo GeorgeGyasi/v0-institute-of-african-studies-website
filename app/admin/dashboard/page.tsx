@@ -28,7 +28,7 @@ const MOCK_STAFF: StaffProfile[] = [
   { id: '9', name: 'Dr. Peter Narh', role: 'Senior Member', email: 'p.narh@university.edu', specialty: 'Economics', photo_url: '/images/dr-peter-narh.jpg' },
   { id: '10', name: 'Dr. Hasiyatu Abubakari', role: 'Senior Member', email: 'h.abubakari@university.edu', specialty: 'History', photo_url: '/images/dr-hasiyatu-abubakari.jpg' },
   { id: '11', name: 'Dr. Mjiba Frehiwot', role: 'Senior Member', email: 'm.frehiwot@university.edu', specialty: 'Religious Studies', photo_url: '/images/dr-mjiba-frehiwot.jpg' },
-  { id: '12', name: 'George Gyesaw', role: 'Senior Member', email: 'g.gyesaw@university.edu', specialty: 'Cultural Studies', photo_url: '/images/george-gyesaw.jpg' },
+  { id: '12', name: 'George Gyasi Gyesaw', role: 'Senior Member', email: 'g.gyesaw@university.edu', specialty: 'Cultural Studies', photo_url: '/images/george-gyesaw.jpg' },
   { id: '47', name: 'Ɔbenfo (Professor) Ọbádélé Bakari Kambon', role: 'Senior Member', email: '', specialty: 'African Philosophy & Consciousness', photo_url: '/images/obadele-bakari-kambon.jpg' },
   { id: '49', name: 'Chika C. Mba', role: 'Senior Member', email: 'cmba@ug.edu.gh', specialty: 'African Philosophy & Decolonial Theory', photo_url: '/images/dr-chika-mba.jpg' },
   { id: '50', name: 'Dr. Eric Tamatey Lawer', role: 'Senior Member', email: 'elawer@ug.edu.gh', specialty: 'Natural Resource Governance & Energy Transition', photo_url: '/images/dr-eric-tamatey-lawer.jpg' },
