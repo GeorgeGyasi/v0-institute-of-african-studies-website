@@ -26,7 +26,6 @@ export const seniorMembers: StaffProfile[] = [
   { name: "Professor Richard Asante", slug: "professor-richard-asante", specialty: "African History & Governance" },
   { name: "Ɔbenfo (Professor) Ọbádélé Bakari Kambon", slug: "benfo-professor-obadele-bakari-kambon", specialty: "African Philosophy & Consciousness" },
   { name: "Dr. Genevieve Nrenzah", slug: "dr-genevieve-nrenzah", specialty: "African Medical Anthropology" },
-  { name: "Professor Irene Appeaning Addo", slug: "professor-irene-appeaning-addo", specialty: "African Architecture" },
   { name: "Dr. Chika C. Mba", slug: "dr-chika-c-mba", specialty: "African Economic Development" },
   { name: "Dr. Kojo Opoku Aidoo", slug: "dr-kojo-opoku-aidoo", specialty: "African Political Science" },
   { name: "Professor (Mrs) Mercy Akrofi Ansah", slug: "professor-mrs-mercy-akrofi-ansah", specialty: "Language, Literature & Drama" },
@@ -49,7 +48,6 @@ export const seniorMembers: StaffProfile[] = [
   { name: "Professor. Samuel Ntewusu", slug: "professor-samuel-ntewusu", specialty: "African History & Politics" },
   { name: "Dr. Benjamin O. Ayeetey", slug: "dr-benjamin-o-ayeetey", specialty: "African Social Anthropology" },
   { name: "Ms. Vivian Appiah", slug: "ms-vivian-appiah", specialty: "African Gender & Development" },
-  { name: "Prof. Irene Appeaning Addo", slug: "prof-irene-appeaning-addo", specialty: "African Maritime Heritage" },
   { name: "Prof. Edem Adotey", slug: "prof-edem-adotey", specialty: "African Arts & Aesthetics" },
   { name: "Prof. Deborah Atobrah", slug: "prof-deborah-atobrah", specialty: "African Women & Development" },
 ]

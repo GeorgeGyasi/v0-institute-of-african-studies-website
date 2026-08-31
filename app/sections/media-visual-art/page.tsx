@@ -16,10 +16,6 @@ export default function MediaVisualArtPage() {
       name: "Prof. Kwame Amoah Labi",
       expertise: "African Art History"
     },
-    {
-      name: "Dr. Irene Appeaning Addo",
-      expertise: "Architectural History"
-    },
   ]
 
   const courses = {

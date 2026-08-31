@@ -264,14 +264,6 @@ const staffData = [
     department: 'Institute of African Studies',
   },
   {
-    name: 'Prof. Irene Appeaning Addo',
-    role: 'Professor',
-    specialty: 'African Maritime Heritage',
-    email: 'iaddo@ug.edu.gh',
-    photo_url: '/images/staff/senior-member-1.jpg',
-    department: 'Institute of African Studies',
-  },
-  {
     name: 'Prof. Edem Adotey',
     role: 'Professor',
     specialty: 'African Arts & Aesthetics',
