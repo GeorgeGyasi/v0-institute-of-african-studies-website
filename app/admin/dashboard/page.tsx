@@ -40,20 +40,20 @@ const MOCK_STAFF: StaffProfile[] = [
   { id: '56', name: 'Dr. Genevieve Nrenzah', role: 'Senior Member', email: 'gnrenzah@ug.edu.gh', specialty: 'Religions & Philosophy', photo_url: '/images/dr-genevieve-nrenzah.png' },
   { id: '57', name: 'Dr. Pius Siakwah', role: 'Senior Member', email: 'psiakwah@ug.edu.gh', specialty: 'African Social Development', photo_url: '/images/dr-pius-siakwah.png' },
   { id: '58', name: 'Professor. (Mrs) Mercy Akrofi Ansah', role: 'Senior Member', email: 'maansah@ug.edu.gh', specialty: 'Language, Literature and Drama', photo_url: '/images/professor-mercy-akrofi-ansah.jpg' },
-  { id: '13', name: 'Nathaniel Kpogo Worlanyo', role: 'Senior Member', email: 'sm1@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-1.jpg' },
-  { id: '14', name: 'Senior Member 2', role: 'Senior Member', email: 'sm2@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-2.jpg' },
-  { id: '15', name: 'Senior Member 3', role: 'Senior Member', email: 'sm3@university.edu', specialty: 'Administration', photo_url: '/images/staff/senior-member-3.jpg' },
+  { id: '13', name: 'Nathaniel Kpogo Worlanyo', role: 'Senior Research Assistant', email: 'nkpogo@ug.edu.gh', specialty: 'Office: IAS Old Site', photo_url: '/images/staff/nathaniel-kpogo-worlanyo.jpg' },
+  { id: '14', name: 'Diana Abena Mensah-Addo', role: 'Principal Administrative Assistant', email: 'damensah@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/diana-abena-mensah-addo.jpg' },
+  { id: '15', name: 'Fidelia Ametewee', role: 'Principal Research Assistant', email: 'fametewee@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/fidelia-ametewee.jpg' },
   { id: '16', name: 'Senior Member 4', role: 'Senior Member', email: 'sm4@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-4.jpg' },
   { id: '17', name: 'Senior Member 5', role: 'Senior Member', email: 'sm5@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-5.jpg' },
   { id: '18', name: 'Senior Member 6', role: 'Senior Member', email: 'sm6@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-6.jpg' },
   { id: '19', name: 'Senior Member 7', role: 'Senior Member', email: 'sm7@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-7.jpg' },
   { id: '20', name: 'Senior Member 8', role: 'Senior Member', email: 'sm8@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-8.jpg' },
   { id: '21', name: 'Senior Member 9', role: 'Senior Member', email: 'sm9@university.edu', specialty: 'Administration', photo_url: '/images/staff/senior-member-9.jpg' },
-  { id: '22', name: 'Selina Okle Emma', role: 'Senior Member', email: 'sm10@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-10.jpg' },
-  { id: '23', name: 'Philip Owusu PhD', role: 'Senior Member', email: 'sm11@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-11.jpg' },
+  { id: '22', name: 'Selina Emma Okle', role: 'Senior Research Assistant', email: 'snalaryea@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/selina-emma-okle.jpg' },
+  { id: '23', name: 'Dr. Philip Owusu', role: 'Curator', email: 'phowusu@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/dr-philip-owusu.jpg' },
   { id: '24', name: 'Joy Koney', role: 'Senior Member', email: 'sm12@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-12.jpg' },
   { id: '25', name: 'Justice Library', role: 'Senior Member', email: 'sm13@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-13.jpg' },
-  { id: '26', name: 'Mark Anthony A. Alongya', role: 'Senior Member', email: 'sm14@university.edu', specialty: 'Administration', photo_url: '/images/staff/senior-member-14.jpg' },
+  { id: '26', name: 'Dr. Apuri Mark-Anthony Alongya', role: 'Chief Administrative Assistant', email: 'maalongya@ug.edu.gh', specialty: 'Office: IAS New Site', photo_url: '/images/staff/dr-apuri-mark-anthony-alongya.jpg' },
   { id: '27', name: 'Senior Member 15', role: 'Senior Member', email: 'sm15@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-15.jpg' },
   { id: '28', name: 'Senior Member 16', role: 'Senior Member', email: 'sm16@university.edu', specialty: 'Research', photo_url: '/images/staff/senior-member-16.jpg' },
   { id: '29', name: 'Senior Member 17', role: 'Senior Member', email: 'sm17@university.edu', specialty: 'Teaching', photo_url: '/images/staff/senior-member-17.jpg' },
@@ -87,14 +87,16 @@ export default function AdminDashboard() {
       const savedStaff = localStorage.getItem('staff_profiles');
       if (savedStaff) {
         const saved = JSON.parse(savedStaff) as StaffProfile[];
+        // Refresh senior-staff members whose details were updated with real name/role/email/office/photo
+        const refreshedIds = ['13', '14', '15', '22', '23', '26'];
         const renamed = saved.map((member) => {
+          if (refreshedIds.includes(member.id)) {
+            const updated = MOCK_STAFF.find((m) => m.id === member.id);
+            if (updated) return { ...member, ...updated };
+          }
           const nameUpdates: Record<string, string> = {
-            'Senior Member 1': 'Nathaniel Kpogo Worlanyo',
-            'Senior Member 10': 'Selina Okle Emma',
-            'Senior Member 11': 'Philip Owusu PhD',
             'Senior Member 12': 'Joy Koney',
             'Senior Member 13': 'Justice Library',
-            'Senior Member 14': 'Mark Anthony A. Alongya',
           };
           return nameUpdates[member.name] ? { ...member, name: nameUpdates[member.name] } : member;
         });
