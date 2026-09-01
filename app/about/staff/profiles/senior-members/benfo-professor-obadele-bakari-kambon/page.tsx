@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
 import { Mail, MapPin, BookOpen, GraduationCap, FlaskConical, Library, Users, Landmark, Award, ExternalLink } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
 import { ProfileNavigation } from "@/components/profile-navigation"
@@ -123,7 +122,6 @@ export default function ProfessorKambonPage() {
           <Section id="leadership" icon={Landmark} title="Board Memberships and Committees"><List items={boards} /><h3 className="mb-3 mt-8 text-lg font-semibold text-foreground">Editorial Board Memberships</h3><List items={["Editor-in-Chief, Ghana Journal of Linguistics (2016–2023)", "Editorial Committee, Ghana Journal of Linguistics (2014–Present)", "Institute of African Studies Newsletter Editor (2015–2016)"]} /></Section>
           <Section id="associations" icon={Award} title="Professional and Civil Society Associations"><List items={associations} /></Section>
           {navigation && <ProfileNavigation previousSlug={navigation.previous.slug} nextSlug={navigation.next.slug} previousName={navigation.previous.name} nextName={navigation.next.name} isFirst={navigation.isFirst} isLast={navigation.isLast} />}
-          <div className="border-t border-border py-8"><Link href="/about/staff" className="text-sm text-primary hover:underline">← Back to Staff Directory</Link></div>
         </article>
       </main>
     </>
