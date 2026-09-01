@@ -14,7 +14,7 @@ const collections = [
     title: "Audio Recordings",
     count: "1,500+",
     description:
-      "Collection of field recordings, oral histories, festivals, and Ghanaian popular music recorded predominantly from the 1950s onward. Physically, these recordings exist across quarter-inch reel-to-reel tapes, audio cassettes, Digital Audio Tapes (DAT), vinyl LPs, CDs, and VHS video formats.",
+      "Rare field recordings, oral histories, and musical traditions from the 1950s onward. Preserved across quarter-inch reel-to-reel tapes, cassettes, DATs, LPs, and CDs. Inscribed on the UNESCO Memory of the World Register for exceptional value.",
   },
   {
     icon: FileText,
