@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
 import { Mail, MapPin, BookOpen, GraduationCap, FlaskConical, Library, Users, Landmark, Award, ExternalLink } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
 import { ProfileNavigation } from "@/components/profile-navigation"
@@ -65,7 +64,6 @@ export default function ProfessorAsantePage() {
         <Section id="leadership" icon={Landmark} title="Leadership"><List items={boards} /></Section>
         <Section id="associations" icon={Users} title="Associations"><p className="text-sm leading-6 text-muted-foreground">Not available.</p></Section>
         {navigation && <ProfileNavigation previousSlug={navigation.previous.slug} nextSlug={navigation.next.slug} previousName={navigation.previous.name} nextName={navigation.next.name} isFirst={navigation.isFirst} isLast={navigation.isLast} />}
-        <div className="border-t border-border py-8"><Link href="/about/staff" className="text-sm text-primary hover:underline">← Back to Staff Directory</Link></div>
       </article>
     </main>
   </>
