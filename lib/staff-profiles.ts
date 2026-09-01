@@ -14,39 +14,33 @@ function nameToSlug(name: string): string {
     .replace(/\s+/g, "-")
 }
 
-// Senior members list - must be in the same order as staff-directory.tsx
+// Senior members list - names match the staff directory exactly and every slug
+// points to a real, existing profile page. Navigation order is derived by sorting
+// on name (see getProfileNavigation), so this list mirrors the directory's display order.
 export const seniorMembers: StaffProfile[] = [
-  { name: "Professor Deborah Atobrah", slug: "prof-deborah-atobrah", specialty: "African Women & Development" },
-  { name: "Dr. Laryea Akwetteh", slug: "dr-laryea-akwetteh", specialty: "African Cultural Heritage" },
-  { name: "Professor Esi Sutherland-Addy", slug: "professor-esi-sutherland-addy", specialty: "African Literature & Linguistics" },
-  { name: "Professor Daniel Avorgbedor", slug: "professor-daniel-avorgbedor", specialty: "Ethnomusicology & Cultural Studies" },
-  { name: "Professor Kojo Amanor", slug: "professor-kojo-amanor", specialty: "African Environmental Studies" },
-  { name: "Professor Richard Asante", slug: "professor-richard-asante", specialty: "African History & Governance" },
-  { name: "Ɔbenfo (Professor) Ọbádélé Bakari Kambon", slug: "benfo-professor-obadele-bakari-kambon", specialty: "African Philosophy & Consciousness" },
-  { name: "Dr. Genevieve Nrenzah", slug: "dr-genevieve-nrenzah", specialty: "African Medical Anthropology" },
-  { name: "Dr. Chika C. Mba", slug: "dr-chika-c-mba", specialty: "African Economic Development" },
-  { name: "Dr. Kojo Opoku Aidoo", slug: "dr-kojo-opoku-aidoo", specialty: "African Political Science" },
-  { name: "Professor (Mrs) Mercy Akrofi Ansah", slug: "professor-mrs-mercy-akrofi-ansah", specialty: "Language, Literature & Drama" },
-  { name: "Dr. Peter Narh", slug: "dr-peter-narh", specialty: "African Urban Geography" },
-  { name: "Dr. Pius Siakwah", slug: "dr-pius-siakwah", specialty: "African Social Development" },
-  { name: "Professor Kwame Amoah Labi", slug: "professor-kwame-amoah-labi", specialty: "African Literature & Cultural Studies" },
-  { name: "Professor Michael Kpessa-Whyte", slug: "professor-michael-kpessa-whyte", specialty: "African Religious Studies & Philosophy" },
-  { name: "Dr. Mjiba Frehiwot", slug: "dr-mjiba-frehiwot", specialty: "African Peace & Conflict Studies" },
-  { name: "George Gyasi Gyesaw", slug: "george-gyasi-gyesaw", specialty: "J. H. Kwabena Nketia Archives" },
-  { name: "Prof. Hasiyatu Abubakari", slug: "dr-hasiyatu-abubakari", specialty: "African Linguistics" },
-  { name: "Dr. Benjamin Kobina Kwansa", slug: "dr-benjamin-kobina-kwansa", specialty: "African Heritage Management" },
-  { name: "Dr. Aristedes Narh Hargoe", slug: "dr-aristedes-narh-hargoe", specialty: "African Environmental Conservation" },
-  { name: "Dr. Eric Tamatey Lawer", slug: "dr-eric-tamatey-lawer", specialty: "African Archaeology" },
-  { name: "Dr. Edwin Asa Adjei", slug: "dr-edwin-asa-adjei", specialty: "African Linguistics" },
-  { name: "Dr. Ahmed Badawi Mustapha", slug: "dr-ahmed-badawi-mustapha", specialty: "African Islamic History" },
-  { name: "Mrs. Yvonne Lartey", slug: "mrs-yvonne-lartey", specialty: "African Food Culture & Nutrition" },
-  { name: "Dr. Obodai Torto", slug: "dr-obodai-torto", specialty: "African Indigenous Knowledge" },
-  { name: "Dr. Osman Abdul-Rahman Alhassan", slug: "dr-osman-abdul-rahman-alhassan", specialty: "African Islamic Civilization" },
-  { name: "Professor. Samuel Ntewusu", slug: "professor-samuel-ntewusu", specialty: "African History & Politics" },
-  { name: "Dr. Benjamin O. Ayeetey", slug: "dr-benjamin-o-ayeetey", specialty: "African Social Anthropology" },
-  { name: "Ms. Vivian Appiah", slug: "ms-vivian-appiah", specialty: "African Gender & Development" },
-  { name: "Prof. Edem Adotey", slug: "prof-edem-adotey", specialty: "African Arts & Aesthetics" },
   { name: "Aba Amandzewaa Anaman", slug: "aba-amandzewaa-anaman", specialty: "Academic Librarianship & Information Science" },
+  { name: "Chika C. Mba", slug: "dr-chika-c-mba", specialty: "African Philosophy & Decolonial Theory" },
+  { name: "Dr. Aristedes Narh Hargoe", slug: "dr-aristedes-narh-hargoe", specialty: "African Environmental Conservation" },
+  { name: "Dr. Benjamin Kobina Kwansa", slug: "dr-benjamin-kobina-kwansa", specialty: "African Heritage Management" },
+  { name: "Dr. Edwin Asa Adjei", slug: "dr-edwin-asa-adjei", specialty: "Language, Literature and Drama" },
+  { name: "Dr. Eric Tamatey Lawer", slug: "dr-eric-tamatey-lawer", specialty: "Natural Resource Governance & Energy Transition" },
+  { name: "Dr. Genevieve Nrenzah", slug: "dr-genevieve-nrenzah", specialty: "Religions & Philosophy" },
+  { name: "Dr. Laryea Akwetteh", slug: "dr-laryea-akwetteh", specialty: "African Cultural Heritage" },
+  { name: "Dr. Mjiba Frehiwot", slug: "dr-mjiba-frehiwot", specialty: "Religious Studies" },
+  { name: "Dr. Peter Narh", slug: "dr-peter-narh", specialty: "Economics" },
+  { name: "Dr. Pius Siakwah", slug: "dr-pius-siakwah", specialty: "African Social Development" },
+  { name: "George Gyasi Gyesaw", slug: "george-gyasi-gyesaw", specialty: "Cultural Studies" },
+  { name: "Prof. Asante", slug: "professor-richard-asante", specialty: "African Studies" },
+  { name: "Prof. Avorgbedor", slug: "professor-daniel-avorgbedor", specialty: "Music & Culture" },
+  { name: "Prof. Esi Sutherland-Addy", slug: "professor-esi-sutherland", specialty: "African Literature & Cultural Policy" },
+  { name: "Prof. Hasiyatu Abubakari", slug: "dr-hasiyatu-abubakari", specialty: "African Linguistics" },
+  { name: "Professor Deborah Atobrah", slug: "prof-deborah-atobrah", specialty: "African Women & Development" },
+  { name: "Professor Michael Kpessa-Whyte", slug: "professor-michael-kpessa-whyte", specialty: "African Politics & Comparative Public Policy" },
+  { name: "Professor Samuel Aniegye Ntewusu", slug: "professor-samuel-ntewusu", specialty: "African History, Culture & Development" },
+  { name: "Professor. (Mrs) Mercy Akrofi Ansah", slug: "professor-mrs-mercy-akrofi-ansah", specialty: "Language, Literature and Drama" },
+  { name: "Rev. Dr. Grace Sintim Adasi", slug: "rev-dr-grace-sintim-adasi", specialty: "Religions, Philosophy & Gender Studies" },
+  { name: "Vivian Appiah, CA", slug: "vivian-appiah", specialty: "Finance & Accounting" },
+  { name: "Ɔbenfo (Professor) Ọbádélé Bakari Kambon", slug: "benfo-professor-obadele-bakari-kambon", specialty: "African Philosophy & Consciousness" },
 ]
 
 // Senior staff list - alphabetical, matches the sorted display order in staff-directory.tsx
@@ -79,22 +73,24 @@ export function getSeniorStaffNavigation(currentSlug: string) {
   }
 }
 
-// Get profile navigation info (current, next, previous)
+// Get profile navigation info (current, next, previous).
+// Sorts by name so Previous/Next always follows the directory's alphabetical display order.
 export function getProfileNavigation(currentSlug: string) {
-  const currentIndex = seniorMembers.findIndex((p) => p.slug === currentSlug)
-  
+  const ordered = [...seniorMembers].sort((a, b) => a.name.localeCompare(b.name))
+  const currentIndex = ordered.findIndex((p) => p.slug === currentSlug)
+
   if (currentIndex === -1) {
     return null
   }
 
-  const previousIndex = currentIndex === 0 ? seniorMembers.length - 1 : currentIndex - 1
-  const nextIndex = currentIndex === seniorMembers.length - 1 ? 0 : currentIndex + 1
+  const previousIndex = currentIndex === 0 ? ordered.length - 1 : currentIndex - 1
+  const nextIndex = currentIndex === ordered.length - 1 ? 0 : currentIndex + 1
 
   return {
-    current: seniorMembers[currentIndex],
-    previous: seniorMembers[previousIndex],
-    next: seniorMembers[nextIndex],
-    isLast: currentIndex === seniorMembers.length - 1,
+    current: ordered[currentIndex],
+    previous: ordered[previousIndex],
+    next: ordered[nextIndex],
+    isLast: currentIndex === ordered.length - 1,
     isFirst: currentIndex === 0,
   }
 }

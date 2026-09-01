@@ -15,7 +15,16 @@ type ProfileNavigationProps = {
 export function ProfileNavigationForSlug({ slug }: { slug: string }) {
   const navigation = getProfileNavigation(slug)
   if (!navigation) return null
-  return <ProfileNavigation {...navigation} />
+  return (
+    <ProfileNavigation
+      previousSlug={navigation.previous.slug}
+      nextSlug={navigation.next.slug}
+      previousName={navigation.previous.name}
+      nextName={navigation.next.name}
+      isFirst={navigation.isFirst}
+      isLast={navigation.isLast}
+    />
+  )
 }
 
 export function ProfileNavigation({

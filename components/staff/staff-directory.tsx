@@ -79,7 +79,7 @@ const PROFILE_SLUG_MAP: Record<string, string> = {
   'Dr. Laryea Akwetteh': 'dr-laryea-akwetteh',
   'Dr. Benjamin Kobina Kwansa': 'dr-benjamin-kobina-kwansa',
   'Dr. Aristedes Narh Hargoe': 'dr-aristedes-narh-hargoe',
-  'Prof. Avorgbedor': 'professor-avorgbedor',
+  'Prof. Avorgbedor': 'professor-daniel-avorgbedor',
   'Dr. Nii Dortey': 'dr-nii-dortey',
   'Prof. Esi Sutherland-Addy': 'professor-esi-sutherland',
   'Dr. Peter Narh': 'dr-peter-narh',
