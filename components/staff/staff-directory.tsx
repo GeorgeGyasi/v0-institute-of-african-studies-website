@@ -19,9 +19,7 @@ const MOCK_STAFF: StaffMember[] = [
   { id: '2', name: 'Professor Deborah Atobrah', role: 'Senior Member', email: 'datobrah@ug.edu.gh', specialty: 'African Women & Development', photo_url: '/images/professor-deborah-atobrah.png' },
   { id: '3', name: 'Dr. Laryea Akwetteh', role: 'Senior Member', email: 'lakwetteh@ug.edu.gh', specialty: 'African Cultural Heritage', photo_url: '/images/dr-laryea-akwetteh.png' },
   { id: '4', name: 'Dr. Benjamin Kobina Kwansa', role: 'Senior Member', email: 'bkkwansa@ug.edu.gh', specialty: 'African Heritage Management', photo_url: '/images/dr-benjamin-kobina-kwansa.png' },
-  { id: '5', name: 'Prof. Avorgbedor', role: 'Senior Member', email: 'p.avorgbedor@university.edu', specialty: 'Music & Culture', photo_url: '/images/professor-avorgbedor.jpg' },
   { id: '6', name: 'Dr. Nii Dortey', role: 'Senior Member', email: 'dr.dortey@university.edu', specialty: 'Literature', photo_url: '/images/dr-nii-dortey.jpg' },
-  { id: '7', name: 'Prof. Esi Sutherland-Addy', role: 'Senior Member', email: 'esutherland-addy@ug.edu.gh', specialty: 'African Literature & Cultural Policy', photo_url: '/images/professor-esi-sutherland.jpg' },
   { id: '8', name: 'Dr. Aristedes Narh Hargoe', role: 'Senior Member', email: 'ahargoe@ug.edu.gh', specialty: 'African Environmental Conservation', photo_url: '/images/dr-aristedes-narh-hargoe.png' },
   { id: '9', name: 'Dr. Peter Narh', role: 'Senior Member', email: 'p.narh@university.edu', specialty: 'Economics', photo_url: '/images/dr-peter-narh.jpg' },
   { id: '10', name: 'Prof. Hasiyatu Abubakari', role: 'Associate Professor', email: 'haabubakari@ug.edu.gh', specialty: 'African Linguistics', photo_url: '/images/dr-hasiyatu-abubakari.jpg' },
@@ -79,9 +77,7 @@ const PROFILE_SLUG_MAP: Record<string, string> = {
   'Dr. Laryea Akwetteh': 'dr-laryea-akwetteh',
   'Dr. Benjamin Kobina Kwansa': 'dr-benjamin-kobina-kwansa',
   'Dr. Aristedes Narh Hargoe': 'dr-aristedes-narh-hargoe',
-  'Prof. Avorgbedor': 'professor-daniel-avorgbedor',
   'Dr. Nii Dortey': 'dr-nii-dortey',
-  'Prof. Esi Sutherland-Addy': 'professor-esi-sutherland',
   'Dr. Peter Narh': 'dr-peter-narh',
   'Prof. Hasiyatu Abubakari': 'dr-hasiyatu-abubakari',
   'Dr. Mjiba Frehiwot': 'dr-mjiba-frehiwot',
@@ -101,9 +97,9 @@ export function StaffDirectory() {
   useEffect(() => {
     // Group staff by role/category
     const grouped: Record<string, StaffMember[]> = {
-      'Senior Members': MOCK_STAFF.slice(0, 24), // Named staff, including Mercy
-      'Senior Staff': MOCK_STAFF.slice(24, 30), // Named senior staff
-      'Junior Staff': MOCK_STAFF.slice(30, 33), // Junior staff
+      'Senior Members': MOCK_STAFF.slice(0, 22), // Named staff, including Mercy
+      'Senior Staff': MOCK_STAFF.slice(22, 28), // Named senior staff
+      'Junior Staff': MOCK_STAFF.slice(28, 31), // Junior staff
     }
 
     const categories = Object.entries(grouped).map(([category, members]) => ({

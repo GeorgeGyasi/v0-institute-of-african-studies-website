@@ -31,8 +31,6 @@ export const seniorMembers: StaffProfile[] = [
   { name: "Dr. Pius Siakwah", slug: "dr-pius-siakwah", specialty: "African Social Development" },
   { name: "George Gyasi Gyesaw", slug: "george-gyasi-gyesaw", specialty: "Cultural Studies" },
   { name: "Prof. Asante", slug: "professor-richard-asante", specialty: "African Studies" },
-  { name: "Prof. Avorgbedor", slug: "professor-daniel-avorgbedor", specialty: "Music & Culture" },
-  { name: "Prof. Esi Sutherland-Addy", slug: "professor-esi-sutherland", specialty: "African Literature & Cultural Policy" },
   { name: "Prof. Hasiyatu Abubakari", slug: "dr-hasiyatu-abubakari", specialty: "African Linguistics" },
   { name: "Professor Deborah Atobrah", slug: "prof-deborah-atobrah", specialty: "African Women & Development" },
   { name: "Professor Michael Kpessa-Whyte", slug: "professor-michael-kpessa-whyte", specialty: "African Politics & Comparative Public Policy" },

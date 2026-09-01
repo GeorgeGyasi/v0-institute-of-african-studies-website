@@ -21,9 +21,7 @@ const MOCK_STAFF: StaffProfile[] = [
   { id: '2', name: 'Professor Deborah Atobrah', role: 'Senior Member', email: 'datobrah@ug.edu.gh', specialty: 'African Women & Development', photo_url: '/images/professor-deborah-atobrah.png' },
   { id: '3', name: 'Dr. Laryea Akwetteh', role: 'Senior Member', email: 'lakwetteh@ug.edu.gh', specialty: 'African Cultural Heritage', photo_url: '/images/dr-laryea-akwetteh.png' },
   { id: '4', name: 'Dr. Benjamin Kobina Kwansa', role: 'Senior Member', email: 'bkkwansa@ug.edu.gh', specialty: 'African Heritage Management', photo_url: '/images/dr-benjamin-kobina-kwansa.png' },
-  { id: '5', name: 'Prof. Avorgbedor', role: 'Senior Member', email: 'p.avorgbedor@university.edu', specialty: 'Music & Culture', photo_url: '/images/professor-avorgbedor.jpg' },
   { id: '6', name: 'Dr. Nii Dortey', role: 'Senior Member', email: 'dr.dortey@university.edu', specialty: 'Literature', photo_url: '/images/dr-nii-dortey.jpg' },
-  { id: '7', name: 'Prof. Esi Sutherland-Addy', role: 'Senior Member', email: 'esutherland-addy@ug.edu.gh', specialty: 'African Literature & Cultural Policy', photo_url: '/images/professor-esi-sutherland.jpg' },
   { id: '8', name: 'Dr. Aristedes Narh Hargoe', role: 'Senior Member', email: 'ahargoe@ug.edu.gh', specialty: 'African Environmental Conservation', photo_url: '/images/dr-aristedes-narh-hargoe.png' },
   { id: '9', name: 'Dr. Peter Narh', role: 'Senior Member', email: 'p.narh@university.edu', specialty: 'Economics', photo_url: '/images/dr-peter-narh.jpg' },
   { id: '10', name: 'Prof. Hasiyatu Abubakari', role: 'Associate Professor', email: 'haabubakari@ug.edu.gh', specialty: 'African Linguistics', photo_url: '/images/dr-hasiyatu-abubakari.jpg' },
@@ -63,7 +61,7 @@ export default function AdminDashboard() {
       if (savedStaff) {
         const saved = JSON.parse(savedStaff) as StaffProfile[];
         // Drop removed placeholder staff (generic "Senior Member N", Joy Koney, Justice Library)
-        const removedNames = ['Joy Koney', 'Justice Library'];
+        const removedNames = ['Joy Koney', 'Justice Library', 'Prof. Avorgbedor', 'Prof. Esi Sutherland-Addy'];
         const pruned = saved.filter(
           (member) => !/^Senior Member \d+$/.test(member.name) && !removedNames.includes(member.name),
         );
