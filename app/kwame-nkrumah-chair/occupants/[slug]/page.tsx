@@ -85,6 +85,32 @@ const occupants = [
       "Continental and diaspora engagement",
     ],
   },
+  {
+    slug: "ato-quayson",
+    name: "Professor Ato Quayson",
+    position: "Fifth Occupant",
+    tenure: "2026–",
+    discipline: "English & African Studies",
+    image: "/images/ato-quayson.jpg",
+    fullBio:
+      "Ato Quayson is a Ghanaian-Canadian literary critic, urban theorist, and academic who serves as the Jean G. and Morris M. Doyle Professor in Interdisciplinary Studies and Professor of English at Stanford University, where he also chairs the Department of African and African American Studies. He is internationally recognized as one of the leading figures in postcolonial literature, African studies, urban humanities, and literary theory. He earned a BA (Hons) in English and Arabic from the University of Ghana and a Ph.D. from the University of Cambridge. He previously served as the inaugural Director of the Centre for Diaspora and Transnational Studies at the University of Toronto, as a Fellow of Pembroke College and Reader in Commonwealth and Postcolonial Studies at Cambridge, and as Professor of English at New York University (2017–2019). Through his scholarship and public engagement—including as host of the YouTube academic series Critic.Exe—Quayson integrates literary criticism, urban ethnography, and political history to explore how global culture and African identity intersect.",
+    expertise: [
+      "Postcolonial Literature",
+      "African Studies",
+      "Urban Humanities",
+      "Literary Theory",
+      "Disability Studies",
+      "Transnationalism & Diaspora Studies",
+    ],
+    achievements: [
+      "Author of Tragedy and Postcolonial Literature (2021), winner of the 2022 Warren-Brooks Prize in Literary Criticism",
+      "Author of Oxford Street, Accra: City Life and the Itineraries of Transnationalism (2014), winner of the 2015 Urban History Association Best Book Prize",
+      "Author of Aesthetic Nervousness: Disability and the Crisis of Representation (2007), a foundational text in disability studies",
+      "Author of Strategic Transformations in Nigerian Writing (1997)",
+      "Fellow of the Ghana Academy of Arts and Sciences, the Royal Society of Canada, and the American Academy of Arts and Sciences, and Corresponding Fellow of the British Academy",
+      "Host of the YouTube academic series Critic.Exe",
+    ],
+  },
 ]
 
 interface PageProps {

@@ -40,6 +40,15 @@ const occupants = [
     image: "/images/occupant-4.jpg",
     bio: "Amina Mattah is a scholar in gender and development studies. She has been engaged in research, consultancy, and professional services in Africa, Europe, the United States, and within international organizations. Her work focuses on gender dynamics, development initiatives, and women's empowerment across the African continent and diaspora.",
   },
+  {
+    slug: "ato-quayson",
+    name: "Professor Ato Quayson",
+    position: "Fifth Occupant",
+    tenure: "2026–",
+    discipline: "English & African Studies",
+    image: "/images/ato-quayson.jpg",
+    bio: "Ato Quayson is a Ghanaian-Canadian literary critic, urban theorist, and academic who serves as the Jean G. and Morris M. Doyle Professor in Interdisciplinary Studies and Professor of English at Stanford University, where he chairs the Department of African and African American Studies. Internationally recognized in postcolonial literature, African studies, urban humanities, and literary theory, he holds a BA from the University of Ghana and a Ph.D. from the University of Cambridge. His award-winning works include Tragedy and Postcolonial Literature and Oxford Street, Accra.",
+  },
 ]
 
 export default function OccupantsPage() {

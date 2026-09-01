@@ -49,6 +49,7 @@ export default function KwameNkrumahChairPage() {
     { id: "professor-gordon", name: "Professor Gordon", position: "Second Occupant", years: "2014–2016" },
     { id: "horace-g-campbell", name: "Professor Horace G. Campbell", position: "Third Occupant", years: "2020–2021" },
     { id: "amina-mattah", name: "Amina Mattah", position: "Fourth Occupant", years: "2021–2025" },
+    { id: "ato-quayson", name: "Professor Ato Quayson", position: "Fifth Occupant", years: "2026–" },
   ]
 
   return (
@@ -99,11 +100,11 @@ export default function KwameNkrumahChairPage() {
                 </h3>
                 <div className="space-y-4">
                   <Link
-                    href="/kwame-nkrumah-chair/occupants/amina-mattah"
+                    href="/kwame-nkrumah-chair/occupants/ato-quayson"
                     className="block rounded-md border border-border bg-background p-3 transition-all hover:border-primary hover:bg-muted"
                   >
                     <p className="text-xs font-semibold text-primary">Current (2026–)</p>
-                    <p className="text-sm font-semibold text-foreground">Ato Quayson</p>
+                    <p className="text-sm font-semibold text-foreground">Professor Ato Quayson</p>
                     <p className="text-xs text-muted-foreground">English & African Studies</p>
                   </Link>
                   
