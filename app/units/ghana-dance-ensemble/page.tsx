@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { PageHeader } from "@/components/page-header"
-import { Music, Users, Calendar, MapPin, Award, Play } from "lucide-react"
+import { Music, Users, Calendar, MapPin, Award, Play, ChevronDown } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Ghana Dance Ensemble",
@@ -190,36 +190,65 @@ export default function GhanaDanceEnsemblePage() {
           <h2 className="mb-4 font-serif text-3xl font-bold text-foreground">
             Directors Through the Years
           </h2>
-          <p className="mb-12 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          <p className="mb-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Since its founding in 1962, the Ghana Dance Ensemble has been shaped
             by a distinguished line of artistic directors, each advancing its
             mission to research, preserve, and reimagine {"Ghana's"} performing
             arts traditions.
           </p>
-          <ol className="relative border-l border-border pl-8">
-            {directors.map((director) => (
-              <li key={director.name} className="mb-10 last:mb-0">
-                <span
-                  className={`absolute -left-[9px] flex h-4 w-4 items-center justify-center rounded-full ring-4 ring-background ${
-                    director.current ? "bg-primary" : "bg-secondary"
-                  }`}
-                  aria-hidden="true"
-                />
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                  <h3 className="font-semibold text-foreground">
+
+          {/* Current director - always visible */}
+          {directors
+            .filter((director) => director.current)
+            .map((director) => (
+              <div
+                key={director.name}
+                className="mb-6 flex flex-col gap-1 rounded-lg border border-border bg-muted/40 p-6 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <div>
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary">
+                    Current Director
+                  </p>
+                  <h3 className="font-serif text-xl font-bold text-foreground">
                     {director.name}
                   </h3>
-                  <span
-                    className={`text-sm font-medium ${
-                      director.current ? "text-primary" : "text-muted-foreground"
-                    }`}
-                  >
-                    {director.tenure}
-                  </span>
                 </div>
-              </li>
+                <span className="text-sm font-medium text-primary">
+                  {director.tenure}
+                </span>
+              </div>
             ))}
-          </ol>
+
+          {/* Past directors - collapsible */}
+          <details className="group">
+            <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg border border-border px-6 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-muted/60">
+              <span>Past Directors (1962 – 2019)</span>
+              <ChevronDown
+                className="h-5 w-5 text-muted-foreground transition-transform duration-300 group-open:rotate-180"
+                aria-hidden="true"
+              />
+            </summary>
+            <ol className="relative ml-2 mt-8 border-l border-border pl-8">
+              {directors
+                .filter((director) => !director.current)
+                .map((director) => (
+                  <li key={director.name} className="mb-10 last:mb-0">
+                    <span
+                      className="absolute -left-[9px] flex h-4 w-4 items-center justify-center rounded-full bg-secondary ring-4 ring-background"
+                      aria-hidden="true"
+                    />
+                    <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                      <h3 className="font-semibold text-foreground">
+                        {director.name}
+                      </h3>
+                      <span className="text-sm font-medium text-muted-foreground">
+                        {director.tenure}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+            </ol>
+          </details>
         </div>
       </section>
 
