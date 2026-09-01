@@ -28,7 +28,7 @@ const collections = [
     title: "Video Documentation",
     count: "300+",
     description:
-      "Documentaries of Ghanaian culture: installation of Chiefs, funerals, musical performances, movies; early Ghanaian movies, command performances, etc.",
+      "Visual recordings capturing traditional dances, royal ceremonies, and festivals. Features early Ghanaian cinema, musical performances, and cultural rites. Preserved in analog VHS and digital formats for visual anthropology studies.",
   },
   {
     icon: Library,
