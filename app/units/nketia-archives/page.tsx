@@ -54,23 +54,34 @@ export default function NketiaArchivesPage() {
               About the Archives
             </p>
             <h2 className="mb-6 font-serif text-3xl font-bold text-foreground">
-              A Life Devoted to African Music
+              Overview
             </h2>
             <div className="flex flex-col gap-4 text-base leading-relaxed text-muted-foreground">
               <p>
-                The J. H. Kwabena Nketia Archives are named in honour of
-                Professor Joseph Hanson Kwabena Nketia (1921-2019), one of
-                Africa's most distinguished scholars of music and the arts.
-                Prof. Nketia spent over six decades researching, documenting,
-                and theorising African music, producing a body of work that
-                fundamentally shaped the field of ethnomusicology.
+                The Institute of African Studies (I.A.S.) Audiovisual Archive
+                merges the IAS Audio Visual Unit and ICAMD collections, forming
+                one of the world&apos;s most vital repositories of Ghanaian
+                performance traditions. Established to support scholars,
+                researchers, and artists, the archive preserves field
+                documentation across diverse legacy media, including 1/4&quot;
+                reel-to-reel tapes, shellac discs, audio cassettes, DATs, CDs,
+                VHS, Mini-DV, and various video formats.
               </p>
               <p>
-                The archives house his personal papers, field recordings,
-                manuscripts, and an extensive collection of materials related to
-                African music research. They serve as an invaluable resource for
-                scholars, students, and anyone interested in understanding the
-                richness of African musical traditions.
+                At the core of the archive are the foundational field recordings
+                made by Prof. J. H. Kwabena Nketia and his colleagues from the
+                early 1950s through the 1970s. Capturing music, dance, and oral
+                histories prior to and immediately following Ghana&apos;s 1957
+                independence, these recordings preserve irreplaceable cultural
+                heritage that has since evolved significantly over time.
+              </p>
+              <p>
+                Notable holdings include rare court music like Odurugya and
+                Fontomfrom, storytelling traditions (Ananses&#603;m and mmoguo),
+                and extensive recordings of Konkomba, Mamprusi, Frafra, Dagaaba,
+                and Kasena music. The archive also preserves occupational and
+                hunters&apos; songs, ritual music, early highlife, vintage brass
+                band compositions, and select international folk music.
               </p>
             </div>
           </div>
