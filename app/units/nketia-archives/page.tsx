@@ -18,10 +18,10 @@ const collections = [
   },
   {
     icon: FileText,
-    title: "Personal Manuscripts",
+    title: "Manuscripts",
     count: "800+",
     description:
-      "Original manuscripts, lecture notes, and unpublished writings by Prof. Nketia covering ethnomusicology, African aesthetics, and the philosophy of African music.",
+      "This includes personal records, collaboration between the Institute of African Studies and other Institutes, companies, departments, schools and universities. Projects of the Institute of African Studies, correspondences, reports, etc.",
   },
   {
     icon: Mic,
