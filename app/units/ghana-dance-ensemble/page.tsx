@@ -96,26 +96,41 @@ export default function GhanaDanceEnsemblePage() {
               </h2>
               <div className="flex flex-col gap-4 text-sm leading-relaxed text-muted-foreground">
                 <p>
-                  The Ghana Dance Ensemble was established in 1962 as a
-                  professional performing arts company of the Institute of
-                  African Studies, University of Ghana.                   Founded under the
-                  direction of Professor Albert Mawere Opoku and Professor J. H.
-                  Kwabena Nketia, the Ensemble was created to research, preserve,
-                  and promote the traditional and contemporary performing arts
-                  of Ghana and Africa.
+                  Established in 1962 through a collaboration between the
+                  Government&apos;s Institute of Arts and Culture and the
+                  Institute of African Studies, University of Ghana, the Ghana
+                  Dance Ensemble was created to be the country&apos;s flagship
+                  for the professional, worldwide promotion of its music and
+                  dance heritage, grounded in solid fieldwork and experimental
+                  research.
                 </p>
                 <p>
-                  Over six decades, the Ensemble has become one of the most
-                  respected and celebrated dance companies on the African
-                  continent. Its repertoire draws from the diverse ethnic groups
-                  and cultural traditions of Ghana, showcasing the richness and
-                  complexity of African performing arts.
+                  The Ensemble has a tradition of identifying young, talented
+                  artistes with mastery of particular dance forms from across the
+                  country and training them to express a dazzling variety of
+                  dances. Many of these dancers have gone on to set up their own
+                  companies or work with companies all over the world.
                 </p>
                 <p>
-                  The Ensemble has performed extensively both within Ghana and
-                  internationally, representing the country at major cultural
-                  festivals, state events, and academic conferences across
-                  Africa, Europe, the Americas, and Asia.
+                  Its directors have transformed everyday Ghanaian dance into
+                  stage presentations. Professor Mawere Opoku used just enough
+                  choreography to showcase the classic movements of heritage
+                  dances; his successor, Professor Nii Yartey, explored dance
+                  vocabulary in dialogue with cultures worldwide to bring the
+                  Ensemble into contemporary dance. Today, under Dr. Aristides
+                  Nene Narh Hargoe, it maintains the discipline of the early
+                  classics while expanding its repertoire and exploring dance as
+                  an expression of contemporary issues.
+                </p>
+                <p>
+                  Alongside Guinea&apos;s Ballet Africain in the 1960s and 70s,
+                  the Ensemble gave the world a breathtaking view of African
+                  aesthetics from the perspective of Africans. It has served as a
+                  model for amateur groups nationwide and spawned the National
+                  Dance Company at the National Theatre of Ghana. Its research,
+                  teaching, and experimental work continues at the Institute of
+                  African Studies, standing to conserve Ghana&apos;s rich dance
+                  heritage and the exhilarating creativity of Ghanaian dance.
                 </p>
               </div>
             </div>
