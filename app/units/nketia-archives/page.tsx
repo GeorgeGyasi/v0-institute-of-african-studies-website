@@ -21,7 +21,7 @@ const collections = [
     title: "Manuscripts",
     count: "800+",
     description:
-      "This includes personal records, collaboration between the Institute of African Studies and other Institutes, companies, departments, schools and universities. Projects of the Institute of African Studies, correspondences, reports, etc.",
+      "Extensive collection of institutional correspondence, field notes, and reports. Documents collaborative projects across global universities and research centers. Provides critical historical context for African heritage and scholarship.",
   },
   {
     icon: Video,
