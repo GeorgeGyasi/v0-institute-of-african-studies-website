@@ -27,6 +27,7 @@ export const seniorMembers: StaffProfile[] = [
   { name: "Dr. Genevieve Nrenzah", slug: "dr-genevieve-nrenzah", specialty: "Religions & Philosophy" },
   { name: "Dr. Laryea Akwetteh", slug: "dr-laryea-akwetteh", specialty: "African Cultural Heritage" },
   { name: "Dr. Mjiba Frehiwot", slug: "dr-mjiba-frehiwot", specialty: "Religious Studies" },
+  { name: "Dr. Moses Nii-Dortey", slug: "dr-nii-dortey", specialty: "Ethnomusicology / Music & Dance" },
   { name: "Dr. Peter Narh", slug: "dr-peter-narh", specialty: "Economics" },
   { name: "Dr. Pius Siakwah", slug: "dr-pius-siakwah", specialty: "African Social Development" },
   { name: "George Gyasi Gyesaw", slug: "george-gyasi-gyesaw", specialty: "Cultural Studies" },
