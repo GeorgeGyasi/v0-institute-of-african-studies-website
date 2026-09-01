@@ -14,7 +14,7 @@ const collections = [
     title: "Audio Recordings",
     count: "1,500+",
     description:
-      "The J. H. Kwabena Nketia Archives houses an extensive collection of field recordings, oral histories, analytical audio, live festival performances, and Ghanaian popular music recorded predominantly from the 1950s onward. Physically, these recordings exist across quarter-inch reel-to-reel tapes, audio cassettes, Digital Audio Tapes (DAT), vinyl LPs, CDs, and VHS video formats.",
+      "Collection of field recordings, oral histories, festivals, and Ghanaian popular music recorded predominantly from the 1950s onward. Physically, these recordings exist across quarter-inch reel-to-reel tapes, audio cassettes, Digital Audio Tapes (DAT), vinyl LPs, CDs, and VHS video formats.",
   },
   {
     icon: FileText,
