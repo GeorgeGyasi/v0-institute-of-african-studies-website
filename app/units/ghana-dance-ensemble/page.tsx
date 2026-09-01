@@ -146,8 +146,8 @@ export default function GhanaDanceEnsemblePage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
               <Image
-                src="/images/archive-5.jpg"
-                alt="Ghana Dance Ensemble performance"
+                src="/images/ghana-dance-ensemble-archive.png"
+                alt="Archival photograph of the Ghana Dance Ensemble in an early rehearsal session"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
