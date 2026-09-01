@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { PageHeader } from "@/components/page-header"
-import { Library, Music, FileText, Mic } from "lucide-react"
+import { Library, Music, FileText, Video } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "J. H. Kwabena Nketia Archives",
@@ -24,11 +24,11 @@ const collections = [
       "This includes personal records, collaboration between the Institute of African Studies and other Institutes, companies, departments, schools and universities. Projects of the Institute of African Studies, correspondences, reports, etc.",
   },
   {
-    icon: Mic,
-    title: "Oral History Interviews",
+    icon: Video,
+    title: "Video Documentation",
     count: "300+",
     description:
-      "Recorded interviews with traditional musicians, cultural custodians, and community elders, providing context for the musical traditions documented in the archive.",
+      "Documentaries of Ghanaian culture: installation of Chiefs, funerals, musical performances, movies; early Ghanaian movies, command performances, etc.",
   },
   {
     icon: Library,
