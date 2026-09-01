@@ -24,12 +24,12 @@ export default function DirectorsMessagePage() {
             <div className="lg:col-span-1">
               <div className="sticky top-28 rounded-lg border border-border bg-card p-8">
                 <div className="mb-8 flex justify-center">
-                  <div className="relative h-64 w-64 overflow-hidden rounded-lg">
+                  <div className="relative aspect-[3/4] w-64 overflow-hidden rounded-lg">
                     <Image
-                      src="/images/director.jpg"
+                      src="/images/director-samuel-ntewusu.jpg"
                       alt="Professor Samuel Aniegye Ntewusu, Director of the Institute of African Studies"
                       fill
-                      className="object-cover"
+                      className="object-cover object-top"
                       sizes="256px"
                     />
                   </div>
