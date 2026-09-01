@@ -237,7 +237,7 @@ export default function GhanaDanceEnsemblePage() {
                       className="absolute -left-[9px] flex h-4 w-4 items-center justify-center rounded-full bg-secondary ring-4 ring-background"
                       aria-hidden="true"
                     />
-                    <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex flex-col gap-x-3 gap-y-0.5 sm:flex-row sm:items-baseline">
                       <h3 className="font-semibold text-foreground">
                         {director.name}
                       </h3>
