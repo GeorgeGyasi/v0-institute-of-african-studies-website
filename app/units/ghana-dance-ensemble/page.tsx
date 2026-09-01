@@ -36,6 +36,16 @@ const highlights = [
   },
 ]
 
+const directors = [
+  { name: "Prof. Albert Mawere Opoku", tenure: "1962 – 1976" },
+  { name: "Prof. Francis Nii Yartey", tenure: "1976 – 1992" },
+  { name: "Mr. E. Ampofo Duodu", tenure: "1993 – 1997" },
+  { name: "Mr. Oh! Nii Kwei Sowah", tenure: "1997 – 2002" },
+  { name: "Dr. Benjamin Obido Ayettey", tenure: "2002 – 2015" },
+  { name: "Dr. Moses Nii-Dortey", tenure: "2015 – 2019" },
+  { name: "Dr. Aristedes Narh Hargoe", tenure: "2019 – Present", current: true },
+]
+
 const repertoire = [
   {
     title: "Agbadza",
@@ -171,8 +181,50 @@ export default function GhanaDanceEnsemblePage() {
         </div>
       </section>
 
-      {/* Repertoire */}
+      {/* Directors */}
       <section className="py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
+            Artistic Leadership
+          </p>
+          <h2 className="mb-4 font-serif text-3xl font-bold text-foreground">
+            Directors Through the Years
+          </h2>
+          <p className="mb-12 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            Since its founding in 1962, the Ghana Dance Ensemble has been shaped
+            by a distinguished line of artistic directors, each advancing its
+            mission to research, preserve, and reimagine {"Ghana's"} performing
+            arts traditions.
+          </p>
+          <ol className="relative border-l border-border pl-8">
+            {directors.map((director) => (
+              <li key={director.name} className="mb-10 last:mb-0">
+                <span
+                  className={`absolute -left-[9px] flex h-4 w-4 items-center justify-center rounded-full ring-4 ring-background ${
+                    director.current ? "bg-primary" : "bg-secondary"
+                  }`}
+                  aria-hidden="true"
+                />
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                  <h3 className="font-semibold text-foreground">
+                    {director.name}
+                  </h3>
+                  <span
+                    className={`text-sm font-medium ${
+                      director.current ? "text-primary" : "text-muted-foreground"
+                    }`}
+                  >
+                    {director.tenure}
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Repertoire */}
+      <section className="border-t border-border py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
             Performance Repertoire
