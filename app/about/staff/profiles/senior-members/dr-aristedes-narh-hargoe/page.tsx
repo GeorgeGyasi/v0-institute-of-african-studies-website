@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
 import { BookOpen, FlaskConical, GraduationCap, Landmark, Mail, Users } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
 import { ProfileNavigation } from "@/components/profile-navigation"
@@ -111,9 +110,6 @@ export default function AristedesHargoePage() {
               isLast={navigation.isLast}
             />
           )}
-          <div className="border-t border-border py-8">
-            <Link href="/about/staff" className="text-sm text-primary hover:underline">← Back to Staff Directory</Link>
-          </div>
         </article>
       </main>
     </>
