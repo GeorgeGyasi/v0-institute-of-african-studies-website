@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { PageHeader } from "@/components/page-header"
-import { Library, Music, FileText, Video } from "lucide-react"
+import { ImageIcon, Music, FileText, Video } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "J. H. Kwabena Nketia Archives",
@@ -31,11 +31,11 @@ const collections = [
       "Visual recordings capturing traditional dances, royal ceremonies, and festivals. Features early Ghanaian cinema, musical performances, and cultural rites. Preserved in analog VHS and digital formats for visual anthropology studies.",
   },
   {
-    icon: Library,
-    title: "Published Works",
-    count: "200+",
+    icon: ImageIcon,
+    title: "Photographs",
+    count: "50000+",
     description:
-      "Complete collection of Prof. Nketia's published books, journal articles, and conference papers spanning African music, dance, and oral literature.",
+      "Rich visual archive capturing the vibrant culture, history, and daily life of Ghana. Features iconic holdings including the Gerald Annan-Forson Collection and Heritage Photo Lab. Serves as an essential visual record of national memory and photographic heritage.",
   },
 ]
 
