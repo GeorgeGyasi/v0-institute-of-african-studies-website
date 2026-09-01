@@ -203,7 +203,7 @@ export default function GhanaDanceEnsemblePage() {
             .map((director) => (
               <div
                 key={director.name}
-                className="mb-6 flex flex-col gap-1 rounded-lg border border-border bg-muted/40 p-6 sm:flex-row sm:items-center sm:justify-between"
+                className="mb-6 flex max-w-2xl flex-col gap-1 rounded-lg border border-border bg-muted/40 p-6 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div>
                   <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary">
@@ -220,7 +220,7 @@ export default function GhanaDanceEnsemblePage() {
             ))}
 
           {/* Past directors - collapsible */}
-          <details className="group">
+          <details className="group max-w-2xl">
             <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg border border-border px-6 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-muted/60">
               <span>Past Directors (1962 – 2019)</span>
               <ChevronDown
