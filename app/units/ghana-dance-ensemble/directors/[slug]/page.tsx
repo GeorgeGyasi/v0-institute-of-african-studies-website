@@ -65,7 +65,9 @@ export default async function DirectorProfilePage({ params }: PageProps) {
               <div className="rounded-lg border border-border bg-card p-8">
                 <h2 className="mb-6 text-2xl font-bold text-foreground">About</h2>
                 <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
-                  <p>{director.bio}</p>
+                  {director.bio.map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
                 </div>
               </div>
 
