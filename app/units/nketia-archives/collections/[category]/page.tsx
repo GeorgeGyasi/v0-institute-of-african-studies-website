@@ -4,6 +4,7 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { PageHeader } from "@/components/page-header"
 import { ArrowLeft, Music, FileText, Video, ImageIcon } from "lucide-react"
+import { ComingSoonLink } from "@/components/coming-soon-link"
 import {
   getCollection,
   collectionOrder,
@@ -85,6 +86,47 @@ function FindingAidCard({
           <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
             {item.description}
           </p>
+
+          {item.audio ? (
+            <div className="mb-5">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                Listening sample
+              </p>
+              <audio controls preload="none" className="w-full">
+                <source src={item.audio} type="audio/wav" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          ) : null}
+
+          {item.video ? (
+            <div className="mb-5">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                Clip sample
+              </p>
+              <video
+                controls
+                preload="none"
+                className="aspect-video w-full rounded-md bg-black"
+              >
+                <source src={item.video} type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </div>
+          ) : null}
+
+          {item.document ? (
+            <a
+              href={item.document}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-5 inline-flex items-center gap-2 rounded-md border border-primary/30 px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+            >
+              <FileText className="h-4 w-4" />
+              View manuscript (PDF)
+            </a>
+          ) : null}
+
           <dl className="flex flex-col gap-2 border-t border-border pt-4">
             <MetaRow label="Creator" value={item.creator} />
             <MetaRow label="Credit" value={item.credit} />
@@ -162,6 +204,15 @@ export default async function CollectionPage({ params }: PageProps) {
                 isPhoto={isPhoto}
               />
             ))}
+          </div>
+
+          {/* View full catalogue */}
+          <div className="mt-8 flex flex-col items-start gap-2">
+            <ComingSoonLink
+              href={`/units/nketia-archives/collections/${collection.slug}/catalogue`}
+              label="View the full catalogue"
+              variant="button"
+            />
           </div>
 
           {/* Other collections */}

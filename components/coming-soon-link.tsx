@@ -5,10 +5,16 @@ import { useState } from "react"
 interface ComingSoonLinkProps {
   href: string
   label: string
+  variant?: "link" | "button"
 }
 
-export function ComingSoonLink({ href, label }: ComingSoonLinkProps) {
+export function ComingSoonLink({ href, label, variant = "link" }: ComingSoonLinkProps) {
   const [showMessage, setShowMessage] = useState(false)
+
+  const className =
+    variant === "button"
+      ? "inline-flex items-center gap-2 rounded-md border border-primary/30 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+      : "text-sm leading-relaxed text-primary underline-offset-4 hover:underline"
 
   return (
     <div>
@@ -18,7 +24,7 @@ export function ComingSoonLink({ href, label }: ComingSoonLinkProps) {
           event.preventDefault()
           setShowMessage(true)
         }}
-        className="text-sm leading-relaxed text-primary underline-offset-4 hover:underline"
+        className={className}
       >
         {label}
       </a>

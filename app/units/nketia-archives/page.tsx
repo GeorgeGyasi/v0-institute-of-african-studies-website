@@ -142,7 +142,7 @@ export default function NketiaArchivesPage() {
                     {item.description}
                   </p>
                   <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                    Browse finding aid
+                    Browse selected items
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </div>
@@ -168,12 +168,9 @@ export default function NketiaArchivesPage() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">Email</p>
-                <a
-                  href="mailto:jhknketia-archives@ug.edu.gh"
-                  className="text-sm leading-relaxed text-primary underline-offset-4 hover:underline"
-                >
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   jhknketia-archives@ug.edu.gh
-                </a>
+                </p>
               </div>
             </div>
             <div className="flex gap-4">
