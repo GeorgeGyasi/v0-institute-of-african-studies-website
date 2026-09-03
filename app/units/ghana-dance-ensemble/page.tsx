@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
 import Image from "next/image"
+import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
-import { Music, Users, Calendar, MapPin, Award, Play, ChevronDown } from "lucide-react"
+import { Music, Users, Calendar, MapPin, Award, Play, ChevronDown, ArrowRight } from "lucide-react"
+import { gdeDirectors } from "@/lib/gde-directors"
 
 export const metadata: Metadata = {
   title: "Ghana Dance Ensemble",
@@ -34,16 +36,6 @@ const highlights = [
     value: "30+",
     description: "International tours worldwide",
   },
-]
-
-const directors = [
-  { name: "Prof. Albert Mawere Opoku", tenure: "1962 – 1976" },
-  { name: "Prof. Francis Nii Yartey", tenure: "1976 – 1992" },
-  { name: "Mr. E. Ampofo Duodu", tenure: "1993 – 1997" },
-  { name: "Mr. Oh! Nii Kwei Sowah", tenure: "1997 – 2002" },
-  { name: "Dr. Benjamin Obido Ayettey", tenure: "2002 – 2015" },
-  { name: "Dr. Moses Nii-Dortey", tenure: "2015 – 2019" },
-  { name: "Dr. Aristedes Narh Hargoe", tenure: "2019 – Present", current: true },
 ]
 
 const repertoire = [
@@ -198,25 +190,27 @@ export default function GhanaDanceEnsemblePage() {
           </p>
 
           {/* Current director - always visible */}
-          {directors
+          {gdeDirectors
             .filter((director) => director.current)
             .map((director) => (
-              <div
-                key={director.name}
-                className="mb-6 flex max-w-2xl flex-col gap-1 rounded-lg border border-border bg-muted/40 p-6 sm:flex-row sm:items-center sm:justify-between"
+              <Link
+                key={director.slug}
+                href={`/units/ghana-dance-ensemble/directors/${director.slug}`}
+                className="group mb-6 flex max-w-2xl flex-col gap-1 rounded-lg border border-border bg-muted/40 p-6 transition-colors hover:border-primary/40 hover:bg-muted/60 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div>
                   <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary">
                     Current Director
                   </p>
-                  <h3 className="font-serif text-xl font-bold text-foreground">
+                  <h3 className="font-serif text-xl font-bold text-foreground group-hover:text-primary">
                     {director.name}
                   </h3>
                 </div>
-                <span className="text-sm font-medium text-primary">
+                <span className="flex items-center gap-2 text-sm font-medium text-primary">
                   {director.tenure}
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
-              </div>
+              </Link>
             ))}
 
           {/* Past directors - collapsible */}
@@ -229,22 +223,25 @@ export default function GhanaDanceEnsemblePage() {
               />
             </summary>
             <ol className="relative ml-2 mt-8 border-l border-border pl-8">
-              {directors
+              {gdeDirectors
                 .filter((director) => !director.current)
                 .map((director) => (
-                  <li key={director.name} className="mb-10 last:mb-0">
+                  <li key={director.slug} className="mb-8 last:mb-0">
                     <span
                       className="absolute -left-[9px] flex h-4 w-4 items-center justify-center rounded-full bg-secondary ring-4 ring-background"
                       aria-hidden="true"
                     />
-                    <div className="flex flex-col gap-x-3 gap-y-0.5 sm:flex-row sm:items-baseline">
-                      <h3 className="font-semibold text-foreground">
+                    <Link
+                      href={`/units/ghana-dance-ensemble/directors/${director.slug}`}
+                      className="group -my-1 flex flex-col gap-x-3 gap-y-0.5 rounded-md py-1 transition-colors sm:flex-row sm:items-baseline"
+                    >
+                      <h3 className="font-semibold text-foreground underline-offset-4 group-hover:text-primary group-hover:underline">
                         {director.name}
                       </h3>
                       <span className="text-sm font-medium text-muted-foreground">
                         {director.tenure}
                       </span>
-                    </div>
+                    </Link>
                   </li>
                 ))}
             </ol>
