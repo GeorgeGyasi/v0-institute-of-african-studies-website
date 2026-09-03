@@ -4,9 +4,9 @@ import { useMemo, useState } from "react"
 import Link from "next/link"
 import { ArrowRight, MapPin } from "lucide-react"
 import {
+  GHANA_REGIONS,
   getGhanaDances,
   getPanAfricanDances,
-  getRepresentedRegions,
   getRepresentedCountries,
   type DanceCategory,
 } from "@/lib/gde-dances"
@@ -18,7 +18,7 @@ export function RepertoireExplorer() {
   const [region, setRegion] = useState<string>(ALL)
   const [country, setCountry] = useState<string>(ALL)
 
-  const regions = useMemo(() => getRepresentedRegions(), [])
+  const regions = useMemo(() => [...GHANA_REGIONS], [])
   const countries = useMemo(() => getRepresentedCountries(), [])
 
   const dances = useMemo(() => {
@@ -123,9 +123,19 @@ export function RepertoireExplorer() {
           ))}
         </div>
       ) : (
-        <p className="rounded-lg border border-dashed border-border py-16 text-center text-sm text-muted-foreground">
-          No dances have been added to this category yet.
-        </p>
+        <div className="rounded-lg border border-dashed border-border py-16 text-center">
+          <MapPin className="mx-auto mb-3 h-6 w-6 text-muted-foreground/60" />
+          <p className="text-sm font-medium text-foreground">
+            {category === "ghana" && region !== ALL
+              ? `Dances from the ${region} Region are coming soon.`
+              : category === "pan-african" && country !== ALL
+                ? `Dances from ${country} are coming soon.`
+                : "Dances will be added to this category soon."}
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            The Ensemble&apos;s repertoire is continually being documented and expanded.
+          </p>
+        </div>
       )}
     </div>
   )
