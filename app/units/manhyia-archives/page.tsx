@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { PageHeader } from "@/components/page-header"
-import { Archive, ScrollText, Mic, BookOpen } from "lucide-react"
+import { Archive, ScrollText, Mic, BookOpen, MapPin, Globe, Phone } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Manhyia Archives",
@@ -164,6 +165,74 @@ export default function ManhyiaArchivesPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="border-t border-border bg-card py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+              <Image
+                src="/images/manhyia-archives-building.png"
+                alt="The Manhyia Archives building in Asawase-Kumasi"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
+                Get in Touch
+              </p>
+              <h2 className="mb-8 font-serif text-3xl font-bold text-foreground">
+                Contact
+              </h2>
+              <ul className="flex flex-col gap-6">
+                <li className="flex gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                    <MapPin className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Address</p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      Manhyia Archives, Box AS 477, Asawase-Kumasi
+                    </p>
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                    <Globe className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Website</p>
+                    <a
+                      href="https://www.manhyiaarchives.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm leading-relaxed text-primary underline-offset-4 hover:underline"
+                    >
+                      www.manhyiaarchives.org
+                    </a>
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                    <Phone className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Telephone</p>
+                    <a
+                      href="tel:0322398511"
+                      className="text-sm leading-relaxed text-primary underline-offset-4 hover:underline"
+                    >
+                      0322398511
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
