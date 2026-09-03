@@ -4,6 +4,7 @@ import Link from "next/link"
 import { PageHeader } from "@/components/page-header"
 import { Music, Users, Calendar, MapPin, Award, Play, ChevronDown, ArrowRight } from "lucide-react"
 import { gdeDirectors } from "@/lib/gde-directors"
+import { gdeDances } from "@/lib/gde-dances"
 
 export const metadata: Metadata = {
   title: "Ghana Dance Ensemble",
@@ -55,44 +56,7 @@ const pioneers = [
   { name: "Godfrey Odokwei Sackeyfio", note: "(joined 1963)" },
 ]
 
-const repertoire = [
-  {
-    title: "Agbadza",
-    origin: "Ewe",
-    description:
-      "A social and recreational dance from the Volta Region, performed to express communal unity and celebrate life events.",
-  },
-  {
-    title: "Adowa",
-    origin: "Akan",
-    description:
-      "A graceful funeral and ceremonial dance of the Akan people, characterised by hand movements that tell stories.",
-  },
-  {
-    title: "Kpanlogo",
-    origin: "Ga",
-    description:
-      "A popular recreational dance from the Greater Accra Region, blending traditional and contemporary movement styles.",
-  },
-  {
-    title: "Bamaya",
-    origin: "Dagbani",
-    description:
-      "A social dance from the Northern Region, originally performed to celebrate the end of drought and give thanks for rain.",
-  },
-  {
-    title: "Fontomfrom",
-    origin: "Akan",
-    description:
-      "A royal court dance of the Akan, traditionally performed at the courts of paramount chiefs during festivals.",
-  },
-  {
-    title: "Gahu",
-    origin: "Ewe",
-    description:
-      "A lively social dance from the Volta Region that showcases the intricate polyrhythmic drumming traditions of the Ewe people.",
-  },
-]
+const featuredDances = gdeDances.slice(0, 6)
 
 export default function GhanaDanceEnsemblePage() {
   return (
@@ -330,20 +294,37 @@ export default function GhanaDanceEnsemblePage() {
       {/* Repertoire */}
       <section className="border-t border-border py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
-            Performance Repertoire
-          </p>
-          <h2 className="mb-12 font-serif text-3xl font-bold text-foreground">
-            Traditional Dances
-          </h2>
+          <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
+                Performance Repertoire
+              </p>
+              <h2 className="font-serif text-3xl font-bold text-foreground">
+                Traditional Dances
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                A selection from the Ensemble&apos;s repertoire, spanning
+                Ghana&apos;s sixteen regions and dances from across Africa.
+                Select a dance to read its full brief.
+              </p>
+            </div>
+            <Link
+              href="/units/ghana-dance-ensemble/repertoire"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-md border border-primary/30 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+            >
+              View Full Repertoire
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {repertoire.map((dance) => (
-              <div
-                key={dance.title}
+            {featuredDances.map((dance) => (
+              <Link
+                key={dance.slug}
+                href={`/units/ghana-dance-ensemble/repertoire/${dance.slug}`}
                 className="group rounded-lg border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md"
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-secondary/10">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-secondary/10">
                     <Play className="h-5 w-5 text-secondary" />
                   </div>
                   <div>
@@ -351,14 +332,15 @@ export default function GhanaDanceEnsemblePage() {
                       {dance.title}
                     </h3>
                     <p className="text-xs text-muted-foreground">
-                      {dance.origin} tradition
+                      {dance.origin} &middot;{" "}
+                      {dance.category === "ghana" ? dance.region : dance.country}
                     </p>
                   </div>
                 </div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  {dance.description}
+                  {dance.summary}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
