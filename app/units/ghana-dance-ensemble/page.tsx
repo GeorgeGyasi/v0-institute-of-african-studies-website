@@ -38,6 +38,23 @@ const highlights = [
   },
 ]
 
+const pioneers = [
+  { name: "Matilda Attiane" },
+  { name: "Patience Abena Kwakwa" },
+  { name: "Hilda Sowa" },
+  { name: "Helen Mensah" },
+  { name: "Edna Mensah" },
+  { name: "Beatrice Addo" },
+  { name: "Emmerentia Tamakloe" },
+  { name: "Lilly Acquah-Harrison" },
+  { name: "Victor Clottey" },
+  { name: "Thomas Ekow Adi" },
+  { name: "William Ofotsu Adinku" },
+  { name: "Frank Kwasi Mensah" },
+  { name: "Emmanuel Ampofo Duodu" },
+  { name: "Godfrey Odokwei Sackeyfio", note: "(joined 1963)" },
+]
+
 const repertoire = [
   {
     title: "Agbadza",
@@ -98,41 +115,62 @@ export default function GhanaDanceEnsemblePage() {
               </h2>
               <div className="flex flex-col gap-4 text-sm leading-relaxed text-muted-foreground">
                 <p>
-                  Established in 1962 through a collaboration between the
+                  A highly successful collaboration between the
                   Government&apos;s Institute of Arts and Culture and the
-                  Institute of African Studies, University of Ghana, the Ghana
-                  Dance Ensemble was created to be the country&apos;s flagship
-                  for the professional, worldwide promotion of its music and
-                  dance heritage, grounded in solid fieldwork and experimental
-                  research.
+                  Institute of African Studies, University of Ghana, created the
+                  Ghana Dance Ensemble in October 1962 &mdash; now celebrating
+                  its 60th anniversary. From its inception, the Ensemble was to
+                  be Ghana&apos;s flagship for the professional, worldwide
+                  promotion of the music and dance heritage of Ghana, undergirded
+                  by solid fieldwork and experimental research.
                 </p>
                 <p>
                   The Ensemble has a tradition of identifying young, talented
-                  artistes with mastery of particular dance forms from across the
-                  country and training them to express a dazzling variety of
-                  dances. Many of these dancers have gone on to set up their own
-                  companies or work with companies all over the world.
+                  artistes with mastery of particular dance forms from different
+                  parts of the country and training them to express a dazzling
+                  variety of dances. Many of these dancers have gone on to set up
+                  their own companies or worked with companies all over the
+                  world.
                 </p>
                 <p>
-                  Its directors have transformed everyday Ghanaian dance into
-                  stage presentations. Professor Mawere Opoku used just enough
-                  choreography to showcase the classic movements of heritage
-                  dances; his successor, Professor Nii Yartey, explored dance
-                  vocabulary in dialogue with cultures worldwide to bring the
-                  Ensemble into contemporary dance. Today, under Dr. Aristides
-                  Nene Narh Hargoe, it maintains the discipline of the early
-                  classics while expanding its repertoire and exploring dance as
-                  an expression of contemporary issues.
+                  The directors of the Ensemble have transformed dance in the
+                  everyday lives of Ghanaians into stage presentations. The
+                  handiwork of Professor Mawere Opoku, the first Director, was
+                  characterized by just enough choreography to showcase the
+                  classic movements of heritage dances. Professor Nii Yartey, his
+                  successor, explored the dance vocabulary to dialogue with dance
+                  cultures from other parts of the world, bringing the Ensemble
+                  into the area of contemporary dance. Subsequent successors
+                  &mdash; Mr. Emmanuel Ampofo Duodu, Mr. Ohh! Nii Kwei Sowah, Dr.
+                  Benjamin Obido Ayettey and Dr. Moses Nii Dortey &mdash;
+                  contributed in diverse ways to advance the repertoire of the
+                  GDE. Today, in the hands of Dr. Aristedes Narh Hargoe, the
+                  Ensemble maintains the discipline of the early classics while
+                  continuing to expand its repertoire and explore dance as an
+                  expression of contemporary issues, reinvigorated with a renewed
+                  sense of dynamism.
                 </p>
                 <p>
-                  Alongside Guinea&apos;s Ballet Africain in the 1960s and 70s,
-                  the Ensemble gave the world a breathtaking view of African
-                  aesthetics from the perspective of Africans. It has served as a
-                  model for amateur groups nationwide and spawned the National
-                  Dance Company at the National Theatre of Ghana. Its research,
-                  teaching, and experimental work continues at the Institute of
-                  African Studies, standing to conserve Ghana&apos;s rich dance
-                  heritage and the exhilarating creativity of Ghanaian dance.
+                  Together with the Ballet Africain of Guinea Conakry in the
+                  1960s and 70s, the Ghana Dance Ensemble gave the world a
+                  breath-taking aper&ccedil;u of African aesthetics and cultures
+                  from the perspective of Africans. The Ensemble has served as a
+                  model for a variety of amateur groups in Ghana and provided the
+                  core artistes for the National Dance Company.
+                </p>
+                <p>
+                  The Ensemble&apos;s broad mandate led to a decision to spawn
+                  the National Dance Company, with a core membership based at the
+                  National Theatre of Ghana, which caters for numerous national
+                  assignments. The research, teaching and experimental emphases
+                  continue to underline the work of the Ensemble at the Institute
+                  of African Studies, where thousands of Ghanaian and
+                  non-Ghanaian students and lovers of African dance and music
+                  have been introduced to the unforgettable dance culture of
+                  Ghana. The Ghana Dance Ensemble stands as an institution
+                  established to conserve the exquisite, rich heritage of
+                  Ghana&apos;s dance cultures and the exhilarating creativity
+                  engendered by the essence of Ghanaian dance.
                 </p>
               </div>
             </div>
@@ -145,6 +183,46 @@ export default function GhanaDanceEnsemblePage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
+          </div>
+
+          {/* GDE @ 60 - Pioneer Members */}
+          <div className="mt-16 rounded-lg border border-border bg-card p-8 lg:p-10">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-secondary">
+              Ghana Dance Ensemble @ 60
+            </p>
+            <h3 className="mb-4 font-serif text-2xl font-bold text-foreground text-balance">
+              Honouring the Fourteen Pioneers
+            </h3>
+            <p className="mb-8 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+              Sixty years on, the Ensemble reflects on the gains and sacrifices
+              of the past, led by its thirteen pioneer members &mdash; joined in
+              1963 by a fourteenth. Even as it honours this legacy, the GDE is
+              rebranding to remain relevant as a national dance ensemble of the
+              21st century, positioned to serve the contemporary needs of both
+              academia and industry.
+            </p>
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3 lg:grid-cols-4">
+              {pioneers.map((pioneer) => (
+                <li
+                  key={pioneer.name}
+                  className="flex items-baseline gap-2 text-sm text-foreground"
+                >
+                  <span
+                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                    aria-hidden="true"
+                  />
+                  <span>
+                    {pioneer.name}
+                    {pioneer.note ? (
+                      <span className="text-muted-foreground">
+                        {" "}
+                        {pioneer.note}
+                      </span>
+                    ) : null}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
