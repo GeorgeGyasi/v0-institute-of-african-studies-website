@@ -296,8 +296,9 @@ export default function PublicationsPage() {
             </div>
           )}
         </div>
+        </div>
+        </div>
       </section>
     </>
   )
-}  )
 }

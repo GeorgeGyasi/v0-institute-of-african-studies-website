@@ -12,7 +12,7 @@ export default function ProfilePage() {
       name="Prof. Benjamin Boateng"
       role="Professor"
       specialty="African Christian Studies"
-      email: "bboateng@ug.edu.gh"
+      email="bboateng@ug.edu.gh"
       bio="Prof. Benjamin Boateng explores the history and contemporary expressions of Christianity in Africa. His work examines how African Christians have adapted, reinterpreted, and transformed Christian faith within African contexts."
       researchAreas={[
         "African Christianity",
